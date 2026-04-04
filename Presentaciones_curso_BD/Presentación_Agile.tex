@@ -1,0 +1,344 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+
+\usepackage[utf8]{inputenc} % solo si usas pdflatex
+\usepackage[T1]{fontenc}    % solo si usas pdflatex
+\usepackage[spanish,es-noshorthands]{babel}
+
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage{cancel}         % si lo usas
+\usepackage{fontawesome}    % si lo usas
+% \usepackage{xypic}        % solo si lo usas
+% \usepackage{multicol}     % normalmente no; usar columns de beamer
+% \usepackage{amsthm}       % solo si defines teoremas propios
+% \usepackage{scrextend}    % solo si lo usas
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{ragged2e}
+
+\hypersetup{pdfborder={0 0 0}}
+
+\title{Introducción a Agile}
+\author{Rodrigo Blanco Betes. Alfa Formación}
+\date{Enero del 2026}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Contenido}
+\tableofcontents
+\end{frame}
+
+\section{Agile y Scrum}
+
+\begin{frame}{Del enfoque tradicional a Agile}
+\begin{columns}[T,onlytextwidth]
+\column{0.49\textwidth}
+\textbf{Problema del enfoque tradicional}
+\begin{itemize}
+    \item Planificación cerrada desde el inicio.
+    \item Cambios costosos y lentos de incorporar.
+    \item Entrega de valor al final del proyecto.
+    \item Riesgo de descubrir tarde errores o necesidades reales.
+\end{itemize}
+
+\column{0.49\textwidth}
+\textbf{Principios de Agile}
+\begin{itemize}
+    \item Trabajo iterativo e incremental.
+    \item Adaptación continua al cambio.
+    \item Colaboración con cliente y equipo.
+    \item Entregas frecuentes con valor real.
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Modelo tradicional vs Agile}
+\vspace{0.4cm}
+\small
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.25\textwidth} >{\RaggedRight\arraybackslash}X >{\RaggedRight\arraybackslash}X}
+\toprule
+\textbf{Aspecto} & \textbf{Tradicional} & \textbf{Agile} \\
+\midrule
+Planificación & Se define al principio & Se revisa en cada iteración \\
+Entrega & Al final & Frecuente y progresiva \\
+Cambios & Se intentan evitar & Se gestionan como parte natural \\
+Éxito & Cumplir el plan & Aportar valor y aprender rápido \\
+\bottomrule
+\end{tabularx}
+\end{frame}
+
+\begin{frame}{¿Qué es Scrum?}
+\begin{itemize}
+    \item Scrum es un marco de trabajo Agile para desarrollar proyectos complejos de forma iterativa.
+    \item El trabajo se organiza en \textbf{sprints}: periodos cortos y fijos en los que se entrega un incremento usable.
+    \item Se apoya en tres ideas clave:
+    \begin{itemize}
+        \item \textbf{Transparencia}: todos saben qué se está haciendo y con qué prioridad.
+        \item \textbf{Inspección}: el equipo revisa con frecuencia el avance y el resultado.
+        \item \textbf{Adaptación}: se ajusta el rumbo en cuanto aparece nueva información.
+    \end{itemize}
+    \item Su objetivo no es solo \textit{hacer tareas}, sino \textbf{entregar valor con control del proceso}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Roles en Scrum y relación entre ellos}
+\begin{columns}[T,onlytextwidth]
+\column{0.32\textwidth}
+\textbf{Product Owner}
+\begin{itemize}
+    \item Define prioridades.
+    \item Maximiza el valor.
+    \item Gestiona el Product Backlog.
+\end{itemize}
+
+\column{0.32\textwidth}
+\textbf{Scrum Master}
+\begin{itemize}
+    \item Facilita el marco Scrum.
+    \item Elimina impedimentos.
+    \item Ayuda a mejorar la forma de trabajar.
+\end{itemize}
+
+\column{0.32\textwidth}
+\textbf{Equipo de Desarrollo}
+\begin{itemize}
+    \item Organiza cómo realizar el trabajo.
+    \item Construye el incremento.
+    \item Colabora de forma multidisciplinar.
+\end{itemize}
+\end{columns}
+
+\vspace{0.35cm}
+\begin{block}{Relación entre roles}
+El \textbf{Product Owner} marca el \textit{qué} y el \textit{por qué}; el \textbf{equipo} decide el \textit{cómo}; el \textbf{Scrum Master} cuida el proceso para que todo fluya.
+\end{block}
+\end{frame}
+
+\begin{frame}{Ceremonias de Scrum para el control del proceso}
+\small
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.22\textwidth} >{\RaggedRight\arraybackslash}p{0.22\textwidth} X}
+\toprule
+\textbf{Ceremonia} & \textbf{Objetivo} & \textbf{Cómo ayuda al control} \\
+\midrule
+Sprint Planning & Decidir qué se hará en el sprint & Alinea prioridades, capacidad y compromiso \\
+Daily Scrum & Revisar avance diario & Detecta bloqueos y desviaciones con rapidez \\
+Sprint Review & Mostrar el incremento & Valida resultado y recoge feedback real \\
+Sprint Retrospective & Mejorar la forma de trabajar & Identifica aprendizajes y acciones de mejora \\
+\bottomrule
+\end{tabularx}
+
+\vspace{0.25cm}
+\normalsize
+\textbf{Idea clave:} las ceremonias no son reuniones por rutina; son puntos de inspección y adaptación que mantienen el proyecto bajo control.
+\end{frame}
+
+\begin{frame}{Ejemplo práctico de uso de Scrum}
+\textbf{Proyecto:} lanzar una nueva experiencia digital de reservas.
+
+\vspace{0.2cm}
+\begin{enumerate}
+    \item El Product Owner prioriza funcionalidades: búsqueda, pago y confirmación.
+    \item El equipo selecciona en Sprint Planning lo que puede completar en dos semanas.
+    \item Cada día revisa avances y bloqueos en la Daily.
+    \item Al final del sprint enseña una versión funcional en la Review.
+    \item En la Retrospective ajusta la forma de colaborar para el siguiente sprint.
+\end{enumerate}
+
+\vspace{0.25cm}
+\begin{alertblock}{Resultado}
+Menos riesgo, mayor visibilidad, capacidad de corregir antes y entregas útiles desde fases tempranas.
+\end{alertblock}
+\end{frame}
+
+\section{Design Thinking}
+
+\begin{frame}{Design Thinking: innovación centrada en las personas}
+\begin{itemize}
+    \item Es una metodología para encontrar soluciones innovadoras a partir de la empatía, la creatividad y la experimentación.
+    \item Parte de una pregunta básica: \textbf{¿qué necesita realmente la persona usuaria?}
+    \item No busca solo ideas originales, sino ideas \textbf{deseables, viables y factibles}.
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Etapas principales}
+\begin{enumerate}
+    \item Empatizar
+    \item Definir
+    \item Idear
+    \item Prototipar
+    \item Testear
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Etapas de Design Thinking}
+\small
+\begin{tabularx}{\textwidth}{>{\RaggedRight\arraybackslash}p{0.18\textwidth} X >{\RaggedRight\arraybackslash}p{0.30\textwidth}}
+\toprule
+\textbf{Etapa} & \textbf{Propósito} & \textbf{Pregunta guía} \\
+\midrule
+Empatizar & Comprender personas, contexto y necesidades & ¿Qué vive, siente y necesita el usuario? \\
+Definir & Concretar el problema correcto & ¿Qué reto merece ser resuelto? \\
+Idear & Generar alternativas sin cerrar pronto la solución & ¿Qué opciones podríamos explorar? \\
+Prototipar & Dar forma rápida a las ideas & ¿Cómo convertir la idea en algo visible? \\
+Testear & Aprender con feedback real & ¿Qué funciona y qué debemos mejorar? \\
+\bottomrule
+\end{tabularx}
+\end{frame}
+
+\begin{frame}{Técnicas útiles en cada fase}
+\begin{columns}[T,onlytextwidth]
+\column{0.48\textwidth}
+\textbf{Comprender el problema}
+\begin{itemize}
+    \item Entrevistas
+    \item Observación
+    \item Mapa de empatía
+    \item \textit{Customer journey}
+\end{itemize}
+
+\textbf{Definir e idear}
+\begin{itemize}
+    \item \textit{How might we...}
+    \item Brainstorming
+    \item Brainwriting
+    \item Priorización impacto/esfuerzo
+\end{itemize}
+
+\column{0.48\textwidth}
+\textbf{Prototipar}
+\begin{itemize}
+    \item Bocetos
+    \item Storyboards
+    \item Maquetas rápidas
+    \item Role play
+\end{itemize}
+
+\textbf{Testear}
+\begin{itemize}
+    \item Pruebas con usuarios
+    \item Entrevistas de validación
+    \item Observación de uso
+    \item Iteración sobre hallazgos
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Cómo se complementan Design Thinking y Scrum}
+\begin{itemize}
+    \item \textbf{Design Thinking} ayuda a descubrir el problema correcto y a diseñar soluciones con sentido.
+    \item \textbf{Scrum} ayuda a convertir esas soluciones en entregas reales, iterativas y controladas.
+\end{itemize}
+
+\vspace{0.3cm}
+\begin{block}{Secuencia habitual}
+Primero exploramos necesidades, generamos ideas y validamos conceptos. Después organizamos la construcción mediante backlog, sprints, revisiones y mejora continua.
+\end{block}
+
+\vspace{0.25cm}
+\textbf{Resultado:} más creatividad al inicio y más disciplina en la ejecución.
+\end{frame}
+
+\section{Storytelling}
+
+\begin{frame}{Storytelling: el arte de transmitir un mensaje con éxito}
+\begin{itemize}
+    \item Contar historias permite convertir datos o ideas en mensajes memorables.
+    \item Una buena historia genera atención, comprensión y conexión emocional.
+    \item No consiste en adornar el mensaje, sino en \textbf{darle estructura, sentido y fuerza}.
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{¿Para qué sirve?}
+\begin{itemize}
+    \item Convencer.
+    \item Inspirar.
+    \item Explicar cambios o proyectos.
+    \item Facilitar que el público recuerde el mensaje principal.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Estructura y elementos de una buena historia}
+\begin{columns}[T,onlytextwidth]
+\column{0.48\textwidth}
+\textbf{Estructura básica}
+\begin{enumerate}
+    \item Contexto inicial
+    \item Conflicto o reto
+    \item Búsqueda de solución
+    \item Resultado o aprendizaje
+\end{enumerate}
+
+\column{0.48\textwidth}
+\textbf{Elementos clave}
+\begin{itemize}
+    \item Personaje o protagonista
+    \item Objetivo claro
+    \item Obstáculo o tensión
+    \item Cambio final
+    \item Mensaje central
+\end{itemize}
+\end{columns}
+
+\vspace{0.25cm}
+\begin{block}{Regla práctica}
+Si la audiencia puede resumir la idea en una frase al terminar, la historia ha funcionado.
+\end{block}
+\end{frame}
+
+\begin{frame}{Consejos y ejemplo breve}
+\textbf{Consejos}
+\begin{itemize}
+    \item Empieza con una situación reconocible.
+    \item Evita saturar con datos sin hilo conductor.
+    \item Da protagonismo al cambio: antes, durante y después.
+    \item Cierra con una idea clara o llamada a la acción.
+\end{itemize}
+
+\vspace{0.25cm}
+\textbf{Ejemplo}
+\begin{quote}
+``El equipo recibía muchas incidencias porque el proceso era lento y confuso. Tras escuchar a los usuarios, rediseñamos los pasos críticos y probamos una versión simple. El tiempo de gestión bajó y la satisfacción subió. La lección fue clara: entender bien el problema cambia la calidad de la solución.''
+\end{quote}
+\end{frame}
+
+\begin{frame}{Puesta en práctica}
+\textbf{Dinámica sugerida}
+\begin{enumerate}
+    \item Elegir un caso real o un proyecto cercano.
+    \item Describir el problema inicial en una frase.
+    \item Construir una mini historia con esta plantilla:
+    \begin{itemize}
+        \item \textbf{Situación}: qué estaba ocurriendo.
+        \item \textbf{Reto}: qué dificultad apareció.
+        \item \textbf{Acción}: qué hicimos.
+        \item \textbf{Resultado}: qué cambió.
+    \end{itemize}
+    \item Contarla en 60-90 segundos.
+    \item Recibir feedback sobre claridad, impacto y memorabilidad.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Ideas clave para cerrar}
+\begin{itemize}
+    \item \textbf{Agile y Scrum} ayudan a gestionar proyectos con flexibilidad, foco y control.
+    \item \textbf{Design Thinking} ayuda a descubrir problemas relevantes y generar soluciones innovadoras.
+    \item \textbf{Storytelling} ayuda a comunicar ideas de manera clara, persuasiva y memorable.
+\end{itemize}
+
+\vspace{0.35cm}
+\centering
+\Large
+Pensar bien, construir bien y comunicar bien.
+\end{frame}
+
+\end{document}

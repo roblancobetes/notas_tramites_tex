@@ -1,0 +1,347 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+
+\usepackage[utf8]{inputenc} % solo si usas pdflatex
+\usepackage[T1]{fontenc}    % solo si usas pdflatex
+
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage{cancel}         % si lo usas
+\usepackage{fontawesome}    % si lo usas
+% \usepackage{xypic}        % solo si lo usas
+% \usepackage{multicol}     % normalmente no; usar columns de beamer
+% \usepackage{amsthm}       % solo si defines teoremas propios
+% \usepackage{scrextend}    % solo si lo usas
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\hypersetup{pdfborder={0 0 0}}
+
+
+\title{Presentación resumen de Java}
+\author{Rodrigo Blanco Betes. Alfa Formación}
+\date{Enero del 2026}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+%-------------------------------------------------
+
+
+\section{Introducción a Java}
+\begin{frame}{Introducción}
+Java es un lenguaje de programación de propósito general ampliamente utilizado en:
+\begin{itemize}
+    \item Aplicaciones de escritorio
+    \item Aplicaciones web
+    \item Sistemas empresariales
+    \item Dispositivos móviles
+\end{itemize}
+
+Se caracteriza principalmente por su:
+\begin{itemize}
+    \item Portabilidad
+    \item Seguridad
+    \item Robustez
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Historia de Java}
+Java fue desarrollado a principios de la década de 1990 por un equipo liderado por James Gosling en Sun Microsystems.
+
+\begin{itemize}
+    \item Proyecto original: \textit{Green Project}
+    \item Nombre inicial: \textit{Oak}
+    \item Cambio de nombre a \textit{Java} en 1995
+    \item Lema: \textit{``Write Once, Run Anywhere''}
+\end{itemize}
+
+En 2010, Sun Microsystems fue adquirida por Oracle Corporation, que actualmente mantiene y evoluciona el lenguaje.
+\end{frame}
+
+\begin{frame}{Principales Características de Java}
+\begin{itemize}
+    \item \textbf{Portabilidad}: Compilación a \textit{bytecode} ejecutable en cualquier sistema con JVM.
+    \item \textbf{Orientación a objetos}: Facilita la reutilización, mantenimiento y organización del código.
+    \item \textbf{Seguridad}: Verificación de bytecode, gestión automática de memoria y modelo de permisos.
+    \item \textbf{Gestión automática de memoria}: Uso de recolector de basura.
+    \item \textbf{Multihilo}: Soporte para programación concurrente mediante hilos.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Conclusión}
+Java es un lenguaje maduro y ampliamente utilizado que ha demostrado su utilidad a lo largo del tiempo.
+
+\begin{itemize}
+    \item Funciona en múltiples plataformas
+    \item Es seguro y robusto
+    \item Sigue siendo una opción clave en el desarrollo de software
+\end{itemize}
+\end{frame}
+
+\section{Tipos primitivos y objetos. API de Java}
+
+\begin{frame}{Tipos primitivos y objetos. API de Java}
+  
+
+El lenguaje de programación Java ofrece un conjunto sólido de herramientas fundamentales para el desarrollo de aplicaciones. Entre ellas se encuentran los tipos primitivos, los objetos proporcionados por su API estándar y los instrumentos de control de flujo, que permiten definir la lógica y el comportamiento de los programas.
+
+Los tipos primitivos son los tipos de datos básicos que Java proporciona para almacenar valores simples. Estos \text{no son objetos} y ocupan un espacio fijo en memoria.
+
+\end{frame}
+
+
+\begin{frame}{Tipos primitivos}
+
+Los tipos primitivos son:
+\begin{itemize}
+    \item \textbf{byte}: almacena números enteros pequeños.
+    \item \textbf{short}: almacena números enteros de tamaño reducido.
+    \item \textbf{int}: tipo entero más utilizado.
+    \item \textbf{long}: almacena números enteros grandes.
+    \item \textbf{float}: almacena números decimales de precisión simple.
+    \item \textbf{double}: almacena números decimales de doble precisión.
+    \item \textbf{char}: representa un carácter Unicode.
+    \item \textbf{boolean}: almacena valores lógicos (\texttt{true} o \texttt{false}).
+\end{itemize}
+
+El uso de tipos primitivos permite una mayor eficiencia en el uso de memoria y un mejor rendimiento del programa.
+
+
+\end{frame}
+
+\begin{frame}{Introducción a la API de Java}
+
+Java incluye una extensa biblioteca estándar conocida como la API de Java, la cual proporciona clases y objetos reutilizables que facilitan el desarrollo de software.
+
+Algunos ejemplos importantes de objetos de la API son:
+\begin{itemize}
+    \item \textbf{String}: permite manipular cadenas de texto.
+    \item \textbf{Scanner}: se utiliza para la entrada de datos desde el teclado.
+    \item \textbf{Math}: ofrece métodos para realizar operaciones matemáticas.
+    \item \textbf{ArrayList}: permite almacenar colecciones dinámicas de datos.
+    \item \textbf{Date}: se utiliza para manejar fechas y tiempos.
+\end{itemize}
+
+Estos objetos permiten al programador evitar la implementación desde cero de funcionalidades comunes, aumentando la productividad y reduciendo errores.
+
+\end{frame}
+
+%Estructuras de control de flujo
+\section{Estructuras de Control de Flujo}
+\begin{frame}{Estructuras de Control de Flujo}
+Los estructuras de control de flujo permiten decidir el orden de ejecución de las instrucciones dentro de un programa Java.
+
+
+Por ejemplo, las estructuras condicionales permiten ejecutar bloques de código según se cumpla o no una condición.
+\begin{itemize}
+    \item \textbf{if}
+    \item \textbf{if-else}
+    \item \textbf{switch}
+\end{itemize}
+
+Las estructuras repetitivas permiten ejecutar un bloque de código varias veces.
+\begin{itemize}
+    \item \textbf{for}
+    \item \textbf{while}
+    \item \textbf{do-while}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+Estas instrucciones modifican el flujo normal del programa.
+\begin{itemize}
+    \item \textbf{break}: finaliza un bucle o un \texttt{switch}.
+    \item \textbf{continue}: salta a la siguiente iteración de un bucle.
+    \item \textbf{return}: devuelve un valor y finaliza la ejecución de un método.
+\end{itemize}
+\end{frame}
+
+%Arrays
+\section{Arrays en Java}
+\begin{frame}{Introducción a los arrays}
+Un array es una estructura de datos que permite almacenar múltiples valores del mismo tipo bajo un mismo nombre.
+
+Características principales:
+\begin{itemize}
+    \item Todos los elementos son del mismo tipo
+    \item Se accede mediante índices que comienzan en cero
+    \item El tamaño es fijo
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Uso de Arrays}
+
+Ejemplos de declaración e inicialización:
+    \begin{verbatim}
+    int[] numeros = new int[5];
+
+    int[] numeros = {1, 2, 3, 4, 5};
+    \end{verbatim}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Uso de Arrays}
+Acceso a los elementos mediante su índice:
+\begin{verbatim}
+int valor = numeros[0];
+\end{verbatim}
+
+Recorrido de un array con un bucle \texttt{for}:
+\begin{verbatim}
+for (int i = 0; i < numeros.length; i++) {
+    System.out.println(numeros[i]);
+}
+\end{verbatim}
+
+\begin{verbatim}
+for (int numero: numeros) {
+    System.out.println(numeros[i]);
+}
+\end{verbatim}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Ventajas y limitaciones de los arrays}
+
+Ventajas y limitaciones:
+\begin{itemize}
+    \item Acceso rápido y eficiente a los datos
+    \item Uso óptimo de la memoria
+    \item Tamaño fijo que no puede modificarse
+\end{itemize}
+\end{frame}
+
+
+%JOptionPane
+\begin{frame}[fragile]{La Clase JOptionPane}
+La clase \texttt{JOptionPane} pertenece al paquete \texttt{javax.swing} y permite crear ventanas de diálogo gráficas de forma sencilla, sin interfaces complejas.
+
+Ejemplos de uso:
+\begin{itemize}
+    \item Mostrar mensajes
+    \item Solicitar datos al usuario
+    \item Confirmar acciones
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Uso de JOptionPane}
+
+\begin{verbatim}
+JOptionPane.showMessageDialog(null, "Hola mundo");
+
+String nombre =
+JOptionPane.showInputDialog("Introduce tu nombre");
+
+int opcion =
+JOptionPane.showConfirmDialog(null, "¿Deseas continuar?");
+\end{verbatim}
+
+Por su simplicidad, es muy recomendable para programas educativos e interacciones sencillas con el usuario.
+\end{frame}
+
+\section{Programación Orientada a Objetos en Java}
+\begin{frame}{Programación Orientada a Objetos en Java}
+Java implementa la Programación Orientada a Objetos (POO) mediante el uso de clases y objetos, permitiendo modelar problemas complejos de forma estructurada.
+
+Los cuatro pilares fundamentales de la POO son:
+\begin{itemize}
+    \item Encapsulación
+    \item Abstracción
+    \item Herencia
+    \item Polimorfismo
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Pilares de la POO}
+\begin{itemize}
+    \item \textbf{Encapsulación}: oculta los detalles internos de una clase y expone solo lo necesario mediante modificadores de acceso.
+    \item \textbf{Abstracción}: representa las características esenciales de un objeto, ignorando detalles irrelevantes.
+    \item \textbf{Herencia}: permite que una clase herede atributos y métodos de otra.
+    \item \textbf{Polimorfismo}: un mismo método puede comportarse de forma distinta según el objeto que lo invoque.
+\end{itemize}
+\end{frame}
+
+\section{Clases y Objetos en Java}
+\begin{frame}{Clases y Objetos}
+Una clase es una plantilla que define las propiedades y comportamientos de un objeto.
+
+Un objeto es una instancia concreta de una clase creada a partir de dicha plantilla.
+\end{frame}
+
+\begin{frame}[fragile]{Estructura Básica de una Clase}
+Una clase en Java se define utilizando la palabra reservada \texttt{class}.
+
+\begin{verbatim}
+public class Persona {
+    String nombre;
+    int edad;
+}
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Creación de Objetos}
+Para crear un objeto a partir de una clase se utiliza el operador \texttt{new}.
+
+\begin{verbatim}
+Persona p1 = new Persona();
+\end{verbatim}
+\end{frame}
+
+\section{Constructores}
+\begin{frame}[fragile]{Constructores}
+Los constructores son métodos especiales que se ejecutan al crear un objeto.
+
+\begin{itemize}
+    \item Tienen el mismo nombre que la clase
+    \item Se utilizan para inicializar los atributos
+\end{itemize}
+
+\begin{verbatim}
+public Persona(String nombre, int edad) {
+    this.nombre = nombre;
+    this.edad = edad;
+}
+\end{verbatim}
+\end{frame}
+
+\section{Métodos}
+\begin{frame}[fragile]{Métodos}
+Los métodos definen el comportamiento de los objetos y permiten realizar acciones o devolver información.
+
+Ejemplo de método en Java:
+\begin{verbatim}
+public void mostrarDatos() {
+    System.out.println(nombre + " - " + edad);
+}
+\end{verbatim}
+\end{frame}
+
+\section{Uso de Modificadores de Acceso}
+\begin{frame}{Modificadores de Acceso}
+Java utiliza modificadores de acceso para controlar la visibilidad de atributos y métodos:
+
+\begin{itemize}
+    \item \texttt{public}: accesible desde cualquier clase
+    \item \texttt{private}: accesible solo desde la misma clase
+    \item \texttt{protected}: accesible desde clases del mismo paquete o subclases
+\end{itemize}
+\end{frame}
+
+
+\end{document}

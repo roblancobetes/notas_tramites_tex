@@ -1,0 +1,349 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+
+\usepackage[utf8]{inputenc} % solo si usas pdflatex
+\usepackage[T1]{fontenc}    % solo si usas pdflatex
+
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage{cancel}         % si lo usas
+\usepackage{fontawesome}    % si lo usas
+% \usepackage{xypic}        % solo si lo usas
+% \usepackage{multicol}     % normalmente no; usar columns de beamer
+% \usepackage{amsthm}       % solo si defines teoremas propios
+% \usepackage{scrextend}    % solo si lo usas
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\hypersetup{pdfborder={0 0 0}}
+
+
+\title{Introducción a Kubernetes}
+\author{Rodrigo Blanco Betes. Alfa Formación}
+\date{Enero del 2026}
+
+\begin{document}
+
+\titlepage
+
+\tableofcontents
+
+\begin{frame}{Introducción a Kubernetes}
+\begin{itemize}
+\item Kubernetes es una plataforma de orquestación de contenedores de código abierto.
+\item Permite automatizar el despliegue, escalado y gestión de aplicaciones containerizadas.
+\item Originalmente desarrollado por Google y actualmente mantenido por la Cloud Native Computing Foundation (CNCF).
+\item Está diseñado para gestionar aplicaciones distribuidas en clusters de máquinas.
+\item Se integra habitualmente con tecnologías como Docker o containerd.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Concepto de Cluster}
+\begin{itemize}
+\item Un cluster de Kubernetes está compuesto por múltiples máquinas llamadas \textbf{nodos}.
+\item Los nodos se dividen en dos tipos principales:
+\begin{itemize}
+\item \textbf{Control Plane}: responsable de la gestión del cluster.
+\item \textbf{Worker Nodes}: ejecutan las aplicaciones containerizadas.
+\end{itemize}
+\item El objetivo del cluster es mantener el estado deseado del sistema.
+\item Kubernetes supervisa continuamente el estado real y realiza acciones para corregir desviaciones.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Arquitectura general}
+\begin{itemize}
+\item Kubernetes sigue una arquitectura maestro-trabajador.
+\item El \textbf{Control Plane} toma decisiones globales del cluster.
+\item Los \textbf{Worker Nodes} ejecutan los contenedores.
+\item La comunicación entre componentes se realiza mediante la API de Kubernetes.
+\item Todos los recursos del sistema se describen mediante objetos declarativos.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Componentes del Control Plane}
+\begin{itemize}
+\item \textbf{kube-apiserver}
+\begin{itemize}
+\item Punto de entrada al cluster.
+\item Expone la API REST de Kubernetes.
+\end{itemize}
+
+\item \textbf{etcd}
+\begin{itemize}
+\item Base de datos distribuida clave-valor.
+\item Almacena el estado completo del cluster.
+\end{itemize}
+
+\item \textbf{kube-scheduler}
+\begin{itemize}
+\item Decide en qué nodo se ejecutará cada Pod.
+\end{itemize}
+
+\item \textbf{kube-controller-manager}
+\begin{itemize}
+\item Ejecuta controladores que garantizan el estado deseado del sistema.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{API Server}
+\begin{itemize}
+\item El \textbf{kube-apiserver} es el componente central del control plane.
+\item Todos los componentes interactúan con el cluster a través de la API.
+\item Gestiona operaciones como:
+\begin{itemize}
+\item creación de recursos
+\item modificación de configuraciones
+\item consulta del estado del cluster
+\end{itemize}
+\item Autentica y autoriza las peticiones de los usuarios.
+\item También valida los objetos enviados al cluster.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{etcd}
+\begin{itemize}
+\item \textbf{etcd} es el almacenamiento persistente de Kubernetes.
+\item Guarda toda la configuración del cluster.
+\item Mantiene información como:
+\begin{itemize}
+\item pods
+\item servicios
+\item deployments
+\item configuraciones de red
+\end{itemize}
+\item Es un sistema distribuido altamente consistente.
+\item Su disponibilidad es crítica para el funcionamiento del cluster.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Scheduler}
+\begin{itemize}
+\item El \textbf{kube-scheduler} decide en qué nodo se ejecuta cada Pod.
+\item Evalúa múltiples factores:
+\begin{itemize}
+\item recursos disponibles
+\item restricciones de afinidad
+\item políticas de scheduling
+\item tolerancias y taints
+\end{itemize}
+\item Selecciona el nodo más adecuado para ejecutar la carga de trabajo.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Controller Manager}
+\begin{itemize}
+\item El \textbf{kube-controller-manager} ejecuta distintos controladores.
+\item Los controladores monitorizan el estado del sistema y realizan acciones correctivas.
+\item Ejemplos:
+\begin{itemize}
+\item Node Controller
+\item Replication Controller
+\item Endpoint Controller
+\item Service Account Controller
+\end{itemize}
+\item Su función principal es mantener el estado deseado del cluster.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Componentes de los Worker Nodes}
+\begin{itemize}
+\item Los worker nodes ejecutan las aplicaciones containerizadas.
+\item Componentes principales:
+\begin{itemize}
+\item \textbf{kubelet}
+\item \textbf{kube-proxy}
+\item \textbf{container runtime}
+\end{itemize}
+\item Estos componentes permiten ejecutar, gestionar y conectar los contenedores.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Kubelet}
+\begin{itemize}
+\item El \textbf{kubelet} es el agente que se ejecuta en cada nodo.
+\item Se comunica con el API Server.
+\item Sus responsabilidades incluyen:
+\begin{itemize}
+\item ejecutar contenedores
+\item monitorizar pods
+\item reportar el estado del nodo
+\end{itemize}
+\item Garantiza que los contenedores definidos en los Pods estén funcionando correctamente.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Container Runtime}
+\begin{itemize}
+\item El container runtime es el software que ejecuta los contenedores.
+\item Kubernetes utiliza la interfaz CRI (Container Runtime Interface).
+\item Algunos runtimes comunes:
+\begin{itemize}
+\item containerd
+\item CRI-O
+\item Docker (históricamente utilizado)
+\end{itemize}
+\item Se encarga de descargar imágenes, iniciar contenedores y gestionar su ciclo de vida.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Kube Proxy}
+\begin{itemize}
+\item El \textbf{kube-proxy} gestiona la red dentro del cluster.
+\item Permite que los servicios sean accesibles desde otros pods.
+\item Implementa reglas de red mediante iptables o IPVS.
+\item Proporciona balanceo de carga entre pods de un mismo servicio.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Pods}
+\begin{itemize}
+\item El \textbf{Pod} es la unidad mínima de despliegue en Kubernetes.
+\item Puede contener uno o varios contenedores.
+\item Los contenedores dentro de un pod:
+\begin{itemize}
+\item comparten red
+\item comparten almacenamiento
+\item se ejecutan en el mismo nodo
+\end{itemize}
+\item Los pods son efímeros y pueden ser recreados por Kubernetes.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Deployments}
+\begin{itemize}
+\item Un \textbf{Deployment} describe cómo desplegar y actualizar una aplicación.
+\item Permite definir:
+\begin{itemize}
+\item número de réplicas
+\item estrategia de actualización
+\item versión de la imagen
+\end{itemize}
+\item Kubernetes mantiene automáticamente el número deseado de pods.
+\item Permite realizar actualizaciones rolling sin interrupciones.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Services}
+\begin{itemize}
+\item Los \textbf{Services} permiten exponer aplicaciones dentro o fuera del cluster.
+\item Proporcionan una dirección IP estable para acceder a los pods.
+\item Tipos principales:
+\begin{itemize}
+\item ClusterIP
+\item NodePort
+\item LoadBalancer
+\end{itemize}
+\item Permiten balanceo de carga entre múltiples pods.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Resumen}
+\begin{itemize}
+\item Kubernetes permite gestionar aplicaciones distribuidas a gran escala.
+\item Su arquitectura se basa en un control plane y múltiples worker nodes.
+\item Automatiza tareas clave como despliegue, escalado y recuperación.
+\item Es una tecnología fundamental en arquitecturas cloud-native.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Networking en Kubernetes}
+\begin{itemize}
+\item Kubernetes utiliza un modelo de red plano en el que todos los Pods pueden comunicarse entre sí.
+\item Cada Pod recibe una dirección IP única dentro del cluster.
+\item La comunicación entre Pods no requiere NAT.
+\item El networking se implementa mediante plugins llamados \textbf{CNI (Container Network Interface)}.
+\item Algunos plugins CNI populares incluyen:
+\begin{itemize}
+\item Calico
+\item Flannel
+\item Cilium
+\item Weave Net
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Servicios y exposición de aplicaciones}
+\begin{itemize}
+\item Los \textbf{Services} permiten exponer pods y proporcionar una dirección estable.
+\item Kubernetes implementa balanceo de carga entre las réplicas de pods.
+\item Tipos principales de servicios:
+\begin{itemize}
+\item \textbf{ClusterIP}: accesible solo dentro del cluster.
+\item \textbf{NodePort}: expone el servicio en un puerto del nodo.
+\item \textbf{LoadBalancer}: utiliza un balanceador de carga externo.
+\end{itemize}
+\item Los \textbf{Ingress Controllers} permiten gestionar acceso HTTP/HTTPS con reglas de enrutamiento.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Almacenamiento en Kubernetes}
+\begin{itemize}
+\item Los contenedores son efímeros, por lo que Kubernetes proporciona mecanismos de almacenamiento persistente.
+\item Los principales recursos son:
+\begin{itemize}
+\item \textbf{Persistent Volumes (PV)}
+\item \textbf{Persistent Volume Claims (PVC)}
+\item \textbf{Storage Classes}
+\end{itemize}
+\item Un \textbf{Persistent Volume} representa almacenamiento físico o virtual disponible en el cluster.
+\item Un \textbf{Persistent Volume Claim} solicita almacenamiento con determinadas características.
+\item Las \textbf{Storage Classes} permiten aprovisionamiento dinámico de almacenamiento.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Escalado automático}
+\begin{itemize}
+\item Kubernetes permite escalar aplicaciones automáticamente según la carga.
+\item Tipos principales de autoscaling:
+\begin{itemize}
+\item \textbf{Horizontal Pod Autoscaler (HPA)}
+\begin{itemize}
+\item Ajusta el número de pods según métricas como CPU o memoria.
+\end{itemize}
+\item \textbf{Vertical Pod Autoscaler (VPA)}
+\begin{itemize}
+\item Ajusta los recursos asignados a un pod.
+\end{itemize}
+\item \textbf{Cluster Autoscaler}
+\begin{itemize}
+\item Añade o elimina nodos del cluster automáticamente.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Seguridad en Kubernetes}
+\begin{itemize}
+\item Kubernetes incluye varios mecanismos para proteger el cluster.
+\item \textbf{RBAC (Role Based Access Control)} permite definir permisos de usuarios y servicios.
+\item Los \textbf{Namespaces} permiten aislar recursos dentro del cluster.
+\item Los \textbf{Network Policies} controlan el tráfico entre pods.
+\item Los \textbf{Secrets} permiten almacenar información sensible como contraseñas o tokens.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Gestión declarativa}
+\begin{itemize}
+\item Kubernetes utiliza un modelo declarativo.
+\item Los usuarios describen el estado deseado del sistema mediante archivos YAML.
+\item Kubernetes compara continuamente el estado actual con el estado deseado.
+\item Si detecta diferencias, realiza acciones para corregirlas.
+\item Esto permite automatizar despliegues y facilitar la reproducibilidad.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Flujo típico de despliegue}
+\begin{enumerate}
+\item El desarrollador crea imágenes de contenedor.
+\item Las imágenes se almacenan en un registro de contenedores.
+\item Se define la aplicación mediante archivos YAML (Deployments, Services, etc.).
+\item Se aplican los manifiestos mediante \texttt{kubectl}.
+\item Kubernetes programa los pods y gestiona su ejecución.
+\item El sistema monitoriza continuamente el estado del cluster.
+\end{enumerate}
+\end{frame}
+
+\end{document}

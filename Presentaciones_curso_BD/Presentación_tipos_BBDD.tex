@@ -1,0 +1,267 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+
+\usepackage[utf8]{inputenc} % solo si usas pdflatex
+\usepackage[T1]{fontenc}    % solo si usas pdflatex
+
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage{cancel}         % si lo usas
+\usepackage{fontawesome}    % si lo usas
+
+\usepackage{hyperref}
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\hypersetup{pdfborder={0 0 0}}
+
+\title{Tipos de BBDDs}
+\author{Rodrigo Blanco Betes. Alfa Formación}
+\date{Febrero del 2026}
+
+\begin{document}
+
+% --------- Portada ---------
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% --------- Índice ---------
+\begin{frame}{Contenido}
+  \tableofcontents
+\end{frame}
+
+% =========================================================
+\section{SQLite}
+
+\begin{frame}{SQLite: ¿qué es?}
+\begin{itemize}
+  \item Base de datos relacional \textbf{embebida} (archivo único).
+  \item Cero servidor: ideal para \textbf{apps}, \textbf{IoT}, \textbf{prototipos}, \textbf{tests}.
+  \item Transaccional (ACID), muy portable y con huella mínima.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{SQLite: casos de uso típicos}
+\begin{itemize}
+  \item Aplicaciones móviles/desktop (caché local, almacenamiento offline).
+  \item Sistemas embebidos/IoT (telemetría, configuración).
+  \item Prototipado rápido y pruebas unitarias/integración.
+  \item Data analysis ``ligero'' (ETL pequeño, staging local).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{SQLite: programas y comandos clave}
+\textbf{Programas/herramientas:}
+\begin{itemize}
+  \item \texttt{sqlite3} (CLI principal)
+  \item Navegadores GUI (p.ej. DB Browser for SQLite, DBeaver)
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{SQLite: programas y comandos clave}
+\textbf{Programas/herramientas:}
+\begin{itemize}
+  \item \texttt{sqlite3} (CLI principal)
+  \item Navegadores GUI (p.ej. DB Browser for SQLite, DBeaver)
+\end{itemize}
+
+\textbf{Comandos útiles (CLI \texttt{sqlite3}):}
+\begin{verbatim}
+sqlite3 mi_bd.sqlite
+.help
+.tables
+.schema tabla
+.headers on
+.mode column
+.timer on
+.quit
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{SQLite: SQL esencial (ejemplos)}
+\begin{verbatim}
+-- Crear tabla
+CREATE TABLE usuarios (
+  id INTEGER PRIMARY KEY,
+  nombre TEXT NOT NULL,
+  email TEXT UNIQUE
+);
+
+-- Insertar y consultar
+INSERT INTO usuarios(nombre, email)
+VALUES ('Ana','ana@ejemplo.com');
+
+SELECT * FROM usuarios
+WHERE email LIKE '%@ejemplo.com';
+
+-- Indices y transacciones
+CREATE INDEX idx_usuarios_email ON usuarios(email);
+
+BEGIN;
+UPDATE usuarios
+SET nombre='Ana Gomez'
+WHERE id=1;
+COMMIT;
+\end{verbatim}
+\end{frame}
+
+% =========================================================
+\section{Neo4j}
+
+\begin{frame}{Neo4j: ¿qué es?}
+\begin{itemize}
+  \item Base de datos de \textbf{grafos} (property graph).
+  \item Optimizada para relaciones profundas y consultas de caminos.
+  \item Lenguaje principal: \textbf{Cypher}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Neo4j: casos de uso típicos}
+\begin{itemize}
+  \item \textbf{Recomendadores}: ``usuarios que vieron X también vieron Y''.
+  \item \textbf{Fraude} y detección de anomalías (redes de transacciones).
+  \item \textbf{Knowledge graphs} (ontologías, entidades y relaciones).
+  \item \textbf{Redes}: telecom, rutas, dependencias de microservicios.
+  \item \textbf{Impact analysis}: propagación de cambios (dependencias).
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Neo4j: programas y comandos clave}
+\textbf{Programas/herramientas:}
+\begin{itemize}
+  \item \texttt{neo4j} (gestión del servidor)
+  \item \texttt{cypher-shell} (CLI para Cypher)
+  \item Neo4j Browser (UI web) y Neo4j Desktop (entorno local)
+\end{itemize}
+
+\textbf{Comandos típicos:}
+\begin{verbatim}
+neo4j start
+neo4j status
+neo4j stop
+
+cypher-shell -u neo4j -p <password>
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Neo4j: Cypher esencial (ejemplos)}
+\begin{verbatim}
+-- Crear nodos y relaciones
+CREATE (a:Persona {nombre:'Ana'})
+CREATE (b:Persona {nombre:'Luis'})
+CREATE (a)-[:AMIGO_DE]->(b);
+
+-- Consultar patrones
+MATCH (p:Persona)-[:AMIGO_DE]->(q:Persona)
+RETURN p.nombre, q.nombre;
+
+-- Busqueda de caminos
+MATCH p = (a:Persona {nombre:'Ana'})-[:AMIGO_DE*1..3]->(x)
+RETURN p;
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Neo4j: buenas prácticas rápidas}
+\begin{itemize}
+  \item Modela \textbf{relaciones como primera clase} (evita ``joins manuales'').
+  \item Crea \textbf{constraints} e índices para nodos clave (p.ej. \texttt{Persona(nombre)}).
+  \item Mantén relaciones con semántica clara: \texttt{COMPRO}, \texttt{SIGUE\_A}, \texttt{DEPENDE\_DE}.
+\end{itemize}
+\end{frame}
+
+% =========================================================
+\section{MongoDB}
+
+\begin{frame}{MongoDB: ¿qué es?}
+\begin{itemize}
+  \item Base de datos \textbf{documental} (BSON/JSON).
+  \item Flexible: esquema evolutivo, ideal para datos semi-estructurados.
+  \item Buen soporte para escalado horizontal (sharding) y replicación.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{MongoDB: casos de uso típicos}
+\begin{itemize}
+  \item Catálogos (e-commerce), contenido (CMS), perfiles de usuario.
+  \item Eventos/logs y telemetría (con diseño adecuado e índices).
+  \item APIs con payload JSON y modelo agregado (documentos anidados).
+  \item Microservicios con datos por dominio (bounded context).
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{MongoDB: programas y comandos clave}
+\textbf{Programas/herramientas:}
+\begin{itemize}
+  \item \texttt{mongod} (servidor)
+  \item \texttt{mongosh} (shell/CLI)
+  \item \texttt{mongodump}/\texttt{mongorestore} (backup/restore)
+  \item \texttt{mongoexport}/\texttt{mongoimport} (CSV/JSON)
+  \item MongoDB Compass (GUI)
+\end{itemize}
+
+\textbf{Comandos típicos:}
+\begin{verbatim}
+mongod --dbpath /data/db
+mongosh "mongodb://localhost:27017"
+
+mongodump --db tienda --out backup/
+mongorestore --db tienda backup/tienda
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{MongoDB: operaciones esenciales (ejemplos)}
+\begin{verbatim}
+// Seleccionar BD y colección
+use tienda
+db.createCollection("productos")
+
+// Insertar
+db.productos.insertOne({ sku:"A1", nombre:"Teclado",
+  precio:29.9, tags:["pc","periferico"] })
+
+// Consultar con filtro y proyección
+db.productos.find(
+  { precio: { $lt: 50 } },
+  { nombre:1, precio:1, _id:0 }
+)
+
+// Indices
+db.productos.createIndex({ sku: 1 }, { unique: true })
+db.productos.createIndex({ tags: 1 })
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{MongoDB: Aggregation Pipeline (ejemplo)}
+\begin{verbatim}
+db.ventas.aggregate([
+  { $match: { fecha: { $gte: ISODate("2026-01-01") } } },
+  { $group: { _id: "$sku", total: { $sum: "$importe" }, n: { $sum: 1 } } },
+  { $sort: { total: -1 } },
+  { $limit: 10 }
+])
+\end{verbatim}
+\end{frame}
+
+% =========================================================
+\section{Cierre}
+
+\begin{frame}{Comparativa rápida: ¿cuándo usar cuál?}
+\begin{itemize}
+  \item \textbf{SQLite}: simple, local/embebido, transacciones, una app/un dispositivo.
+  \item \textbf{Neo4j}: relaciones complejas, caminos, recomendación, fraude, knowledge graph.
+  \item \textbf{MongoDB}: documentos JSON, esquema flexible, agregaciones, APIs y escalado.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Checklist de decisión}
+\begin{itemize}
+  \item ¿Tus consultas principales son \textbf{joins} relacionales clásicos? $\rightarrow$ SQLite (o SQL en general).
+  \item ¿Tu valor está en \textbf{relaciones y caminos}? $\rightarrow$ Neo4j.
+  \item ¿Tu modelo natural es \textbf{documentos JSON} con evolución de campos? $\rightarrow$ MongoDB.
+  \item ¿Necesitas simplicidad operativa local? $\rightarrow$ SQLite.
+\end{itemize}
+\end{frame}
+
+\end{document}

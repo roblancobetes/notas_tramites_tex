@@ -1,0 +1,118 @@
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} % solo si usas pdflatex
+\usepackage[T1]{fontenc}    % solo si usas pdflatex
+
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage{cancel}         % si lo usas
+\usepackage{fontawesome}    % si lo usas
+% \usepackage{xypic}        % solo si lo usas
+% \usepackage{multicol}     % normalmente no; usar columns de beamer
+% \usepackage{amsthm}       % solo si defines teoremas propios
+% \usepackage{scrextend}    % solo si lo usas
+
+\begin{document}
+
+\section*{Ejercicios prácticos de criptografía asimétrica}
+
+\section{Cifrado RSA paso a paso}
+
+\textbf{Objetivo:} Comprender el funcionamiento del algoritmo RSA aplicando cada uno de sus pasos de forma manual utilizando números pequeños.
+
+\bigskip
+
+Se desea cifrar y descifrar un mensaje sencillo utilizando el algoritmo de cifrado \textbf{RSA}.
+
+\begin{enumerate}
+    \item Elige los siguientes números primos:
+    \[
+    p = 11 \qquad q = 17
+    \]
+
+    \item Calcula:
+    \begin{itemize}
+        \item \( n = p \cdot q \)
+        \item \( \varphi(n) = (p-1)(q-1) \)
+    \end{itemize}
+
+    \item Elige un exponente público \( e \) tal que:
+    \begin{itemize}
+        \item \( 1 < e < \varphi(n) \)
+        \item \( \gcd(e, \varphi(n)) = 1 \)
+    \end{itemize}
+
+    \item Calcula el exponente privado \( d \) que satisfaga:
+    \[
+    e \cdot d \equiv 1 \pmod{\varphi(n)}
+    \]
+
+    \item Se desea cifrar el siguiente mensaje:
+    \[
+    m = 88
+    \]
+    Comprueba que se cumple \( m < n \).
+
+    \item Calcula el mensaje cifrado utilizando la clave pública:
+    \[
+    c = m^e \bmod n
+    \]
+
+    \item Descifra el mensaje utilizando la clave privada:
+    \[
+    m = c^d \bmod n
+    \]
+
+    \item Comprueba que el mensaje descifrado coincide con el mensaje original.
+\end{enumerate}
+
+\section{Cifrado RSA con OpenSSL en WSL}
+
+\textbf{Objetivo:} Aplicar criptografía asimétrica utilizando OpenSSL desde la línea de comandos, sin necesidad de instalar aplicaciones adicionales fuera del Subsistema de Windows para Linux (WSL).
+
+\bigskip
+
+Se desea cifrar y descifrar un mensaje utilizando \textbf{RSA con OpenSSL}, trabajando exclusivamente desde una terminal de WSL.
+
+\begin{enumerate}
+    \item Abre una terminal del Subsistema de Windows para Linux (WSL).
+
+    \item Genera un par de claves RSA de 2048 bits:
+    \begin{itemize}
+        \item Una clave privada.
+        \item A partir de ella, la clave pública.
+    \end{itemize}
+
+    \item Crea un archivo de texto llamado \texttt{mensaje.txt} que contenga un mensaje corto (por ejemplo, \emph{``Mensaje secreto''}).
+
+    \item Cifra el archivo \texttt{mensaje.txt} utilizando:
+    \begin{itemize}
+        \item La clave pública generada.
+        \item El algoritmo RSA mediante OpenSSL.
+    \end{itemize}
+
+    \item Comprueba que el contenido del archivo cifrado no es legible visualmente.
+
+    \item Descifra el archivo cifrado utilizando la clave privada.
+
+    \item Verifica que el contenido descifrado coincide exactamente con el mensaje original.
+
+    \item (Opcional) Elimina la clave privada y reflexiona:
+    \begin{itemize}
+        \item ¿Sería posible recuperar el mensaje cifrado sin la clave privada?
+        \item Justifica tu respuesta.
+    \end{itemize}
+\end{enumerate}
+
+\bigskip
+
+\textbf{Entrega:}
+\begin{itemize}
+    \item Comandos utilizados.
+    \item Salida relevante obtenida en la terminal.
+    \item Breve explicación del proceso seguido.
+\end{itemize}
+
+
+\end{document}

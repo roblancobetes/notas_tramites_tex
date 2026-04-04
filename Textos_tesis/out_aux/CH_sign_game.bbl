@@ -1,0 +1,1029 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{Blanco1}{unpublished}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=836fdf78d50e74a268e917543c797c48}{%
+           family={Blanco},
+           familyi={B\bibinitperiod},
+           given={Rodrigo},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{836fdf78d50e74a268e917543c797c48}
+      \strng{fullhash}{836fdf78d50e74a268e917543c797c48}
+      \strng{fullhashraw}{836fdf78d50e74a268e917543c797c48}
+      \strng{bibnamehash}{836fdf78d50e74a268e917543c797c48}
+      \strng{authorbibnamehash}{836fdf78d50e74a268e917543c797c48}
+      \strng{authornamehash}{836fdf78d50e74a268e917543c797c48}
+      \strng{authorfullhash}{836fdf78d50e74a268e917543c797c48}
+      \strng{authorfullhashraw}{836fdf78d50e74a268e917543c797c48}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Manuscript under review}
+      \field{title}{Feferman revisited: conceptual structuralism, {K}oellner's critique and mathematical practice}
+      \field{year}{2026}
+    \endentry
+    \entry{Christen2018}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=211ff2c14a54886bad9b37dfc1ddad5f}{%
+           family={Christen},
+           familyi={C\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{211ff2c14a54886bad9b37dfc1ddad5f}
+      \strng{fullhash}{211ff2c14a54886bad9b37dfc1ddad5f}
+      \strng{fullhashraw}{211ff2c14a54886bad9b37dfc1ddad5f}
+      \strng{bibnamehash}{211ff2c14a54886bad9b37dfc1ddad5f}
+      \strng{authorbibnamehash}{211ff2c14a54886bad9b37dfc1ddad5f}
+      \strng{authornamehash}{211ff2c14a54886bad9b37dfc1ddad5f}
+      \strng{authorfullhash}{211ff2c14a54886bad9b37dfc1ddad5f}
+      \strng{authorfullhashraw}{211ff2c14a54886bad9b37dfc1ddad5f}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Reality of the Complex: The Discovery and Development of Imaginary Numbers}
+      \field{year}{2018}
+    \endentry
+    \entry{Cohen1966}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=db90b622eba26dc7c0195a3ce34de469}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Paul\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {W. A. Benjamin}%
+      }
+      \strng{namehash}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{fullhash}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{fullhashraw}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{bibnamehash}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{authorbibnamehash}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{authornamehash}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{authorfullhash}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{authorfullhashraw}{db90b622eba26dc7c0195a3ce34de469}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Set Theory and the Continuum Hypothesis}
+      \field{year}{1966}
+    \endentry
+    \entry{Feferman1999}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4882f9cf8c157580b3191115697f529b}{%
+           family={Feferman},
+           familyi={F\bibinitperiod},
+           given={Solomon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{fullhash}{4882f9cf8c157580b3191115697f529b}
+      \strng{fullhashraw}{4882f9cf8c157580b3191115697f529b}
+      \strng{bibnamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authorbibnamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authornamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authorfullhash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authorfullhashraw}{4882f9cf8c157580b3191115697f529b}
+      \field{extraname}{1}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The American Mathematical Monthly}
+      \field{number}{2}
+      \field{title}{Does Mathematics Need New Axioms?}
+      \field{volume}{106}
+      \field{year}{1999}
+      \field{pages}{99\bibrangedash 111}
+      \range{pages}{13}
+    \endentry
+    \entry{Feferman2011}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4882f9cf8c157580b3191115697f529b}{%
+           family={Feferman},
+           familyi={F\bibinitperiod},
+           given={Solomon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{fullhash}{4882f9cf8c157580b3191115697f529b}
+      \strng{fullhashraw}{4882f9cf8c157580b3191115697f529b}
+      \strng{bibnamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authorbibnamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authornamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authorfullhash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authorfullhashraw}{4882f9cf8c157580b3191115697f529b}
+      \field{extraname}{2}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Draft for the Exploring the Frontiers of Incompleteness Project, Harvard University}
+      \field{title}{Is the Continuum Hypothesis a Definite Mathematical Problem?}
+      \field{year}{2011}
+    \endentry
+    \entry{Godel1940}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=741b5eae8f0486fe4cfb19725eb596a0}{%
+           family={Gödel},
+           familyi={G\bibinitperiod},
+           given={Kurt},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Princeton}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University Press}%
+      }
+      \strng{namehash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{fullhash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{fullhashraw}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{bibnamehash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{authorbibnamehash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{authornamehash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{authorfullhash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{authorfullhashraw}{741b5eae8f0486fe4cfb19725eb596a0}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Annals of Mathematics Studies}
+      \field{title}{The Consistency of the Axiom of Choice and of the Generalized Continuum Hypothesis}
+      \field{volume}{3}
+      \field{year}{1940}
+    \endentry
+    \entry{Koellner2016Infinity}{inbook}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=dca61418cd0bb7f5f2d60ebd58af7e8c}{%
+           family={Koellner},
+           familyi={K\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=04e6613905aec889d86b7ddc2e914c2b}{%
+           family={Jäger},
+           familyi={J\bibinitperiod},
+           given={Gerhard},
+           giveni={G\bibinitperiod}}}%
+        {{hash=b01cca24bc230ef30d05934ce138ce9f}{%
+           family={Sieg},
+           familyi={S\bibinitperiod},
+           given={Wilfried},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{fullhash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{fullhashraw}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{bibnamehash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{authorbibnamehash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{authornamehash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{authorfullhash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{authorfullhashraw}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{editorbibnamehash}{ec47e9813ab2f80493d87b4a3c7752de}
+      \strng{editornamehash}{ec47e9813ab2f80493d87b4a3c7752de}
+      \strng{editorfullhash}{ec47e9813ab2f80493d87b4a3c7752de}
+      \strng{editorfullhashraw}{ec47e9813ab2f80493d87b4a3c7752de}
+      \field{extraname}{1}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Feferman on Foundations}
+      \field{title}{Infinity up on Trial: Reply to {Feferman}}
+      \field{year}{2016}
+      \field{pages}{491\bibrangedash 523}
+      \range{pages}{33}
+    \endentry
+    \entry{Koellner2022IndefinitenessCH}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=dca61418cd0bb7f5f2d60ebd58af7e8c}{%
+           family={Koellner},
+           familyi={K\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{fullhash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{fullhashraw}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{bibnamehash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{authorbibnamehash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{authornamehash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{authorfullhash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{authorfullhashraw}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \field{extraname}{2}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Feferman on the Indefiniteness of {CH}}
+      \field{urlday}{9}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://bpb-us-e1.wpmucdn.com/websites.harvard.edu/dist/f/94/files/2022/07/EFI_Feferman_comments.pdf
+      \endverb
+      \verb{url}
+      \verb https://bpb-us-e1.wpmucdn.com/websites.harvard.edu/dist/f/94/files/2022/07/EFI_Feferman_comments.pdf
+      \endverb
+    \endentry
+    \entry{Maddy1997}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4b9714e290847626f6b27a43439d9010}{%
+           family={Maddy},
+           familyi={M\bibinitperiod},
+           given={Penelope},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{4b9714e290847626f6b27a43439d9010}
+      \strng{fullhash}{4b9714e290847626f6b27a43439d9010}
+      \strng{fullhashraw}{4b9714e290847626f6b27a43439d9010}
+      \strng{bibnamehash}{4b9714e290847626f6b27a43439d9010}
+      \strng{authorbibnamehash}{4b9714e290847626f6b27a43439d9010}
+      \strng{authornamehash}{4b9714e290847626f6b27a43439d9010}
+      \strng{authorfullhash}{4b9714e290847626f6b27a43439d9010}
+      \strng{authorfullhashraw}{4b9714e290847626f6b27a43439d9010}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Naturalism in Mathematics}
+      \field{year}{1997}
+    \endentry
+    \entry{McLarty2020}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=bfd18cdba587608eac8588f66ecb15ce}{%
+           family={McLarty},
+           familyi={M\bibinitperiod},
+           given={Colin},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{fullhash}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{fullhashraw}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{bibnamehash}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{authorbibnamehash}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{authornamehash}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{authorfullhash}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{authorfullhashraw}{bfd18cdba587608eac8588f66ecb15ce}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Review of Symbolic Logic}
+      \field{number}{2}
+      \field{title}{The Large Structures of {Grothendieck} Founded on Finite Order Arithmetic}
+      \field{volume}{13}
+      \field{year}{2020}
+      \field{pages}{296\bibrangedash 325}
+      \range{pages}{30}
+    \endentry
+    \entry{Nahin2010}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8b57626e0589025b0277f639fc2e1826}{%
+           family={Nahin},
+           familyi={N\bibinitperiod},
+           given={Paul\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University Press}%
+      }
+      \strng{namehash}{8b57626e0589025b0277f639fc2e1826}
+      \strng{fullhash}{8b57626e0589025b0277f639fc2e1826}
+      \strng{fullhashraw}{8b57626e0589025b0277f639fc2e1826}
+      \strng{bibnamehash}{8b57626e0589025b0277f639fc2e1826}
+      \strng{authorbibnamehash}{8b57626e0589025b0277f639fc2e1826}
+      \strng{authornamehash}{8b57626e0589025b0277f639fc2e1826}
+      \strng{authorfullhash}{8b57626e0589025b0277f639fc2e1826}
+      \strng{authorfullhashraw}{8b57626e0589025b0277f639fc2e1826}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{An Imaginary Tale: The Story of {\ensuremath{\sqrt{-1}}}}
+      \field{year}{2010}
+    \endentry
+    \entry{quine1953logical}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=cd939c5aa7528152c6660f83e659c19e}{%
+           family={Quine},
+           familyi={Q\bibinitperiod},
+           given={Willard\bibnamedelimb Van\bibnamedelima Orman},
+           giveni={W\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, MA}%
+      }
+      \list{publisher}{1}{%
+        {Harvard University Press}%
+      }
+      \strng{namehash}{cd939c5aa7528152c6660f83e659c19e}
+      \strng{fullhash}{cd939c5aa7528152c6660f83e659c19e}
+      \strng{fullhashraw}{cd939c5aa7528152c6660f83e659c19e}
+      \strng{bibnamehash}{cd939c5aa7528152c6660f83e659c19e}
+      \strng{authorbibnamehash}{cd939c5aa7528152c6660f83e659c19e}
+      \strng{authornamehash}{cd939c5aa7528152c6660f83e659c19e}
+      \strng{authorfullhash}{cd939c5aa7528152c6660f83e659c19e}
+      \strng{authorfullhashraw}{cd939c5aa7528152c6660f83e659c19e}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{From a Logical Point of View}
+      \field{year}{1953}
+    \endentry
+    \entry{Shapiro1997}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=19fc1e76aff11a2664a2e471819575e4}{%
+           family={Shapiro},
+           familyi={S\bibinitperiod},
+           given={Stewart},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{19fc1e76aff11a2664a2e471819575e4}
+      \strng{fullhash}{19fc1e76aff11a2664a2e471819575e4}
+      \strng{fullhashraw}{19fc1e76aff11a2664a2e471819575e4}
+      \strng{bibnamehash}{19fc1e76aff11a2664a2e471819575e4}
+      \strng{authorbibnamehash}{19fc1e76aff11a2664a2e471819575e4}
+      \strng{authornamehash}{19fc1e76aff11a2664a2e471819575e4}
+      \strng{authorfullhash}{19fc1e76aff11a2664a2e471819575e4}
+      \strng{authorfullhashraw}{19fc1e76aff11a2664a2e471819575e4}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Philosophy of Mathematics: Structure and Ontology}
+      \field{year}{1997}
+    \endentry
+    \entry{Wittgenstein1978}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3234c99a3eebf68ef7d42684cdb8ed8f}{%
+           family={Wittgenstein},
+           familyi={W\bibinitperiod},
+           given={Ludwig},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=8597f4c8d24a063e08cfd0b6288990ca}{%
+           family={Wright},
+           familyi={W\bibinitperiod},
+           given={G.\bibnamedelimi H.},
+           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod},
+           prefix={von},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=be79211ca4e0b60a4ab54fb5632bfb11}{%
+           family={Rhees},
+           familyi={R\bibinitperiod},
+           given={Rush},
+           giveni={R\bibinitperiod}}}%
+        {{hash=bf892da5e1f6cf8cd987907f28be4692}{%
+           family={Anscombe},
+           familyi={A\bibinitperiod},
+           given={G.\bibnamedelimi E.\bibnamedelimi M.},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \name{translator}{1}{}{%
+        {{hash=bf892da5e1f6cf8cd987907f28be4692}{%
+           family={Anscombe},
+           familyi={A\bibinitperiod},
+           given={G.\bibnamedelimi E.\bibnamedelimi M.},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, MA}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{3234c99a3eebf68ef7d42684cdb8ed8f}
+      \strng{fullhash}{3234c99a3eebf68ef7d42684cdb8ed8f}
+      \strng{fullhashraw}{3234c99a3eebf68ef7d42684cdb8ed8f}
+      \strng{bibnamehash}{3234c99a3eebf68ef7d42684cdb8ed8f}
+      \strng{authorbibnamehash}{3234c99a3eebf68ef7d42684cdb8ed8f}
+      \strng{authornamehash}{3234c99a3eebf68ef7d42684cdb8ed8f}
+      \strng{authorfullhash}{3234c99a3eebf68ef7d42684cdb8ed8f}
+      \strng{authorfullhashraw}{3234c99a3eebf68ef7d42684cdb8ed8f}
+      \strng{editorbibnamehash}{8bbb47378ca9179ac56088c1e7bd8bbf}
+      \strng{editornamehash}{6e0020c03776f7107812be1c5ea5db68}
+      \strng{editorfullhash}{8bbb47378ca9179ac56088c1e7bd8bbf}
+      \strng{editorfullhashraw}{8bbb47378ca9179ac56088c1e7bd8bbf}
+      \strng{translatorbibnamehash}{bf892da5e1f6cf8cd987907f28be4692}
+      \strng{translatornamehash}{bf892da5e1f6cf8cd987907f28be4692}
+      \strng{translatorfullhash}{bf892da5e1f6cf8cd987907f28be4692}
+      \strng{translatorfullhashraw}{bf892da5e1f6cf8cd987907f28be4692}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Remarks on the Foundations of Mathematics}
+      \field{year}{1978}
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{Blanco1}{unpublished}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=836fdf78d50e74a268e917543c797c48}{%
+           family={Blanco},
+           familyi={B\bibinitperiod},
+           given={Rodrigo},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{836fdf78d50e74a268e917543c797c48}
+      \strng{fullhash}{836fdf78d50e74a268e917543c797c48}
+      \strng{fullhashraw}{836fdf78d50e74a268e917543c797c48}
+      \strng{bibnamehash}{836fdf78d50e74a268e917543c797c48}
+      \strng{authorbibnamehash}{836fdf78d50e74a268e917543c797c48}
+      \strng{authornamehash}{836fdf78d50e74a268e917543c797c48}
+      \strng{authorfullhash}{836fdf78d50e74a268e917543c797c48}
+      \strng{authorfullhashraw}{836fdf78d50e74a268e917543c797c48}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Manuscript under review}
+      \field{title}{Feferman revisited: conceptual structuralism, {K}oellner's critique and mathematical practice}
+      \field{year}{2026}
+    \endentry
+    \entry{Christen2018}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=211ff2c14a54886bad9b37dfc1ddad5f}{%
+           family={Christen},
+           familyi={C\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{211ff2c14a54886bad9b37dfc1ddad5f}
+      \strng{fullhash}{211ff2c14a54886bad9b37dfc1ddad5f}
+      \strng{fullhashraw}{211ff2c14a54886bad9b37dfc1ddad5f}
+      \strng{bibnamehash}{211ff2c14a54886bad9b37dfc1ddad5f}
+      \strng{authorbibnamehash}{211ff2c14a54886bad9b37dfc1ddad5f}
+      \strng{authornamehash}{211ff2c14a54886bad9b37dfc1ddad5f}
+      \strng{authorfullhash}{211ff2c14a54886bad9b37dfc1ddad5f}
+      \strng{authorfullhashraw}{211ff2c14a54886bad9b37dfc1ddad5f}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Reality of the Complex: The Discovery and Development of Imaginary Numbers}
+      \field{year}{2018}
+    \endentry
+    \entry{Cohen1966}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=db90b622eba26dc7c0195a3ce34de469}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Paul\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {W. A. Benjamin}%
+      }
+      \strng{namehash}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{fullhash}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{fullhashraw}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{bibnamehash}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{authorbibnamehash}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{authornamehash}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{authorfullhash}{db90b622eba26dc7c0195a3ce34de469}
+      \strng{authorfullhashraw}{db90b622eba26dc7c0195a3ce34de469}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Set Theory and the Continuum Hypothesis}
+      \field{year}{1966}
+    \endentry
+    \entry{Feferman1999}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4882f9cf8c157580b3191115697f529b}{%
+           family={Feferman},
+           familyi={F\bibinitperiod},
+           given={Solomon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{fullhash}{4882f9cf8c157580b3191115697f529b}
+      \strng{fullhashraw}{4882f9cf8c157580b3191115697f529b}
+      \strng{bibnamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authorbibnamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authornamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authorfullhash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authorfullhashraw}{4882f9cf8c157580b3191115697f529b}
+      \field{extraname}{1}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The American Mathematical Monthly}
+      \field{number}{2}
+      \field{title}{Does Mathematics Need New Axioms?}
+      \field{volume}{106}
+      \field{year}{1999}
+      \field{pages}{99\bibrangedash 111}
+      \range{pages}{13}
+    \endentry
+    \entry{Feferman2011}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4882f9cf8c157580b3191115697f529b}{%
+           family={Feferman},
+           familyi={F\bibinitperiod},
+           given={Solomon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{fullhash}{4882f9cf8c157580b3191115697f529b}
+      \strng{fullhashraw}{4882f9cf8c157580b3191115697f529b}
+      \strng{bibnamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authorbibnamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authornamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authorfullhash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authorfullhashraw}{4882f9cf8c157580b3191115697f529b}
+      \field{extraname}{2}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Draft for the Exploring the Frontiers of Incompleteness Project, Harvard University}
+      \field{title}{Is the Continuum Hypothesis a Definite Mathematical Problem?}
+      \field{year}{2011}
+    \endentry
+    \entry{Godel1940}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=741b5eae8f0486fe4cfb19725eb596a0}{%
+           family={Gödel},
+           familyi={G\bibinitperiod},
+           given={Kurt},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Princeton}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University Press}%
+      }
+      \strng{namehash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{fullhash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{fullhashraw}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{bibnamehash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{authorbibnamehash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{authornamehash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{authorfullhash}{741b5eae8f0486fe4cfb19725eb596a0}
+      \strng{authorfullhashraw}{741b5eae8f0486fe4cfb19725eb596a0}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Annals of Mathematics Studies}
+      \field{title}{The Consistency of the Axiom of Choice and of the Generalized Continuum Hypothesis}
+      \field{volume}{3}
+      \field{year}{1940}
+    \endentry
+    \entry{Koellner2016Infinity}{inbook}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=dca61418cd0bb7f5f2d60ebd58af7e8c}{%
+           family={Koellner},
+           familyi={K\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=04e6613905aec889d86b7ddc2e914c2b}{%
+           family={Jäger},
+           familyi={J\bibinitperiod},
+           given={Gerhard},
+           giveni={G\bibinitperiod}}}%
+        {{hash=b01cca24bc230ef30d05934ce138ce9f}{%
+           family={Sieg},
+           familyi={S\bibinitperiod},
+           given={Wilfried},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{fullhash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{fullhashraw}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{bibnamehash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{authorbibnamehash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{authornamehash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{authorfullhash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{authorfullhashraw}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{editorbibnamehash}{ec47e9813ab2f80493d87b4a3c7752de}
+      \strng{editornamehash}{ec47e9813ab2f80493d87b4a3c7752de}
+      \strng{editorfullhash}{ec47e9813ab2f80493d87b4a3c7752de}
+      \strng{editorfullhashraw}{ec47e9813ab2f80493d87b4a3c7752de}
+      \field{extraname}{1}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Feferman on Foundations}
+      \field{title}{Infinity up on Trial: Reply to {Feferman}}
+      \field{year}{2016}
+      \field{pages}{491\bibrangedash 523}
+      \range{pages}{33}
+    \endentry
+    \entry{Koellner2022IndefinitenessCH}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=dca61418cd0bb7f5f2d60ebd58af7e8c}{%
+           family={Koellner},
+           familyi={K\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{fullhash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{fullhashraw}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{bibnamehash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{authorbibnamehash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{authornamehash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{authorfullhash}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \strng{authorfullhashraw}{dca61418cd0bb7f5f2d60ebd58af7e8c}
+      \field{extraname}{2}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Feferman on the Indefiniteness of {CH}}
+      \field{urlday}{9}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://bpb-us-e1.wpmucdn.com/websites.harvard.edu/dist/f/94/files/2022/07/EFI_Feferman_comments.pdf
+      \endverb
+      \verb{url}
+      \verb https://bpb-us-e1.wpmucdn.com/websites.harvard.edu/dist/f/94/files/2022/07/EFI_Feferman_comments.pdf
+      \endverb
+    \endentry
+    \entry{Maddy1997}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4b9714e290847626f6b27a43439d9010}{%
+           family={Maddy},
+           familyi={M\bibinitperiod},
+           given={Penelope},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{4b9714e290847626f6b27a43439d9010}
+      \strng{fullhash}{4b9714e290847626f6b27a43439d9010}
+      \strng{fullhashraw}{4b9714e290847626f6b27a43439d9010}
+      \strng{bibnamehash}{4b9714e290847626f6b27a43439d9010}
+      \strng{authorbibnamehash}{4b9714e290847626f6b27a43439d9010}
+      \strng{authornamehash}{4b9714e290847626f6b27a43439d9010}
+      \strng{authorfullhash}{4b9714e290847626f6b27a43439d9010}
+      \strng{authorfullhashraw}{4b9714e290847626f6b27a43439d9010}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Naturalism in Mathematics}
+      \field{year}{1997}
+    \endentry
+    \entry{McLarty2020}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=bfd18cdba587608eac8588f66ecb15ce}{%
+           family={McLarty},
+           familyi={M\bibinitperiod},
+           given={Colin},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{fullhash}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{fullhashraw}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{bibnamehash}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{authorbibnamehash}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{authornamehash}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{authorfullhash}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{authorfullhashraw}{bfd18cdba587608eac8588f66ecb15ce}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Review of Symbolic Logic}
+      \field{number}{2}
+      \field{title}{The Large Structures of {Grothendieck} Founded on Finite Order Arithmetic}
+      \field{volume}{13}
+      \field{year}{2020}
+      \field{pages}{296\bibrangedash 325}
+      \range{pages}{30}
+    \endentry
+    \entry{Nahin2010}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8b57626e0589025b0277f639fc2e1826}{%
+           family={Nahin},
+           familyi={N\bibinitperiod},
+           given={Paul\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University Press}%
+      }
+      \strng{namehash}{8b57626e0589025b0277f639fc2e1826}
+      \strng{fullhash}{8b57626e0589025b0277f639fc2e1826}
+      \strng{fullhashraw}{8b57626e0589025b0277f639fc2e1826}
+      \strng{bibnamehash}{8b57626e0589025b0277f639fc2e1826}
+      \strng{authorbibnamehash}{8b57626e0589025b0277f639fc2e1826}
+      \strng{authornamehash}{8b57626e0589025b0277f639fc2e1826}
+      \strng{authorfullhash}{8b57626e0589025b0277f639fc2e1826}
+      \strng{authorfullhashraw}{8b57626e0589025b0277f639fc2e1826}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{An Imaginary Tale: The Story of {\ensuremath{\sqrt{-1}}}}
+      \field{year}{2010}
+    \endentry
+    \entry{quine1953logical}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=cd939c5aa7528152c6660f83e659c19e}{%
+           family={Quine},
+           familyi={Q\bibinitperiod},
+           given={Willard\bibnamedelimb Van\bibnamedelima Orman},
+           giveni={W\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, MA}%
+      }
+      \list{publisher}{1}{%
+        {Harvard University Press}%
+      }
+      \strng{namehash}{cd939c5aa7528152c6660f83e659c19e}
+      \strng{fullhash}{cd939c5aa7528152c6660f83e659c19e}
+      \strng{fullhashraw}{cd939c5aa7528152c6660f83e659c19e}
+      \strng{bibnamehash}{cd939c5aa7528152c6660f83e659c19e}
+      \strng{authorbibnamehash}{cd939c5aa7528152c6660f83e659c19e}
+      \strng{authornamehash}{cd939c5aa7528152c6660f83e659c19e}
+      \strng{authorfullhash}{cd939c5aa7528152c6660f83e659c19e}
+      \strng{authorfullhashraw}{cd939c5aa7528152c6660f83e659c19e}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{From a Logical Point of View}
+      \field{year}{1953}
+    \endentry
+    \entry{Shapiro1997}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=19fc1e76aff11a2664a2e471819575e4}{%
+           family={Shapiro},
+           familyi={S\bibinitperiod},
+           given={Stewart},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{19fc1e76aff11a2664a2e471819575e4}
+      \strng{fullhash}{19fc1e76aff11a2664a2e471819575e4}
+      \strng{fullhashraw}{19fc1e76aff11a2664a2e471819575e4}
+      \strng{bibnamehash}{19fc1e76aff11a2664a2e471819575e4}
+      \strng{authorbibnamehash}{19fc1e76aff11a2664a2e471819575e4}
+      \strng{authornamehash}{19fc1e76aff11a2664a2e471819575e4}
+      \strng{authorfullhash}{19fc1e76aff11a2664a2e471819575e4}
+      \strng{authorfullhashraw}{19fc1e76aff11a2664a2e471819575e4}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Philosophy of Mathematics: Structure and Ontology}
+      \field{year}{1997}
+    \endentry
+    \entry{Wittgenstein1978}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3234c99a3eebf68ef7d42684cdb8ed8f}{%
+           family={Wittgenstein},
+           familyi={W\bibinitperiod},
+           given={Ludwig},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=8597f4c8d24a063e08cfd0b6288990ca}{%
+           family={Wright},
+           familyi={W\bibinitperiod},
+           given={G.\bibnamedelimi H.},
+           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod},
+           prefix={von},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=be79211ca4e0b60a4ab54fb5632bfb11}{%
+           family={Rhees},
+           familyi={R\bibinitperiod},
+           given={Rush},
+           giveni={R\bibinitperiod}}}%
+        {{hash=bf892da5e1f6cf8cd987907f28be4692}{%
+           family={Anscombe},
+           familyi={A\bibinitperiod},
+           given={G.\bibnamedelimi E.\bibnamedelimi M.},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \name{translator}{1}{}{%
+        {{hash=bf892da5e1f6cf8cd987907f28be4692}{%
+           family={Anscombe},
+           familyi={A\bibinitperiod},
+           given={G.\bibnamedelimi E.\bibnamedelimi M.},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, MA}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{3234c99a3eebf68ef7d42684cdb8ed8f}
+      \strng{fullhash}{3234c99a3eebf68ef7d42684cdb8ed8f}
+      \strng{fullhashraw}{3234c99a3eebf68ef7d42684cdb8ed8f}
+      \strng{bibnamehash}{3234c99a3eebf68ef7d42684cdb8ed8f}
+      \strng{authorbibnamehash}{3234c99a3eebf68ef7d42684cdb8ed8f}
+      \strng{authornamehash}{3234c99a3eebf68ef7d42684cdb8ed8f}
+      \strng{authorfullhash}{3234c99a3eebf68ef7d42684cdb8ed8f}
+      \strng{authorfullhashraw}{3234c99a3eebf68ef7d42684cdb8ed8f}
+      \strng{editorbibnamehash}{8bbb47378ca9179ac56088c1e7bd8bbf}
+      \strng{editornamehash}{6e0020c03776f7107812be1c5ea5db68}
+      \strng{editorfullhash}{8bbb47378ca9179ac56088c1e7bd8bbf}
+      \strng{editorfullhashraw}{8bbb47378ca9179ac56088c1e7bd8bbf}
+      \strng{translatorbibnamehash}{bf892da5e1f6cf8cd987907f28be4692}
+      \strng{translatornamehash}{bf892da5e1f6cf8cd987907f28be4692}
+      \strng{translatorfullhash}{bf892da5e1f6cf8cd987907f28be4692}
+      \strng{translatorfullhashraw}{bf892da5e1f6cf8cd987907f28be4692}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Remarks on the Foundations of Mathematics}
+      \field{year}{1978}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

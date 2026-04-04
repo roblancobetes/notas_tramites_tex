@@ -1,0 +1,12 @@
+\frametitle{Ejemplo de acciones}
+\begin{verbatim}
+transformed.show()
+
+val total = transformed.count()
+
+val firstRow = transformed.first()
+
+transformed.write
+  .mode("overwrite")
+  .parquet("/data/output")
+\end{verbatim}

@@ -1,0 +1,703 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+
+\usepackage[utf8]{inputenc} % solo si usas pdflatex
+\usepackage[T1]{fontenc}    % solo si usas pdflatex
+
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage{cancel}         % si lo usas
+\usepackage{fontawesome}    % si lo usas
+% \usepackage{xypic}        % solo si lo usas
+% \usepackage{multicol}     % normalmente no; usar columns de beamer
+% \usepackage{amsthm}       % solo si defines teoremas propios
+% \usepackage{scrextend}    % solo si lo usas
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\hypersetup{pdfborder={0 0 0}}
+
+
+\title{Introducción a Azure}
+\author{Rodrigo Blanco Betes. Alfa Formación}
+\date{Enero del 2026}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+\section{Introducción a Azure}
+
+\begin{frame}{Infraestructura en Azure}
+\begin{itemize}
+    \item Organización de recursos y servicios en la nube
+    \item Gestión de costes, entornos y despliegues
+    \item Recursos principales:
+    \begin{itemize}
+        \item Cuentas
+        \item Resource Groups
+        \item Virtual Machines
+        \item AKS
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cuentas en Azure}
+\begin{itemize}
+    \item Punto de partida para consumir servicios en Azure
+    \item Asociadas a suscripción, facturación y control de acceso
+    \item Permiten:
+    \begin{itemize}
+        \item Monitorizar costes
+        \item Asignar presupuestos
+        \item Controlar el uso por equipos o proyectos
+    \end{itemize}
+    \item Base para la gobernanza y la trazabilidad del gasto
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Resource Groups}
+\begin{itemize}
+    \item Contenedor lógico para agrupar recursos relacionados
+    \item Facilitan la organización según distintos criterios:
+    \begin{itemize}
+        \item Entornos: desarrollo, pruebas, producción
+        \item Funcionalidad: frontend, backend, datos
+        \item Área o centro de costes
+    \end{itemize}
+    \item Simplifican la administración, permisos y eliminación conjunta
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Virtual Machines}
+\begin{itemize}
+    \item Servicio de computación IaaS en Azure
+    \item Permite desplegar servidores con control completo del sistema operativo
+    \item Casos de uso habituales:
+    \begin{itemize}
+        \item Aplicaciones legacy
+        \item Entornos de laboratorio
+        \item Servicios que requieren configuración específica
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{AKS}
+\begin{itemize}
+    \item Azure Kubernetes Service
+    \item Plataforma gestionada para ejecutar contenedores orquestados con Kubernetes
+    \item Reduce la complejidad operativa del clúster
+    \item Adecuado para:
+    \begin{itemize}
+        \item Aplicaciones distribuidas
+        \item Microservicios
+        \item Despliegues escalables y resilientes
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Primeras prácticas}
+
+\begin{frame}{Gestión de cuentas y costes}
+\begin{itemize}
+    \item Identificación de suscripciones y responsables
+    \item Revisión del consumo y control presupuestario
+    \item Buenas prácticas:
+    \begin{itemize}
+        \item Etiquetado de recursos
+        \item Separación por proyectos o departamentos
+        \item Seguimiento periódico del gasto
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Uso práctico de Resource Groups}
+\begin{itemize}
+    \item Crear grupos de recursos alineados con la estructura del proyecto
+    \item Separar recursos por entorno:
+    \begin{itemize}
+        \item \texttt{rg-dev}
+        \item \texttt{rg-test}
+        \item \texttt{rg-prod}
+    \end{itemize}
+    \item Aplicar nomenclatura consistente
+    \item Facilitar mantenimiento y limpieza de recursos
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Virtual Machine: creación y configuración}
+\begin{itemize}
+    \item Selección de imagen, tamaño y red
+    \item Configuración inicial:
+    \begin{itemize}
+        \item Sistema operativo
+        \item Credenciales de acceso
+        \item Reglas de red y puertos
+        \item Discos y monitorización
+    \end{itemize}
+    \item Validación de conectividad y estado operativo
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Virtual Machine: decomisionado}
+\begin{itemize}
+    \item Apagado y revisión previa del recurso
+    \item Copia o respaldo de datos necesarios
+    \item Eliminación controlada de:
+    \begin{itemize}
+        \item Máquina virtual
+        \item Discos asociados
+        \item Interfaces de red e IP públicas
+    \end{itemize}
+    \item Objetivo: evitar costes residuales y recursos huérfanos
+\end{itemize}
+\end{frame}
+
+\begin{frame}{AKS: creación y configuración}
+\begin{itemize}
+    \item Creación del clúster y definición de nodos
+    \item Configuración de red, identidad y escalado
+    \item Despliegue inicial de cargas de trabajo en contenedores
+    \item Revisión de:
+    \begin{itemize}
+        \item Acceso al clúster
+        \item Estado de nodos y pods
+        \item Integración con monitorización
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{AKS: decomisionado}
+\begin{itemize}
+    \item Revisión de servicios y cargas desplegadas
+    \item Exportación o migración de configuraciones necesarias
+    \item Eliminación del clúster y recursos asociados
+    \item Verificación final para evitar consumos innecesarios
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Resumen}
+\begin{itemize}
+    \item Azure permite organizar infraestructura de forma flexible y gobernada
+    \item Los Resource Groups ayudan a estructurar recursos y costes
+    \item Las Virtual Machines ofrecen control total sobre entornos IaaS
+    \item AKS facilita la ejecución y operación de contenedores a escala
+    \item La creación, configuración y decomisionado forman parte del ciclo de vida operativo
+\end{itemize}
+\end{frame}
+
+\section{Procesamiento de datos}
+
+\begin{frame}{Arquitectura de procesamiento}
+\begin{itemize}
+    \item Flujo de datos estructurado en varias fases
+    \item Separación por capas para facilitar mantenimiento y trazabilidad
+    \item Etapas principales del procesamiento:
+    \begin{itemize}
+        \item Extracción
+        \item Ingesta
+        \item Limpieza
+        \item Generación de tablones
+        \item Construcción del modelo de explotación
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Extracciones: origen a Blob}
+\begin{itemize}
+    \item Obtención de datos desde los sistemas de origen
+    \item Posibles fuentes:
+    \begin{itemize}
+        \item Bases de datos
+        \item APIs
+        \item Sistemas externos
+        \item Ficheros
+    \end{itemize}
+    \item Los datos se almacenan inicialmente en almacenamiento Blob
+    \item Objetivo: disponer de una copia inicial sin transformaciones
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ingesta: Blob a Staging}
+\begin{itemize}
+    \item Movimiento de datos desde Blob hacia la capa \textit{staging}
+    \item Zona intermedia para preparar el procesamiento
+    \item Características principales:
+    \begin{itemize}
+        \item Datos cercanos al formato original
+        \item Preparados para su transformación
+        \item Control de versiones o particiones
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Limpieza con Spark: Staging a Golden}
+\begin{itemize}
+    \item Procesamiento de datos mediante Apache Spark
+    \item Aplicación de transformaciones de calidad:
+    \begin{itemize}
+        \item Eliminación de registros inválidos
+        \item Normalización de formatos
+        \item Tratamiento de valores nulos
+        \item Validaciones de integridad
+    \end{itemize}
+    \item Resultado almacenado en la capa \textit{golden}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Generación de tablones con Spark}
+\begin{itemize}
+    \item Construcción de datasets agregados o enriquecidos
+    \item Combinación de distintas fuentes de datos
+    \item Operaciones habituales:
+    \begin{itemize}
+        \item Joins
+        \item Agregaciones
+        \item Cálculo de métricas
+    \end{itemize}
+    \item Los resultados se almacenan en la capa \textit{golden}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Modelo de explotación: Golden a Silver}
+\begin{itemize}
+    \item Generación de estructuras optimizadas para análisis
+    \item Procesamiento mediante Spark
+    \item Organización orientada a consumo analítico
+    \item Características:
+    \begin{itemize}
+        \item Datos consolidados
+        \item Estructuras optimizadas para consultas
+        \item Preparación para herramientas de BI o analítica
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Modelo de explotación: Golden a Cosmos}
+\begin{itemize}
+    \item Publicación de datos hacia Azure Cosmos DB
+    \item Orientado a aplicaciones operacionales o APIs
+    \item Ventajas:
+    \begin{itemize}
+        \item Baja latencia
+        \item Alta escalabilidad
+        \item Acceso directo desde aplicaciones
+    \end{itemize}
+    \item Los datos proceden de la capa \textit{golden}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Resumen del flujo de procesamiento}
+\begin{itemize}
+    \item Extracción de datos desde sistemas origen
+    \item Ingesta inicial en almacenamiento intermedio
+    \item Procesamiento y limpieza mediante Spark
+    \item Generación de datasets enriquecidos
+    \item Publicación de modelos para analítica y aplicaciones
+\end{itemize}
+\end{frame}
+
+\section{Visualización}
+
+\begin{frame}{Visualización en Azure}
+\begin{itemize}
+    \item La visualización permite analizar el estado de los sistemas y explotar los datos procesados
+    \item En entornos Azure, las herramientas de visualización suelen cubrir:
+    \begin{itemize}
+        \item Monitorización operativa
+        \item Observabilidad de infraestructura y aplicaciones
+        \item Exploración y análisis de datos
+    \end{itemize}
+    \item Herramientas principales:
+    \begin{itemize}
+        \item Kibana
+        \item Grafana
+        \item Notebooks
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Kibana en entornos Azure}
+\begin{itemize}
+    \item Herramienta orientada a exploración y visualización de datos indexados
+    \item Uso habitual junto con Elasticsearch
+    \item Permite:
+    \begin{itemize}
+        \item Crear dashboards
+        \item Analizar logs
+        \item Investigar incidencias
+        \item Realizar búsquedas sobre grandes volúmenes de información
+    \end{itemize}
+    \item En Azure puede integrarse en arquitecturas de observabilidad y análisis de logs
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Grafana en Azure}
+\begin{itemize}
+    \item Plataforma de visualización orientada a métricas y monitorización
+    \item Muy útil para cuadros de mando técnicos y operativos
+    \item Permite:
+    \begin{itemize}
+        \item Visualizar series temporales
+        \item Supervisar infraestructura
+        \item Monitorizar aplicaciones y pipelines
+        \item Centralizar indicadores de distintos orígenes
+    \end{itemize}
+    \item En Azure puede conectarse con servicios de monitorización y fuentes de datos diversas
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Notebooks en Azure}
+\begin{itemize}
+    \item Entorno interactivo para exploración, transformación y análisis de datos
+    \item Permiten combinar:
+    \begin{itemize}
+        \item Código
+        \item Resultados
+        \item Visualizaciones
+        \item Documentación
+    \end{itemize}
+    \item Uso habitual en Azure para:
+    \begin{itemize}
+        \item Análisis exploratorio
+        \item Desarrollo con Spark
+        \item Validación de datasets
+        \item Prototipado de modelos
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Resumen de visualización}
+\begin{itemize}
+    \item Kibana facilita la exploración de logs y eventos
+    \item Grafana está orientado a métricas y monitorización
+    \item Los notebooks permiten análisis interactivo y desarrollo de procesos de datos
+    \item En Azure, estas herramientas complementan la explotación y la observabilidad de la plataforma
+\end{itemize}
+\end{frame}
+
+\section{Almacenamiento}
+
+\begin{frame}{Almacenamiento en Azure}
+\begin{itemize}
+    \item El almacenamiento es una pieza central en cualquier arquitectura de datos
+    \item Azure ofrece distintos modelos según el tipo de información y su uso
+    \item Opciones principales:
+    \begin{itemize}
+        \item Modelo SQL
+        \item Data Lake
+        \item Storage
+        \item Cosmos DB
+    \end{itemize}
+    \item Cada una responde a necesidades diferentes de estructura, escalabilidad y acceso
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Modelo SQL}
+\begin{itemize}
+    \item Almacenamiento relacional orientado a datos estructurados
+    \item Basado en tablas, relaciones, claves e integridad referencial
+    \item Adecuado para:
+    \begin{itemize}
+        \item Aplicaciones transaccionales
+        \item Modelos normalizados
+        \item Consultas SQL
+        \item Reporting estructurado
+    \end{itemize}
+    \item En Azure suele emplearse cuando se necesita consistencia y esquema definido
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Data Lake en Azure}
+\begin{itemize}
+    \item Repositorio escalable para grandes volúmenes de datos
+    \item Admite datos estructurados, semiestructurados y no estructurados
+    \item Organización habitual por capas:
+    \begin{itemize}
+        \item \textbf{Landing}: recepción inicial de datos
+        \item \textbf{Golden}: datos limpios, validados y enriquecidos
+        \item \textbf{Silver}: datos preparados para explotación o consumo específico
+    \end{itemize}
+    \item Base habitual para arquitecturas analíticas modernas en Azure
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Capa Landing}
+\begin{itemize}
+    \item Zona de entrada de datos procedentes de sistemas origen
+    \item Conserva la información con mínima transformación
+    \item Objetivos:
+    \begin{itemize}
+        \item Mantener trazabilidad
+        \item Preservar el dato original
+        \item Facilitar reprocesados
+    \end{itemize}
+    \item Es la primera parada en el flujo de ingesta dentro del Data Lake
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Capas Golden y Silver}
+\begin{itemize}
+    \item \textbf{Golden}:
+    \begin{itemize}
+        \item Datos depurados y consolidados
+        \item Resultado de procesos de limpieza y enriquecimiento
+    \end{itemize}
+    \item \textbf{Silver}:
+    \begin{itemize}
+        \item Datos orientados a consumo
+        \item Preparados para análisis, explotación o integración con otros sistemas
+    \end{itemize}
+    \item Estas capas ayudan a separar el dato bruto del dato de negocio
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Storage en Azure: Blob y File}
+\begin{itemize}
+    \item Azure Storage proporciona distintos servicios según el tipo de acceso requerido
+    \item \textbf{Blob Storage}:
+    \begin{itemize}
+        \item Orientado a objetos
+        \item Adecuado para ficheros, datos masivos, backups y datasets
+    \end{itemize}
+    \item \textbf{File Storage}:
+    \begin{itemize}
+        \item Comparte archivos mediante estructura tipo sistema de ficheros
+        \item Útil para recursos compartidos entre aplicaciones o servidores
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Blob Storage}
+\begin{itemize}
+    \item Servicio de almacenamiento de objetos en Azure
+    \item Muy utilizado en arquitecturas de datos y analítica
+    \item Casos de uso:
+    \begin{itemize}
+        \item Ingesta de datos
+        \item Almacenamiento de ficheros de entrada y salida
+        \item Persistencia de datos intermedios
+        \item Integración con pipelines y procesos Spark
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{File Storage}
+\begin{itemize}
+    \item Servicio orientado a compartición de archivos
+    \item Permite montar recursos compartidos en entornos Windows o Linux
+    \item Adecuado para:
+    \begin{itemize}
+        \item Carpetas compartidas
+        \item Aplicaciones legacy
+        \item Intercambio de ficheros entre servicios
+    \end{itemize}
+    \item Complementa al almacenamiento tipo Blob cuando se necesita acceso tipo fichero
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cosmos DB en Azure}
+\begin{itemize}
+    \item Base de datos NoSQL distribuida globalmente
+    \item Diseñada para alta disponibilidad, baja latencia y escalabilidad horizontal
+    \item Modelos mencionados:
+    \begin{itemize}
+        \item API SQL
+        \item API MongoDB
+    \end{itemize}
+    \item Adecuada para aplicaciones con necesidades de acceso rápido y flexible a los datos
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cosmos DB: SQL y MongoDB}
+\begin{itemize}
+    \item \textbf{API SQL}:
+    \begin{itemize}
+        \item Modelo documental nativo
+        \item Consultas sobre documentos JSON
+        \item Muy utilizada en desarrollos cloud nativos
+    \end{itemize}
+    \item \textbf{API MongoDB}:
+    \begin{itemize}
+        \item Compatible con el ecosistema y herramientas de MongoDB
+        \item Facilita migraciones o integraciones con aplicaciones existentes
+    \end{itemize}
+    \item Ambas permiten trabajar con datos semiestructurados en Azure
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Resumen de almacenamiento}
+\begin{itemize}
+    \item El modelo SQL cubre necesidades relacionales y estructuradas
+    \item El Data Lake organiza el ciclo de vida del dato en distintas capas
+    \item Blob y File resuelven necesidades diferentes de almacenamiento en Azure
+    \item Cosmos DB ofrece una alternativa NoSQL escalable para aplicaciones modernas
+\end{itemize}
+\end{frame}
+
+\section{Procesamiento en tiempo real}
+
+\begin{frame}{Arquitectura de datos en tiempo real}
+\begin{itemize}
+    \item El procesamiento en tiempo real permite analizar datos según se generan
+    \item Se utiliza en escenarios donde la latencia debe ser mínima
+    \item Ejemplos de uso:
+    \begin{itemize}
+        \item IoT y sensores
+        \item Monitorización de sistemas
+        \item Procesamiento de eventos
+        \item Analítica operativa
+    \end{itemize}
+    \item En Azure, el flujo suele incluir ingestión de eventos, procesamiento streaming y almacenamiento
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Node-RED}
+\begin{itemize}
+    \item Herramienta de programación visual basada en flujos
+    \item Permite integrar dispositivos, APIs y servicios cloud
+    \item Uso habitual en entornos IoT:
+    \begin{itemize}
+        \item Conectar sensores o dispositivos
+        \item Transformar eventos
+        \item Enviar datos a servicios de Azure
+    \end{itemize}
+    \item Facilita la creación rápida de pipelines de eventos
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Azure IoT Hub}
+\begin{itemize}
+    \item Servicio gestionado para comunicación con dispositivos IoT
+    \item Permite conectar y gestionar miles o millones de dispositivos
+    \item Funcionalidades principales:
+    \begin{itemize}
+        \item Ingesta de telemetría
+        \item Gestión de dispositivos
+        \item Comunicación bidireccional
+        \item Seguridad y autenticación
+    \end{itemize}
+    \item Punto de entrada habitual para datos procedentes de sensores
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Azure Event Hub}
+\begin{itemize}
+    \item Plataforma de ingestión de eventos a gran escala
+    \item Diseñada para manejar grandes volúmenes de datos en streaming
+    \item Características principales:
+    \begin{itemize}
+        \item Alta capacidad de ingestión
+        \item Procesamiento distribuido
+        \item Integración con servicios de análisis
+    \end{itemize}
+    \item Muy utilizada como buffer entre productores de eventos y sistemas de procesamiento
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Spark Streaming}
+\begin{itemize}
+    \item Extensión de Apache Spark para procesamiento de datos en streaming
+    \item Permite analizar flujos de eventos en tiempo casi real
+    \item Funcionalidades:
+    \begin{itemize}
+        \item Transformación de datos
+        \item Agregaciones en streaming
+        \item Cálculo de métricas en tiempo real
+    \end{itemize}
+    \item Puede consumir eventos desde Event Hub u otras fuentes
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Almacenamiento en Cosmos DB}
+\begin{itemize}
+    \item Base de datos NoSQL distribuida utilizada para persistir resultados
+    \item Adecuada para escenarios de baja latencia
+    \item En arquitecturas streaming permite:
+    \begin{itemize}
+        \item Guardar resultados procesados
+        \item Servir datos a aplicaciones en tiempo real
+        \item Escalar horizontalmente con gran volumen de eventos
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Notebooks en procesamiento streaming}
+\begin{itemize}
+    \item Permiten desarrollar y validar pipelines de procesamiento
+    \item Usados habitualmente en entornos Spark
+    \item Utilidades:
+    \begin{itemize}
+        \item Desarrollo de lógica de transformación
+        \item Análisis exploratorio de flujos de datos
+        \item Monitorización y validación de resultados
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Flujo típico de procesamiento en tiempo real}
+\begin{itemize}
+    \item Generación de eventos desde dispositivos o aplicaciones
+    \item Ingesta mediante IoT Hub o Event Hub
+    \item Procesamiento en streaming con Spark
+    \item Persistencia de resultados en sistemas de almacenamiento
+    \item Visualización o explotación de la información
+\end{itemize}
+\end{frame}
+
+\section{Gobierno del dato}
+
+\begin{frame}{Gobierno del dato}
+\begin{itemize}
+    \item El gobierno del dato define cómo se gestionan los datos dentro de una organización
+    \item Su objetivo es garantizar:
+    \begin{itemize}
+        \item Calidad del dato
+        \item Seguridad
+        \item Cumplimiento normativo
+        \item Uso correcto de la información
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Elementos clave del gobierno del dato}
+\begin{itemize}
+    \item Definición de responsables y roles sobre los datos
+    \item Gestión de la calidad y validación de información
+    \item Control de accesos y seguridad
+    \item Catalogación y documentación de datasets
+    \item Seguimiento del ciclo de vida del dato
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Gobierno del dato en entornos Azure}
+\begin{itemize}
+    \item Azure proporciona herramientas para gestionar el ciclo de vida del dato
+    \item Permite:
+    \begin{itemize}
+        \item Controlar accesos a los recursos
+        \item Auditar el uso de los datos
+        \item Catalogar y descubrir información
+        \item Aplicar políticas de seguridad
+    \end{itemize}
+    \item El gobierno del dato es esencial en plataformas de datos empresariales
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Resumen}
+\begin{itemize}
+    \item El procesamiento en tiempo real permite analizar eventos según se generan
+    \item Azure ofrece servicios para ingestión, procesamiento y almacenamiento streaming
+    \item Cosmos DB facilita el acceso rápido a los resultados
+    \item El gobierno del dato garantiza calidad, seguridad y control sobre la información
+\end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,820 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+
+\usepackage[utf8]{inputenc} % solo si usas pdflatex
+\usepackage[T1]{fontenc}    % solo si usas pdflatex
+
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage{cancel}         % si lo usas
+\usepackage{fontawesome}    % si lo usas
+% \usepackage{xypic}        % solo si lo usas
+% \usepackage{multicol}     % normalmente no; usar columns de beamer
+% \usepackage{amsthm}       % solo si defines teoremas propios
+% \usepackage{scrextend}    % solo si lo usas
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\hypersetup{pdfborder={0 0 0}}
+
+
+\title{Procesamiento distribuido con Spark}
+\author{Rodrigo Blanco Betes. Alfa Formación}
+\date{Enero del 2026}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+% ------------------------------------------------------------
+% Sección 1
+% ------------------------------------------------------------
+\section{Uso de Spark como framework de procesamiento de la información en sistemas distribuidos}
+
+% -------------------------
+
+\begin{frame}{Principales retos en los sistemas distribuidos}
+\begin{itemize}
+  \item \textbf{Latencia y red}: comunicación entre nodos más lenta que la memoria local; penaliza algoritmos con muchas rondas.
+  \item \textbf{Fallos parciales}: nodos que caen, discos que fallan, timeouts; el sistema debe \emph{recuperar} sin parar todo.
+  \item \textbf{Consistencia y coordinación}: sincronización, locks, consenso; evitar cuellos de botella por coordinación excesiva.
+  \item \textbf{Distribución de datos}: particionado, \emph{skew} (particiones desbalanceadas), localización (data locality).
+  \item \textbf{Reproducibilidad y determinismo}: reintentos pueden duplicar efectos si no hay cuidado (\emph{exactly-once} vs \emph{at-least-once}).
+  \item \textbf{Gestión de recursos}: memoria, CPU, disco, I/O; contención cuando varios jobs compiten.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Retos típicos que aparecen en la práctica}
+\begin{itemize}
+  \item \textbf{Shuffles caros}: joins/aggregations provocan intercambio masivo de datos por red.
+  \item \textbf{Stragglers}: unas pocas tareas lentas alargan toda la etapa (\emph{stage}).
+  \item \textbf{Observabilidad}: entender “qué pasa” requiere métricas, UI, logs, y explicar planes de ejecución.
+  \item \textbf{Coste}: más nodos no siempre implica más rendimiento (ley de rendimientos decrecientes).
+\end{itemize}
+\end{frame}
+
+% -------------------------
+\begin{frame}{¿Por qué Spark? Ventajas clave}
+\begin{itemize}
+  \item \textbf{Procesamiento en memoria}: acelera workloads iterativos (ML, graph, ETL encadenado).
+  \item \textbf{Modelo unificado}: batch, streaming, SQL, ML (ecosistema integrado).
+  \item \textbf{Tolerancia a fallos}: recomputación a partir de \emph{lineage} (DAG) de transformaciones.
+  \item \textbf{Optimización automática}: Catalyst (planes lógicos/físicos) y Tungsten (ejecución eficiente).
+  \item \textbf{APIs de alto nivel}: DataFrames/Datasets (tipado en Scala), SQL, funciones built-in.
+  \item \textbf{Escalabilidad}: desde local a clúster (YARN, Kubernetes, Standalone) sin reescribir el código.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conceptos Spark que conectan con “beneficios”}
+\begin{itemize}
+  \item \textbf{DAG de ejecución}: el job se divide en \textbf{stages} (por barreras de shuffle) y \textbf{tasks}.
+  \item \textbf{Transformations vs Actions}:
+  \begin{itemize}
+    \item \emph{Transformations} son \textbf{perezosas} (lazy): construyen el plan.
+    \item \emph{Actions} disparan la ejecución: materializan el resultado.
+  \end{itemize}
+  \item \textbf{Persistencia/caching}: control explícito de reutilización para evitar recomputaciones.
+  \item \textbf{Particionado}: clave para rendimiento (paralelismo) y para evitar \emph{skew}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Ejemplo mínimo: lazy + action (Scala)}
+\begin{verbatim}
+val df = spark.read.parquet("/data/events")
+
+val cleaned = df
+  .filter($"country".isNotNull)
+  .withColumn("day", to_date($"ts"))
+
+val agg = cleaned.groupBy($"day").count()
+
+agg.show()   // Action: aquí se ejecuta el plan
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Cuándo Spark brilla (y cuándo no)}
+\begin{itemize}
+  \item \textbf{Brilla}: ETL grande, joins/aggregations a escala, pipelines, análisis exploratorio, streaming.
+  \item \textbf{No siempre ideal}: latencia ultra-baja (ms), OLTP, tareas pequeñas donde el overhead domina.
+  \item \textbf{Regla práctica}: Spark es una “fábrica” para datos; no un motor transaccional.
+\end{itemize}
+\end{frame}
+
+% -------------------------
+
+
+\begin{frame}{Fundamentos de programación funcional (FP)}
+\begin{itemize}
+  \item \textbf{Funciones como valores}: se pasan como parámetros y se retornan.
+  \item \textbf{Inmutabilidad}: evita efectos colaterales y simplifica concurrencia.
+  \item \textbf{Funciones puras}: mismo input \(\Rightarrow\) mismo output; facilita pruebas y reintentos.
+  \item \textbf{Transformaciones sobre colecciones}: \texttt{map}, \texttt{filter}, \texttt{flatMap}, \texttt{reduce}.
+  \item \textbf{Composición}: construir pipelines encadenando transformaciones.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{FP y sistemas distribuidos: por qué encaja tan bien}
+\begin{itemize}
+  \item \textbf{Menos estado compartido} \(\Rightarrow\) menos coordinación entre nodos.
+  \item \textbf{Reintentos seguros} si las funciones son puras (muy alineado con tolerancia a fallos).
+  \item \textbf{Pipelines declarativos}: describes \emph{qué} hacer; el motor decide \emph{cómo} ejecutarlo.
+  \item \textbf{Paralelismo natural}: operaciones por elemento/partición se distribuyen fácilmente.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Ejemplo FP: de listas a RDD/DataFrame (Scala)}
+\begin{verbatim}
+// Colección local (FP clásica)
+val xs = List(1,2,3,4,5)
+val ys = xs.filter(_ % 2 == 0).map(_ * 10)
+
+// Idea similar en Spark (distribuido)
+val rdd = sc.parallelize(xs)
+val out = rdd.filter(_ % 2 == 0).map(_ * 10)
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Idea clave para Spark: "declarar transformaciones"}
+\begin{itemize}
+  \item En Spark, muchas operaciones son \textbf{transformaciones} (lazy) sobre datos distribuidos.
+  \item La FP ayuda a pensar en términos de:
+  \begin{itemize}
+    \item \textbf{pipeline} de pasos
+    \item \textbf{datos inmutables}
+    \item \textbf{funciones} que transforman datos
+  \end{itemize}
+  \item Resultado: código más \textbf{razonable}, \textbf{testeable} y \textbf{escalable}.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+% Sección 2
+% ------------------------------------------------------------
+\section{Inmersión en la estructura de datos principal de Spark: RDD -- Resilient Distributed Dataset}
+
+\begin{frame}{¿Qué es un RDD?}
+\begin{itemize}
+  \item \textbf{RDD (Resilient Distributed Dataset)}: colección \textbf{distribuida} e \textbf{inmutable} de elementos.
+  \item \textbf{Particionado}: los datos se dividen en particiones procesadas en paralelo.
+  \item \textbf{Resilient}: tolerancia a fallos mediante \textbf{lineage} (DAG de transformaciones).
+  \item Nivel de API más \textbf{bajo} que DataFrames/Datasets: más control, menos optimización automática.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Tipos de operaciones sobre RDDs}
+\begin{itemize}
+  \item \textbf{Transformations} (lazy): construyen el plan, no ejecutan.
+  \begin{itemize}
+    \item \texttt{map}, \texttt{flatMap}, \texttt{filter}
+    \item \texttt{distinct}, \texttt{union}, \texttt{intersection}
+    \item \texttt{groupByKey}, \texttt{reduceByKey}, \texttt{join}
+  \end{itemize}
+  \item \textbf{Actions}: disparan la ejecución y devuelven resultado o escriben salida.
+  \begin{itemize}
+    \item \texttt{count}, \texttt{collect}, \texttt{take}, \texttt{first}
+    \item \texttt{reduce}, \texttt{saveAsTextFile}
+  \end{itemize}
+  \item \textbf{Persistencia}: \texttt{cache}/\texttt{persist} para reutilizar resultados entre acciones.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Operaciones ``narrow'' vs ``wide'' (impacto en rendimiento)}
+\begin{itemize}
+  \item \textbf{Narrow transformations}: cada partición de salida depende de una sola partición de entrada.
+  \begin{itemize}
+    \item Ejemplos: \texttt{map}, \texttt{filter}
+    \item Ventaja: se ejecutan \textbf{sin shuffle}, suelen ser más rápidas.
+  \end{itemize}
+  \item \textbf{Wide transformations}: la salida depende de múltiples particiones de entrada.
+  \begin{itemize}
+    \item Ejemplos: \texttt{reduceByKey}, \texttt{groupByKey}, \texttt{join}
+    \item Implican \textbf{shuffle}: intercambio de datos por red (coste alto).
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Introducción a MapReduce}
+\begin{itemize}
+  \item \textbf{Map}: transformar cada elemento en pares clave--valor (o en una colección de pares).
+  \item \textbf{Shuffle/Sort}: agrupar por clave (fase costosa).
+  \item \textbf{Reduce}: combinar todos los valores asociados a cada clave (agregación).
+  \item Patrón típico: \textbf{contar}, \textbf{sumar}, \textbf{agrupar}, \textbf{calcular métricas por categoría}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{MapReduce en Spark (RDDs)}
+\begin{itemize}
+  \item Spark implementa este patrón con transformaciones sobre RDDs:
+  \begin{itemize}
+    \item \texttt{map}/\texttt{flatMap} para generar claves y valores.
+    \item \texttt{reduceByKey} o \texttt{aggregateByKey} para reducir por clave.
+  \end{itemize}
+  \item Diferencia clave: Spark puede \textbf{mantener datos en memoria} y encadenar múltiples etapas de forma eficiente.
+  \item \textbf{Buenas prácticas}:
+  \begin{itemize}
+    \item Preferir \texttt{reduceByKey} frente a \texttt{groupByKey} (menos datos en shuffle).
+    \item Controlar el particionado (\texttt{repartition}/\texttt{coalesce}) si hay \emph{skew}.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Ejemplo: WordCount (MapReduce clásico) con RDD (Scala)}
+\begin{verbatim}
+val lines = sc.textFile("/data/book.txt")
+
+val counts = lines
+  .flatMap(_.split("\\s+"))
+  .map(word => (word.toLowerCase, 1))
+  .reduceByKey(_ + _)
+
+counts.take(10).foreach(println)
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Aplicación práctica: caso típico de logs}
+\begin{itemize}
+  \item Objetivo: \textbf{nº de eventos por tipo} y \textbf{top N} más frecuentes.
+  \item Flujo típico:
+  \begin{enumerate}
+    \item Leer logs (texto/JSON) \(\rightarrow\) parseo.
+    \item Mapear a \((tipoEvento, 1)\).
+    \item \texttt{reduceByKey} para contar.
+    \item Ordenar y seleccionar top N.
+  \end{enumerate}
+  \item Métricas a vigilar: particiones, shuffle, tiempo por stage, \emph{skew}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Ejemplo práctico: top 5 eventos (Scala)}
+\begin{verbatim}
+val rdd = sc.textFile("/data/events.log")
+
+val top5 = rdd
+  .map(parseEventType)          // String => eventType
+  .map(t => (t, 1))
+  .reduceByKey(_ + _)
+  .map { case (t, c) => (c, t) }
+  .sortByKey(ascending = false)
+  .take(5)
+
+top5.foreach(println)
+\end{verbatim}
+\end{frame}
+
+% ------------------------------------------------------------
+% Sección
+% ------------------------------------------------------------
+\section{Iniciación a Spark en cluster}
+
+\begin{frame}{Arquitectura básica de Spark en cluster}
+\begin{itemize}
+  \item \textbf{Driver}: proceso principal que contiene el \texttt{SparkSession} y construye el DAG.
+  \item \textbf{Cluster Manager}: gestiona recursos (CPU, memoria) en los nodos.
+  \item \textbf{Executors}: procesos en los nodos worker que ejecutan tareas.
+  \item \textbf{Tasks}: unidad mínima de ejecución, una por partición.
+  \item Flujo general:
+  \begin{enumerate}
+    \item El driver solicita recursos al cluster manager.
+    \item Se lanzan executors.
+    \item El driver envía tareas a los executors.
+    \item Los executors procesan particiones y devuelven resultados.
+  \end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Gestores de recursos soportados}
+\begin{itemize}
+  \item \textbf{Spark Standalone}
+  \begin{itemize}
+    \item Cluster manager propio de Spark.
+    \item Sencillo de configurar.
+    \item Adecuado para entornos dedicados.
+  \end{itemize}
+  \item \textbf{Hadoop YARN}
+  \begin{itemize}
+    \item Integrado en ecosistemas Hadoop.
+    \item Comparte recursos con otras aplicaciones.
+    \item Muy habitual en entornos empresariales.
+  \end{itemize}
+  \item \textbf{Apache Mesos}
+  \begin{itemize}
+    \item Cluster manager generalista.
+    \item Permite compartir recursos entre múltiples frameworks.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Funcionamiento del Driver de Spark}
+\begin{itemize}
+  \item Punto de entrada de la aplicación.
+  \item Construye el \textbf{DAG} de transformaciones.
+  \item Divide el job en \textbf{stages} separados por shuffles.
+  \item Planifica tareas y las asigna a executors.
+  \item Mantiene metadatos, estado de ejecución y resultados parciales.
+  \item Si el driver falla, la aplicación termina (salvo configuraciones específicas en cluster).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Modos de despliegue del Driver}
+\begin{itemize}
+  \item \textbf{Client mode}:
+  \begin{itemize}
+    \item El driver se ejecuta fuera del cluster (por ejemplo, en la máquina local).
+    \item Útil para desarrollo y debugging.
+  \end{itemize}
+  \item \textbf{Cluster mode}:
+  \begin{itemize}
+    \item El driver se ejecuta dentro del cluster.
+    \item Más robusto para producción.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Principales propiedades de configuración}
+\begin{itemize}
+  \item \texttt{spark.master}: URL del cluster manager.
+  \item \texttt{spark.app.name}: nombre de la aplicación.
+  \item \texttt{spark.executor.memory}: memoria por executor.
+  \item \texttt{spark.executor.cores}: núcleos por executor.
+  \item \texttt{spark.driver.memory}: memoria del driver.
+  \item \texttt{spark.executor.instances}: número de executors.
+  \item \texttt{spark.default.parallelism}: paralelismo por defecto.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Ejemplo de envío de aplicación al cluster}
+\begin{verbatim}
+spark-submit \
+  --class com.ejemplo.Main \
+  --master yarn \
+  --deploy-mode cluster \
+  --executor-memory 4G \
+  --executor-cores 2 \
+  --num-executors 4 \
+  app.jar
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Compilación y empaquetamiento}
+\begin{itemize}
+  \item Aplicaciones Scala/Java:
+  \begin{itemize}
+    \item Compilación con Maven o SBT.
+    \item Generación de JAR con dependencias (fat jar o shaded jar).
+  \end{itemize}
+  \item Dependencias externas:
+  \begin{itemize}
+    \item Marcar Spark como \texttt{provided} si el cluster ya lo incluye.
+  \end{itemize}
+  \item Python:
+  \begin{itemize}
+    \item Scripts enviados con \texttt{spark-submit}.
+    \item Posible uso de entornos virtuales o \texttt{--py-files}.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Logging en aplicaciones Spark}
+\begin{itemize}
+  \item Spark utiliza \textbf{log4j / log4j2} para el sistema de logs.
+  \item Permite configurar:
+  \begin{itemize}
+    \item Nivel de log (INFO, WARN, ERROR, DEBUG).
+    \item Appenders (consola, fichero).
+  \end{itemize}
+  \item Importante para:
+  \begin{itemize}
+    \item Diagnóstico de errores.
+    \item Análisis de rendimiento.
+    \item Seguimiento en producción.
+  \end{itemize}
+  \item Complemento visual: Spark UI (puerto 4040 en local).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Resumen conceptual}
+\begin{itemize}
+  \item El driver orquesta; los executors ejecutan.
+  \item El cluster manager asigna recursos.
+  \item La configuración adecuada impacta directamente en rendimiento y estabilidad.
+  \item El empaquetado y logging correctos son esenciales para producción.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+% Sección
+% ------------------------------------------------------------
+\section{Conceptos de programación paralela en Spark}
+
+\begin{frame}{Paralelismo en Spark: idea fundamental}
+\begin{itemize}
+  \item Spark paraleliza el procesamiento a nivel de \textbf{particiones}.
+  \item Cada partición se procesa mediante una \textbf{task}.
+  \item El número de particiones influye directamente en:
+  \begin{itemize}
+    \item Nivel de paralelismo.
+    \item Uso de CPU.
+    \item Overhead de planificación.
+  \end{itemize}
+  \item Regla práctica: más particiones $\neq$ siempre mejor rendimiento.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Particionado de los RDDs cargados desde fichero}
+\begin{itemize}
+  \item Cuando se usa \texttt{sc.textFile()} o similares:
+  \begin{itemize}
+    \item Spark crea una partición por \textbf{bloque de fichero} (por defecto).
+  \end{itemize}
+  \item Puede indicarse número mínimo de particiones:
+  \begin{itemize}
+    \item \texttt{sc.textFile(path, minPartitions)}
+  \end{itemize}
+  \item Influye:
+  \begin{itemize}
+    \item Tamaño del fichero.
+    \item Tamaño del bloque en el sistema de almacenamiento.
+  \end{itemize}
+  \item Buen diseño de particionado mejora el paralelismo inicial.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Ejemplo: controlando particiones}
+\begin{verbatim}
+val rdd = sc.textFile("/data/logs.txt", 8)
+
+println(rdd.getNumPartitions)
+
+// Reparticionar después
+val repartitioned = rdd.repartition(16)
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Particionado de la información leída desde HDFS}
+\begin{itemize}
+  \item HDFS divide los ficheros en \textbf{bloques} (por ejemplo, 128MB).
+  \item Cada bloque suele corresponder a una partición inicial en Spark.
+  \item Ventaja clave: \textbf{data locality}.
+  \begin{itemize}
+    \item Las tareas se intentan ejecutar en el nodo que contiene el bloque.
+    \item Reduce tráfico de red.
+  \end{itemize}
+  \item El paralelismo inicial depende del número de bloques.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Repartition vs Coalesce}
+\begin{itemize}
+  \item \textbf{repartition(n)}:
+  \begin{itemize}
+    \item Aumenta o disminuye particiones.
+    \item Siempre implica shuffle.
+  \end{itemize}
+  \item \textbf{coalesce(n)}:
+  \begin{itemize}
+    \item Reduce particiones.
+    \item Puede evitar shuffle si se usa correctamente.
+  \end{itemize}
+  \item Uso típico:
+  \begin{itemize}
+    \item Reducir particiones antes de escribir a disco.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cálculo de los Stages en Spark}
+\begin{itemize}
+  \item Spark construye un \textbf{DAG} de transformaciones.
+  \item Divide el job en \textbf{stages} separados por operaciones que requieren shuffle.
+  \item Regla general:
+  \begin{itemize}
+    \item Transformaciones \textbf{narrow} $\rightarrow$ mismo stage.
+    \item Transformaciones \textbf{wide} (shuffle) $\rightarrow$ nuevo stage.
+  \end{itemize}
+  \item Cada stage se compone de múltiples \textbf{tasks}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ejemplo conceptual de división en stages}
+\begin{itemize}
+  \item Código:
+  \begin{enumerate}
+    \item \texttt{map}
+    \item \texttt{filter}
+    \item \texttt{reduceByKey}
+    \item \texttt{map}
+  \end{enumerate}
+  \item Resultado:
+  \begin{itemize}
+    \item Stage 1: \texttt{map} + \texttt{filter}
+    \item Stage 2: \texttt{reduceByKey} (shuffle)
+    \item Stage 3: \texttt{map} posterior
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Relación entre particiones y stages}
+\begin{itemize}
+  \item Cada stage genera tantas tasks como particiones tenga el RDD de entrada.
+  \item Más particiones $\rightarrow$ más tasks $\rightarrow$ mayor paralelismo.
+  \item Pero también:
+  \begin{itemize}
+    \item Más overhead.
+    \item Más coste de coordinación.
+  \end{itemize}
+  \item El equilibrio es clave en programación paralela.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ideas clave para programación paralela eficiente}
+\begin{itemize}
+  \item Diseñar bien el particionado inicial.
+  \item Minimizar shuffles innecesarios.
+  \item Evitar \emph{data skew}.
+  \item Ajustar número de particiones según recursos del cluster.
+  \item Usar Spark UI para analizar stages y tareas.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+% Sección
+% ------------------------------------------------------------
+\section{Optimización de rendimiento en Spark}
+
+\begin{frame}{El linaje (Lineage) en Spark}
+\begin{itemize}
+  \item Cada RDD mantiene un \textbf{linaje de transformaciones} que describe cómo fue construido.
+  \item Este linaje forma un \textbf{DAG} (Directed Acyclic Graph).
+  \item Permite:
+  \begin{itemize}
+    \item \textbf{Tolerancia a fallos}: recomputar particiones perdidas.
+    \item Optimización de ejecución.
+  \end{itemize}
+  \item Implicación práctica:
+  \begin{itemize}
+    \item Si no se persiste un RDD, puede recomputarse varias veces.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Coste del linaje largo}
+\begin{itemize}
+  \item Pipelines muy largos $\rightarrow$ DAG complejo.
+  \item Si hay múltiples acciones sobre el mismo RDD:
+  \begin{itemize}
+    \item Se recalcula desde el origen si no está persistido.
+  \end{itemize}
+  \item Solución:
+  \begin{itemize}
+    \item \textbf{cache()} o \textbf{persist()}.
+    \item \textbf{checkpoint()} para cortar el linaje en procesos muy largos.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Estrategias de almacenamiento de RDDs}
+\begin{itemize}
+  \item Spark permite distintos niveles de persistencia:
+  \begin{itemize}
+    \item \texttt{MEMORY\_ONLY}
+    \item \texttt{MEMORY\_AND\_DISK}
+    \item \texttt{DISK\_ONLY}
+    \item Versiones serializadas
+  \end{itemize}
+  \item Elección depende de:
+  \begin{itemize}
+    \item Tamaño del dataset.
+    \item Memoria disponible.
+    \item Coste de recomputación.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Ejemplo de persistencia}
+\begin{verbatim}
+val rdd = sc.textFile("/data/logs.txt")
+  .map(parse)
+  .filter(valid)
+
+rdd.cache()
+
+val count1 = rdd.count()
+val count2 = rdd.filter(_.level == "ERROR").count()
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Buenas prácticas de persistencia}
+\begin{itemize}
+  \item Persistir solo si:
+  \begin{itemize}
+    \item Se reutiliza varias veces.
+    \item La recomputación es costosa.
+  \end{itemize}
+  \item Liberar memoria cuando ya no se necesita:
+  \begin{itemize}
+    \item \texttt{rdd.unpersist()}
+  \end{itemize}
+  \item Evitar cachear datasets enormes sin memoria suficiente.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Variables de Broadcast}
+\begin{itemize}
+  \item Permiten enviar una copia \textbf{eficiente y distribuida} de un objeto a todos los executors.
+  \item Evitan:
+  \begin{itemize}
+    \item Enviar el mismo objeto en cada task.
+    \item Sobrecarga de red innecesaria.
+  \end{itemize}
+  \item Uso típico:
+  \begin{itemize}
+    \item Tablas pequeñas de referencia.
+    \item Diccionarios de lookup.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Ejemplo de Broadcast}
+\begin{verbatim}
+val lookup = Map("ES" -> "Spain", "FR" -> "France")
+
+val broadcastVar = sc.broadcast(lookup)
+
+val enriched = rdd.map { row =>
+  val country = broadcastVar.value.get(row.code)
+  (row, country)
+}
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Acumuladores (Accumulators)}
+\begin{itemize}
+  \item Variables que permiten agregar información desde los executors al driver.
+  \item Uso típico:
+  \begin{itemize}
+    \item Contadores.
+    \item Métricas de calidad.
+  \end{itemize}
+  \item Características:
+  \begin{itemize}
+    \item Solo el driver puede leer el valor final.
+    \item Los executors solo pueden incrementar.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Ejemplo de Acumulador}
+\begin{verbatim}
+val errorCounter = sc.longAccumulator("ErrorCounter")
+
+rdd.foreach { row =>
+  if (!isValid(row)) {
+    errorCounter.add(1)
+  }
+}
+
+println(errorCounter.value)
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Mecanismos simples para mejorar rendimiento}
+\begin{itemize}
+  \item Minimizar shuffles.
+  \item Ajustar número de particiones.
+  \item Persistir correctamente.
+  \item Usar broadcast en joins pequeños.
+  \item Utilizar acumuladores para métricas sin romper paralelismo.
+  \item Monitorizar con Spark UI.
+\end{itemize}
+\end{frame}
+
+% ------------------------------------------------------------
+% Sección
+% ------------------------------------------------------------
+\section{Iniciación al procesamiento de datos en Spark mediante el uso del módulo SparkSQL}
+
+\begin{frame}{¿Qué es SparkSQL?}
+\begin{itemize}
+  \item Módulo de Spark para procesamiento estructurado.
+  \item Introduce el concepto de \textbf{DataFrame}.
+  \item Basado en optimización automática mediante:
+  \begin{itemize}
+    \item \textbf{Catalyst Optimizer}
+    \item \textbf{Tungsten Execution Engine}
+  \end{itemize}
+  \item Permite trabajar con:
+  \begin{itemize}
+    \item API en Scala/Python
+    \item SQL directamente
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Construcción de DataFrames en Spark}
+\begin{itemize}
+  \item Desde ficheros:
+  \begin{itemize}
+    \item \texttt{read.csv()}
+    \item \texttt{read.json()}
+    \item \texttt{read.parquet()}
+  \end{itemize}
+  \item Desde RDDs.
+  \item Desde colecciones locales.
+  \item Desde tablas externas (Hive, JDBC).
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Ejemplo: Crear DataFrame desde fichero}
+\begin{verbatim}
+val df = spark.read
+  .option("header", "true")
+  .option("inferSchema", "true")
+  .csv("/data/users.csv")
+
+df.printSchema()
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Transformaciones comunes sobre DataFrames}
+\begin{itemize}
+  \item \textbf{select}: seleccionar columnas.
+  \item \textbf{selectExpr}: expresiones SQL.
+  \item \textbf{withColumn}: añadir/modificar columnas.
+  \item \textbf{where / filter}: filtrar filas.
+  \item \textbf{join}: combinar DataFrames.
+  \item \textbf{unionAll}: unir datasets verticalmente.
+  \item \textbf{groupBy}: agregaciones.
+  \item \textbf{orderBy}: ordenar resultados.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Ejemplo de transformaciones}
+\begin{verbatim}
+import org.apache.spark.sql.functions._
+
+val transformed = df
+  .select("name", "age", "country")
+  .withColumn("age_plus_1", col("age") + 1)
+  .filter(col("age") > 18)
+  .groupBy("country")
+  .count()
+  .orderBy(desc("count"))
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Tipos de joins en SparkSQL}
+\begin{itemize}
+  \item \textbf{inner join}
+  \item \textbf{left / right outer join}
+  \item \textbf{full outer join}
+  \item \textbf{cross join}
+  \item \textbf{broadcast join} (optimización automática o explícita)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Acciones comunes sobre DataFrames}
+\begin{itemize}
+  \item \textbf{show}: visualizar resultados.
+  \item \textbf{collect}: traer datos al driver.
+  \item \textbf{count}: contar filas.
+  \item \textbf{first / head}: primera fila.
+  \item \textbf{take}: primeras N filas.
+  \item \textbf{write}: guardar en almacenamiento.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Ejemplo de acciones}
+\begin{verbatim}
+transformed.show()
+
+val total = transformed.count()
+
+val firstRow = transformed.first()
+
+transformed.write
+  .mode("overwrite")
+  .parquet("/data/output")
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Buenas prácticas en SparkSQL}
+\begin{itemize}
+  \item Preferir DataFrames frente a RDDs en procesamiento estructurado.
+  \item Evitar \texttt{collect()} en datasets grandes.
+  \item Aprovechar funciones built-in antes que UDFs.
+  \item Revisar el plan con:
+  \begin{itemize}
+    \item \texttt{df.explain(true)}
+  \end{itemize}
+  \item Monitorizar ejecución en Spark UI.
+\end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,572 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+
+\usepackage[utf8]{inputenc} % solo si usas pdflatex
+\usepackage[T1]{fontenc}    % solo si usas pdflatex
+
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage{cancel}         % si lo usas
+\usepackage{fontawesome}    % si lo usas
+% \usepackage{xypic}        % solo si lo usas
+% \usepackage{multicol}     % normalmente no; usar columns de beamer
+% \usepackage{amsthm}       % solo si defines teoremas propios
+% \usepackage{scrextend}    % solo si lo usas
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\hypersetup{pdfborder={0 0 0}}
+
+
+\title{Introducción a Hadoop}
+\author{Rodrigo Blanco Betes. Alfa Formación}
+\date{Febrero del 2026}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+%-------------------------------------------------
+
+\section{Introducción a Big Data}
+
+\begin{frame}{Introducción a Big Data}
+En los últimos años, el crecimiento exponencial de los datos generados por sistemas informáticos, dispositivos móviles, redes sociales, sensores e infraestructuras digitales ha dado lugar al concepto conocido como \textit{Big Data}.
+
+Este término hace referencia a conjuntos de datos cuyo tamaño, complejidad y velocidad de generación superan la capacidad de las herramientas tradicionales de almacenamiento y procesamiento.
+\end{frame}
+
+\begin{frame}{Big Data: las cinco Vs}
+El Big Data no se define únicamente por el volumen de información, sino por un conjunto de características conocidas como las \textbf{cinco Vs}:
+\begin{itemize}
+    \item \textbf{Volumen}: grandes cantidades de datos que pueden alcanzar terabytes o petabytes.
+    \item \textbf{Velocidad}: rapidez con la que los datos se generan, transmiten y procesan.
+    \item \textbf{Variedad}: diversidad de formatos de datos, tanto estructurados como no estructurados.
+    \item \textbf{Veracidad}: calidad y fiabilidad de los datos, que pueden contener errores o inconsistencias.
+    \item \textbf{Valor}: capacidad de extraer información útil y conocimiento relevante a partir de los datos.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Limitaciones y necesidad de plataformas distribuidas}
+Los sistemas tradicionales de bases de datos y procesamiento centralizado presentan importantes limitaciones ante estos retos, especialmente en términos de:
+\begin{itemize}
+    \item \textbf{Escalabilidad}
+    \item \textbf{Coste}
+    \item \textbf{Tolerancia a fallos}
+\end{itemize}
+
+A medida que el volumen de datos crece, resulta inviable aumentar la capacidad de un único sistema sin incurrir en elevados costes económicos y técnicos.
+
+Ante este escenario surge la necesidad de plataformas capaces de distribuir tanto el almacenamiento como el procesamiento entre múltiples nodos. En este contexto, destaca \textbf{Hadoop}, diseñado para gestionar grandes volúmenes de datos de forma eficiente, escalable y tolerante a fallos.
+\end{frame}
+
+%----------------------------
+
+\section{Flujo de los datos y ciclo de vida del dato}
+
+\begin{frame}{Flujo de los datos y ciclo de vida del dato}
+El tratamiento de datos en entornos Big Data sigue un conjunto de etapas bien definidas que conforman el \textbf{ciclo de vida del dato}.
+
+Este ciclo describe el recorrido que realizan los datos desde su generación hasta su transformación en información útil para la toma de decisiones.
+\end{frame}
+
+\begin{frame}{Objetivo del ciclo de vida del dato}
+El objetivo principal del ciclo de vida del dato es \textbf{maximizar el valor} de los datos, garantizando:
+\begin{itemize}
+    \item Captura correcta y fiable desde múltiples fuentes.
+    \item Calidad y consistencia.
+    \item Almacenamiento adecuado a gran escala.
+    \item Procesamiento eficiente.
+    \item Presentación clara de resultados.
+\end{itemize}
+
+En entornos Big Data, este ciclo suele ser \textbf{continuo y repetitivo}, debido a la generación constante de nuevos datos. Plataformas como \textbf{Hadoop} permiten gestionarlo de manera distribuida, escalable y tolerante a fallos.
+\end{frame}
+
+\begin{frame}{Etapas del ciclo de vida del dato (visión general)}
+\begin{enumerate}
+    \item \textbf{Recolección}
+    \item \textbf{Ingestión}
+    \item \textbf{Preparación}
+    \item \textbf{Procesamiento}
+    \item \textbf{Presentación}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Recolección e ingestión de datos}
+\textbf{Recolección:} captura inicial desde fuentes heterogéneas:
+\begin{itemize}
+    \item Sensores IoT, aplicaciones web, redes sociales, sistemas empresariales.
+    \item Bases de datos transaccionales, archivos y \textit{logs} de servidores.
+    \item Formatos variados: texto, JSON, XML, imágenes, binario.
+    \item Generación continua (sensores/logs) o puntual (exportaciones periódicas).
+\end{itemize}
+
+\medskip
+\textbf{Ingestión:} traslado hacia el sistema de almacenamiento/procesamiento (p.\ ej., Hadoop):
+\begin{itemize}
+    \item Modo \textbf{batch} (por bloques) o (casi) \textbf{tiempo real} (continuo).
+    \item Debe manejar grandes volúmenes y picos de carga, asegurando consistencia y disponibilidad.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Preparación y procesamiento de los datos}
+\textbf{Preparación:} mejora de la calidad antes del análisis:
+\begin{itemize}
+    \item Limpieza de errores, eliminación de duplicados.
+    \item Gestión de valores nulos.
+    \item Transformación y unificación de formatos/codificaciones.
+\end{itemize}
+Una mala calidad de datos puede afectar negativamente a los resultados, incluso con herramientas avanzadas.
+
+\medskip
+\textbf{Procesamiento:} análisis distribuido (p.\ ej., en un clúster Hadoop):
+\begin{itemize}
+    \item Estadística, agregaciones, búsqueda de patrones.
+    \item Clasificación, análisis de tendencias.
+    \item Orientado a histórico o a resultados agregados a gran escala.
+\end{itemize}
+Objetivo: extraer información relevante y generar valor para la organización.
+\end{frame}
+
+\begin{frame}{Presentación de los datos}
+Fase final centrada en mostrar resultados de forma comprensible:
+\begin{itemize}
+    \item Informes, gráficos, paneles de control (\textit{dashboards}), visualizaciones interactivas.
+    \item Facilita interpretación e identificación de patrones, tendencias o anomalías.
+    \item Apoya la toma de decisiones estratégicas (rendimiento, comportamiento de usuarios, KPIs, etc.).
+\end{itemize}
+
+Esta fase cierra el ciclo, convirtiendo resultados en información accionable.
+\end{frame}
+
+%------------------------------------------
+
+\section{Ejemplo de análisis detallado del ciclo de vida del dato}
+
+\begin{frame}{Ejemplo: análisis detallado del ciclo de vida del dato}
+Para ilustrar de forma práctica el ciclo de vida del dato en un entorno Big Data, se presenta un ejemplo que recorre todas las fases:
+\begin{itemize}
+    \item Identificación del dato en su origen.
+    \item Ingesta y organización en zonas de datos.
+    \item Preparación y transformaciones.
+    \item Cruce y enriquecimiento.
+    \item Visualización y KPIs.
+\end{itemize}
+Este recorrido permite comprender cómo los datos evolucionan a lo largo del proceso y cómo se les añade valor progresivamente.
+\end{frame}
+
+\begin{frame}{Fuentes e identificación del dato (e-commerce)}
+Los datos proceden de una plataforma digital de comercio electrónico. Fuentes principales:
+\begin{itemize}
+    \item Registros de acceso de usuarios (\textit{logs}).
+    \item Transacciones de compra.
+    \item Información básica de productos.
+\end{itemize}
+
+\medskip
+Naturaleza y formato de los datos:
+\begin{itemize}
+    \item \textbf{Logs de acceso}: semiestructurados en texto.
+    \item \textbf{Transacciones}: estructurados en BBDD relacionales.
+    \item \textbf{Productos}: formatos como JSON o CSV.
+    \item Generación \textbf{continua} (logs) y \textbf{periódica} (cargas batch).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ingesta y zonas de residencia del dato}
+Tras identificar las fuentes, los datos se ingieren en el sistema Big Data:
+\begin{itemize}
+    \item \textbf{Logs}: incorporación continua.
+    \item \textbf{Transacciones y productos}: importación \textbf{batch}.
+\end{itemize}
+
+\medskip
+Organización por zonas:
+\begin{itemize}
+    \item \textbf{\textit{Landing zone}}: conservación inicial en formato original.
+    \item \textbf{\textit{Raw zone}}: copia íntegra del dato original para trazabilidad y reprocesamientos.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Preparación, transformaciones y paso a zona procesada}
+En la zona en bruto, se realizan tareas de preparación:
+\begin{itemize}
+    \item Eliminación de duplicados.
+    \item Corrección de errores de formato.
+    \item Normalización de fechas, identificadores y valores numéricos.
+\end{itemize}
+
+\medskip
+Tras las transformaciones:
+\begin{itemize}
+    \item Los datos se distribuyen en la \textbf{\textit{processed zone}}.
+    \item Se almacenan en formatos optimizados para el análisis.
+\end{itemize}
+
+La separación por zonas facilita el control del flujo y mejora la trazabilidad.
+\end{frame}
+
+\begin{frame}{Cruce de información y enriquecimiento}
+Una vez preparados, los datos se cruzan y enriquecen:
+\begin{itemize}
+    \item Combinación de \textit{logs} de acceso con transacciones para analizar patrones de comportamiento.
+    \item Uso de la información de productos para contextualizar compras y segmentar resultados.
+\end{itemize}
+
+\medskip
+Resultado:
+\begin{itemize}
+    \item Conjuntos de datos analíticos integrados desde múltiples fuentes.
+    \item Mayor valor informativo y visión más completa del negocio.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Visualización, cuadros de mando y KPIs}
+En la fase final, los resultados se presentan mediante herramientas de visualización:
+\begin{itemize}
+    \item Construcción de cuadros de mando (\textit{dashboards}).
+    \item Indicadores clave (KPIs), por ejemplo:
+    \begin{itemize}
+        \item Número de usuarios activos.
+        \item Volumen de ventas.
+        \item Tasa de conversión.
+    \end{itemize}
+\end{itemize}
+
+Estas visualizaciones permiten interpretar resultados y tomar decisiones basadas en datos, completando el ciclo: de información bruta a conocimiento útil.
+\end{frame}
+
+%-----------------------------------------
+
+\section{Hadoop}
+
+\begin{frame}{¿Qué es Hadoop?}
+Apache Hadoop es un framework de software de código abierto diseñado para el almacenamiento y procesamiento distribuido de grandes volúmenes de datos. Permite utilizar clústeres formados por hardware convencional para tratar datos de forma eficiente, escalable y tolerante a fallos.
+
+Se basa en la \textbf{escalabilidad horizontal}, aumentando la capacidad del sistema mediante la incorporación de nuevos nodos al clúster, en lugar de potenciar un único servidor. Este enfoque reduce costes y mejora la flexibilidad frente a grandes cargas de trabajo.
+\end{frame}
+
+\begin{frame}{Objetivos y relevancia de Hadoop}
+Entre los objetivos fundamentales de Hadoop destacan:
+\begin{itemize}
+    \item Procesar grandes conjuntos de datos de forma distribuida.
+    \item Garantizar tolerancia a fallos mediante replicación de datos.
+    \item Ofrecer alta disponibilidad y fiabilidad.
+    \item Acercar el procesamiento a los datos para minimizar el tráfico de red.
+\end{itemize}
+
+Gracias a estas características, Hadoop se ha consolidado como una de las tecnologías base del ecosistema Big Data, con amplio uso en entornos académicos y empresariales.
+\end{frame}
+
+\begin{frame}{Arquitectura general de Hadoop}
+La arquitectura de Hadoop sigue un modelo distribuido basado en un clúster de nodos con estructura \textit{master--slave}. Cada nodo desempeña un rol específico que permite separar:
+\begin{itemize}
+    \item Gestión del sistema.
+    \item Almacenamiento de datos.
+    \item Procesamiento distribuido.
+\end{itemize}
+
+Se distinguen dos tipos principales de nodos:
+\begin{itemize}
+    \item \textbf{Nodos maestros}: gestión global y asignación de recursos.
+    \item \textbf{Nodos trabajadores}: almacenamiento de datos y ejecución de tareas.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Módulos principales de Hadoop}
+Hadoop está compuesto por varios módulos que cooperan entre sí:
+\begin{itemize}
+    \item \textbf{HDFS}: sistema de archivos distribuido para el almacenamiento.
+    \item \textbf{YARN}: gestión de recursos y planificación de tareas.
+    \item \textbf{MapReduce}: modelo de programación para el procesamiento distribuido.
+\end{itemize}
+
+La comunicación entre estos componentes permite detectar y gestionar fallos automáticamente, redistribuyendo tareas y garantizando la continuidad del sistema.
+\end{frame}
+
+\begin{frame}{División de datos en bloques (HDFS)}
+HDFS divide los archivos de gran tamaño en bloques de tamaño fijo que se distribuyen entre los nodos del clúster:
+\begin{itemize}
+    \item Tamaño de bloque habitual: \textbf{128 MB o 256 MB}.
+    \item Reducción de operaciones de E/S y mejora del rendimiento secuencial.
+    \item Replicación de bloques en distintos nodos para tolerancia a fallos.
+\end{itemize}
+
+El \textbf{NameNode} gestiona la ubicación y replicación de los bloques, mientras que la división en bloques facilita el procesamiento paralelo y la escalabilidad del sistema.
+\end{frame}
+
+%----------------------------
+
+\section{Componentes de Hadoop}
+
+\begin{frame}{Componentes principales de Hadoop}
+Hadoop se basa en una arquitectura modular cuyos componentes trabajan de forma coordinada para ofrecer:
+\begin{itemize}
+    \item Almacenamiento distribuido.
+    \item Gestión eficiente de recursos.
+    \item Procesamiento paralelo de grandes volúmenes de datos.
+\end{itemize}
+
+Los componentes clave son:
+\begin{itemize}
+    \item HDFS
+    \item YARN
+    \item MapReduce
+\end{itemize}
+\end{frame}
+
+\begin{frame}{HDFS y almacenamiento distribuido}
+HDFS (Hadoop Distributed File System) es el sistema de archivos distribuido de Hadoop. Su objetivo es almacenar grandes volúmenes de datos de forma fiable y escalable.
+
+Desde el punto de vista arquitectónico, separa:
+\begin{itemize}
+    \item Gestión de metadatos.
+    \item Almacenamiento físico de los datos.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{NameNode y DataNodes}
+El \textbf{NameNode} gestiona los metadatos del sistema de archivos:
+\begin{itemize}
+    \item Estructura de directorios y archivos.
+    \item Ubicación de los bloques.
+    \item Permisos y políticas de acceso.
+    \item Replicación para tolerancia a fallos.
+\end{itemize}
+
+Los \textbf{DataNodes} (WorkerNodes) almacenan físicamente los bloques y:
+\begin{itemize}
+    \item Atienden lecturas y escrituras.
+    \item Informan periódicamente de su estado al NameNode.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{YARN y la gestión de recursos}
+YARN es el componente encargado de la gestión de recursos y la planificación de aplicaciones en el clúster.
+
+Su objetivo principal es asignar de forma eficiente recursos como CPU y memoria, permitiendo la ejecución simultánea de múltiples aplicaciones y frameworks de procesamiento.
+\end{frame}
+
+\begin{frame}{Componentes internos de YARN}
+YARN se compone de varios elementos clave:
+\begin{itemize}
+    \item \textbf{ResourceManager}: gestión global de recursos y planificación.
+    \item \textbf{NodeManager}: control de recursos y contenedores en cada nodo.
+    \item \textbf{ApplicationMaster}: gestión del ciclo de vida de cada aplicación.
+    \item \textbf{Containers}: unidad básica de asignación de CPU y memoria.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{MapReduce como modelo de procesamiento}
+MapReduce es un modelo de programación para procesar grandes volúmenes de datos de forma distribuida y paralela.
+
+Se basa en:
+\begin{itemize}
+    \item \textbf{Map}: generación de pares clave--valor intermedios.
+    \item \textbf{Shuffle y Sort}: agrupación de pares por clave.
+    \item \textbf{Reduce}: combinación de valores para obtener resultados finales.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Usos y características de MapReduce}
+MapReduce se utiliza habitualmente para:
+\begin{itemize}
+    \item Cálculo de estadísticas agregadas.
+    \item Análisis de logs y patrones de uso.
+    \item Procesamiento de datos históricos.
+\end{itemize}
+
+Aunque es robusto y tolerante a fallos, su enfoque batch y su latencia han motivado el uso de otros modelos más flexibles en ciertos escenarios, si bien sigue siendo un pilar fundamental de la arquitectura Hadoop.
+\end{frame}
+
+%---------------------------------
+
+\section{Ecosistema Hadoop}
+
+\begin{frame}{Ecosistema Hadoop}
+Hadoop no es una herramienta aislada, sino el núcleo de un amplio \textbf{ecosistema de proyectos} diseñados para cubrir las distintas necesidades del tratamiento de datos en entornos Big Data.
+
+Este ecosistema amplía las capacidades básicas de:
+\begin{itemize}
+    \item Almacenamiento distribuido.
+    \item Procesamiento paralelo.
+    \item Gestión eficiente de recursos.
+\end{itemize}
+
+Proporciona herramientas especializadas para consulta, análisis, ingesta, bases de datos distribuidas y orquestación de procesos.
+\end{frame}
+
+\begin{frame}{Integración sobre HDFS y YARN}
+Las herramientas del ecosistema Hadoop se integran principalmente sobre:
+\begin{itemize}
+    \item \textbf{HDFS}: almacenamiento distribuido y tolerante a fallos.
+    \item \textbf{YARN}: gestión centralizada de recursos y ejecución de aplicaciones.
+\end{itemize}
+
+Esta integración permite ofrecer soluciones:
+\begin{itemize}
+    \item Escalables.
+    \item Distribuidas.
+    \item Altamente disponibles.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Hive: consultas tipo SQL}
+\textbf{Apache Hive} es una herramienta de análisis que permite consultar datos almacenados en HDFS mediante un lenguaje similar a SQL (\textit{HiveQL}).
+
+Características principales:
+\begin{itemize}
+    \item Orientado a usuarios con experiencia en bases de datos relacionales.
+    \item Traduce consultas en trabajos de procesamiento distribuido.
+    \item Especialmente adecuado para análisis \textbf{batch} y datos históricos.
+\end{itemize}
+
+Es habitual su uso en generación de informes y análisis exploratorio.
+\end{frame}
+
+\begin{frame}{Pig: flujos de transformación de datos}
+\textbf{Apache Pig} proporciona un lenguaje de alto nivel llamado \textit{Pig Latin}, orientado a describir flujos de procesamiento de datos.
+
+Se utiliza principalmente para:
+\begin{itemize}
+    \item Limpieza y filtrado de datos.
+    \item Transformaciones y agregaciones.
+    \item Combinación de conjuntos de datos.
+\end{itemize}
+
+Actúa como una capa intermedia entre los datos almacenados en HDFS y los procesos analíticos posteriores.
+\end{frame}
+
+\begin{frame}{HBase: base de datos NoSQL distribuida}
+\textbf{Apache HBase} es una base de datos NoSQL distribuida que se ejecuta sobre HDFS.
+
+A diferencia del enfoque batch de Hadoop, HBase está orientada a:
+\begin{itemize}
+    \item Acceso rápido y aleatorio a los datos.
+    \item Operaciones de lectura y escritura en tiempo casi real.
+\end{itemize}
+
+Es especialmente útil en aplicaciones que requieren baja latencia, como monitorización, perfiles de usuario o acceso inmediato a datos semiestructurados.
+\end{frame}
+
+\begin{frame}{Sqoop: integración con bases de datos relacionales}
+\textbf{Apache Sqoop} permite la transferencia eficiente de datos entre Hadoop y bases de datos relacionales.
+
+Funcionalidades clave:
+\begin{itemize}
+    \item Importación de datos desde sistemas tradicionales hacia HDFS, Hive o HBase.
+    \item Exportación de resultados procesados desde Hadoop a bases de datos externas.
+\end{itemize}
+
+Facilita la integración de Hadoop con infraestructuras ya existentes en las organizaciones.
+\end{frame}
+
+\begin{frame}{Flume: ingesta de datos en tiempo casi real}
+\textbf{Apache Flume} es un sistema distribuido para la recolección y transporte de grandes volúmenes de datos en tiempo casi real.
+
+Uso principal:
+\begin{itemize}
+    \item Ingesta de logs, eventos y flujos continuos.
+    \item Datos generados por aplicaciones y servidores.
+\end{itemize}
+
+Está diseñado para ser escalable y tolerante a fallos, asegurando una transferencia fiable hacia HDFS u otros sistemas del ecosistema.
+\end{frame}
+
+\begin{frame}{Oozie: orquestación de flujos de trabajo}
+\textbf{Apache Oozie} es una herramienta para la gestión y coordinación de flujos de trabajo en Hadoop.
+
+Permite:
+\begin{itemize}
+    \item Definir secuencias de trabajos de ingesta, procesamiento y análisis.
+    \item Programar tareas y gestionar dependencias.
+    \item Automatizar procesos complejos de principio a fin.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Relación entre las herramientas del ecosistema}
+Las herramientas del ecosistema Hadoop se complementan para cubrir todo el ciclo de vida del dato:
+\begin{itemize}
+    \item \textbf{Flume / Sqoop}: ingesta de datos.
+    \item \textbf{HDFS}: almacenamiento distribuido.
+    \item \textbf{Pig / Hive}: preparación y análisis.
+    \item \textbf{HBase}: acceso rápido a resultados.
+    \item \textbf{Oozie}: coordinación y orquestación.
+\end{itemize}
+
+Esta integración convierte a Hadoop en una \textbf{plataforma completa} para el tratamiento de grandes volúmenes de datos en entornos distribuidos.
+\end{frame}
+
+%----------------------------------------
+
+\section{Consideraciones finales sobre Hadoop}
+
+\begin{frame}{Consideraciones finales sobre Hadoop}
+En esta sección se resumen algunos aspectos clave relacionados con el uso de Hadoop:
+\begin{itemize}
+    \item Principales ventajas y desventajas.
+    \item Casos de uso habituales.
+    \item Papel actual de Hadoop en el ecosistema Big Data.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ventajas de Hadoop}
+Hadoop presenta numerosas ventajas que han favorecido su adopción en entornos Big Data:
+\begin{itemize}
+    \item \textbf{Escalabilidad horizontal} mediante la incorporación de nuevos nodos.
+    \item \textbf{Tolerancia a fallos} gracias a la replicación de datos y ejecución distribuida.
+    \item \textbf{Uso de hardware convencional}, reduciendo costes de infraestructura.
+    \item Capacidad para procesar \textbf{grandes volúmenes de datos} de forma eficiente.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Desventajas de Hadoop}
+A pesar de sus ventajas, Hadoop también presenta ciertas limitaciones:
+\begin{itemize}
+    \item \textbf{Elevada latencia} frente a sistemas orientados al tiempo real.
+    \item \textbf{Complejidad} en la instalación, configuración y administración del clúster.
+    \item Menor eficiencia con \textbf{conjuntos de datos pequeños}.
+    \item \textbf{Curva de aprendizaje pronunciada} para nuevos usuarios.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Casos de uso habituales}
+Hadoop se utiliza en escenarios donde se requiere el procesamiento y análisis de grandes volúmenes de datos:
+\begin{itemize}
+    \item Procesamiento y análisis de archivos de registros (\textit{logs}).
+    \item Análisis de datos en comercio electrónico, telecomunicaciones y redes sociales.
+    \item Sistemas de recomendación y análisis del comportamiento de usuarios.
+    \item Procesamiento de datos de sensores y entornos IoT.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Hadoop en la actualidad}
+Aunque Hadoop fue durante años la tecnología de referencia en Big Data, hoy comparte protagonismo con soluciones más modernas, como Apache Spark, que ofrecen:
+\begin{itemize}
+    \item Menor latencia.
+    \item Mayor flexibilidad en los modelos de procesamiento.
+\end{itemize}
+
+No obstante, Hadoop sigue siendo fundamental en muchos entornos empresariales, especialmente como base para:
+\begin{itemize}
+    \item Almacenamiento distribuido.
+    \item Gestión de recursos a gran escala.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusión}
+Hadoop ha desempeñado un papel clave en la evolución del Big Data, sentando las bases del procesamiento distribuido a gran escala.
+
+Su arquitectura escalable y tolerante a fallos lo convierte en una solución robusta para el tratamiento de grandes volúmenes de datos, manteniendo su relevancia como componente esencial dentro de los ecosistemas modernos de análisis de datos.
+\end{frame}
+
+
+\end{document}

@@ -1,0 +1,4 @@
+{
+  "latex-workshop.latex.outDir": "out_pdf",
+  "latex-workshop.latex.auxDir": "out_aux"
+}

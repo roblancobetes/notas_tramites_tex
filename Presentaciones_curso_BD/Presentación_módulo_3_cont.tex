@@ -1,0 +1,728 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+
+\usepackage[utf8]{inputenc} % solo si usas pdflatex
+\usepackage[T1]{fontenc}    % solo si usas pdflatex
+
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage{cancel}         % si lo usas
+\usepackage{fontawesome}    % si lo usas
+% \usepackage{xypic}        % solo si lo usas
+% \usepackage{multicol}     % normalmente no; usar columns de beamer
+% \usepackage{amsthm}       % solo si defines teoremas propios
+% \usepackage{scrextend}    % solo si lo usas
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\hypersetup{pdfborder={0 0 0}}
+
+
+\title{Modelos y formatos de almacenamiento de datos}
+\author{Rodrigo Blanco Betes. Alfa Formación}
+\date{Febrero del 2026}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+
+% --- Slide deck content (Beamer) ---
+% Nota: Ignoro encabezados globales (documentclass, theme, etc.) como pediste.
+% Incluye esta sección dentro de tu .tex beamer.
+
+\section{Object y block storage}
+
+\begin{frame}{¿Por qué hablamos de tipos de almacenamiento?}
+En Big Data y Cloud, el modelo de almacenamiento condiciona:
+\begin{itemize}
+    \item \textbf{Rendimiento}: latencia y throughput.
+    \item \textbf{Escalabilidad}: crecimiento y distribución.
+    \item \textbf{Coste}: capacidad, tráfico, operación.
+    \item \textbf{Casos de uso}: analítica, transaccional, backups, etc.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Block Storage: idea básica}
+\textbf{Block Storage} guarda datos en \textbf{bloques} (unidades de tamaño fijo o gestionadas como bloques).
+\begin{itemize}
+    \item Cada bloque tiene un identificador/dirección.
+    \item Encima suele haber un \textbf{sistema de ficheros} (ext4, NTFS, XFS, \dots) que organiza archivos y directorios.
+    \item Se comporta como un \textbf{disco} (volumen) para el sistema operativo.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Block Storage: cuándo conviene}
+\textbf{Ventajas}
+\begin{itemize}
+    \item Baja latencia y buen rendimiento en I/O aleatorio.
+    \item Adecuado para workloads \textbf{transaccionales} y bases de datos.
+\end{itemize}
+
+\textbf{Limitaciones}
+\begin{itemize}
+    \item Escalado y compartición pueden ser más complejos (dependen del proveedor/arquitectura).
+    \item Normalmente no es el modelo más cómodo para “data lake” masivo.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Block Storage en el ecosistema Hadoop}
+Aunque Hadoop trabaja a nivel de \textbf{ficheros}, su almacenamiento distribuido usa un enfoque basado en bloques.
+
+\begin{itemize}
+    \item \textbf{HDFS} divide los ficheros en \textbf{bloques grandes} (p.ej. 128MB/256MB).
+    \item Los bloques se distribuyen entre nodos (\textbf{DataNodes}).
+    \item Se replican bloques (típicamente 3) para tolerancia a fallos.
+\end{itemize}
+
+\medskip
+\textbf{Idea clave:} bloques grandes $\Rightarrow$ paralelismo + throughput alto en lecturas/escrituras secuenciales.
+\end{frame}
+
+\begin{frame}{Object Storage: idea básica}
+\textbf{Object Storage} guarda datos como \textbf{objetos} en un espacio “plano” (contenedores/buckets).
+Cada objeto incluye:
+\begin{itemize}
+    \item Los \textbf{datos}.
+    \item \textbf{Metadatos} (clave-valor) ricos.
+    \item Un \textbf{identificador} único (nombre/clave del objeto).
+\end{itemize}
+
+Acceso típico: \textbf{API HTTP/REST} (no un sistema de archivos clásico).
+\end{frame}
+
+\begin{frame}{Object Storage: cuándo conviene}
+\textbf{Ventajas}
+\begin{itemize}
+    \item Escala masiva y alta durabilidad.
+    \item Muy bueno para datos \textbf{no estructurados} y grandes volúmenes.
+    \item Metadatos útiles para catalogación y gobierno del dato.
+\end{itemize}
+
+\textbf{Limitaciones}
+\begin{itemize}
+    \item Latencia mayor que block para I/O fino.
+    \item Semántica diferente: no siempre hay “rename”/“append” eficientes como en FS tradicionales.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ejemplo: Azure Blob Storage (Object Storage)}
+\textbf{Azure Blob Storage} es almacenamiento de objetos en la nube:
+\begin{itemize}
+    \item Organización en \textbf{contenedores} y \textbf{blobs} (objetos).
+    \item Acceso por \textbf{HTTP/HTTPS} y SDKs.
+    \item Integración con analítica: Spark, Synapse, Databricks, etc.
+\end{itemize}
+
+\medskip
+Uso típico: data lake, backups, logs, multimedia, datasets analíticos.
+\end{frame}
+
+\begin{frame}{Hadoop + Cloud: desacoplar cómputo y almacenamiento}
+En on-premises clásico:
+\begin{itemize}
+    \item Cómputo y almacenamiento suelen ir juntos (HDFS en los nodos).
+\end{itemize}
+
+En cloud:
+\begin{itemize}
+    \item Es común usar \textbf{Object Storage} como “data lake”.
+    \item Motores (Spark/Hive/Presto) leen directamente de Blob/S3.
+    \item Beneficio: \textbf{elasticidad} (escala cómputo sin mover datos).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Comparativa rápida}
+\begin{itemize}
+    \item \textbf{Unidad}: bloques vs objetos.
+    \item \textbf{Acceso}: como disco/sistema de archivos vs API (REST).
+    \item \textbf{Rendimiento típico}: block (baja latencia) vs object (alto throughput masivo).
+    \item \textbf{Casos de uso}: BD/VMs vs data lake/backups/datos no estructurados.
+    \item \textbf{Ejemplos}: HDFS (bloques), Azure Managed Disks (block) vs Azure Blob (object).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Mensaje final}
+\begin{itemize}
+    \item \textbf{Block Storage}: “disco” para I/O fino y transaccional.
+    \item \textbf{Object Storage}: “repositorio masivo” para datos escalables y analítica.
+    \item En Big Data moderno: tendencia a \textbf{object storage + motores de cómputo desacoplados}.
+\end{itemize}
+\end{frame}
+
+%-----------------------------------
+
+%------------------------------------------------
+\begin{frame}{¿Object Storage es realmente diferente o solo marketing?}
+\textbf{Pregunta capciosa:}
+
+Si todo termina siendo bloques en discos…  
+¿no es lo mismo que Block Storage?
+
+\medskip
+
+\textbf{Idea:}
+\begin{itemize}
+    \item A nivel \textbf{físico}: no es radicalmente distinto.
+    \item A nivel \textbf{arquitectónico y de abstracción}: sí es muy distinto.
+\end{itemize}
+\end{frame}
+%------------------------------------------------
+
+\begin{frame}{Nivel físico: lo que no cambia}
+En ambos casos:
+\begin{itemize}
+    \item Hay discos (HDD/SSD).
+    \item Hay bloques físicos.
+    \item Hay servidores en centros de datos.
+    \item Hay replicación y redes.
+\end{itemize}
+
+\medskip
+\textbf{Conclusión:} Todo almacenamiento termina siendo bloques en algún disco.
+\end{frame}
+%------------------------------------------------
+
+\begin{frame}{Nivel lógico: lo que sí cambia}
+\textbf{Block Storage}
+\begin{itemize}
+    \item Se comporta como un disco.
+    \item Tú gestionas sistema de archivos.
+    \item Permite modificar partes pequeñas.
+\end{itemize}
+
+\medskip
+
+\textbf{Object Storage}
+\begin{itemize}
+    \item Se comporta como un servicio.
+    \item No hay sistema de archivos real.
+    \item Se gestionan objetos completos.
+    \item Acceso vía API (HTTP).
+\end{itemize}
+\end{frame}
+%------------------------------------------------
+
+\begin{frame}{La diferencia real está en la arquitectura}
+\begin{itemize}
+    \item Object Storage está diseñado para:
+    \begin{itemize}
+        \item Escalar masivamente.
+        \item Distribuir datos automáticamente.
+        \item Replicar sin intervención del usuario.
+        \item Integrarse como servicio en arquitecturas cloud.
+    \end{itemize}
+    \item Block Storage está diseñado para:
+    \begin{itemize}
+        \item Simular un disco.
+        \item Soportar bases de datos y máquinas virtuales.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+% --- Continuación (Beamer) ---
+% Nota: ignoro encabezados globales y mantengo el estilo de frames.
+
+\section{Formatos: Avro y Parquet}
+
+\begin{frame}{Formatos de ficheros en Hadoop (visión rápida)}
+En el ecosistema Hadoop/Spark aparecen varios formatos comunes:
+\begin{itemize}
+    \item \textbf{Text}: CSV/TSV/JSON/logs (simple, pero poco eficiente).
+    \item \textbf{SequenceFile}: binario clave-valor (históricamente ligado a MapReduce).
+    \item \textbf{Avro}: binario orientado a filas, \textbf{basado en esquema}.
+    \item \textbf{Columnar}: Parquet/ORC (optimizado para analítica).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Apache Avro: ¿qué es?}
+\textbf{Avro} es un sistema de \textbf{serialización} con \textbf{esquema} (schema) usado en Hadoop.
+
+\begin{itemize}
+    \item Los datos se almacenan en binario compacto.
+    \item El \textbf{esquema} (en JSON) describe la estructura.
+    \item Permite \textbf{evolución de esquemas} (añadir campos, compatibilidad hacia atrás, etc.).
+\end{itemize}
+
+\medskip
+Uso típico: intercambio de datos entre sistemas, ingestión, streaming y etapas intermedias.
+\end{frame}
+
+\begin{frame}{Avro: ventajas clave}
+\begin{itemize}
+    \item \textbf{Compacto} y eficiente en red/almacenamiento.
+    \item \textbf{Autodescriptivo}: el esquema puede viajar con los datos (dependiendo del contenedor).
+    \item \textbf{Evolución de esquema}: muy útil cuando los datos cambian con el tiempo.
+    \item Buen encaje con pipelines (p.ej. Kafka $\rightarrow$ procesamiento $\rightarrow$ data lake).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Avro: tipos de datos (básicos y complejos)}
+\textbf{Básicos:}
+\begin{itemize}
+    \item \texttt{null}, \texttt{boolean}, \texttt{int}, \texttt{long}, \texttt{float}, \texttt{double}
+    \item \texttt{bytes}, \texttt{string}
+\end{itemize}
+
+\textbf{Complejos:}
+\begin{itemize}
+    \item \texttt{record} (estructura con campos)
+    \item \texttt{enum}, \texttt{array}, \texttt{map}
+    \item \texttt{union} (p.ej. \texttt{["null","string"]} para opcionales)
+    \item \texttt{fixed}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Ejemplo de esquema Avro (JSON)}
+\begin{verbatim}
+{
+  "type": "record",
+  "name": "Usuario",
+  "namespace": "ejemplo",
+  "fields": [
+    {"name": "id", "type": "int"},
+    {"name": "nombre", "type": "string"},
+    {"name": "email", "type": ["null","string"], "default": null}
+  ]
+}
+\end{verbatim}
+
+\medskip
+\textbf{Idea}: \texttt{union} permite valores nulos (campo opcional).
+\end{frame}
+
+\begin{frame}{Relación con Java: Avro en la práctica}
+Avro nació con fuerte integración en el ecosistema \textbf{Java}.
+
+\begin{itemize}
+    \item Flujo típico en Java:
+    \begin{itemize}
+        \item Definir el esquema (\texttt{.avsc}) o un IDL.
+        \item \textbf{Generar clases Java} (POJOs) a partir del esquema.
+        \item Serializar/deserializar con las librerías de Avro.
+    \end{itemize}
+    \item Ventaja: \textbf{tipado} y modelos de datos consistentes entre microservicios y batch.
+\end{itemize}
+
+\medskip
+En entornos Hadoop, esto facilita escribir jobs (MapReduce) o componentes de ingestión en Java.
+\end{frame}
+
+\begin{frame}{Parquet: formato columnar para analítica}
+\textbf{Apache Parquet} es un formato \textbf{columnar} pensado para consultas analíticas.
+
+\begin{itemize}
+    \item Almacena datos \textbf{por columnas} (no por filas).
+    \item Muy eficiente cuando se consultan \textbf{solo algunas columnas}.
+    \item Permite \textbf{compresión} y \textbf{codificación} por columna.
+\end{itemize}
+
+\medskip
+Uso típico: data lakes, tablas analíticas (Spark SQL, Hive, Impala, Trino/Presto).
+\end{frame}
+
+\begin{frame}{¿Qué aporta lo columnar?}
+Cuando preguntas: \emph{``dame media(importe) por país''}:
+
+\begin{itemize}
+    \item En formato fila (CSV/Avro): lees muchas columnas aunque no las uses.
+    \item En \textbf{Parquet}: puedes leer solo \textbf{importe} y \textbf{país}.
+\end{itemize}
+
+\medskip
+Esto mejora:
+\begin{itemize}
+    \item \textbf{Tiempo de lectura} (menos I/O).
+    \item \textbf{Coste} en cloud (menos datos escaneados).
+    \item \textbf{Compresión} (valores similares por columna).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Relación con Hadoop/Spark}
+\begin{itemize}
+    \item Parquet es un estándar de facto en el \textbf{ecosistema Hadoop} moderno.
+    \item Motores como Spark y Hive lo optimizan con:
+    \begin{itemize}
+        \item \textbf{Predicate pushdown} (filtrar lo antes posible).
+        \item \textbf{Column pruning} (leer solo columnas necesarias).
+        \item Estadísticas y metadatos para planificar mejor consultas.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Relación con Java: Parquet en la práctica}
+También hay integración directa con \textbf{Java} (librerías Apache Parquet).
+
+\begin{itemize}
+    \item Casos típicos en Java:
+    \begin{itemize}
+        \item Generar datasets Parquet en pipelines batch.
+        \item Escribir/leer Parquet usando esquemas (a menudo con Avro como modelo).
+    \end{itemize}
+    \item Patrón común: \textbf{Avro schema} $\rightarrow$ escribir Parquet (muy usado en pipelines).
+\end{itemize}
+
+\medskip
+\textbf{Idea}: Avro facilita el modelo y compatibilidad; Parquet optimiza almacenamiento y consulta.
+\end{frame}
+
+\begin{frame}{Avro vs Parquet: ¿cuándo usar cada uno?}
+\begin{itemize}
+    \item \textbf{Avro} (fila + esquema):
+    \begin{itemize}
+        \item Ingestión, intercambio, streaming.
+        \item Escritura secuencial y evolución de esquema frecuente.
+    \end{itemize}
+    \item \textbf{Parquet} (columna):
+    \begin{itemize}
+        \item Data lake analítico, BI, agregaciones, consultas repetidas.
+        \item Rendimiento y coste optimizados en lectura selectiva.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Pipeline típico en Big Data (con Java en la cadena)}
+\begin{itemize}
+    \item \textbf{Java} (producer/servicio) genera eventos con esquema Avro.
+    \item Se almacenan o transportan (p.ej. en colas/streams) manteniendo el esquema.
+    \item Proceso batch/streaming transforma y persiste en \textbf{Parquet} para analítica.
+\end{itemize}
+
+\medskip
+Resultado: \textbf{compatibilidad} y \textbf{gobierno del dato} (Avro) + \textbf{rendimiento analítico} (Parquet).
+\end{frame}
+
+
+%------------------------------------------------
+\section{Colas, ZooKeeper y Apache Kafka}
+%------------------------------------------------
+
+\begin{frame}{Introducción a las colas}
+Las \textbf{colas de mensajes} permiten desacoplar productores y consumidores.
+
+\begin{itemize}
+    \item Un \textbf{productor} envía mensajes a una cola.
+    \item Uno o varios \textbf{consumidores} los procesan.
+    \item Comunicación asíncrona.
+\end{itemize}
+
+\medskip
+Objetivo principal: \textbf{desacoplar sistemas} y mejorar escalabilidad y tolerancia a fallos.
+\end{frame}
+
+\begin{frame}{¿Por qué usar colas?}
+\begin{itemize}
+    \item \textbf{Desacoplamiento}: productor y consumidor no necesitan conocerse.
+    \item \textbf{Escalabilidad}: múltiples consumidores pueden procesar en paralelo.
+    \item \textbf{Tolerancia a fallos}: los mensajes se almacenan hasta procesarse.
+    \item \textbf{Asincronía}: mejora rendimiento en sistemas distribuidos.
+\end{itemize}
+
+\medskip
+Muy utilizadas en microservicios, Big Data y sistemas event-driven.
+\end{frame}
+
+%------------------------------------------------
+\subsection*{ZooKeeper}
+%------------------------------------------------
+
+\begin{frame}{ZooKeeper: ¿qué es?}
+\textbf{Apache ZooKeeper} es un servicio distribuido de \textbf{coordinación}.
+
+No es una cola ni una base de datos tradicional.
+
+Proporciona:
+\begin{itemize}
+    \item Configuración centralizada.
+    \item Sincronización distribuida.
+    \item Gestión de líderes.
+    \item Registro de servicios.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{ZooKeeper: arquitectura}
+\begin{itemize}
+    \item Funciona como un \textbf{ensemble} (conjunto) de nodos.
+    \item Uno actúa como \textbf{líder}, los demás como seguidores.
+    \item Utiliza un modelo jerárquico tipo sistema de archivos (\texttt{znodes}).
+\end{itemize}
+
+\medskip
+Principio clave: \textbf{consistencia fuerte} (protocolo tipo quorum).
+\end{frame}
+
+\begin{frame}{ZooKeeper: propiedades}
+\begin{itemize}
+    \item \textbf{Alta disponibilidad} mediante replicación.
+    \item \textbf{Consistencia} garantizada.
+    \item Datos pequeños y en memoria (no pensado para grandes volúmenes).
+    \item Operaciones rápidas (lecturas frecuentes).
+\end{itemize}
+
+\medskip
+En el ecosistema Hadoop, se usa para coordinar servicios como HBase o Kafka (versiones clásicas).
+\end{frame}
+
+%------------------------------------------------
+\subsection*{Apache Kafka}
+%------------------------------------------------
+
+\begin{frame}{Apache Kafka: visión general}
+\textbf{Apache Kafka} es un \textbf{broker de mensajería distribuido} orientado a eventos.
+
+Modelo:
+\begin{itemize}
+    \item Productores publican mensajes.
+    \item Mensajes se almacenan en \textbf{topics}.
+    \item Consumidores leen desde esos topics.
+\end{itemize}
+
+Diseñado para alto throughput y procesamiento en tiempo real.
+\end{frame}
+
+\begin{frame}{Kafka: arquitectura básica}
+\begin{itemize}
+    \item \textbf{Brokers}: servidores que almacenan datos.
+    \item \textbf{Topics}: categorías de mensajes.
+    \item \textbf{Partitions}: subdivisiones de un topic para paralelismo.
+    \item \textbf{Consumers Groups}: permiten escalado horizontal.
+\end{itemize}
+
+\medskip
+Los datos se almacenan en disco de forma secuencial (muy eficiente).
+\end{frame}
+
+\begin{frame}{Kafka: características principales}
+\begin{itemize}
+    \item \textbf{Alto rendimiento} (millones de mensajes/segundo).
+    \item \textbf{Persistencia en disco}.
+    \item \textbf{Escalabilidad horizontal}.
+    \item \textbf{Replicación} entre brokers.
+    \item Garantías configurables: \textit{at-most-once}, \textit{at-least-once}, \textit{exactly-once}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Kafka y Java}
+Kafka está desarrollado en \textbf{Java/Scala} y ofrece API nativa en Java.
+
+Uso típico en Java:
+\begin{itemize}
+    \item Crear un \textbf{Producer} para enviar eventos.
+    \item Crear un \textbf{Consumer} para procesarlos.
+    \item Integración con microservicios Spring Boot.
+\end{itemize}
+
+\medskip
+Muy común en pipelines:
+\[
+Java\ Service \rightarrow Kafka \rightarrow Spark/Flink \rightarrow Data\ Lake
+\]
+\end{frame}
+
+\begin{frame}{Relación ZooKeeper -- Kafka}
+\begin{itemize}
+    \item Versiones clásicas de Kafka usan \textbf{ZooKeeper} para:
+    \begin{itemize}
+        \item Elección de líder.
+        \item Gestión de metadatos del clúster.
+        \item Coordinación entre brokers.
+    \end{itemize}
+    \item Versiones modernas pueden funcionar sin ZooKeeper (modo KRaft).
+\end{itemize}
+
+\medskip
+Idea clave: ZooKeeper coordina; Kafka transporta eventos.
+\end{frame}
+
+\begin{frame}{Conclusión sobre Zookeper y Kafka}
+\begin{itemize}
+    \item \textbf{Colas}: desacoplamiento y comunicación asíncrona.
+    \item \textbf{ZooKeeper}: coordinación distribuida y consistencia.
+    \item \textbf{Kafka}: broker de mensajería distribuido y escalable.
+\end{itemize}
+
+Base fundamental de arquitecturas modernas \textbf{event-driven} y Big Data.
+\end{frame}
+
+%------------------------------------------------
+\section{Bases de datos relacionales vs NoSQL}
+%------------------------------------------------
+
+\begin{frame}{Modelo Relacional vs NoSQL}
+Dos grandes enfoques en almacenamiento de datos:
+
+\begin{itemize}
+    \item \textbf{Bases de datos relacionales (SQL)}
+    \item \textbf{Bases de datos NoSQL}
+\end{itemize}
+
+La elección depende del tipo de datos, escalabilidad y requisitos del sistema.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Bases de datos relacionales}
+Modelo basado en:
+\begin{itemize}
+    \item \textbf{Tablas} (filas y columnas).
+    \item \textbf{Esquema fijo}.
+    \item Relaciones mediante \textbf{claves primarias y foráneas}.
+    \item Lenguaje estándar: \textbf{SQL}.
+\end{itemize}
+
+\medskip
+Ejemplos: MySQL, PostgreSQL, Oracle, SQL Server.
+\end{frame}
+
+\begin{frame}{Propiedades del modelo relacional}
+\begin{itemize}
+    \item Cumplen propiedades \textbf{ACID}.
+    \item Alta consistencia.
+    \item Adecuadas para sistemas transaccionales (OLTP).
+    \item Escalado tradicionalmente vertical.
+\end{itemize}
+
+\medskip
+Muy utilizadas en banca, ERP, e-commerce tradicional.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{¿Qué es NoSQL?}
+\textbf{NoSQL} = “Not Only SQL”.
+
+Diseñadas para:
+\begin{itemize}
+    \item Escalabilidad horizontal.
+    \item Datos semiestructurados o no estructurados.
+    \item Grandes volúmenes (Big Data).
+\end{itemize}
+
+\medskip
+No siguen necesariamente el modelo tabular clásico.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Tipos de bases de datos NoSQL}
+Cuatro categorías principales:
+
+\begin{itemize}
+    \item \textbf{Clave-valor}
+    \item \textbf{Orientadas a documentos}
+    \item \textbf{Orientadas a columnas}
+    \item \textbf{De grafos}
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{1. Clave-Valor}
+Modelo más simple:
+
+\[
+Clave \rightarrow Valor
+\]
+
+\begin{itemize}
+    \item Muy rápidas.
+    \item Escalables.
+    \item El valor es opaco para el sistema.
+\end{itemize}
+
+\medskip
+Ejemplos: Redis, Riak.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{2. Orientadas a Documentos}
+Almacenan documentos (normalmente JSON/BSON).
+
+\begin{itemize}
+    \item Estructura flexible (sin esquema rígido).
+    \item Documentos auto-contenidos.
+    \item Consultas sobre campos internos.
+\end{itemize}
+
+\medskip
+Ejemplos: MongoDB, CouchDB.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{3. Orientadas a Columnas}
+Inspiradas en BigTable (Google).
+
+\begin{itemize}
+    \item Almacenan datos por familias de columnas.
+    \item Muy eficientes en grandes volúmenes.
+    \item Buen rendimiento en escrituras masivas.
+\end{itemize}
+
+\medskip
+Ejemplos: Cassandra, HBase.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{4. Bases de datos de Grafos}
+Modelo basado en:
+
+\begin{itemize}
+    \item \textbf{Nodos}
+    \item \textbf{Relaciones}
+    \item \textbf{Propiedades}
+\end{itemize}
+
+Optimizado para consultas sobre relaciones complejas.
+
+\medskip
+Ejemplos: Neo4j.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{ACID vs BASE}
+\textbf{Relacionales:}
+\begin{itemize}
+    \item ACID (Atomicidad, Consistencia, Aislamiento, Durabilidad)
+\end{itemize}
+
+\textbf{Muchas NoSQL:}
+\begin{itemize}
+    \item BASE (Basically Available, Soft state, Eventually consistent)
+\end{itemize}
+
+\medskip
+Trade-off entre consistencia fuerte y escalabilidad.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Comparación general}
+\begin{itemize}
+    \item \textbf{Relacional}: estructura rígida, integridad fuerte, SQL estándar.
+    \item \textbf{NoSQL}: flexibilidad, escalabilidad horizontal, modelos variados.
+    \item Relacional $\rightarrow$ transacciones críticas.
+    \item NoSQL $\rightarrow$ Big Data, sistemas distribuidos, microservicios.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Conclusión final}
+No existe una solución universal.
+
+\begin{itemize}
+    \item Elegir según:
+    \begin{itemize}
+        \item Tipo de datos.
+        \item Volumen.
+        \item Necesidades de consistencia.
+        \item Escalabilidad.
+    \end{itemize}
+\end{itemize}
+
+En arquitecturas modernas es común combinar ambos enfoques.
+\end{frame}
+
+
+\end{document}

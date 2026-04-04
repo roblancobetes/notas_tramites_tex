@@ -1,0 +1,9 @@
+\frametitle{Métodos}
+Los métodos definen el comportamiento de los objetos y permiten realizar acciones o devolver información.
+
+Ejemplo de método en Java:
+\begin{verbatim}
+public void mostrarDatos() {
+    System.out.println(nombre + " - " + edad);
+}
+\end{verbatim}
