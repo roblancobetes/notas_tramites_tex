@@ -4,13 +4,20 @@ Repositorio para la gestión de documentos en LaTeX (prácticas, presentaciones 
 ## Estructura
 .
 ├── ejercicios/ # Ejercicios y documentos principales
-│ ├── out_aux/ # Archivos auxiliares de compilación (ignorados en github, se crearán automáticamente al compilar)
-│ ├── out_pdf/ # PDFs generados (ignorados)
+│ ├── out_aux/ # Archivos auxiliares (ignorado)
+│ ├── out_pdf/ # PDFs generados (ignorado)
 │ └── *.tex # Archivos fuente
-├── Presentaciones_curso_BD/
-    ...
-├── Textos_tesis/
-    ...
+│
+├── Presentaciones_curso_BD/ # Presentaciones
+│ ├── out_aux/
+│ ├── out_pdf/
+│ └── *.tex
+│
+├── Textos_tesis/ # Documentos de tesis
+│ ├── out_aux/
+│ ├── out_pdf/
+│ └── *.tex
+│
 └── .vscode/ # Configuración de VS Code
 
 
