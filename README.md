@@ -1,7 +1,9 @@
 # Proyectos LaTeX
 Repositorio para la gestión de documentos en LaTeX (prácticas, presentaciones y textos académicos).
 
-## Estructura
+## 📁 Estructura
+
+
 .
 ├── ejercicios/ # Ejercicios y documentos principales
 │ ├── out_aux/ # Archivos auxiliares (ignorado)
