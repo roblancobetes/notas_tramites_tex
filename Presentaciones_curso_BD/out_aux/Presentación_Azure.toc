@@ -1,7 +1,0 @@
-\beamer@sectionintoc {1}{Introducción a Azure}{3}{0}{1}
-\beamer@sectionintoc {2}{Primeras prácticas}{8}{0}{2}
-\beamer@sectionintoc {3}{Procesamiento de datos}{15}{0}{3}
-\beamer@sectionintoc {4}{Visualización}{23}{0}{4}
-\beamer@sectionintoc {5}{Almacenamiento}{28}{0}{5}
-\beamer@sectionintoc {6}{Procesamiento en tiempo real}{39}{0}{6}
-\beamer@sectionintoc {7}{Gobierno del dato}{47}{0}{7}

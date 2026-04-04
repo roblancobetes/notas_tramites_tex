@@ -1,4 +1,0 @@
-\babel@toc {spanish}{}\relax 
-\beamer@sectionintoc {1}{Agile y Scrum}{3}{0}{1}
-\beamer@sectionintoc {2}{Design Thinking}{9}{0}{2}
-\beamer@sectionintoc {3}{Storytelling}{13}{0}{3}

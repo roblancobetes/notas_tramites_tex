@@ -1,9 +1,0 @@
-\beamer@sectionintoc {1}{Introducción a Java}{3}{0}{1}
-\beamer@sectionintoc {2}{Tipos primitivos y objetos. API de Java}{7}{0}{2}
-\beamer@sectionintoc {3}{Estructuras de Control de Flujo}{10}{0}{3}
-\beamer@sectionintoc {4}{Arrays en Java}{12}{0}{4}
-\beamer@sectionintoc {5}{Programación Orientada a Objetos en Java}{18}{0}{5}
-\beamer@sectionintoc {6}{Clases y Objetos en Java}{20}{0}{6}
-\beamer@sectionintoc {7}{Constructores}{23}{0}{7}
-\beamer@sectionintoc {8}{Métodos}{24}{0}{8}
-\beamer@sectionintoc {9}{Uso de Modificadores de Acceso}{25}{0}{9}

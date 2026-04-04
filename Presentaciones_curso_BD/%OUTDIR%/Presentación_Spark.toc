@@ -1,6 +1,0 @@
-\beamer@sectionintoc {1}{Uso de Spark como framework de procesamiento de la información en sistemas distribuidos}{3}{0}{1}
-\beamer@sectionintoc {2}{Inmersión en la estructura de datos principal de Spark: RDD -- Resilient Distributed Dataset}{13}{0}{2}
-\beamer@sectionintoc {3}{Iniciación a Spark en cluster}{21}{0}{3}
-\beamer@sectionintoc {4}{Conceptos de programación paralela en Spark}{30}{0}{4}
-\beamer@sectionintoc {5}{Optimización de rendimiento en Spark}{39}{0}{5}
-\beamer@sectionintoc {6}{Iniciación al procesamiento de datos en Spark mediante el uso del módulo SparkSQL}{49}{0}{6}
