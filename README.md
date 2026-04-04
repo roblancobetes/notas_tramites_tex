@@ -21,7 +21,7 @@ Repositorio para la gestión de documentos en LaTeX (prácticas, presentaciones 
 │   └── *.tex
 │
 └── .vscode/                     # Configuración de VS Code
-```text
+```
 
 
 ## Requisitos
