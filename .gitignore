@@ -1,0 +1,42 @@
+# =========================
+# LaTeX auxiliares
+# =========================
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+
+# =========================
+# Directorios de build
+# =========================
+out_aux/
+out_pdf/
+out/
+*.pdf
+
+
+
+# =========================
+# VS Code
+# =========================
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# =========================
+# Sistema operativo
+# =========================
+.DS_Store
+Thumbs.db
