@@ -9,7 +9,13 @@ Repositorio para la gestión de documentos en LaTeX (prácticas, presentaciones 
 │ ├── out_pdf/ # PDFs generados
 │ └── *.tex # Archivos fuente
 ├── Presentaciones_curso_BD/
+│ ├── out_aux/ # Archivos auxiliares de compilación
+│ ├── out_pdf/ # PDFs generados
+│ └── *.tex # Archivos fuente
 ├── Textos_tesis/
+│ ├── out_aux/ # Archivos auxiliares de compilación
+│ ├── out_pdf/ # PDFs generados
+│ └── *.tex # Archivos fuente
 └── .vscode/ # Configuración de VS Code
 
 

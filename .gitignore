@@ -1,5 +1,5 @@
 # =========================
-# LaTeX auxiliares
+# LaTeX auxiliares (global)
 # =========================
 *.aux
 *.fdb_latexmk
@@ -19,14 +19,15 @@
 *.vrb
 
 # =========================
-# Directorios de build
+# Carpetas de compilación (en cualquier nivel)
 # =========================
-out_aux/
-out_pdf/
-out/
+**/out_aux/
+**/out/
+
+# =========================
+# PDFs
+**/out_pdf/
 *.pdf
-
-
 
 # =========================
 # VS Code
@@ -36,7 +37,7 @@ out/
 !.vscode/extensions.json
 
 # =========================
-# Sistema operativo
+# Sistema
 # =========================
 .DS_Store
 Thumbs.db
