@@ -1,0 +1,90 @@
+%=========================
+% Plantilla LaTeX Artículo Académico
+% Compilar con: pdflatex + biber + pdflatex + pdflatex
+%=========================
+\documentclass[11pt,a4paper]{article}
+
+%-------------------------
+% Idioma y tipografía
+%-------------------------
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+%-------------------------
+% Márgenes y espaciado
+%-------------------------
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+%-------------------------
+% Matemáticas y símbolos
+%-------------------------
+\usepackage{amsmath,amssymb,amsthm}
+
+%-------------------------
+% Tablas y figuras
+%-------------------------
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{changepage}
+
+%-------------------------
+% Enlaces y PDF
+%-------------------------
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  pdftitle={The Continuum Hypothesis as a speech act},
+  pdfauthor={Rodrigo Blanco Betes}
+}
+
+%-------------------------
+% Listas, código y utilidades
+%-------------------------
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{csquotes} % recomendado con biblatex
+
+%-------------------------
+% Bibliografía (biblatex + biber)
+%-------------------------
+\usepackage[
+  backend=biber,
+  style=apa,
+  sortcites=true,
+  url=true,
+  doi=true
+]{biblatex}
+\DeclareLanguageMapping{english}{english-apa}
+\addbibresource{refs.bib}
+
+%-------------------------
+% Metadatos del artículo
+%-------------------------
+\title{\textbf{Notes and references}}
+
+\author{Rodrigo Blanco Betes}
+
+
+\date{\today}
+
+%-------------------------
+% Entornos de teoremas (opcional)
+%-------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\begin{document}
+\maketitle
+
+\section{a}
+
+\end{document}
