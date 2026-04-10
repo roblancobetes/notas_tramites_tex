@@ -1,0 +1,152 @@
+%=========================
+% Plantilla LaTeX Artículo Académico
+% Compilar con: pdflatex + biber + pdflatex + pdflatex
+%=========================
+\documentclass[11pt,a4paper]{book}
+
+%-------------------------
+% Idioma y tipografía
+%-------------------------
+% ---------- Idioma y codificación ----------
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}
+
+%-------------------------
+% Nárgenes y espaciado
+%-------------------------
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+%-------------------------
+% Matemáticas y símbolos
+%-------------------------
+\usepackage{amsmath,amssymb,amsthm}
+
+%-------------------------
+% Tablas y figuras
+%-------------------------
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{changepage}
+
+%-------------------------
+% Enlaces y PDF
+%-------------------------
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  pdftitle={Notas alrededor de la hipótesis del continuo},
+  pdfauthor={Rodrigo Blanco Betes}
+}
+
+%-------------------------
+% Listas, código y utilidades
+%-------------------------
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{csquotes} % recomendado con biblatex
+
+%-------------------------
+% Bibliografía (biblatex + biber)
+%-------------------------
+\usepackage[
+  backend=biber,
+  style=apa,
+  sortcites=true,
+  url=true,
+  doi=true
+]{biblatex}
+\DeclareLanguageMapping{spanish}{spanish-apa}
+\addbibresource{refs.bib}
+
+%-------------------------
+% Netadatos del artículo
+%-------------------------
+\title{\textbf{Notas sobre lógica matemática}}
+
+\author{Rodrigo Blanco Betes}
+
+
+\date{\today}
+
+%-------------------------
+% Entornos de teoremas (opcional)
+%-------------------------
+\theoremstyle{plain}
+\newtheorem{teorema}{Teorema}[chapter]
+\newtheorem{lema}[teorema]{Lema}
+\newtheorem{proposicion}[teorema]{Proposición}
+\newtheorem{corolario}[teorema]{Corolario}
+
+% Estilo para definiciones (texto normal)
+\theoremstyle{definition}
+\newtheorem{definition}[teorema]{Definición}
+\newtheorem{ejemplo}[teorema]{Ejemplo}
+
+% Estilo para notas (texto normal, sin cursiva)
+\theoremstyle{remark}
+\newtheorem{nota}[teorema]{Nota}
+\newtheorem{observacion}[teorema]{Observación}
+
+\begin{document}
+
+% ---------- Portada ----------
+\frontmatter
+\maketitle
+
+\tableofcontents
+
+\chapter*{Introducción}
+
+\mainmatter
+
+\chapter{La consistencia de \texorpdfstring{$\mathrm{GCH}$}{GCH} en \texorpdfstring{$\mathrm{ATR}_0$}{ATR₀}}
+
+Un argumento a favor de la integración de la teoría de conjuntos como componente de primer orden de las matemáticas es su aparición sistemática en la práctica de las matemáticas, donde ha dado lugar a desarrollos muy fructíferos---véase \textcite{Maddy1997}. Sin embargo, no está claro que en el aspecto en el que esto se ha dado en mayor medida, las pruebas de consistencia relativa, podamos estar genuinamente de integración de la propia teoría de conjuntos. Estas pruebas de consistencia se pueden entender como la mera manipulación de símbolos lógicos en un sistema formal mucho más débil. 
+
+Nuestro objetivo en este capítulo es presentar una de las pruebas de consistencia relativa más conocidas, la de la consistencia relativa de $\mathrm{GCH}$ con respecto a $\mathrm{ZFC}$, desarrollada en un sistema de aritmética de segundo orden, en particular $\mathrm{ATR}_0$.
+
+\section{La idea de las matemáticas inversas y a la aritmética de segundo orden}
+
+Casi cualquier operación matemática admite (de algún modo) una inversa, pero hasta el siglo XX no se pudo decir lo mismo de las matemáticas mismas. Si se entiende las matemáticas como el proceso de partir de ciertos axiomas fundamentales y derivar de ellos resultados relevantes, el programa de las \textit{matemáticas inversas} se entiende por actuar en la dirección contraria: partir de esos mismos resultados y tratar de concluir cuál es el sistema axiomático más débil que permite demostrarlos.
+
+Una gran parte de la matemática inversa se ha llevado a cabo en subsistemas de aritmética de segundo orden. Esto es así porque es el lenguaje más sencillo en el que se pueden expresar y desarrollar muchos de los resultados matemáticos más importantes \parencite[p. VIII]{Simpson2006}. Este lenguaje incorpora dos tipos de variables: para números naturales y para conjuntos de números naturales, y los diferentes sistemas axiomáticos corresponden a asunciones sobre la existencia de determinados conjuntos. Los axiomas de existencia más habituales en la práctica son la comprehensión recursiva, el lema débil de König, la comprehensión artimética, la recursión transfinita aritmética y la comprehensión $\Pi^1_1$. Estos axiomas corresponden a los sistemas $\mathrm{RCA}_0$, $\mathrm{WKL}_0$, $\mathrm{ACA}_0$, $\mathrm{ATR}_0$ y $\Pi^1_1-\mathrm{CA}_0$, que corresponden, respectivamente, a programas fundacionales como el constructivismo, el reduccionismo finito, el predicativismo, el predicativismo más fuerte o análisis predicativo, y por último, al impredicativismo pleno (ídem).
+
+Todos estos sistemas son subsistemas de $\mathrm{Z}_2$, el sistema formal más fuerte de la aritmética de segundo orden. Como hemos dicho, es un lenguaje con dos categorías de variables: en primer lugar están las \textit{variables numéricas}, que se denotarán con letras como $i,j,k,n,m,l,...$ y en segundo lugar las \textit{variables de conjuntos}, que representan subconjuntos de $\omega$ y se denotarán con letras como $X,Y,Z,...$. Los \textit{términos numéricos} son $0$, $1$, $n+m$ y $n \cdot m$, donde $n$ y $m$ son términos numéricos. Las \textit{fórmulas atómicas} son las de la forma $n = m$, $n<m$ y $n \in X$, donde $X$ es una variable de conjunto. Los \textit{conectores} son los símbolos $\wedge$, $\vee $, $\neg$ y $\rightarrow$ (que representan la conjunción, la disyunción, la negación y la implicación, respectivamente). Los \textit{cuantificadores numéricos} son símbolos de la forma $\exists n$, donde $n$ es una variable numérica, y los \textit{nuantificadores de conjuntos}, similarmente, son de la forma $\exists X$, donde $X$ es una variable de conjunto. Estas permiten definir sintácticamente el lenguaje de la aritmética de segundo orden, como damos a continuación:
+
+\begin{definition}[Lenguaje $\mathrm{L}_2$]
+    \label{def-lenguaje-Z2}
+    Una fórmula $\phi$ pertenece al \textit{lenguaje de la aritmética} $\mathrm{L}_2$ si se puede obtener a partir de fórmulas atómicas mediante los conectores o cuantificadores. En caso de que no tenga variables libres se le llamará \textit{sentencia}.
+\end{definition}
+
+Como a otros lenguajes formales, a $\mathrm{L}_2$ se le puede dotar de una semántica, es decir, de una estructura donde este lenguaje se interpreta. Formalmente se tiene: 
+
+\begin{definition}[$\mathrm{L}_2$-estructuras]
+    
+    Un \textit{modelo de} $\mathrm{L}_2$, también llamado $\mathrm{L}_2$\textit{-estructura}, es una 7-tupla
+
+    $$ \mathcal{N} = (N, S_\mathcal{N}, +_\mathcal{N}, \cdot_\mathcal{N}, 0_\mathcal{N}, 1_\mathcal{N}, <_\mathcal{N}) $$
+
+    donde $N$ es un conjunto de números, en el que toman valor las variales numéricas y $S_\mathcal{N} \subseteq \mathcal{P}(N)$ es el rango de las variables de conjuntos. $+_\mathcal{N}, \cdot_\mathcal{N} \subseteq N \times N$, $0_\mathcal{N} \in N$, $1_\mathcal{N} \in N$ y $<_\mathcal{N} : N \times N \rightarrow N$ tienen la interpretación habitual.
+
+\end{definition}
+
+Si $B \subseteq N \cap S_\mathcal{N}$, se entiende como una \textit{fórmula con parámetros de} $B$ una fórmula del lenguaje $\mathrm{L}_2(B)$, que consiste en añadir a $\mathrm{L}_2$ como signos constantes los elementos de $B$. Un conjunto $A \subseteq N$ es \textit{definible sobre} $N$ \textit{con parámetros en} $B$ si existe una fórmula de $\mathrm{L}_2$ $\phi(n)$, con parámetros sobre $B$ tal que
+
+$$ A = \{  n \in N : \mathcal{N} \models \phi(n) \} $$
+
+El modelo \textit{canónico} para $\mathrm{L}_2$ es la estructura $(\omega, \mathcal{P}(\omega), \+, \cdot, 0, 1, <)$. En un $\omega$-modelo, en lugar de el total de subconjuntos de $\omega$, se tomará un subconjunto posiblemente más pequeño $\emptyset \neq S \subseteq \mathcal{P}(\omega)$. En ocasiones, si está claro por contexto, nos referiremos al $\omega$-modelo $S$. Un caso especial son los $\beta$-modelos.
+
+
+
+\printbibliography
+
+\end{document}
