@@ -114,17 +114,17 @@ Un argumento a favor de la integración de la teoría de conjuntos como componen
 
 Nuestro objetivo en este capítulo es presentar una de las pruebas de consistencia relativa más conocidas, la de la consistencia relativa de $\mathrm{GCH}$ con respecto a $\mathrm{ZFC}$, desarrollada en un sistema de aritmética de segundo orden, en particular $\mathrm{ATR}_0$.
 
-\section{La idea de las matemáticas inversas y a la aritmética de segundo orden}
+\section{Matemática inversa y a la aritmética de segundo orden}
 
 Casi cualquier operación matemática admite (de algún modo) una inversa, pero hasta el siglo XX no se pudo decir lo mismo de las matemáticas mismas. Si se entiende las matemáticas como el proceso de partir de ciertos axiomas fundamentales y derivar de ellos resultados relevantes, el programa de las \textit{matemáticas inversas} se entiende por actuar en la dirección contraria: partir de esos mismos resultados y tratar de concluir cuál es el sistema axiomático más débil que permite demostrarlos.
 
-Una gran parte de la matemática inversa se ha llevado a cabo en subsistemas de aritmética de segundo orden. Esto es así porque es el lenguaje más sencillo en el que se pueden expresar y desarrollar muchos de los resultados matemáticos más importantes \parencite[p. VIII]{Simpson2006}. Este lenguaje incorpora dos tipos de variables: para números naturales y para conjuntos de números naturales, y los diferentes sistemas axiomáticos corresponden a asunciones sobre la existencia de determinados conjuntos. Los axiomas de existencia más habituales en la práctica son la comprehensión recursiva, el lema débil de König, la comprehensión artimética, la recursión transfinita aritmética y la comprehensión $\Pi^1_1$. Estos axiomas corresponden a los sistemas $\mathrm{RCA}_0$, $\mathrm{WKL}_0$, $\mathrm{ACA}_0$, $\mathrm{ATR}_0$ y $\Pi^1_1-\mathrm{CA}_0$, que corresponden, respectivamente, a programas fundacionales como el constructivismo, el reduccionismo finito, el predicativismo, el predicativismo más fuerte o análisis predicativo, y por último, al impredicativismo pleno (ídem).
+Una gran parte de la matemática inversa se ha llevado a cabo en subsistemas de aritmética de segundo orden. Esto es así porque es el lenguaje más sencillo en el que se pueden expresar y desarrollar muchos de los resultados matemáticos más importantes \parencite[p. VIII]{Simpson2006}. Este lenguaje incorpora dos tipos de variables: para números naturales y para conjuntos de números naturales, y los diferentes sistemas axiomáticos corresponden a asunciones sobre la existencia de determinados conjuntos. Los axiomas de existencia más habituales en la práctica son la comprensión recursiva, el lema débil de König, la comprensión artimética, la recursión transfinita aritmética y la comprensión $\Pi^1_1$. Estos axiomas corresponden a los sistemas $\mathrm{RCA}_0$, $\mathrm{WKL}_0$, $\mathrm{ACA}_0$, $\mathrm{ATR}_0$ y $\Pi^1_1-\mathrm{CA}_0$, que corresponden, respectivamente, a programas fundacionales como el constructivismo, el reduccionismo finito, el predicativismo, el predicativismo más fuerte o análisis predicativo, y por último, al impredicativismo pleno (ídem).
 
 Todos estos sistemas son subsistemas de $\mathrm{Z}_2$, el sistema formal más fuerte de la aritmética de segundo orden. Como hemos dicho, es un lenguaje con dos categorías de variables: en primer lugar están las \textit{variables numéricas}, que se denotarán con letras como $i,j,k,n,m,l,...$ y en segundo lugar las \textit{variables de conjuntos}, que representan subconjuntos de $\omega$ y se denotarán con letras como $X,Y,Z,...$. Los \textit{términos numéricos} son $0$, $1$, $n+m$ y $n \cdot m$, donde $n$ y $m$ son términos numéricos. Las \textit{fórmulas atómicas} son las de la forma $n = m$, $n<m$ y $n \in X$, donde $X$ es una variable de conjunto. Los \textit{conectores} son los símbolos $\wedge$, $\vee $, $\neg$ y $\rightarrow$ (que representan la conjunción, la disyunción, la negación y la implicación, respectivamente). Los \textit{cuantificadores numéricos} son símbolos de la forma $\exists n$, donde $n$ es una variable numérica, y los \textit{nuantificadores de conjuntos}, similarmente, son de la forma $\exists X$, donde $X$ es una variable de conjunto. Estas permiten definir sintácticamente el lenguaje de la aritmética de segundo orden, como damos a continuación:
 
 \begin{definition}[Lenguaje $\mathrm{L}_2$]
-    \label{def-lenguaje-Z2}
-    Una fórmula $\phi$ pertenece al \textit{lenguaje de la aritmética} $\mathrm{L}_2$ si se puede obtener a partir de fórmulas atómicas mediante los conectores o cuantificadores. En caso de que no tenga variables libres se le llamará \textit{sentencia}.
+  \label{def-lenguaje-Z2}
+  Una fórmula $\phi$ pertenece al \textit{lenguaje de la aritmética} $\mathrm{L}_2$ si se puede obtener a partir de fórmulas atómicas mediante los conectores o cuantificadores. En caso de que no tenga variables libres se le llamará \textit{sentencia}.
 \end{definition}
 
 Como a otros lenguajes formales, a $\mathrm{L}_2$ se le puede dotar de una semántica, es decir, de una estructura donde este lenguaje se interpreta. Formalmente se tiene: 
@@ -139,13 +139,62 @@ Como a otros lenguajes formales, a $\mathrm{L}_2$ se le puede dotar de una semá
 
 \end{definition}
 
-Si $B \subseteq N \cap S_\mathcal{N}$, se entiende como una \textit{fórmula con parámetros de} $B$ una fórmula del lenguaje $\mathrm{L}_2(B)$, que consiste en añadir a $\mathrm{L}_2$ como signos constantes los elementos de $B$. Un conjunto $A \subseteq N$ es \textit{definible sobre} $N$ \textit{con parámetros en} $B$ si existe una fórmula de $\mathrm{L}_2$ $\phi(n)$, con parámetros sobre $B$ tal que
+Si $B \subseteq N \cup S_\mathcal{N}$, se entiende como una \textit{fórmula con parámetros de} $B$ una fórmula del lenguaje $\mathrm{L}_2(B)$, que consiste en añadir a $\mathrm{L}_2$ como signos constantes los elementos de $B$. Un conjunto $A \subseteq N$ es \textit{definible sobre} $N$ \textit{con parámetros en} $B$ si existe una fórmula de $\mathrm{L}_2$ $\phi(n)$, con parámetros sobre $B$ tal que
 
 $$ A = \{  n \in N : \mathcal{N} \models \phi(n) \} $$
 
 El modelo \textit{canónico} para $\mathrm{L}_2$ es la estructura $(\omega, \mathcal{P}(\omega), \+, \cdot, 0, 1, <)$. En un $\omega$-modelo, en lugar de el total de subconjuntos de $\omega$, se tomará un subconjunto posiblemente más pequeño $\emptyset \neq S \subseteq \mathcal{P}(\omega)$. En ocasiones, si está claro por contexto, nos referiremos al $\omega$-modelo $S$. Un caso especial son los $\beta$-modelos.
 
+Una vez vistas las nociones básicas de semántica del lenguaje $\mathrm{L}_2$, pasamos a ver el sistema formal de la aritmética de segundo orden:
 
+\begin{definition}[aritmética de segundo orden]
+  \label{axiomas-Z2}
+
+  Los \textit{axiomas de la aritmética de segundo orden} se componen del siguiente conjunto de fórmulas:
+
+  \textbf{(i) Axiomas básicos:}
+
+  \begin{align*}
+  &\forall n \; (n + 1 \neq 0) \\
+  &\forall m \forall n \; ((m + 1 = n + 1) \to m = n) \\
+  &\forall m \; (m + 0 = m) \\
+  &\forall m \forall n \; (m + (n + 1) = (m + n) + 1) \\
+  &\forall m \; (m \cdot 0 = 0) \\
+  &\forall m \forall n \; (m \cdot (n + 1) = (m \cdot n) + m) \\
+  &\forall m \; \neg (m < 0) \\
+  &\forall m \forall n \; \bigl(m < n + 1 \leftrightarrow (m < n \lor m = n)\bigr)
+  \end{align*}
+
+  \textbf{(ii) Axioma de inducción:}
+
+  \[
+  \forall X \; \Bigl( (0 \in X \land \forall n , (n \in X \to n + 1 \in X)) \to \forall n , (n \in X) \Bigr)
+  \]
+
+  \textbf{(iii) Esquema de comprensión:}
+
+  \[
+  \forall \varphi , \exists X , \forall n , \bigl(n \in X \leftrightarrow \varphi(n)\bigr)
+  \]
+
+  \text{donde $\varphi(n)$ es una fórmula de $L_2$ en la que $X$ no aparece libre.}
+
+
+\end{definition}
+
+Los axiomas básicos y el axioma de inducción son axiomas clásicos de la aritmética, similares a los dados en $\mathrm{PA}$. La primera diferencia es que, al poder utilizar variable de segundo orden, el axioma de inducción se da como un axioma, y no un esquema. Por otro lado, la idea del esquema de comprensión es la de garantizar, para cada conjunto fórmula del lenguaje de la aritmética $\phi(n)$, la existencia del conjunto $X = \{ n \in N : \phi(n) \}$. La fórmula $\phi$ podría contener variables libres además de $n$, las cuáles se denotan como \textit{parámetros} de la correspondiente instancia del esquema. Por ejemplo, si cualquier $n_0 \in \omega$ fuera un parámetro, entonces se podría tomar la fórmula $\exists X \; \forall n \; (n \in X \leftrightarrow n = n_0)$, dando lugar al punto $\{ n_0 \}$. Esto implica que una estructura $\mathcal{N}$ sólo satisfará \ref{axiomas-Z2} (iii) si $S_N$ contiene todos los conjuntos que son definibles por parámetros de $N \cup S_N$. 
+
+La \textit{aritmética de segundo orden} $Z_2$ es el sistema formal definido en el lenguaje $\mathrm{L}_2$ junto con los axiomas \ref{axiomas-Z2}. Este sistema formal también se suele denotar como $\Pi ^1_{\infty}-\mathrm{CA}_0$. Un \textit{subsistema de} $Z_2$ es un sistema formal cuyos axiomas sean todos teoremas de $\mathrm{Z}_2$. Todos los sistemas considerados en adelante incluirán los axiomas básicos (\ref{axiomas-Z2}, i) y el axioma de inducción (\ref{axiomas-Z2}, ii) de $\mathrm{Z}_2$, pero serán más restrictivos con respecto a la existencia de conjuntos. Precisamente por eso, su estudio es particularmente interesante para la matemática inversa, ya que estos sistemas permiten evaluar con precisión qué axiomas fundamentales—concernientes a la existencia de conjuntos—son necesarios para probar cada resultado matemático considerado.
+
+\subsection{El sistema \texorpdfstring{$\mathrm{ACA}_0$}{ACA₀}}
+
+El acrónimo ACA significa “arithmetical comprehension axiom”. En esta línea, el sistema $\mathrm{ACA}_0$ incluye todos conjuntos que son definibles de forma aritmética, es decir, mediante fórmulas de $\mathrm{L}_2$ que no contengan cuantificadores de conjuntos—aunque sí podrían contener variables libres de conjuntos. 
+
+La \textit{aritmética de primer orden} $Z_1$ (también conocida como $\mathrm{PA}$), es el sistema axiomático que incluye los axiomas (\ref{axiomas-Z2}, 1) y el \textit{esquema de inducción de primer orden}: 
+
+$$ (\phi(0) \vee \forall n \; (\phi(n) \rightarrow \phi(n + 1))) \rightarrow \forall n \; \phi(n) $$
+
+donde $\phi$ recorre las fórmulas del lenguaje de la aritmética de primer orden $\mathrm{L}_1$, que incluye $\mathrm{L}_2$ eliminando las variables relativas a conjuntos. Como este esquema es equivalente $\mathrm{ACA}_0$ al axioma de inducción (\ref{axiomas-Z2}, ii), se obtiene que cualquier fórmula $\sigma \in \mathrm{L}_1$ que sea un teorema de $mathrm{ACA}_0$ también lo será de $\mathrm{PA}$. Esto implica que $\mathrm{ACA}_0$ es \textit{conservativo} sobre la aritmética de primer orden.
 
 \printbibliography
 
