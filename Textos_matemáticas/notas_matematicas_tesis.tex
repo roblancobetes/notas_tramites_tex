@@ -33,6 +33,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{changepage}
+\usepackage{multicol}
 
 %-------------------------
 % Enlaces y PDF
@@ -108,13 +109,7 @@
 
 \mainmatter
 
-\chapter{La consistencia de \texorpdfstring{$\mathrm{GCH}$}{GCH} en \texorpdfstring{$\mathrm{ATR}_0$}{ATR₀}}
-
-Un argumento a favor de la integración de la teoría de conjuntos como componente de primer orden de las matemáticas es su aparición sistemática en la práctica de las matemáticas, donde ha dado lugar a desarrollos muy fructíferos---véase \textcite{Maddy1997}. Sin embargo, no está claro que en el aspecto en el que esto se ha dado en mayor medida, las pruebas de consistencia relativa, podamos estar genuinamente de integración de la propia teoría de conjuntos. Estas pruebas de consistencia se pueden entender como la mera manipulación de símbolos lógicos en un sistema formal mucho más débil. 
-
-Nuestro objetivo en este capítulo es presentar una de las pruebas de consistencia relativa más conocidas, la de la consistencia relativa de $\mathrm{GCH}$ con respecto a $\mathrm{ZFC}$, desarrollada en un sistema de aritmética de segundo orden, en particular $\mathrm{ATR}_0$.
-
-\section{Matemática inversa y a la aritmética de segundo orden}
+\chapter{Matemática inversa y subsistemas de \texorpdfstring{$\mathrm{Z}_2$}{Z2}}
 
 Casi cualquier operación matemática admite (de algún modo) una inversa, pero hasta el siglo XX no se pudo decir lo mismo de las matemáticas mismas. Si se entiende las matemáticas como el proceso de partir de ciertos axiomas fundamentales y derivar de ellos resultados relevantes, el programa de las \textit{matemáticas inversas} se entiende por actuar en la dirección contraria: partir de esos mismos resultados y tratar de concluir cuál es el sistema axiomático más débil que permite demostrarlos.
 
@@ -124,7 +119,7 @@ Todos estos sistemas son subsistemas de $\mathrm{Z}_2$, el sistema formal más f
 
 \begin{definition}[Lenguaje $\mathrm{L}_2$]
   \label{def-lenguaje-Z2}
-  Una fórmula $\phi$ pertenece al \textit{lenguaje de la aritmética} $\mathrm{L}_2$ si se puede obtener a partir de fórmulas atómicas mediante los conectores o cuantificadores. En caso de que no tenga variables libres se le llamará \textit{sentencia}.
+  Una fórmula $\varphi$ pertenece al \textit{lenguaje de la aritmética} $\mathrm{L}_2$ si se puede obtener a partir de fórmulas atómicas mediante los conectores o cuantificadores. En caso de que no tenga variables libres se le llamará \textit{sentencia}.
 \end{definition}
 
 Como a otros lenguajes formales, a $\mathrm{L}_2$ se le puede dotar de una semántica, es decir, de una estructura donde este lenguaje se interpreta. Formalmente se tiene: 
@@ -139,16 +134,16 @@ Como a otros lenguajes formales, a $\mathrm{L}_2$ se le puede dotar de una semá
 
 \end{definition}
 
-Si $B \subseteq N \cup S_\mathcal{N}$, se entiende como una \textit{fórmula con parámetros de} $B$ una fórmula del lenguaje $\mathrm{L}_2(B)$, que consiste en añadir a $\mathrm{L}_2$ como signos constantes los elementos de $B$. Un conjunto $A \subseteq N$ es \textit{definible sobre} $N$ \textit{con parámetros en} $B$ si existe una fórmula de $\mathrm{L}_2$ $\phi(n)$, con parámetros sobre $B$ tal que
+Si $B \subseteq N \cup S_\mathcal{N}$, se entiende como una \textit{fórmula con parámetros de} $B$ una fórmula del lenguaje $\mathrm{L}_2(B)$, que consiste en añadir a $\mathrm{L}_2$ como signos constantes los elementos de $B$. Un conjunto $A \subseteq N$ es \textit{definible sobre} $N$ \textit{con parámetros en} $B$ si existe una fórmula de $\mathrm{L}_2$ $\varphi(n)$, con parámetros sobre $B$ tal que
 
-$$ A = \{  n \in N : \mathcal{N} \models \phi(n) \} $$
+$$ A = \{  n \in N : \mathcal{N} \models \varphi(n) \} $$
 
 El modelo \textit{canónico} para $\mathrm{L}_2$ es la estructura $(\omega, \mathcal{P}(\omega), \+, \cdot, 0, 1, <)$. En un $\omega$-modelo, en lugar de el total de subconjuntos de $\omega$, se tomará un subconjunto posiblemente más pequeño $\emptyset \neq S \subseteq \mathcal{P}(\omega)$. En ocasiones, si está claro por contexto, nos referiremos al $\omega$-modelo $S$. Un caso especial son los $\beta$-modelos.
 
 Una vez vistas las nociones básicas de semántica del lenguaje $\mathrm{L}_2$, pasamos a ver el sistema formal de la aritmética de segundo orden:
 
 \begin{definition}[aritmética de segundo orden]
-  \label{axiomas-Z2}
+\label{axiomas-Z2}
 
   Los \textit{axiomas de la aritmética de segundo orden} se componen del siguiente conjunto de fórmulas:
 
@@ -182,19 +177,207 @@ Una vez vistas las nociones básicas de semántica del lenguaje $\mathrm{L}_2$, 
 
 \end{definition}
 
-Los axiomas básicos y el axioma de inducción son axiomas clásicos de la aritmética, similares a los dados en $\mathrm{PA}$. La primera diferencia es que, al poder utilizar variable de segundo orden, el axioma de inducción se da como un axioma, y no un esquema. Por otro lado, la idea del esquema de comprensión es la de garantizar, para cada conjunto fórmula del lenguaje de la aritmética $\phi(n)$, la existencia del conjunto $X = \{ n \in N : \phi(n) \}$. La fórmula $\phi$ podría contener variables libres además de $n$, las cuáles se denotan como \textit{parámetros} de la correspondiente instancia del esquema. Por ejemplo, si cualquier $n_0 \in \omega$ fuera un parámetro, entonces se podría tomar la fórmula $\exists X \; \forall n \; (n \in X \leftrightarrow n = n_0)$, dando lugar al punto $\{ n_0 \}$. Esto implica que una estructura $\mathcal{N}$ sólo satisfará \ref{axiomas-Z2} (iii) si $S_N$ contiene todos los conjuntos que son definibles por parámetros de $N \cup S_N$. 
+Los axiomas básicos y el axioma de inducción son axiomas clásicos de la aritmética, similares a los dados en $\mathrm{PA}$. La primera diferencia es que, al poder utilizar variable de segundo orden, el axioma de inducción se da como un axioma, y no un esquema. Por otro lado, la idea del esquema de comprensión es la de garantizar, para cada conjunto fórmula del lenguaje de la aritmética $\varphi(n)$, la existencia del conjunto $X = \{ n \in N : \varphi(n) \}$. La fórmula $\varphi$ podría contener variables libres además de $n$, las cuáles se denotan como \textit{parámetros} de la correspondiente instancia del esquema. Por ejemplo, si cualquier $n_0 \in \omega$ fuera un parámetro, entonces se podría tomar la fórmula $\exists X \; \forall n \; (n \in X \leftrightarrow n = n_0)$, dando lugar al punto $\{ n_0 \}$. Esto implica que una estructura $\mathcal{N}$ sólo satisfará \ref{axiomas-Z2} (iii) si $S_N$ contiene todos los conjuntos que son definibles por parámetros de $N \cup S_N$. 
 
 La \textit{aritmética de segundo orden} $Z_2$ es el sistema formal definido en el lenguaje $\mathrm{L}_2$ junto con los axiomas \ref{axiomas-Z2}. Este sistema formal también se suele denotar como $\Pi ^1_{\infty}-\mathrm{CA}_0$. Un \textit{subsistema de} $Z_2$ es un sistema formal cuyos axiomas sean todos teoremas de $\mathrm{Z}_2$. Todos los sistemas considerados en adelante incluirán los axiomas básicos (\ref{axiomas-Z2}, i) y el axioma de inducción (\ref{axiomas-Z2}, ii) de $\mathrm{Z}_2$, pero serán más restrictivos con respecto a la existencia de conjuntos. Precisamente por eso, su estudio es particularmente interesante para la matemática inversa, ya que estos sistemas permiten evaluar con precisión qué axiomas fundamentales—concernientes a la existencia de conjuntos—son necesarios para probar cada resultado matemático considerado.
 
-\subsection{El sistema \texorpdfstring{$\mathrm{ACA}_0$}{ACA₀}}
+\section{El sistema \texorpdfstring{$\mathrm{ACA}_0$}{ACA₀}}
 
 El acrónimo ACA significa “arithmetical comprehension axiom”. En esta línea, el sistema $\mathrm{ACA}_0$ incluye todos conjuntos que son definibles de forma aritmética, es decir, mediante fórmulas de $\mathrm{L}_2$ que no contengan cuantificadores de conjuntos—aunque sí podrían contener variables libres de conjuntos. 
 
 La \textit{aritmética de primer orden} $Z_1$ (también conocida como $\mathrm{PA}$), es el sistema axiomático que incluye los axiomas (\ref{axiomas-Z2}, 1) y el \textit{esquema de inducción de primer orden}: 
 
-$$ (\phi(0) \vee \forall n \; (\phi(n) \rightarrow \phi(n + 1))) \rightarrow \forall n \; \phi(n) $$
+$$ (\varphi(0) \vee \forall n \; (\varphi(n) \rightarrow \varphi(n + 1))) \rightarrow \forall n \; \varphi(n) $$
 
-donde $\phi$ recorre las fórmulas del lenguaje de la aritmética de primer orden $\mathrm{L}_1$, que incluye $\mathrm{L}_2$ eliminando las variables relativas a conjuntos. Como este esquema es equivalente $\mathrm{ACA}_0$ al axioma de inducción (\ref{axiomas-Z2}, ii), se obtiene que cualquier fórmula $\sigma \in \mathrm{L}_1$ que sea un teorema de $mathrm{ACA}_0$ también lo será de $\mathrm{PA}$. Esto implica que $\mathrm{ACA}_0$ es \textit{conservativo} sobre la aritmética de primer orden.
+donde $\varphi$ recorre las fórmulas del lenguaje de la aritmética de primer orden $\mathrm{L}_1$, que incluye $\mathrm{L}_2$ eliminando las variables relativas a conjuntos. Como este esquema es equivalente $\mathrm{ACA}_0$ al axioma de inducción (\ref{axiomas-Z2}, ii), se obtiene que cualquier fórmula $\sigma \in \mathrm{L}_1$ que sea un teorema de $\mathrm{ACA}_0$ también lo será de $\mathrm{PA}$. Esto implica que $\mathrm{ACA}_0$ es \textit{conservativo} sobre la aritmética de primer orden.
+
+$\oplus$ 
+
+
+
+\chapter{La consistencia de \texorpdfstring{$\mathrm{GCH}$}{GCH} en lógica finitaria}
+
+Un argumento a favor de la integración de la teoría de conjuntos como componente de primer orden de las matemáticas es su aparición sistemática en la práctica de las matemáticas, donde ha dado lugar a desarrollos muy fructíferos---véase \textcite{Maddy1997}. Sin embargo, no está claro que en el aspecto en el que esto se ha dado en mayor medida, las pruebas de consistencia relativa, podamos estar genuinamente de integración de la propia teoría de conjuntos. Estas pruebas de consistencia se pueden entender como la mera manipulación de símbolos lógicos en un sistema formal mucho más débil. 
+
+Nuestro objetivo en este capítulo es presentar una de las pruebas de consistencia relativa más conocidas, la de la consistencia relativa de $\mathrm{GCH}$ con respecto a $\mathrm{ZFC}$, desarrollada en un sistema de lógica finitaria. En este sentido, segiremos la formulación de \textcite[p. 8]{Kunen2011}:
+
+\begin{quote}
+\small
+Now, the independence of the Continuum Hypothesis is another finitistic statement about formal proofs that is proved in the metatheory. People say, informally, that Gödel showed that ``$CH$ is relatively consistent with $ZFC$''. What he really showed is that if $\varphi$ is a statement of elementary number theory and $ZFC + CH \vdash \varphi$, then $ZFC \vdash \varphi$. We shall show explicitly, by a finitistic argument, how to construct a proof of $\varphi$ from $ZFC$ if you are given a proof of $\varphi$ from $ZFC + CH$.
+\end{quote}
+
+En adelante se da por supuesta una familiaridad con los conceptos básicos de teoría axiomática de conjuntos, como los axiomas, ordinales, cardinales, etc. Véase \textcite[I]{Kunen2011}
+
+\section{Fórmulas absolutas en teoría de conjuntos}
+
+Trabajamos en $\mathrm{ZF}$, aunque el concepto de absolutez se puede dar en sistemas más débiles, como $\mathrm{BST}$\footnote{Este sistema incluye los axiomas de extensionalidad, conjunto vacío, pares, comprensión, unión y la disyunción del axioma del conjunto potencia con el de reemplazamiento.}. Comenzamos con una definición previa, la de fórmulas $\Delta_0$:
+
+\begin{definition}[fórmulas $\Delta_0$]
+  \label{def-delta-0}
+
+  Sea $\mathcal{L}$ el lenguaje de la teoría de conjuntos (i.e., con $\in$ como única relación binaria). Entonces las \textit{fórmulas $\Delta_0$ de $\mathcal{L}$} son las dadas por las siguientes reglas:
+
+  \begin{enumerate}
+    \item Todas las fórmulas atómicas son $\Delta_0$.
+    
+    \item Si $\varphi$ es una fórmula $\Delta_0$, $y$ es una variable y $\tau$ es un término en el que no aparece $y$, entonces $\forall y \in \tau \; \varphi$ y $\exists y \in \tau \; \varphi$ son fórmulas $\Delta_0$.
+    
+    \item Si $\varphi$ es una fórmula $\Delta_0$, entonces también lo es $\neg \varphi$.
+
+    \item Si $\varphi$ y $\psi$ son fórmulas $\Delta_0$, entonces también lo son 
+    $\varphi \vee \psi$, $\varphi \wedge \psi$, $\varphi \rightarrow \psi$ y 
+    $\varphi \leftrightarrow \psi$.
+
+  \end{enumerate}
+\end{definition}
+
+Con esta definición, se tiene que si $\mathcal{A}$ y $\mathcal{B}$ son dos estructuras estándar (i.e. $\in \!\upharpoonright_{A} = \in _A$, y similarmente con $B$) en $\mathcal{L}$, con $A \subseteq B$, siendo $A$ un conjunto transitivo, entonces $\mathcal{A} \preceq_{\Delta_0} \mathcal{B}$, es decir, que para cada fórmula $\varphi \in \Delta_0$, $\mathcal{A} \models \varphi \iff \mathcal{B} \models \varphi$. Esto implica que estas fórmulas tienen la misma interpretación (valor de verdad) en modelos transitivos. A continuación damos ejemplos de fórmulas importantes que pueden expresarse como $\Delta_0$.
+
+\begin{ejemplo}
+
+  Se da una fórmula importante en la teoría de conjuntos, y la serie de equivalencias que permite entenderla como una fórmula $\Delta_0$:
+
+  \begin{enumerate}
+
+    \item $x \subseteq y \leftrightarrow \forall z \in x, \; z \in y$.
+    
+    \item $x = \emptyset \leftrightarrow \forall z, \; z \notin x \leftrightarrow \forall z \in x, \; z \ne z$.
+    
+    \item $y = x \cup \{x\} \leftrightarrow \forall z \in y, \; (z \in x \vee z = x)$.
+    
+    \item $y = v \cap w \leftrightarrow \forall x \in y, \; (x \in v \wedge x \in w)$.
+    
+    \item $\text{SING}(x) \leftrightarrow \exists y \in x \; \forall z \in x, \; (z = y)$.
+
+  \end{enumerate}
+
+\end{ejemplo}
+
+Por lo tanto, vemos varios ejemplos de fórmulas, en este caso las fórmulas $\Delta_0$, que van a tomar siempre el mismo valor de verdad en diferentes modelos transitivos de $\mathrm{ZF}$, o incluso sistemas más débiles. Habitualmente, esto se suele escribir en términos de \textit{absolutez (absoluteness)}. Esta definición también puede aplicarse si las estructuras consideradas con clases propias, como en el caso de $V$:
+
+\begin{definition}[Fórmula absoluta]
+  Una fórmula $\varphi \in \mathcal{L}$ es absoluta para $A, B$ si y sólo si $\mathcal{A} \preceq_{\varphi} \mathcal{B}$, es decir, si y sólo si $\mathcal{A} \models \varphi \iff \mathcal{B} \models \varphi$. Y $\varphi$ se dice \textit{absoluta para $A$} si y sólo si lo es para $A, V$.
+\end{definition}
+
+La afirmación de que $\mathcal{A} \preceq_{\Delta_0} \mathcal{B}$ se puede entender como un enunciado en el lenguaje $\mathcal{L}$ de la teoría de conjuntos (y de hecho ---\textcite[p. 97]{Kunen2011}--- un teorema de $\mathrm{ZF^-}-\mathrm{P}$) $\forall \varphi \in \Delta_0, \mathcal{A}, \mathcal{B} \; [ \mathcal{A} \preceq_\varphi \mathcal{B} ]$. Si ahora tomamos $A = \{ x: \; \alpha(x) \}$ y $B = \{ x: \; \beta(x) \}$ como clases propias, entonces las afirmaciones sobre $A$ y $B$ son esencialmente afirmaciones sobre las fórmulas $\alpha$ y $\beta$. Entonces el mismo resultado se convierte en el esquema de la metateoría de que dadas $\alpha$, $\beta$ y fórmula $\Delta_0$ $\varphi$, teniendo que $\forall x, \; (\alpha(x) \rightarrow \beta(x))$, y con $\alpha$ transitiva\footnote{Esto significa que $\forall x, \;(\alpha(x) \wedge y \in x) \rightarrow \alpha(y) $.}, entonces se tiene que $\forall x_1, ..., x_n \; \big[ \alpha(x_1) \wedge ... \wedge \alpha(x_n) \longrightarrow \varphi^A(x_1,...,x_n) \leftrightarrow \varphi^B(x_1,...,x_n)$\footnote{Esto es, $\varphi$ con todos sus cuantificadores restringidos a $A$, o lo que es lo mismo, a cumplir la fórmula $\alpha$.}. En el caso de que $B = V$, entonces la fórmula se interpreta como $\forall x_1, ..., x_n \; \big[ \alpha(x_1) \wedge ... \wedge \alpha(x_n) \longrightarrow \varphi^A(x_1,...,x_n) \leftrightarrow \varphi(x_1,...,x_n) \big]$, es decir, que $\phi$ y $\phi^A$ tienen el mismo significado, son equivalentes, para miembros de $A$. En ese caso, se tiene fácilmente el siguiente resultado:
+
+\begin{lema}
+  Si $\varphi(x_1, ..., x_n)$ y $\psi(x_1, ..., x_n)$ son dos fórmulas, en $\mathcal{L} = \{ \in \}$, y 
+  
+  $$\forall x_1, ..., x_n, \; [\varphi(x_1, ..., x_n) \leftrightarrow \psi(x_1, ..., x_n)]$$
+  
+  se da en $V$\footnote{Desde el punto de vista metateórico, una fórmula se da en $V$ si y sólo si es consecuencia de los axiomas $\mathrm{ZF}$.} y en $M$, entonces $\phi$ es absoluta en $M$ si y sólo si lo es $\psi$.
+\end{lema}
+
+Esto es interesante porque permite demostrar que las siguientes fórmulas, que son equivalentes a una fórmula $\Delta_0$ en $\mathrm{BST}$, son absolutas:
+
+\begin{multicols}{2}
+\begin{enumerate} 
+  \item $x$ es un conjunto transitivo.
+  \item $x$ es un ordinal.
+  \item $x$ es un ordinal sucesor.
+  \item $x=0$.
+  \item $x$ es un ordinal límite.
+  \item $x$ es un número natural.
+  \item $x \subseteq \omega$.
+  \item $x = \omega$.
+\end{enumerate}
+\end{multicols}
+
+\section{Los conjuntos constructibles}
+
+La idea de los conjuntos constructibles es restringir el universo de conjuntos de forma que sólo se admitan los que se puedan definir de forma directa mediante una fórmula en el lenguaje $\mathcal{L}$, en el sentido que veremos a continuación. Esta limitación del tamaño del universo permitirá, habiendo incluido los conjuntos necesarios para que se cumplan los axiomas $\mathrm{ZF}$, que se verifiquen asimismo el axioma de elección y la hipótesis generalizada del continuo. Comenzamos con la definición siguiente, de conjunto derivado:
+
+\begin{definition}[conjunto derivado]
+  Sea $A$ un conjunto y $P \subseteq A$. $D(A, P)$ contiene a todos los subconjuntos de $A$ que son definibles en el lenguaje $\mathcal{L}$ con parámetros en $P$. Se define $D^+(A)$ como $D(A,A) $, que se conoce como el \textit{conjunto derivado} de $A$.
+\end{definition}
+
+Una vez definido el conjunto derivado, estamos en condiciones de definir la jerarquía de los conjuntos constructibles:
+
+\begin{definition}[Conjunto constructible]
+  
+  Se define $L(\alpha)$ por recursión transfinita sobre $\alpha$ por los siguientes pasos:
+  
+  \begin{enumerate}
+
+    \item $L(0) = \emptyset$.
+    
+    \item $\forall \alpha, \; L(\alpha + 1) = D^+(L(\alpha))$.
+  
+    \item $ L(\alpha) = \bigcup_{\delta < \alpha} L(\delta)$, para todo ordinal límite $\alpha$.
+
+  \end{enumerate}
+\end{definition}
+
+Partiendo de esta definición, se pueden comprobar fácilmente los siguientes puntos:
+
+\begin{proposicion}
+  \label{proposicion-L}
+Para cualesquiera ordinales $\alpha, \beta$:
+
+\begin{enumerate}
+  \item $L(\alpha) \subseteq R(\alpha)$.
+  \item $L(\alpha)$ es transitivo.
+  \item $\alpha \leq \beta \longrightarrow L(\alpha) \subseteq L(\beta)$.
+  \item $L(\alpha) \cap ON = \alpha$.\footnote{La demostración formal de la esta última parte depende del resultado siguiente, que rige para cada fórmula del lenguaje $\mathcal{L}$ de la forma $\varphi(x, y_1, \dots, y_n)$,
+\[
+ZF^- - P \;\vdash\; \forall A \, \forall b_1, \dots, b_n \in A \;
+\Bigl[ \{x \in A : \varphi(x, b_1, \dots, b_n)\}^A \in \mathcal{D}^+(A) \Bigr].
+\]}
+\end{enumerate}
+\end{proposicion}
+
+Pasamos ahora a la definición del rango dentro de $L$, y algunos resultados básicos relacionados:
+
+\begin{definition}
+Para $x \in L$, el rango en $L$ de $x$, denotado por $\rho(x)$, es el menor ordinal $\alpha$ tal que 
+$x \in L(\alpha + 1)$.
+\end{definition}
+
+\begin{lema}
+Para todo $\alpha$:
+\[
+L(\alpha) = \{x \in L : \rho(x) < \alpha\}
+\quad \text{y} \quad
+L(\alpha+1) \setminus L(\alpha) = \{x \in L : \rho(x) = \alpha\}.
+\]
+\end{lema}
+
+\begin{lema}
+Para todo $\alpha$, se tiene que $L(\alpha) \in L$ y $\rho(L(\alpha)) = \rho(\alpha) = \alpha$.
+\end{lema}
+
+\begin{proof}
+Se tiene que $\alpha \in L(\alpha+1) \setminus L(\alpha)$ por la proposición \ref{proposicion-L}, y que $L(\alpha) \notin L(\alpha)$ es evidente. Además, de $L(\alpha) \in L(\alpha+1)$ se sigue de que $L(\alpha) \in \mathcal{D}^-(L(\alpha))$.
+\end{proof}
+
+Es interesante ver, además de la proposición \ref{proposicion-L}, de qué forma se relacionan las jerarquías $R(\alpha)$ y $L(\alpha)$. En ese sentido se tiene el resultado siguiente, que demuestra que empiezan a diverger a partir del ordinal $\omega + 1$:
+
+\begin{lema}
+
+  \[
+L(\alpha) = R(\alpha) \text{ para todo } \alpha \leq \omega 
+\quad \text{y} \quad 
+L(\omega + 1) \nsubseteq R(\omega + 1).
+\]
+
+\end{lema}
+
+\begin{proof}
+La igualdad $L(n) = R(n)$ se obtiene por la proposición \ref{proposicion-L} y por inducción sobre 
+$n \in \omega$. Entonces $L(\omega) = R(\omega) = HF$ se sigue claramente tomando uniones.
+
+Además, $R(\omega+1) = \mathcal{P}(HF)$ es no numerable, mientras que 
+$L(\omega+1) = \mathcal{D}^+(HF)$ es numerable, ya que solo hay una cantidad 
+numerable de fórmulas y $HF$ es numerable. De hecho se tiene que para cada ordinal $\alpha$, $|L(\alpha)| = \alpha$, si se asume el $\mathrm{AC}$ y $\alpha$ es infinito.
+
+Recordemos que $HF$ (los conjuntos hereditariamente finitos) es la colección de todos los 
+conjuntos finitos cuyos elementos son también finitos, y así sucesivamente; equivalentemente,
+$HF = \bigcup_{n \in \omega} R(n)$.
+\end{proof}
+
+\chapter{Los límites transfinitos del predicativismo}
+
 
 \printbibliography
 
