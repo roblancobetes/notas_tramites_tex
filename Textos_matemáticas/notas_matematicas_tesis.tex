@@ -89,7 +89,7 @@
 
 % Estilo para definiciones (texto normal)
 \theoremstyle{definition}
-\newtheorem{definition}[teorema]{Definición}
+\newtheorem{definicion}[teorema]{Definición}
 \newtheorem{ejemplo}[teorema]{Ejemplo}
 
 % Estilo para notas (texto normal, sin cursiva)
@@ -109,6 +109,50 @@
 
 \mainmatter
 
+\chapter{Nociones básicas de lógica} \label{nociones-basicas}
+
+Los lenguajes formales son el campo de trabajo fundamental en lógica matemática. En matemáticas normalmente se procede manipulando símbolos para llegar a resultados; la idea que se tiene aquí es la de formalizar este tipo de procedimientos. Para ello, la fórmula lógica que normalmente se considera independientemente, vamos a pensarla ahora como un \textit{objeto}, y en ese sentido se le atribuirán propiedades. Desde este nuevo enfoque, preguntas como qué es una proposición, un teorema o una demostración tendrán respuestas satisfactorias, con consecuencias relevantes. Esto también nos permitirá formalizar el concepto de significado de una fórmula, en lo cual consiste la teoría de modelos.
+
+\begin{definicion} [Lenguaje de primer orden]
+  \label{lenguaje-L}
+Un lenguaje $\mathcal{L}$ se da especificando los siguientes datos:
+\begin{enumerate}
+    \item un conjunto de símbolos de función $\mathcal{F}$ y enteros positivos $n_f$ para cada $f \in \mathcal{F}$;
+    \item un conjunto de símbolos de relación $\mathcal{R}$ y enteros positivos $n_R$ para cada $R \in \mathcal{R}$;
+    \item un conjunto de símbolos constantes $\mathcal{C}$.
+\end{enumerate}
+\end{definicion}
+
+Los números $n_f$ y $n_R$ nos indican que $f$ es una función de $n_f$ variables y que $R$ es una relación de aridad $n_R$. Lo más importante, aunque esto no se suelen utilizar directamente en la práctica, es que la aridad de una función o relación deben estar implícitos en los símbolos que las representan. La unidad básica de estudio en un lenguaje son las \textit{fórmulas}, que son conjuntos de símbolos construidos de acuerdo con determinadas reglas:
+
+
+\begin{definicion}[Lenguaje de primer orden]
+\label{definicion-formula}
+Una \textit{fórmula} es el conjunto de signos del lenguaje $\mathcal{L}$ se pueden construir usando los conectores $\neg$ (la negación), $\vee$ (disyunción), el cuantificador $\exists$, la variable $x$, el signo constante $c$, el signo \textbf{'}, un número finito símbolos de relación $(R_j^{i_j})_{j=1}^N$ y los paréntesis utilizando exclusivamente las reglas siguientes:
+
+1: Si $x,x'$ son signos de variables y $c,c'$ de constantes (véase nota \ref{apóstrofe}), son fórmulas $x=x'$, $x=c$, $c=x$ y $c=c'$.
+
+2: Si $R$ es un símbolo de relación de grado n+m, $c_1,...,c_n$ son constantes y $x_1,...,x_m$ variables, $R_{n+m}(c_1,...,c_n,x_1,...,x_m)$ es una fórmula, así como las correspondientes con todas las posibles permutaciones de las variables.
+
+3: Si $A$ y $B$ son fórmulas, también lo son $(A) \vee (B)$, $\neg (A)$ y $\exists x A$, para cualquier variable $x$.
+
+\end{definicion}
+
+Un lenguaje suele interpretarse en un conjunto sobre el que se definen una serie de relaciones y funciones, llamado \textit{estructura}:
+
+\begin{definicion}\label{def-estructura}
+Una $\mathcal{L}$-estructura $\mathcal{M}$ está dada por los siguientes datos:
+\begin{enumerate}
+    \item[(i)] un conjunto no vacío $M$ llamado el universo, dominio o conjunto subyacente de $\mathcal{M}$;
+    \item[(ii)] una función $f^{\mathcal{M}} : M^{n_f} \to M$ para cada $f \in \mathcal{F}$;
+    \item[(iii)] un conjunto $R^{\mathcal{M}} \subseteq M^{n_R}$ para cada $R \in \mathcal{R}$;
+    \item[(iv)] un elemento $c^{\mathcal{M}} \in M$ para cada $c \in \mathcal{C}$.
+\end{enumerate}
+\end{definicion}
+
+
+
+
 \chapter{Matemática inversa y subsistemas de \texorpdfstring{$\mathrm{Z}_2$}{Z2}}
 
 Casi cualquier operación matemática admite (de algún modo) una inversa, pero hasta el siglo XX no se pudo decir lo mismo de las matemáticas mismas. Si se entiende las matemáticas como el proceso de partir de ciertos axiomas fundamentales y derivar de ellos resultados relevantes, el programa de las \textit{matemáticas inversas} se entiende por actuar en la dirección contraria: partir de esos mismos resultados y tratar de concluir cuál es el sistema axiomático más débil que permite demostrarlos.
@@ -117,14 +161,14 @@ Una gran parte de la matemática inversa se ha llevado a cabo en subsistemas de 
 
 Todos estos sistemas son subsistemas de $\mathrm{Z}_2$, el sistema formal más fuerte de la aritmética de segundo orden. Como hemos dicho, es un lenguaje con dos categorías de variables: en primer lugar están las \textit{variables numéricas}, que se denotarán con letras como $i,j,k,n,m,l,...$ y en segundo lugar las \textit{variables de conjuntos}, que representan subconjuntos de $\omega$ y se denotarán con letras como $X,Y,Z,...$. Los \textit{términos numéricos} son $0$, $1$, $n+m$ y $n \cdot m$, donde $n$ y $m$ son términos numéricos. Las \textit{fórmulas atómicas} son las de la forma $n = m$, $n<m$ y $n \in X$, donde $X$ es una variable de conjunto. Los \textit{conectores} son los símbolos $\wedge$, $\vee $, $\neg$ y $\rightarrow$ (que representan la conjunción, la disyunción, la negación y la implicación, respectivamente). Los \textit{cuantificadores numéricos} son símbolos de la forma $\exists n$, donde $n$ es una variable numérica, y los \textit{nuantificadores de conjuntos}, similarmente, son de la forma $\exists X$, donde $X$ es una variable de conjunto. Estas permiten definir sintácticamente el lenguaje de la aritmética de segundo orden, como damos a continuación:
 
-\begin{definition}[Lenguaje $\mathrm{L}_2$]
+\begin{definicion}[Lenguaje $\mathrm{L}_2$]
   \label{def-lenguaje-Z2}
   Una fórmula $\varphi$ pertenece al \textit{lenguaje de la aritmética} $\mathrm{L}_2$ si se puede obtener a partir de fórmulas atómicas mediante los conectores o cuantificadores. En caso de que no tenga variables libres se le llamará \textit{sentencia}.
-\end{definition}
+\end{definicion}
 
 Como a otros lenguajes formales, a $\mathrm{L}_2$ se le puede dotar de una semántica, es decir, de una estructura donde este lenguaje se interpreta. Formalmente se tiene: 
 
-\begin{definition}[$\mathrm{L}_2$-estructuras]
+\begin{definicion}[$\mathrm{L}_2$-estructuras]
     
     Un \textit{modelo de} $\mathrm{L}_2$, también llamado $\mathrm{L}_2$\textit{-estructura}, es una 7-tupla
 
@@ -132,7 +176,7 @@ Como a otros lenguajes formales, a $\mathrm{L}_2$ se le puede dotar de una semá
 
     donde $N$ es un conjunto de números, en el que toman valor las variales numéricas y $S_\mathcal{N} \subseteq \mathcal{P}(N)$ es el rango de las variables de conjuntos. $+_\mathcal{N}, \cdot_\mathcal{N} \subseteq N \times N$, $0_\mathcal{N} \in N$, $1_\mathcal{N} \in N$ y $<_\mathcal{N} : N \times N \rightarrow N$ tienen la interpretación habitual.
 
-\end{definition}
+\end{definicion}
 
 Si $B \subseteq N \cup S_\mathcal{N}$, se entiende como una \textit{fórmula con parámetros de} $B$ una fórmula del lenguaje $\mathrm{L}_2(B)$, que consiste en añadir a $\mathrm{L}_2$ como signos constantes los elementos de $B$. Un conjunto $A \subseteq N$ es \textit{definible sobre} $N$ \textit{con parámetros en} $B$ si existe una fórmula de $\mathrm{L}_2$ $\varphi(n)$, con parámetros sobre $B$ tal que
 
@@ -142,7 +186,7 @@ El modelo \textit{canónico} para $\mathrm{L}_2$ es la estructura $(\omega, \mat
 
 Una vez vistas las nociones básicas de semántica del lenguaje $\mathrm{L}_2$, pasamos a ver el sistema formal de la aritmética de segundo orden:
 
-\begin{definition}[aritmética de segundo orden]
+\begin{definicion}[aritmética de segundo orden]
 \label{axiomas-Z2}
 
   Los \textit{axiomas de la aritmética de segundo orden} se componen del siguiente conjunto de fórmulas:
@@ -175,11 +219,13 @@ Una vez vistas las nociones básicas de semántica del lenguaje $\mathrm{L}_2$, 
   \text{donde $\varphi(n)$ es una fórmula de $L_2$ en la que $X$ no aparece libre.}
 
 
-\end{definition}
+\end{definicion}
 
 Los axiomas básicos y el axioma de inducción son axiomas clásicos de la aritmética, similares a los dados en $\mathrm{PA}$. La primera diferencia es que, al poder utilizar variable de segundo orden, el axioma de inducción se da como un axioma, y no un esquema. Por otro lado, la idea del esquema de comprensión es la de garantizar, para cada conjunto fórmula del lenguaje de la aritmética $\varphi(n)$, la existencia del conjunto $X = \{ n \in N : \varphi(n) \}$. La fórmula $\varphi$ podría contener variables libres además de $n$, las cuáles se denotan como \textit{parámetros} de la correspondiente instancia del esquema. Por ejemplo, si cualquier $n_0 \in \omega$ fuera un parámetro, entonces se podría tomar la fórmula $\exists X \; \forall n \; (n \in X \leftrightarrow n = n_0)$, dando lugar al punto $\{ n_0 \}$. Esto implica que una estructura $\mathcal{N}$ sólo satisfará \ref{axiomas-Z2} (iii) si $S_N$ contiene todos los conjuntos que son definibles por parámetros de $N \cup S_N$. 
 
 La \textit{aritmética de segundo orden} $Z_2$ es el sistema formal definido en el lenguaje $\mathrm{L}_2$ junto con los axiomas \ref{axiomas-Z2}. Este sistema formal también se suele denotar como $\Pi ^1_{\infty}-\mathrm{CA}_0$. Un \textit{subsistema de} $Z_2$ es un sistema formal cuyos axiomas sean todos teoremas de $\mathrm{Z}_2$. Todos los sistemas considerados en adelante incluirán los axiomas básicos (\ref{axiomas-Z2}, i) y el axioma de inducción (\ref{axiomas-Z2}, ii) de $\mathrm{Z}_2$, pero serán más restrictivos con respecto a la existencia de conjuntos. Precisamente por eso, su estudio es particularmente interesante para la matemática inversa, ya que estos sistemas permiten evaluar con precisión qué axiomas fundamentales—concernientes a la existencia de conjuntos—son necesarios para probar cada resultado matemático considerado.
+
+Se podrían considerar asimismo sistemas de orden más alto. Por ejemplo, $\mathrm{Z}_3$ sería un sistema formal similar al que hemos visto, pero cuyo lenguaje incorporara variables de tercer orden para conjuntos de conjuntos de naturales, así como esquemas de inducción y comprensión irrestrictos, tanto para el segundo orden como para el tercero.
 
 \section{El sistema \texorpdfstring{$\mathrm{ACA}_0$}{ACA₀}}
 
@@ -199,20 +245,20 @@ $\oplus$
 
 Un argumento a favor de la integración de la teoría de conjuntos como componente de primer orden de las matemáticas es su aparición sistemática en la práctica de las matemáticas, donde ha dado lugar a desarrollos muy fructíferos---véase \textcite{Maddy1997}. Sin embargo, no está claro que en el aspecto en el que esto se ha dado en mayor medida, las pruebas de consistencia relativa, podamos estar genuinamente de integración de la propia teoría de conjuntos. Estas pruebas de consistencia se pueden entender como la mera manipulación de símbolos lógicos en un sistema formal mucho más débil. 
 
-Nuestro objetivo en este capítulo es presentar una de las pruebas de consistencia relativa más conocidas, la de la consistencia relativa de $\mathrm{GCH}$ con respecto a $\mathrm{ZFC}$, desarrollada en un sistema de lógica finitaria. En este sentido, segiremos la formulación de \textcite[p. 8]{Kunen2011}:
+Nuestro objetivo en este capítulo es presentar una de las pruebas de consistencia relativa más conocidas, la de la consistencia relativa de $\mathrm{GCH}$ con respecto a $ZFC$, desarrollada en un sistema de lógica finitaria. En este sentido, segiremos la formulación de \textcite[p. 8]{Kunen2011}:
 
 \begin{quote}
 \small
 Now, the independence of the Continuum Hypothesis is another finitistic statement about formal proofs that is proved in the metatheory. People say, informally, that Gödel showed that ``$CH$ is relatively consistent with $ZFC$''. What he really showed is that if $\varphi$ is a statement of elementary number theory and $ZFC + CH \vdash \varphi$, then $ZFC \vdash \varphi$. We shall show explicitly, by a finitistic argument, how to construct a proof of $\varphi$ from $ZFC$ if you are given a proof of $\varphi$ from $ZFC + CH$.
 \end{quote}
 
-En adelante se da por supuesta una familiaridad con los conceptos básicos de teoría axiomática de conjuntos, como los axiomas, ordinales, cardinales, etc. Véase \textcite[I]{Kunen2011}
+En adelante se da por supuesta una familiaridad con los conceptos básicos de teoría axiomática de conjuntos, como los axiomas, ordinales, cardinales, etc. Véase Kunen (\citeyear{Kunen2011}, I).
 
 \section{Fórmulas absolutas en teoría de conjuntos}
 
-Trabajamos en $\mathrm{ZF}$, aunque el concepto de absolutez se puede dar en sistemas más débiles, como $\mathrm{BST}$\footnote{Este sistema incluye los axiomas de extensionalidad, conjunto vacío, pares, comprensión, unión y la disyunción del axioma del conjunto potencia con el de reemplazamiento.}. Comenzamos con una definición previa, la de fórmulas $\Delta_0$:
+Trabajamos en $ZF$, aunque el concepto de absolutez se puede dar en sistemas más débiles, como $\mathrm{BST}$\footnote{Este sistema incluye los axiomas de extensionalidad, conjunto vacío, pares, comprensión, unión y la disyunción del axioma del conjunto potencia con el de reemplazamiento.}. La idea fundamental es que una fórmula absoluta tendrá, en un cierto sentido, un valor de verdad invariante en diferentes modelos de la teoría de conjuntos. En todo momento enfatizaremos qué aspectos se pueden definir en la metateoría. Comenzamos con una definición previa, la de fórmulas $\Delta_0$:
 
-\begin{definition}[fórmulas $\Delta_0$]
+\begin{definicion}[fórmulas $\Delta_0$]
   \label{def-delta-0}
 
   Sea $\mathcal{L}$ el lenguaje de la teoría de conjuntos (i.e., con $\in$ como única relación binaria). Entonces las \textit{fórmulas $\Delta_0$ de $\mathcal{L}$} son las dadas por las siguientes reglas:
@@ -229,7 +275,7 @@ Trabajamos en $\mathrm{ZF}$, aunque el concepto de absolutez se puede dar en sis
     $\varphi \leftrightarrow \psi$.
 
   \end{enumerate}
-\end{definition}
+\end{definicion}
 
 Con esta definición, se tiene que si $\mathcal{A}$ y $\mathcal{B}$ son dos estructuras estándar (i.e. $\in \!\upharpoonright_{A} = \in _A$, y similarmente con $B$) en $\mathcal{L}$, con $A \subseteq B$, siendo $A$ un conjunto transitivo, entonces $\mathcal{A} \preceq_{\Delta_0} \mathcal{B}$, es decir, que para cada fórmula $\varphi \in \Delta_0$, $\mathcal{A} \models \varphi \iff \mathcal{B} \models \varphi$. Esto implica que estas fórmulas tienen la misma interpretación (valor de verdad) en modelos transitivos. A continuación damos ejemplos de fórmulas importantes que pueden expresarse como $\Delta_0$.
 
@@ -253,11 +299,11 @@ Con esta definición, se tiene que si $\mathcal{A}$ y $\mathcal{B}$ son dos estr
 
 \end{ejemplo}
 
-Por lo tanto, vemos varios ejemplos de fórmulas, en este caso las fórmulas $\Delta_0$, que van a tomar siempre el mismo valor de verdad en diferentes modelos transitivos de $\mathrm{ZF}$, o incluso sistemas más débiles. Habitualmente, esto se suele escribir en términos de \textit{absolutez (absoluteness)}. Esta definición también puede aplicarse si las estructuras consideradas con clases propias, como en el caso de $V$:
+Por lo tanto, vemos varios ejemplos de fórmulas, en este caso las fórmulas $\Delta_0$, que van a tomar siempre el mismo valor de verdad en diferentes modelos transitivos de $ZF$, o incluso sistemas más débiles. Habitualmente, esto se suele escribir en términos de \textit{absolutez (absoluteness)}. Esta definición también puede aplicarse si las estructuras consideradas con clases propias, como en el caso de $V$:
 
-\begin{definition}[Fórmula absoluta]
+\begin{definicion}[Fórmula absoluta]
   Una fórmula $\varphi \in \mathcal{L}$ es absoluta para $A, B$ si y sólo si $\mathcal{A} \preceq_{\varphi} \mathcal{B}$, es decir, si y sólo si $\mathcal{A} \models \varphi \iff \mathcal{B} \models \varphi$. Y $\varphi$ se dice \textit{absoluta para $A$} si y sólo si lo es para $A, V$.
-\end{definition}
+\end{definicion}
 
 La afirmación de que $\mathcal{A} \preceq_{\Delta_0} \mathcal{B}$ se puede entender como un enunciado en el lenguaje $\mathcal{L}$ de la teoría de conjuntos (y de hecho ---\textcite[p. 97]{Kunen2011}--- un teorema de $\mathrm{ZF^-}-\mathrm{P}$) $\forall \varphi \in \Delta_0, \mathcal{A}, \mathcal{B} \; [ \mathcal{A} \preceq_\varphi \mathcal{B} ]$. Si ahora tomamos $A = \{ x: \; \alpha(x) \}$ y $B = \{ x: \; \beta(x) \}$ como clases propias, entonces las afirmaciones sobre $A$ y $B$ son esencialmente afirmaciones sobre las fórmulas $\alpha$ y $\beta$. Entonces el mismo resultado se convierte en el esquema de la metateoría de que dadas $\alpha$, $\beta$ y fórmula $\Delta_0$ $\varphi$, teniendo que $\forall x, \; (\alpha(x) \rightarrow \beta(x))$, y con $\alpha$ transitiva\footnote{Esto significa que $\forall x, \;(\alpha(x) \wedge y \in x) \rightarrow \alpha(y) $.}, entonces se tiene que $\forall x_1, ..., x_n \; \big[ \alpha(x_1) \wedge ... \wedge \alpha(x_n) \longrightarrow \varphi^A(x_1,...,x_n) \leftrightarrow \varphi^B(x_1,...,x_n)$\footnote{Esto es, $\varphi$ con todos sus cuantificadores restringidos a $A$, o lo que es lo mismo, a cumplir la fórmula $\alpha$.}. En el caso de que $B = V$, entonces la fórmula se interpreta como $\forall x_1, ..., x_n \; \big[ \alpha(x_1) \wedge ... \wedge \alpha(x_n) \longrightarrow \varphi^A(x_1,...,x_n) \leftrightarrow \varphi(x_1,...,x_n) \big]$, es decir, que $\phi$ y $\phi^A$ tienen el mismo significado, son equivalentes, para miembros de $A$. En ese caso, se tiene fácilmente el siguiente resultado:
 
@@ -266,7 +312,7 @@ La afirmación de que $\mathcal{A} \preceq_{\Delta_0} \mathcal{B}$ se puede ente
   
   $$\forall x_1, ..., x_n, \; [\varphi(x_1, ..., x_n) \leftrightarrow \psi(x_1, ..., x_n)]$$
   
-  se da en $V$\footnote{Desde el punto de vista metateórico, una fórmula se da en $V$ si y sólo si es consecuencia de los axiomas $\mathrm{ZF}$.} y en $M$, entonces $\phi$ es absoluta en $M$ si y sólo si lo es $\psi$.
+  se da en $V$\footnote{Desde el punto de vista metateórico, una fórmula se da en $V$ si y sólo si es consecuencia de los axiomas $ZF$.} y en $M$, entonces $\phi$ es absoluta en $M$ si y sólo si lo es $\psi$.
 \end{lema}
 
 Esto es interesante porque permite demostrar que las siguientes fórmulas, que son equivalentes a una fórmula $\Delta_0$ en $\mathrm{BST}$, son absolutas:
@@ -284,18 +330,26 @@ Esto es interesante porque permite demostrar que las siguientes fórmulas, que s
 \end{enumerate}
 \end{multicols}
 
+El siguiente lema será importante en la construcción de $L$ y las demostraciones de consistencia relativa relacionadas. 
+
+\begin{lema} [$ZF^- - P$]
+Supongamos que $M$ es una clase transitiva tal que el Axioma de Comprensión se cumple en $M$, y supongamos que para todo subconjunto $x \subseteq M$, existe un conjunto $y \in M$ tal que $x \subseteq y$. Entonces todos los axiomas de $ZF$ se cumplen en $M$.
+\end{lema}
+
+Recordemos que, formalmente, la afirmación ``$M \models ZF$'' debe entenderse como un esquema en la metateoría. Para cada $\varphi \in ZF$, podemos escribir la sentencia $\varphi^{M}$ como una abreviatura de la oración que se obtiene de $\varphi$ al restringir los cuantificadores sobre $M$. Entonces $M \models ZF \;\text{se interpreta como}\; \forall \varphi \in ZF,\; \vdash \varphi^M$. A menudo, estas fórmulas se pueden demostrar como teorema de $ZF$, $ZF^-$ u otros sistemas axiomáticos, lo cuál dará lugar a una demostración de consistencia relativa. Además, el teorema de completitud, en caso de que $\mathrm{L}$ sea numerable o esté bien ordenado, puede demostrarse, al igual que el lema anterior, en $ZF^- - P$.
+
 \section{Los conjuntos constructibles}
 
-La idea de los conjuntos constructibles es restringir el universo de conjuntos de forma que sólo se admitan los que se puedan definir de forma directa mediante una fórmula en el lenguaje $\mathcal{L}$, en el sentido que veremos a continuación. Esta limitación del tamaño del universo permitirá, habiendo incluido los conjuntos necesarios para que se cumplan los axiomas $\mathrm{ZF}$, que se verifiquen asimismo el axioma de elección y la hipótesis generalizada del continuo. Comenzamos con la definición siguiente, de conjunto derivado:
+La idea de los conjuntos constructibles es restringir el universo de conjuntos de forma que sólo se admitan los que se puedan definir de forma directa mediante una fórmula en el lenguaje $\mathcal{L}$, en el sentido que veremos a continuación. Esta limitación del tamaño del universo permitirá, habiendo incluido los conjuntos necesarios para que se cumplan los axiomas $ZF$, que se verifiquen asimismo el axioma de elección y la hipótesis generalizada del continuo. Comenzamos con la definición siguiente, de conjunto derivado:
 
-\begin{definition}[conjunto derivado]
+\begin{definicion}[conjunto derivado]
   Sea $A$ un conjunto y $P \subseteq A$. $D(A, P)$ contiene a todos los subconjuntos de $A$ que son definibles en el lenguaje $\mathcal{L}$ con parámetros en $P$. Se define $D^+(A)$ como $D(A,A) $, que se conoce como el \textit{conjunto derivado} de $A$.
-\end{definition}
+\end{definicion}
 
 Una vez definido el conjunto derivado, estamos en condiciones de definir la jerarquía de los conjuntos constructibles:
 
-\begin{definition}[Conjunto constructible]
-  
+\begin{definicion}[Conjunto constructible]
+  \label{definicion-L}
   Se define $L(\alpha)$ por recursión transfinita sobre $\alpha$ por los siguientes pasos:
   
   \begin{enumerate}
@@ -307,7 +361,7 @@ Una vez definido el conjunto derivado, estamos en condiciones de definir la jera
     \item $ L(\alpha) = \bigcup_{\delta < \alpha} L(\delta)$, para todo ordinal límite $\alpha$.
 
   \end{enumerate}
-\end{definition}
+\end{definicion}
 
 Partiendo de esta definición, se pueden comprobar fácilmente los siguientes puntos:
 
@@ -329,10 +383,10 @@ ZF^- - P \;\vdash\; \forall A \, \forall b_1, \dots, b_n \in A \;
 
 Pasamos ahora a la definición del rango dentro de $L$, y algunos resultados básicos relacionados:
 
-\begin{definition}
+\begin{definicion} [rango en $L$]
 Para $x \in L$, el rango en $L$ de $x$, denotado por $\rho(x)$, es el menor ordinal $\alpha$ tal que 
-$x \in L(\alpha + 1)$.
-\end{definition}
+$x \in L(\alpha + 1)$. Nótese la diferencia con la función $r(x)$, que define el rango en la jerarquía de von Neumann $R(\alpha)$.
+\end{definicion}
 
 \begin{lema}
 Para todo $\alpha$:
@@ -376,7 +430,110 @@ conjuntos finitos cuyos elementos son también finitos, y así sucesivamente; eq
 $HF = \bigcup_{n \in \omega} R(n)$.
 \end{proof}
 
+En este punto, sería interesante encontrar un ejemplo de conjunto en $R(\alpha)$ que no sea constructible. A pesar de la diferencia de cardinales, éste no es tan sencillo de encontrar. Uno de los casos más sencillos es $Th(HF)$, la teoría de las fórmulas verdaderas en los conjuntos hereditariamente finitos:
+
+\begin{ejemplo}
+  \begin{proof}
+Sea $HF = L(\omega)$ el conjunto de los conjuntos hereditariamente finitos. Por el teorema de Tarski sobre la indefinibilidad de la verdad, no existe una definición (sin parámetros) en $HF$ que capture el predicado de verdad. En particular, la teoría completa $Th(HF)$ no es definible sobre $HF$, es decir,
+\[
+Th(HF) \notin D(HF).
+\]
+Como $L(\omega+1)$ consiste precisamente en los subconjuntos de $L(\omega)$ definibles sobre $L(\omega)$ con parámetros, se sigue que
+
+\[
+Th(HF) \notin L(\omega+1).
+\]
+
+Aunque $Th(HF)$ no es definible sobre $HF$, sí es posible definir la relación de verdad de Tarski dentro de $L(\omega+1)$ mediante codificación de fórmulas y evaluaciones. En efecto, $L(\omega+1)$ contiene:
+
+\begin{itemize}
+    \item el conjunto $HF = L(\omega)$,
+    \item los códigos de todas las fórmulas del lenguaje de la teoría de conjuntos,
+    \item y suficiente estructura para formalizar la recursión sobre la complejidad de las fórmulas.
+\end{itemize}
+
+Usando la definición de verdad de Tarski (por inducción en la complejidad sintáctica), se puede construir dentro de $L(\omega+1)$ el conjunto de todas las fórmulas verdaderas en $HF$, esto es, $Th(HF)$. Por tanto, $Th(HF) \in R(\omega+1)$. De este modo, $Th(HF)$ aparece en el nivel $R(\omega+1)$, y no antes (ya que no está en $L(\omega+1)$), luego $\rho(Th(HF)) = \omega+1$.
+
+Cada elemento de $Th(HF)$ es una fórmula (o su código), que es un objeto finito. Por tanto, todos sus elementos tienen rango finito, y el rango del conjunto es el supremo de rangos finitos, es decir,
+\[
+r(Th(HF)) = \omega.
+\]
+\end{proof}
+\end{ejemplo}
+
+Una vez hemos definido la jerarquía $L$, podemos aproximarnos a la prueba de consistencia relativa de $ZFC+\mathrm{GCH}$. En primer lugar, se requiere comprobar que los axiomas $ZF$ se verifican en el modelo $L$, o lo que es lo mismo, que $Con(ZF) \rightarrow Con(ZF+\mathrm{V=L})$:
+
+\begin{teorema}
+  Los axiomas $ZF$ se verifican en $L$. Desde el punto de vista metateórico, esto significa que se pueden deducir los axiomas de $ZF$ a partir de la afirmación de que todo objeto de la teoría es un conjunto constructible:
+
+  $$ \forall x, x \in L \vdash ZF$$ 
+
+\end{teorema}
+
+
+
+
+
+
+%---------------------------------------------------
 \chapter{Los límites transfinitos del predicativismo}
+
+%--------------------------
+\chapter{Sobre categoricidad y estructuras matemáticas}
+
+Uno de los temas recurrentes en el desarrollo tanto de la lógica como de la filosofía de las matemáticas en tiempos recientes es el fino enlace, así como la sutil diferencia, entre el enfoque sintáctico y el semántico, es decir, entre teorías axiomáticas y estructuras matemáticas. En general, se entiende que un sistema axiomático depende de la estructura matemática en la que se fundamenta, del mismo modo que todo nuestro conocimiento de esta estructura dependerá de los axiomas establecidos sobre ella. De modo que estas dos nociones fundamentales aparecen como la gallina y el huevo, al menos \textit{a priori} como mutuamente dependientes y por ello íntimamente relacionadas.
+
+Sin embargo, técnicamente la situación es algo más difícil. El enlace fundamental entre estos dos conceptos es la teoría de modelos, y el resultado fundamental de enlace el teorema de completitud. Cuando el mencionado puente está perfectamente construido, y se puede hablar de una asociación perfecta, casi un reflejo especular, entre las estructuras matemáticas y los sistemas axiomáticos que las describen, se dice que las teorías axiomáticas involucradas con \textit{categóricas}. Sin embargo, veremos que la categoricidad es una cuestión delicada en el mundo de la lógica. 
+
+\textbf{Resumen del capítulo}
+
+\section{Estructuras elementalmente equivalentes e isomorfas}
+
+La teoría de modelos distingue dos nociones fundamentales. En primer lugar está la noción de equivalencia elemental, que significa que dos estructuras satisfacen las mismas fórmulas. Esto implica fundamentalmente que el lenguaje en consideración no proporciona las herramientas para distinguir entre esas dos estructuras. Sin embargo, está la noción más fuerte de isomorfismo, que implica que las dos estructuras son esencialmente la misma. Naturalmente esta última noción es más fuerte. Se da por hecho que trabajamos en un lenguaje formal $\mathcal{L}$. Seguimos la notación del capítulo \ref{nociones-basicas}.
+
+\begin{definicion} [Equivalencia elemental]
+  \label{equivalencia-elemental}
+  
+  Dos estructuras $\mathcal{M}$ y $\mathcal{N}$ en $\mathcal{L}$ son \textit{elementalmente equivalentes}, que se escribe $\mathcal{N} \equiv \mathcal{M}$, siempre y cuando, para cualquier fórmula $\varphi$ de $\mathcal{L}$
+
+  $$ \mathcal{M} \models \varphi \Longleftrightarrow \mathcal{N} \models \varphi $$.
+
+
+\end{definicion}
+
+\begin{definicion}\label{isomorfismo-embebimiento}
+Supongamos que $\mathcal{M}$ y $\mathcal{N}$ son $\mathcal{L}$-estructuras con universos $M$ y $N$, respectivamente. Un $\mathcal{L}$-embebimiento $\eta : \mathcal{M} \to \mathcal{N}$ es una aplicación inyectiva $\eta : M \to N$ que preserva la interpretación de todos los símbolos de $\mathcal{L}$. Más precisamente:
+\begin{enumerate}
+    \item[(i)] $\eta\big(f^{\mathcal{M}}(a_1,\ldots,a_{n_f})\big)
+    = f^{\mathcal{N}}\big(\eta(a_1),\ldots,\eta(a_{n_f})\big)$ para todo $f \in \mathcal{F}$ y $a_1,\ldots,a_{n_f} \in M$;
+    
+    \item[(ii)] $(a_1,\ldots,a_{n_R}) \in R^{\mathcal{M}}$ si y sólo si 
+    $(\eta(a_1),\ldots,\eta(a_{n_R})) \in R^{\mathcal{N}}$ para todo $R \in \mathcal{R}$ y $a_1,\ldots,a_{n_R} \in M$;
+    
+    \item[(iii)] $\eta(c^{\mathcal{M}}) = c^{\mathcal{N}}$ para todo $c \in \mathcal{C}$.
+\end{enumerate}
+
+Un $\mathcal{L}$-embebimiento biyectivo se llama un $\mathcal{L}$-isomorfismo. Si $M \subseteq N$ y la aplicación inclusión es un $\mathcal{L}$-embebimiento, decimos que $\mathcal{M}$ es una subestructura de $\mathcal{N}$ o que $\mathcal{N}$ es una extensión de $\mathcal{M}$.
+\end{definicion}
+
+Con estas definiciones, es fácil ver que la noción de isomorfismo implica la de equivalencia elemental. En efecto, si todos los términos del lenguaje obtienen la misma interpretación tanto en $\mathcal{M}$ como en $\mathcal{N}$, es claro que cualquier fórmula del lenguaje obtendrá el mismo valor de verad, razonando por inducción sobre la complejidad de la fórmula a partir de fórmulas atómicas.
+
+La noción de isomorfía enlaza naturalmente con la de categoricidad, que pasamos a definir a continuación:
+
+\begin{definicion}[Teoría categórica] \label{def-categoricidad}
+
+  Si $\kappa$ es un cardinal infinito y $T$ una teoría con modelos de tamaño $\kappa$, decimos que $T$ es \textit{$\kappa$-categórica} si cualesquiera modelos $\mathcal{N}$ y $\mathcal{M}$ de $T$, con $|M|=|N|=\kappa$ son isomorfos.
+ 
+\end{definicion}
+
+
+
+
+
+
+%------------------------------
+\chapter{La teoría de categorías en la fundación de las matemáticas}
+
 
 
 \printbibliography
