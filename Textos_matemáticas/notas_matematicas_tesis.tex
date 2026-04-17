@@ -113,6 +113,8 @@
 
 Los lenguajes formales son el campo de trabajo fundamental en lógica matemática. En matemáticas normalmente se procede manipulando símbolos para llegar a resultados; la idea que se tiene aquí es la de formalizar este tipo de procedimientos. Para ello, la fórmula lógica que normalmente se considera independientemente, vamos a pensarla ahora como un \textit{objeto}, y en ese sentido se le atribuirán propiedades. Desde este nuevo enfoque, preguntas como qué es una proposición, un teorema o una demostración tendrán respuestas satisfactorias, con consecuencias relevantes. Esto también nos permitirá formalizar el concepto de significado de una fórmula, en lo cual consiste la teoría de modelos.
 
+\section{Sintaxis de la lógica}
+
 \begin{definicion} [Lenguaje de primer orden]
   \label{lenguaje-L}
 Un lenguaje $\mathcal{L}$ se da especificando los siguientes datos:
@@ -130,13 +132,15 @@ Los números $n_f$ y $n_R$ nos indican que $f$ es una función de $n_f$ variable
 \label{definicion-formula}
 Una \textit{fórmula} es el conjunto de signos del lenguaje $\mathcal{L}$ se pueden construir usando los conectores $\neg$ (la negación), $\vee$ (disyunción), el cuantificador $\exists$, la variable $x$, el signo constante $c$, el signo \textbf{'}, un número finito símbolos de relación $(R_j^{i_j})_{j=1}^N$ y los paréntesis utilizando exclusivamente las reglas siguientes:
 
-1: Si $x,x'$ son signos de variables y $c,c'$ de constantes (véase nota \ref{apóstrofe}), son fórmulas $x=x'$, $x=c$, $c=x$ y $c=c'$.
+1: Si $x,x'$ son signos de variables y $c,c'$ de constantes, son fórmulas $x=x'$, $x=c$, $c=x$ y $c=c'$.
 
 2: Si $R$ es un símbolo de relación de grado n+m, $c_1,...,c_n$ son constantes y $x_1,...,x_m$ variables, $R_{n+m}(c_1,...,c_n,x_1,...,x_m)$ es una fórmula, así como las correspondientes con todas las posibles permutaciones de las variables.
 
 3: Si $A$ y $B$ son fórmulas, también lo son $(A) \vee (B)$, $\neg (A)$ y $\exists x A$, para cualquier variable $x$.
 
 \end{definicion}
+
+\section{Modelos e interpretaciones}
 
 Un lenguaje suele interpretarse en un conjunto sobre el que se definen una serie de relaciones y funciones, llamado \textit{estructura}:
 
@@ -150,6 +154,44 @@ Una $\mathcal{L}$-estructura $\mathcal{M}$ está dada por los siguientes datos:
 \end{enumerate}
 \end{definicion}
 
+La teoría de modelos distingue dos nociones fundamentales. En primer lugar está la noción de equivalencia elemental, que significa que dos estructuras satisfacen las mismas fórmulas. Esto implica fundamentalmente que el lenguaje en consideración no proporciona las herramientas para distinguir entre esas dos estructuras. Sin embargo, está la noción más fuerte de isomorfismo, que implica que las dos estructuras son esencialmente la misma. Naturalmente esta última noción es más fuerte.
+
+\begin{definicion} [Equivalencia elemental]
+  \label{equivalencia-elemental}
+  
+  Dos estructuras $\mathcal{M}$ y $\mathcal{N}$ en $\mathcal{L}$ son \textit{elementalmente equivalentes}, que se escribe $\mathcal{N} \equiv \mathcal{M}$, siempre y cuando, para cualquier fórmula $\varphi$ de $\mathcal{L}$
+
+  $$ \mathcal{M} \models \varphi \Longleftrightarrow \mathcal{N} \models \varphi $$.
+
+
+\end{definicion}
+
+\begin{definicion}\label{isomorfismo-embebimiento}
+Supongamos que $\mathcal{M}$ y $\mathcal{N}$ son $\mathcal{L}$-estructuras con universos $M$ y $N$, respectivamente. Un $\mathcal{L}$-embebimiento $\eta : \mathcal{M} \to \mathcal{N}$ es una aplicación inyectiva $\eta : M \to N$ que preserva la interpretación de todos los símbolos de $\mathcal{L}$. Más precisamente:
+\begin{enumerate}
+    \item[(i)] $\eta\big(f^{\mathcal{M}}(a_1,\ldots,a_{n_f})\big)
+    = f^{\mathcal{N}}\big(\eta(a_1),\ldots,\eta(a_{n_f})\big)$ para todo $f \in \mathcal{F}$ y $a_1,\ldots,a_{n_f} \in M$;
+    
+    \item[(ii)] $(a_1,\ldots,a_{n_R}) \in R^{\mathcal{M}}$ si y sólo si 
+    $(\eta(a_1),\ldots,\eta(a_{n_R})) \in R^{\mathcal{N}}$ para todo $R \in \mathcal{R}$ y $a_1,\ldots,a_{n_R} \in M$;
+    
+    \item[(iii)] $\eta(c^{\mathcal{M}}) = c^{\mathcal{N}}$ para todo $c \in \mathcal{C}$.
+\end{enumerate}
+
+Un $\mathcal{L}$-embebimiento biyectivo se llama un $\mathcal{L}$-isomorfismo. Si $M \subseteq N$ y la aplicación inclusión es un $\mathcal{L}$-embebimiento, decimos que $\mathcal{M}$ es una subestructura de $\mathcal{N}$ o que $\mathcal{N}$ es una extensión de $\mathcal{M}$.
+\end{definicion}
+
+Con estas definiciones, es fácil ver que la noción de isomorfismo implica la de equivalencia elemental. En efecto, si todos los términos del lenguaje obtienen la misma interpretación tanto en $\mathcal{M}$ como en $\mathcal{N}$, es claro que cualquier fórmula del lenguaje obtendrá el mismo valor de verad, razonando por inducción sobre la complejidad de la fórmula a partir de fórmulas atómicas.
+
+Uno de los temas recurrentes en el desarrollo tanto de la lógica como de la filosofía de las matemáticas en tiempos recientes es el fino enlace, así como la sutil diferencia, entre el enfoque sintáctico y el semántico, es decir, entre teorías axiomáticas y estructuras matemáticas. En general, se entiende que un sistema axiomático depende de la estructura matemática en la que se fundamenta, del mismo modo que todo nuestro conocimiento de esta estructura dependerá de los axiomas establecidos sobre ella. De modo que estas dos nociones fundamentales aparecen como la gallina y el huevo, al menos \textit{a priori} como mutuamente dependientes y por ello íntimamente relacionadas.
+
+Sin embargo, técnicamente la situación es algo más difícil. El enlace fundamental entre estos dos conceptos es la teoría de modelos, y el resultado fundamental de enlace el teorema de completitud. Cuando el mencionado puente está perfectamente construido, y se puede hablar de una asociación perfecta, casi un reflejo especular, entre las estructuras matemáticas y los sistemas axiomáticos que las describen, se dice que las teorías axiomáticas involucradas con \textit{categóricas}. Sin embargo, veremos que la categoricidad es una cuestión delicada en el mundo de la lógica. La noción de isomorfía enlaza naturalmente con la de categoricidad, que pasamos a definir a continuación:
+
+\begin{definicion}[Teoría categórica] \label{def-categoricidad}
+
+  Si $\kappa$ es un cardinal infinito y $T$ una teoría con modelos de tamaño $\kappa$, decimos que $T$ es \textit{$\kappa$-categórica} si cualesquiera modelos $\mathcal{N}$ y $\mathcal{M}$ de $T$, con $|M|=|N|=\kappa$ son isomorfos.
+ 
+\end{definicion}
 
 
 
@@ -476,64 +518,143 @@ Una vez hemos definido la jerarquía $L$, podemos aproximarnos a la prueba de co
 
 
 %---------------------------------------------------
+
 \chapter{Los límites transfinitos del predicativismo}
+\label{capitulo-gamma-0}
 
-%--------------------------
-\chapter{Sobre categoricidad y estructuras matemáticas}
+Los ordinales están entre los objetos más intuitivos de la lógica matemática, y son como la columna vertebral del universo matemático. Decir como de ``arriba'' se puede avanzar en la jerarquía de ordinales equivale en gran medida a reconocer cómo de ricas son las matemáticas que uno acepta. Un caso particular es el predicativismo, que sólo acepta las definiciones obtenidas estrictamente a partir de términos previamente definidos. Por tanto, no se permite al universo matemático crecer de forma arbitraria, incorporando como si nada nuevas entidades. Si se incorpora este principio, en el sentido que veremos en este capítulo, se obtiene un límite para los ordinales que se permite generar, que se conoce como el \textit{ordinal de Feferman-Schütte}, $\Gamma_0$. Comenzamos recordando conceptos básicos sobre los números ordinales.
 
-Uno de los temas recurrentes en el desarrollo tanto de la lógica como de la filosofía de las matemáticas en tiempos recientes es el fino enlace, así como la sutil diferencia, entre el enfoque sintáctico y el semántico, es decir, entre teorías axiomáticas y estructuras matemáticas. En general, se entiende que un sistema axiomático depende de la estructura matemática en la que se fundamenta, del mismo modo que todo nuestro conocimiento de esta estructura dependerá de los axiomas establecidos sobre ella. De modo que estas dos nociones fundamentales aparecen como la gallina y el huevo, al menos \textit{a priori} como mutuamente dependientes y por ello íntimamente relacionadas.
+\section{Fundamentos de la teoría de ordinales}
 
-Sin embargo, técnicamente la situación es algo más difícil. El enlace fundamental entre estos dos conceptos es la teoría de modelos, y el resultado fundamental de enlace el teorema de completitud. Cuando el mencionado puente está perfectamente construido, y se puede hablar de una asociación perfecta, casi un reflejo especular, entre las estructuras matemáticas y los sistemas axiomáticos que las describen, se dice que las teorías axiomáticas involucradas con \textit{categóricas}. Sin embargo, veremos que la categoricidad es una cuestión delicada en el mundo de la lógica. 
+Los ordinales representan tipos genéricos de conjuntos bien ordenados. Si dos conjuntos bien ordenados pueden asociarse en una función biyectiva que preserve el orden, entonces se consideran equivalentes en cuanto conjuntos bien ordenados, y por tanto se considerará que tienen el mismo tipo ordinal. Por motivos técnicos, se suelen representar canónicamente los ordinales a través de conjuntos en los que la misma relación de pertenencia es el orden. En el lenguaje de la teoría de conjuntos se tiene:
 
-\textbf{Resumen del capítulo}
+\begin{definicion}[Número ordinal]
+\label{def-ordinales}
 
-\section{Estructuras elementalmente equivalentes e isomorfas}
+Un \textit{número ordinal} es un conjunto $\alpha$ tal que:
 
-La teoría de modelos distingue dos nociones fundamentales. En primer lugar está la noción de equivalencia elemental, que significa que dos estructuras satisfacen las mismas fórmulas. Esto implica fundamentalmente que el lenguaje en consideración no proporciona las herramientas para distinguir entre esas dos estructuras. Sin embargo, está la noción más fuerte de isomorfismo, que implica que las dos estructuras son esencialmente la misma. Naturalmente esta última noción es más fuerte. Se da por hecho que trabajamos en un lenguaje formal $\mathcal{L}$. Seguimos la notación del capítulo \ref{nociones-basicas}.
-
-\begin{definicion} [Equivalencia elemental]
-  \label{equivalencia-elemental}
-  
-  Dos estructuras $\mathcal{M}$ y $\mathcal{N}$ en $\mathcal{L}$ son \textit{elementalmente equivalentes}, que se escribe $\mathcal{N} \equiv \mathcal{M}$, siempre y cuando, para cualquier fórmula $\varphi$ de $\mathcal{L}$
-
-  $$ \mathcal{M} \models \varphi \Longleftrightarrow \mathcal{N} \models \varphi $$.
-
+\begin{itemize}
+  \item[i] $\alpha$ es transitivo, i.e. $\forall x \in \alpha, \forall y \in x \; y \in \alpha$.
+  \item[ii]  $\in$ es un buen orden en $\alpha$.
+\end{itemize}
 
 \end{definicion}
 
-\begin{definicion}\label{isomorfismo-embebimiento}
-Supongamos que $\mathcal{M}$ y $\mathcal{N}$ son $\mathcal{L}$-estructuras con universos $M$ y $N$, respectivamente. Un $\mathcal{L}$-embebimiento $\eta : \mathcal{M} \to \mathcal{N}$ es una aplicación inyectiva $\eta : M \to N$ que preserva la interpretación de todos los símbolos de $\mathcal{L}$. Más precisamente:
+La transitividad permite que los ordinales tengan una cierta uniformidad con respecto a su construcción. Si $\alpha$ es un ordinal de un elemento, y $x \in \alpha$, entonces, por la transitividad $y \in x$ implica $y \in \alpha = \{x\}$, luego $y = x \in x$. Eso contradice el axioma de regularidad, luego se tiene que $x = \emptyset$. Si continuamos este proceso, se obtiene una representación ordinal de los números naturales:
+
+\[
+0 := \emptyset,\quad 1 := 0 + 1 = \{\emptyset\},\quad 2 = \{\emptyset, \{\emptyset\}\},\quad 3 := \{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}\}, \ldots
+ \]
+
+ Sin embargo, los ordinales no se limitan a los números naturales. La unión de todos los números naturales se denota a través del ordinal $\omega$. Dado cualquier ordinal $\alpha$, se puede demostrar que el conjunto $\alpha + 1 := \alpha \cup \{ \alpha \}$ es también un ordinal. Entonces se pueden definir $\omega + 1 = \{ 0, 1, 2, ..., \omega\}$, $\omega + 2 = ((\omega + 1) + 1) = \{ 0, 1, 2, ..., \omega, \omega + 1 \} $, $\omega + 3$, etc. Llamamos $2\omega$ al menor ordinal mayor que $\omega + n$ para cualquier natural $n$. Similarmente, se construyen $3\omega$, $4\omega$ y $n \cdot \omega$. En general, si $n$ y $k$ son naturales se tiene el ordinal
+\[
+n \cdot \omega + k = \{0,1,\ldots,\omega,\omega+1,\ldots,n\omega,n\omega+1,\ldots,n\omega+(k-1)\}.
+\]
+El primer ordinal mayor que todos los de esta forma se denota $\omega^2$.
+
+Este proceso se puede continuar eternamente, y los ordinales resultantes son cada vez más difíciles de visualizar: $\omega^2 + 1,\ldots,\omega^2 + \omega,\ldots,\omega^3,\ldots,\omega^4,\ldots,\omega^\omega,\ldots,\omega^{(\omega^\omega)},\ldots$, etc. El primer ordinal más grande que todas estas potencias escalonadas de $\omega$ se llama $\varepsilon_0$. Nótese que todos estos ordinales son contables (luego se hablará más rigurosamente de cardinalidad).
+
+Similarmente a los números naturales, los ordinales también admiten su correspondiente razonamiento por inducción, pero mucho más poderoso:
+
+ \begin{teorema}[Inducción transfinita]
+Sea una fórmula con una variable libre $\phi(x)$. Supongamos que:
 \begin{enumerate}
-    \item[(i)] $\eta\big(f^{\mathcal{M}}(a_1,\ldots,a_{n_f})\big)
-    = f^{\mathcal{N}}\big(\eta(a_1),\ldots,\eta(a_{n_f})\big)$ para todo $f \in \mathcal{F}$ y $a_1,\ldots,a_{n_f} \in M$;
-    
-    \item[(ii)] $(a_1,\ldots,a_{n_R}) \in R^{\mathcal{M}}$ si y sólo si 
-    $(\eta(a_1),\ldots,\eta(a_{n_R})) \in R^{\mathcal{N}}$ para todo $R \in \mathcal{R}$ y $a_1,\ldots,a_{n_R} \in M$;
-    
-    \item[(iii)] $\eta(c^{\mathcal{M}}) = c^{\mathcal{N}}$ para todo $c \in \mathcal{C}$.
+    \item $\phi(0)$ es cierta.
+    \item Si $\phi(\gamma)$ es cierta para cualquier $\gamma < \alpha$, también lo es $\phi(\alpha)$.
 \end{enumerate}
+Entonces, $\phi$ es cierta para cualquier ordinal.
+\end{teorema}
 
-Un $\mathcal{L}$-embebimiento biyectivo se llama un $\mathcal{L}$-isomorfismo. Si $M \subseteq N$ y la aplicación inclusión es un $\mathcal{L}$-embebimiento, decimos que $\mathcal{M}$ es una subestructura de $\mathcal{N}$ o que $\mathcal{N}$ es una extensión de $\mathcal{M}$.
+\begin{proof}
+La demostración se obtiene del principio de buena ordenación.
+Supongamos que existe un ordinal $\beta$ para el cual no se da $\phi$.
+Entonces tomamos
+\[
+\gamma := \min\{\alpha \in \beta + 1 : \neg \phi(\alpha)\}.
+\]
+Por la primera hipótesis, $\gamma > 0$, pero, por minimalidad de $\gamma$, se puede aplicar la segunda, y se obtiene así también $\phi(\gamma)$, que es un absurdo.
+\end{proof}
+
+Esto permite definir funciones que toman valores en ordinales de forma recursiva, que es lo que se conoce como el \textit{Teorema de recursión transfinita}:
+
+\begin{teorema}[Recursión transfinita]
+Si se tiene una fórmula biunívoca $A(x,y)$ que define una función (en el sentido del lenguaje), con dominio lo suficientemente grande, $F$, y un elemento $x_0$, entonces existe una única función $f$ definida para todo ordinal $\alpha$ tal que:
+\begin{enumerate}
+    \item $f(0) = x_0$.
+    \item $f(\alpha) = F(f\!\upharpoonright\!\alpha)$, donde se recuerda que 
+    $\alpha = \{\gamma : \mathrm{Ord}(\gamma) \land \gamma < \beta\}$.
+\end{enumerate}
+\end{teorema}
+
+\begin{proof}
+Sea $g$ cualquier función definida para los ordinales que verifique i) y ii).
+Entonces $g = f$ trivialmente usando el teorema anterior para la fórmula
+\[
+\phi(\alpha) \equiv (f(\alpha) = g(\alpha)).
+\]
+Por tanto $f$ es única y se tiene el resultado.
+\end{proof}
+
+
+Recuérdese que si $f$ es una función,
+\[
+f\!\upharpoonright\!\alpha = \{(\gamma, f(\gamma)) : \gamma \in \alpha\}
+\]
+es un conjunto, luego tiene sentido usarlo como argumento de una función.
+
+El teorema viene a decir que se puede definir una función $f$ en todos los ordinales a partir de su valor en $0$ y de una regla para determinarla en un ordinal $\alpha$ en función de lo que vale en los ordinales menores. De este modo se puede definir una aritmética ordinal: tomamos cualquier $\alpha$, y se define $\alpha + 0 := \alpha$, y en general,
+\[
+\alpha + (\beta + 1) := (\alpha + \beta) + 1 
+\]
+Análogamente, se define $\alpha \cdot 0 := 0$, y
+\[
+\alpha \cdot (\beta + 1) := alpha \cdot \beta + \beta,
+\]
+y exactamente igual se define una exponenciación, $\alpha^\beta$, para cualesquiera ordinales $\alpha, \beta$. Obsérvese que ni la suma ni el producto son conmutativos, por ejemplo $\omega + 1 = \{ 0, 1, 2, ..., \omega \} \neq 1 + \omega = \omega$. 
+
+
+\section{Segmentos y funciones enumeradoras}
+
+Si $\alpha$ es un ordinal, $S(\alpha)$ denota el \textit{segmento inicial determinado por $\alpha$}, compuesto por el conjunto $\{ \gamma < \alpha \}$. En particular, cualquier segmento inicial $S$ está caracterizado por las propiedades siguiente: si $\gamma \in S$ y $\delta < \gamma$, entonces $\delta \in S$. Si $S \neq ON$, entonces se puede ver que existe $\alpha$ tal que $S = S(\alpha)$.
+
+Una \textit{función enumeradora} $f$ es una función monótona con un segmento inicial $S$ como dominio. Si $f(S) = B$, entonces se dice que $f$ es una función enumeradora de $B$. Se puede comprobar que, para cualquier ordinal $\alpha$, $\alpha < f(\alpha)$. También se puede demostrar---véase \textcite[pp. 77-78]{schutte1977proof}--- que cualquier conjunto de ordinales $B$ tiene una única función de numeración, ya que $B$ es un conjunto bien ordenado, luego le corresponderá un único ordinal como tipo de ordenación. Entonces el conjunto enumeración es el segmento determinado por ese ordinal\footnote{En teoría de conjuntos, es de hecho también el ordinal mismo.}. 
+
+Un conjunto $B \subseteq ON$ se dice \textit{cerrado} si, para cualquier conjunto numerable $M$, $M \subseteq B \Rightarrow sup(M) \in B$. Una función enumeradora $f: A \rightarrow B$ se dice \textit{continua} si $A$ es cerrado y, para cualquier conjunto numerable $U \subseteq A$, $sup(f(U)) = f(sup(U))$.
+
+Recuérdese que para cualquier $n < \omega$, $ n + \omega = \omega$. Esta idea se generaliza en el concepto de \textit{número aditivo principal}:
+
+\begin{definicion}[Número aditivo principal]
+\label{def-numero-aditivo-principal}
+
+Un ordinal $\alpha$ es un número aditivo principal si para cualquier $\gamma < \alpha$, $\gamma + \alpha = \alpha$.
+
 \end{definicion}
 
-Con estas definiciones, es fácil ver que la noción de isomorfismo implica la de equivalencia elemental. En efecto, si todos los términos del lenguaje obtienen la misma interpretación tanto en $\mathcal{M}$ como en $\mathcal{N}$, es claro que cualquier fórmula del lenguaje obtendrá el mismo valor de verad, razonando por inducción sobre la complejidad de la fórmula a partir de fórmulas atómicas.
+\section{Ordinales \texorpdfstring{$\alpha$}{alfa}-críticos}
 
-La noción de isomorfía enlaza naturalmente con la de categoricidad, que pasamos a definir a continuación:
-
-\begin{definicion}[Teoría categórica] \label{def-categoricidad}
-
-  Si $\kappa$ es un cardinal infinito y $T$ una teoría con modelos de tamaño $\kappa$, decimos que $T$ es \textit{$\kappa$-categórica} si cualesquiera modelos $\mathcal{N}$ y $\mathcal{M}$ de $T$, con $|M|=|N|=\kappa$ son isomorfos.
- 
+\begin{definicion}[Ordinales $\alpha$-críticos]
+\label{def-alfa-críticos}
+  Para cualquier ordinal $\alpha$, se define, el \textit{conjunto de ordinales $\alpha$-críticos} $Cr(\alpha)$ y la función $\phi_\alpha$ por inducción transfinita como sigue:
+  \begin{enumerate}
+    \item $Cr(0)$ es el conjunto de ordinales aditivos principales (véase la definición \ref{def-numero-aditivo-principal}).
+    \item $\phi_\alpha: A_\alpha \rightarrow Cr(\alpha)$ es la función enumeradora de $Cr(\alpha)$.
+    \item Si $\alpha \neq 0$, $Cr(\alpha)$ es el conjunto de puntos fijos comunes de las funciones $\phi_\gamma$, con $\gamma < \alpha$. 
+    
+  \end{enumerate}
 \end{definicion}
 
+Con esta definición, es fácil ver que $Cr(\alpha)$ forma una sucesión monótona decreciente, es decir, si $\alpha < \beta$, $Cr(\alpha) > Cr(\beta)$. Se puede demostrar también que el conjunto $Ca(\alpha)$ es cerrado y que no está acotado.
 
+\begin{definicion}[Ordinales fuertemente críticos]
+  \label{def-fuerte-criticos}
+  Un ordinal $\alpha$ es \textit{fuertemente crítico} si $\alpha \in Ca(\alpha)$, es decir, si $\alpha$ mismo es $\alpha$-crítico. 
+\end{definicion}
 
+Si $\alpha$ es fuertemente crítico, existe un $\beta$ tan que $\phi_\alpha (\beta) = \alpha$. Como $\alpha \leq \phi_\alpha (0)$, pero $\phi_\alpha$ es monótona, entonces se sigue que $\beta = 0$. Por lo tanto, se obtiene una definición equivalente, un ordinal es fuertemente crítico si y sólo si $\phi_\alpha (0) = \alpha$. 
 
+$\Gamma_0$, el ordinal de Feferman-Schütte, es precisamente el menor ordinal fuertemente crítico.
 
-
-%------------------------------
-\chapter{La teoría de categorías en la fundación de las matemáticas}
-
+\section{El ordinal \texorpdfstring{$\Gamma_0$}{Gamma0}}
 
 
 \printbibliography
