@@ -123,100 +123,54 @@ I think this last point is crucial to the debate surrounding the Continuum Hypot
 
 And this is precisely the question this paper seeks to address: whether certain abstract structures, including those involved in the formulation of the Continuum Hypothesis, have progressed beyond what might be regarded, in Wittgenstein’s terms, as a merely formal \textit{sign-game}. In this regard, I agree with Quine that scientific applicability is crucial, and with Maddy on the importance of everyday mathematical practice. However, I do not think either account succeeds in adequately integrating these two criteria. The perspective developed here is also closely related to Feferman’s broader view of mathematics, which he described as \textit{conceptual structuralism}, according to which mathematical objects are understood as positions within structures determined by our conceptual practices. On this view, the legitimacy of mathematical statements ultimately depends on whether the structures involved are sufficiently clear and conceptually grounded. 
 
-The text is organized as follows. In Section~\ref{ConceptualStructuralism}, I examine Feferman’s conceptual structuralism, focusing on the roles of clarity, definiteness, and applicability, and on how these bear on the status of the Continuum Hypothesis. In Section~\ref{refinedAppCriterion}, I develop a refined applicability criterion and introduce a hierarchical account of mathematically legitimate structures. Section~\ref{FiniteOrderLegitimacy} discusses the legitimacy of finite-order arithmetic, while Section~\ref{SetTheoryLegitimacy} turns to the case of abstract set theory and the place of CH within it. In Section~\ref{history-section}, I compare this framework with related views, particularly those of Maddy and Shapiro. Finally, Section~\ref{Conclusion} draws together the main results of the paper.
+The text is organized as follows. In Section~\ref{ConceptualStructuralism}, I examine Feferman’s conceptual structuralism, focusing on the roles of clarity, definiteness, and applicability, and on how these bear on the status of the Continuum Hypothesis. In Section~\ref{quasi-emp-structuralism}, I develop a refined applicability criterion and introduce a hierarchical account of mathematically legitimate structures. Section~\ref{FiniteOrderLegitimacy} discusses the legitimacy of finite-order arithmetic, while Section~\ref{SetTheoryLegitimacy} turns to the case of abstract set theory and the place of CH within it. In Section~\ref{history-section}, I compare this framework with related views, particularly those of Maddy and Shapiro. Finally, Section~\ref{Conclusion} draws together the main results of the paper.
 
 %=========================
 
-\section{Stepping away from formalism: from logical positivism to naturalism and mathematical practice}
+\section{Stepping away from formalism: mathematical practice and metodology}
 \label{history-section}
 
-The idea that doing mathematics must differ in some sense from merely manipulating symbols in a formal language was far from unanimously accepted at the beginning of the twentieth century. During the advent of logical positivism, 
+The idea that doing mathematics must differ from merely manipulating symbols in a formal language was far from universally accepted at the beginning of the twentieth century. At that time, both the mathematical world—dominated by Hilbert’s formalism—and several philosophical approaches to mathematics, such as logical positivism, located the essence of mathematics in formal and logical methods. From the perspective of formalism, mathematical statements were understood as deductions from a given set of axioms, and any consistent theory formulated in a logical language was regarded as sufficient to define a corresponding piece of mathematical reality—see, for instance, \textcite{hilbert1971geometry}. Within logical positivism, as represented for example by \textcite{carnap1937syntax}, mathematical sentences were regarded as analytic, in the sense that they say nothing about the empirical world and function instead as tools for clarifying the structure of scientific language.
+
+The latter half of the twentieth century gave rise to markedly different philosophical conceptions of mathematics, in which practical applicability, heuristics, and the essentially informal character of everyday mathematical work gained increasing importance. This shift marked the advent of the so-called \textit{philosophy of mathematical practice}. One of its earliest and most influential proponents was Imre Lakatos, who, in his work \textit{Proofs and Refutations}, strongly criticized the formalist approach of earlier schools:
 
 \begin{adjustwidth}{1cm}{1cm}
-  \small
-  \begin{quote}
-    Since, [according to logical positivism], informal mathematics is neither `tautological' nor empirical, it must be meaningless, sheer nonsense. The dogmas of logical positivism have been detrimental to the \textit{history and philosophy of mathematics}. \textcite[p. 2]{Lakatos1976}
-  \end{quote}
+\small
+\begin{quote}
+Since, [according to logical positivism], informal mathematics is neither `tautological' nor empirical, it must be meaningless, sheer nonsense. The dogmas of logical positivism have been detrimental to the \textit{history and philosophy of mathematics}. \textcite[p. 2]{Lakatos1976}
+\end{quote}
 \end{adjustwidth}
 
+Lakatos’ alternative approach is known as quasi-empiricism, as he argued that mathematics develops in a manner analogous to the empirical sciences: one begins with a conjecture and subsequently seeks a proof. Although such a proof may initially appear convincing, it can generally be decomposed into lemmas and implicit assumptions, which may themselves be vulnerable to refutation. When such refutations arise, the original conjecture is not simply discarded but rather refined—whether by restricting its scope, revising underlying definitions, or modifying auxiliary assumptions.\footnote{This idea is extensively developed through the analysis of Euler's formula, which states that for convex polyhedra with $V$ vertices, $E$ edges, and $F$ faces, $V - E + F = 2$. See \textcite[pp. 10–41]{Lakatos1976}.}
+
+According to Lakatos, this perspective remains meaningful even in the context of the increasing rigor of nineteenth-century mathematics, particularly with the formalization of analysis:
 
 \begin{adjustwidth}{1cm}{1cm}
-  \small
-  \begin{quote}
-In the early nineteenth century the flood of counterexamples brought confusion. Since proofs were crystal-clear, refutations had to be miraculous freaks, to be completely segregated from the indubitable proofs. Cauchy’s revolution of rigour rested on the heuristic innovation that the mathematician should not stop at the proof: he should go on and find out what he has proved by enumerating the exceptions, or rather by stating a safe domain where the proof is valid. But neither Cauchy –nor Abel– saw any connection between the two problems. It never occurred to them that if they discover an exception, they should have another look at the proof. \textcite[p. 55]{Lakatos1976}
-  \end{quote}
+\small
+\begin{quote}
+In the early nineteenth century the flood of counterexamples brought confusion. Since proofs were crystal-clear, refutations had to be miraculous freaks, to be completely segregated from the indubitable proofs. Cauchy’s revolution of rigour rested on the heuristic innovation that the mathematician should not stop at the proof: he should go on and find out what he has proved by enumerating the exceptions, or rather by stating a safe domain where the proof is valid.\textcite[p. 55]{Lakatos1976}
+\end{quote}
 \end{adjustwidth}
 
-\begin{adjustwidth}{1cm}{1cm}
-  \small
-  \begin{quote}
-These considerations may lead us to say that $2^{\aleph_0} > \aleph_0$. That is to say: we can \emph{make} the considerations lead us to that. Or: we can say \emph{this} and give \emph{this} as our reason. But if we do say it---what are we to do next? In what practice is this proposition anchored? It is for the time being a piece of mathematical architecture which hangs in the air, and looks as if it were, let us say, an architrave, but not supported by anything and supporting nothing. \textcite[III, §35]{Wittgenstein1978}
-  \end{quote}
-\end{adjustwidth}
+From the perspective developed here, Lakatos draws a clear distinction between mathematical reasoning and purely formal calculation. Rather than grounding mathematics in formal derivations alone, he emphasizes its problem-solving power: definitions, entities, and assumptions are justified insofar as they contribute to the advancement of inquiry. Another central feature of his view is the iterative character of mathematical reasoning. The emergence of a refutation or the identification of a flaw does not terminate the process; instead, it prompts the introduction of revised assumptions, refined definitions, or new intermediate results, which may in turn generate further tensions and revisions:
+
+This iterative character is central to Lakatos’ account, according to which mathematics advances not through the accumulation of final proofs, but through a dynamic process of conjecture and criticism. As he puts it (\citeyear{Lakatos1976}, p.5), “mathematics […] does not grow through a monotonous increase of the number of indubitably established theorems but through the incessant improvement of guesses by speculation and criticism, by the logic of proofs and refutations”.
 
 
-A practice-based, quasi-empirical structuralism grounded in mathematical fruitfulness.
+\section{The structuralists' approach to ontology and epistemology}
+
+While Lakatos focused intensively on methodological and historical issues, he did not directly develop a detailed epistemological or ontological account in the philosophy of mathematics. An important philosophical approach that, while also distancing itself from formalism, does address these issues is mathematical structuralism, as developed by thinkers such as Shapiro and Resnik. Crucially,structuralist and related approaches (including Feferman’s work) connect to debates about the determinacy of set-theoretic questions such as the Continuum Hypothesis, particularly concerning whether there is a single, fixed mathematical universe.
 
 
-
-\textbf{1. Quasi-empiricism (Imre Lakatos)}
-
-The closest match is the philosophy of Imre Lakatos.
-
-Lakatos argued that mathematics develops like science:
-conjectures → refutations → refinements
-Legitimacy comes from success in mathematical practice, not a priori certainty.
-
-Similarity to your text:
-
-Emphasis on problem-solving power
-Mathematical concepts justified by how they advance inquiry
-Iterative, evolving structure (like your $S_0, S_1, ...$)
-
-Difference:
-
-Lakatos focuses more on proofs and counterexamples, less on a formal “admission rule” for structures.
-
-\textbf{2. Mathematical Naturalism (W.V.O. Quine)}
-
-Another strong parallel is Willard Van Orman Quine.
-
-Mathematics is justified the same way as science: by its role in our best theories of the world.
-No sharp boundary between math and empirical science.
-
-Similarity:
-
-Your $S_0$
- (structures grounded in physical applicability) is very Quinean.
-Legitimacy comes from indispensability + usefulness.
-
-Difference:
-
-Quine emphasizes empirical indispensability, while your text adds internal criteria like unification and generativity.
-
-\textbf{3. Maddy’s Second Philosophy}
-
-Penelope Maddy develops a view very close to your passage.
-
-Mathematics should be evaluated on its own internal standards, not external metaphysics.
-Mathematicians accept new structures when they are:
-fruitful
-natural
-explanatory
-
-Similarity (very strong):
-
-Your three criteria:
-Problem-solving
-Unification
-Generativity
-→ almost exactly Maddy’s notion of mathematical fruitfulness
-
-\textbf{4. Structuralism (esp. Shapiro, Resnik)}
 
 Philosophers like Stewart Shapiro emphasize:
 
 Mathematics studies structures, not objects.
+
+On all versions of structuralism, the nature of the objects in the places of a structure does not matter—only the relations among the objects are significant. On the ontological option, then, the only relevant feature of the background ontology is its size. Are there enough objects to exemplify every structure the mathematician might consider? If a theory of this ontology is developed, the only relevant factor is the size of the ontology. \textcite[p. 88]{Shapiro1997}
+
+I believe that the ante rem option is the most perspicuous and least artificial of the three. It comes closest to capturing how mathematical theories are conceived. Nevertheless, I do not mean to rule out the other options. Indeed, it follows from the thesis of structuralism that, in a sense, all three options are equivalent. As will be shown, each delivers the same “structure of structures.”
+
 What matters is how structures relate and extend one another.
 
 Similarity:
@@ -236,110 +190,11 @@ One way to understand and communicate a particular structure is through a direct
 
 Elsewhere, I argue that the informal language of mathematics has the resources to distinguish standard from nonstandard models (Shapiro [1991, especially chapter 8]). \textcite[chapter 8]{shapiro1991foundations}
 
-5. Pragmatism (Peirce, Putnam)
-
-Thinkers like Hilary Putnam:
-
-Truth and justification tied to practical success and explanatory power
-
-Similarity:
-
-Emphasis on:
-usefulness
-explanatory unification
-ongoing inquiry
-
-\textbf{6. Category-theoretic / Unification-driven views}
-
-Some modern philosophers and mathematicians (influenced by category theory) emphasize:
-
-The value of theories lies in unifying disparate areas
-Mathematics progresses by identifying deep structural connections
-
-Similarity:
-
-Your “explanatory unification” criterion is exactly this idea.
-
-\textbf{7. Internal Realism / Practice-first views}
-
-A broader label for your passage would be:
-
-Internal fruitfulness realism (informal name)
-
-Core idea:
-
-A mathematical structure is legitimate if it earns its place within mathematical practice.
-
-This contrasts with:
-
-Platonism → legitimacy = existence in an abstract realm
-Formalism → legitimacy = consistency in a formal system
-Intuitionism → legitimacy = constructibility
-
-Your passage instead says:
-
-legitimacy = successful integration into a growing web of mathematics
-
-%=========================
-\section{Definiteness in conceptual structuralism: clarity and applicability}
-\label{ConceptualStructuralism}
-
-As explained in the introduction, this text examines the mathematical significance of certain structures. In this section, I explore how this notion is addressed—often indirectly—within conceptual structuralism, a framework that has engaged extensively with CH. In the next section, I turn to how I would address the difficulties this conception raises for this issue.
-
-From the perspective of conceptual structuralism, what can be evaluated is not the legitimacy of isolated facts and objects, but of the full structures or frameworks that are introduced in mathematical reasoning. For example, if the whole ZFC set theory universe is regarded as mathematically meaningful, then so is CH, since it is perfectly well-defined within that framework. In this regard, what Feferman most values, as mentioned in the introduction, is the degree to which such mathematical structures are conceptually clear and well-grounded. This emphasis is evident in the fifth of the ten theses he proposes to articulate conceptual structuralism:
-
-\begin{adjustwidth}{1cm}{1cm}
-    \small
-    \begin{quote}
-        Basic conceptions differ in their degree of clarity. One may speak of what is true in a given conception, but that notion of truth may only be partial. Truth in full is applicable only to completely clear conceptions. 
-    \end{quote}
-    \hfill \textcite[p. 15]{Feferman2011a}
-\end{adjustwidth}
-
-Feferman argues that conceptions such as those required to formulate CH—namely, third-order arithmetic and stronger systems—suffer from an intrinsic lack of clarity. This is particularly evident in set theory, where, as he notes (\citeyear{Feferman2011a}, p.~1), “the concept of a set being arbitrary is vague or underdetermined, and there is no way to sharpen it without violating what it is supposed to be about”. For this reason, in his particular framework for understanding mathematics, he concludes that the CH cannot be assigned a definite truth value.
-
-This argument has been subject to substantial criticism, most directly by Peter Koellner (\citeyear{Koellner2016} \& \citeyear{Koellner2022}). Koellner argues that Solomon Feferman’s notion of mathematical clarity is unstable and can be extended in such a way that even statements of arithmetic would be rendered indefinite—an outcome that Feferman himself explicitly rejects. I have examined this debate in \textcite{Blanco1}, where I argue that many of Koellner’s criticisms on this point are well taken. In that work, I also defended that Feferman’s position can be made more resilient by emphasizing an alternative interpretation of his conception—one that is closer to the notion of mathematical content that concerns me here. This interpretation focuses on what I call the \textit{applicability criterion}, namely the idea that mathematical entities exist through their systematic and consistent appearance in world pictures. 
-
-Feferman adheres to this criterion with varying degrees of explicitness, though he emphasizes it quite generally. For example, it appears in Thesis 3 of conceptual structuralism (\citeyear{Feferman2011a}, p. 11):
-
-\begin{adjustwidth}{1cm}{1cm}
-\begin{quote}
-\small
-The basic conceptions of mathematics are of certain kinds of relatively simple ideal world-pictures which are not of objects in isolation but of structures, (...). They are communicated and understood prior to any axiomatics, indeed prior to any systematic logical development.
-\end{quote}
-\end{adjustwidth}
-
-This passage emphasizes that the most basic and primitive mathematical structures are connected to the world we inhabit, in the sense that they help us understand and model it.\footnote{See section 2 in \textcite{Blanco1} for further discussion of this interpretation.} In another text, Feferman argues that the mathematics applicable to real-world physics can be derived from relatively simple systems such as Peano Arithmetic:
-
-\begin{adjustwidth}{1cm}{1cm}
-\small
-\begin{quote}
-I have come to conjecture that practically all scientifically applicable mathematics can be formalized in systems reducible to PA, or, as I have sloganized it in (1993): a little bit goes a long way. I have learned of a couple of cases (...) where it appears one must go beyond the resources of PA; but the physical theories that require such additional strength are rather speculative.
-\end{quote} \hfill \textcite[p. 15]{Feferman1999}
-\end{adjustwidth}
-
-In conclusion, Feferman takes it to be important that mathematical structures are connected to real-world physics, at least insofar as they enable us to construct models and representations of it. However, he does not regard this connection as sufficient to establish the reality of certain mathematical conceptions—particularly those that figure in debates about the definiteness of the Continuum Hypothesis:
-
-\begin{adjustwidth}{1cm}{1cm}
-\small
-\begin{quote}
-Whether or not this thesis will hold for all future applications of mathematics to physical science, what this shows is that the argument from the success of physics to the reality of the set-theoretical conception of the real numbers is completely vitiated.
-\end{quote} \hfill \textcite[p. 25]{Feferman2011a}
-\end{adjustwidth}
-
-Feferman’s main thesis on this topic, as already mentioned, is that the Continuum Hypothesis (CH) is not a definite mathematical problem. In the present work, however, I am concerned with related but distinct notions, such as mathematical content and the question of whether CH can be regarded as mathematically meaningful. Before explaining in detail, in Section \ref{refinedAppCriterion}, how I understand this concept, I first compare these two notions, which, although distinct, are closely interconnected.
-
-For the moment, let us understand a mathematical statement as meaningful insofar as it makes sense to use it outside the formal systems in which it appears, following a broadly Wittgensteinian idea—see the \nameref{Intro}. Thus, an indefinite statement in a given formal language is not merely one that is undecidable within a particular system, but rather one whose underlying concepts are insufficiently determinate to fix a definite truth value. Such a statement should therefore not be expected to be settled as true or false, even in principle. As a result, it is unlikely to play a significant role in ordinary scientific or mathematical practice, except within the formal framework in which it is formulated. Conversely, the practices in which determinate statements are employed play a central role in shaping both their use and the structures to which they belong. For this reason, even though Feferman does not explicitly formulate his position in terms of meaningful mathematical statements or mathematical content, his reflections on CH clearly bear on these notions, particularly insofar as he emphasizes the role of applicability in scientific and everyday practice.
-
-However, a central difficulty with this emphasis is that it remains too restricted to direct applications in science, especially in physics, thereby overlooking—much like the indispensability argument—important aspects of mathematical practice. In particular, there are statements formulated within otherwise well-established frameworks, such as Fermat’s Last Theorem in PA, for which there is no known way of deciding them without appealing to stronger systems, such as finite-order arithmetic.\footnote{In this regard, see \textcite{McLarty2020}. I also discuss this problem in more detail in Section~\ref{FiniteOrderLegitimacy}.} At the same time, it is crucial that mathematical entities be integrated into scientific practice in as simple and natural a way as possible. Some of the restrictions Feferman defends—such as limiting the treatment of the continuum to predicative, non-set-theoretical frameworks—do not seem to adequately account for this requirement.
-
-In this regard, I propose to distinguish between two related but distinct notions, both connected to the applicability of mathematical structures. First, closely aligned with what Feferman emphasizes, is the notion of \textit{external applicability}, namely the usefulness of mathematical entities and results in modeling the physical world and thus in being directly applicable in science. Second, I introduce what I call \textit{internal fruitfulness}, that is, the role played by mathematical structures within mathematics itself, insofar as they extend, organize, or deepen our understanding of previously established concepts. From this perspective, there are entities and structures that significantly contribute to mathematical understanding without being directly relatable to physical reality. The aim of the following section—and indeed the central aim of this paper—is to develop a notion of mathematical content that accommodates both of these dimensions, while remaining as faithful as possible to mathematical practice.
 
 
+\section{A practice-based, quasi-empirical structuralism}
+\label{quasi-emp-structuralism}
 
-%=========================
-\section{The refined applicability criterion: mathematically legitimate structures}
-\label{refinedAppCriterion}
 
 One of the most paradigmatic cases in the history of mathematics of a concept regarded as obscure, metaphysical, or ill-defined is the development of complex numbers from the sixteenth to the nineteenth century. Before presenting my own approach to this controversy, I outline the reasons why complex numbers in particular shifted from being rejected or ignored to becoming one of the most important concepts in mathematics.
 
@@ -414,7 +269,111 @@ Are abstract set theoretical structures internally fruitful with respect to stru
 
 With respect to the power set axiom, consider, for instance, the field of topology. Topology focuses on the study of topological spaces—structures defined as a set together with a collection of its subsets satisfying certain conditions. The power set axiom seems be inherent in the very definition, as the topology on a set is defined as subset of the power set, . Nevertheless, I would argue this is interpreted in a schematic way by the working topologist. In practice, one reasons about any given family of subsets of that fulfills the specific rules. Theorems are proven about this structure itself. This schematic reasoning about a family of subsets if fundamentally different from needing to quantify over a pre-existing, completed totality . A potential objection could be the definition of the discrete topology, where the space is formed through the entire power set. However, in most cases practical applications, this topology is used on countable sets. When it is applied to uncountable sets, it is typically within the realm of abstract set-theoretical considerations themselves—precisely the context whose necessity for more down-to-earth applications we are questioning. One could concede that a topologist, for simplicity, assumes they can always form the power set of any set they encounter in practice. However, for this purpose a far weaker system that ZFC, like the previously given MC, could suffice.
 
+\begin{adjustwidth}{1cm}{1cm}
+  \small
+  \begin{quote}
+These considerations may lead us to say that $2^{\aleph_0} > \aleph_0$. That is to say: we can \emph{make} the considerations lead us to that. Or: we can say \emph{this} and give \emph{this} as our reason. But if we do say it---what are we to do next? In what practice is this proposition anchored? It is for the time being a piece of mathematical architecture which hangs in the air, and looks as if it were, let us say, an architrave, but not supported by anything and supporting nothing. \textcite[III, §35]{Wittgenstein1978}
+  \end{quote}
+\end{adjustwidth}
+
 %=========================
+
+%=========================
+\section{Definiteness in conceptual structuralism: clarity and applicability}
+\label{ConceptualStructuralism}
+
+As explained in the introduction, this text examines the mathematical significance of certain structures. In this section, I explore how this notion is addressed—often indirectly—within conceptual structuralism, a framework that has engaged extensively with CH. In the next section, I turn to how I would address the difficulties this conception raises for this issue.
+
+From the perspective of conceptual structuralism, what can be evaluated is not the legitimacy of isolated facts and objects, but of the full structures or frameworks that are introduced in mathematical reasoning. For example, if the whole ZFC set theory universe is regarded as mathematically meaningful, then so is CH, since it is perfectly well-defined within that framework. In this regard, what Feferman most values, as mentioned in the introduction, is the degree to which such mathematical structures are conceptually clear and well-grounded. This emphasis is evident in the fifth of the ten theses he proposes to articulate conceptual structuralism:
+
+\begin{adjustwidth}{1cm}{1cm}
+    \small
+    \begin{quote}
+        Basic conceptions differ in their degree of clarity. One may speak of what is true in a given conception, but that notion of truth may only be partial. Truth in full is applicable only to completely clear conceptions. 
+    \end{quote}
+    \hfill \textcite[p. 15]{Feferman2011a}
+\end{adjustwidth}
+
+Feferman argues that conceptions such as those required to formulate CH—namely, third-order arithmetic and stronger systems—suffer from an intrinsic lack of clarity. This is particularly evident in set theory, where, as he notes (\citeyear{Feferman2011a}, p.~1), “the concept of a set being arbitrary is vague or underdetermined, and there is no way to sharpen it without violating what it is supposed to be about”. For this reason, in his particular framework for understanding mathematics, he concludes that the CH cannot be assigned a definite truth value.
+
+This argument has been subject to substantial criticism, most directly by Peter Koellner (\citeyear{Koellner2016} \& \citeyear{Koellner2022}). Koellner argues that Solomon Feferman’s notion of mathematical clarity is unstable and can be extended in such a way that even statements of arithmetic would be rendered indefinite—an outcome that Feferman himself explicitly rejects. I have examined this debate in \textcite{Blanco1}, where I argue that many of Koellner’s criticisms on this point are well taken. In that work, I also defended that Feferman’s position can be made more resilient by emphasizing an alternative interpretation of his conception—one that is closer to the notion of mathematical content that concerns me here. This interpretation focuses on what I call the \textit{applicability criterion}, namely the idea that mathematical entities exist through their systematic and consistent appearance in world pictures. 
+
+Feferman adheres to this criterion with varying degrees of explicitness, though he emphasizes it quite generally. For example, it appears in Thesis 3 of conceptual structuralism (\citeyear{Feferman2011a}, p. 11):
+
+\begin{adjustwidth}{1cm}{1cm}
+\begin{quote}
+\small
+The basic conceptions of mathematics are of certain kinds of relatively simple ideal world-pictures which are not of objects in isolation but of structures, (...). They are communicated and understood prior to any axiomatics, indeed prior to any systematic logical development.
+\end{quote}
+\end{adjustwidth}
+
+This passage emphasizes that the most basic and primitive mathematical structures are connected to the world we inhabit, in the sense that they help us understand and model it.\footnote{See section 2 in \textcite{Blanco1} for further discussion of this interpretation.} In another text, Feferman argues that the mathematics applicable to real-world physics can be derived from relatively simple systems such as Peano Arithmetic:
+
+\begin{adjustwidth}{1cm}{1cm}
+\small
+\begin{quote}
+I have come to conjecture that practically all scientifically applicable mathematics can be formalized in systems reducible to PA, or, as I have sloganized it in (1993): a little bit goes a long way. I have learned of a couple of cases (...) where it appears one must go beyond the resources of PA; but the physical theories that require such additional strength are rather speculative.
+\end{quote} \hfill \textcite[p. 15]{Feferman1999}
+\end{adjustwidth}
+
+In conclusion, Feferman takes it to be important that mathematical structures are connected to real-world physics, at least insofar as they enable us to construct models and representations of it. However, he does not regard this connection as sufficient to establish the reality of certain mathematical conceptions—particularly those that figure in debates about the definiteness of the Continuum Hypothesis:
+
+\begin{adjustwidth}{1cm}{1cm}
+\small
+\begin{quote}
+Whether or not this thesis will hold for all future applications of mathematics to physical science, what this shows is that the argument from the success of physics to the reality of the set-theoretical conception of the real numbers is completely vitiated.
+\end{quote} \hfill \textcite[p. 25]{Feferman2011a}
+\end{adjustwidth}
+
+Feferman’s main thesis on this topic, as already mentioned, is that the Continuum Hypothesis (CH) is not a definite mathematical problem. In the present work, however, I am concerned with related but distinct notions, such as mathematical content and the question of whether CH can be regarded as mathematically meaningful. Before explaining in detail, in Section \ref{quasi-emp-structuralism}, how I understand this concept, I first compare these two notions, which, although distinct, are closely interconnected.
+
+For the moment, let us understand a mathematical statement as meaningful insofar as it makes sense to use it outside the formal systems in which it appears, following a broadly Wittgensteinian idea—see the \nameref{Intro}. Thus, an indefinite statement in a given formal language is not merely one that is undecidable within a particular system, but rather one whose underlying concepts are insufficiently determinate to fix a definite truth value. Such a statement should therefore not be expected to be settled as true or false, even in principle. As a result, it is unlikely to play a significant role in ordinary scientific or mathematical practice, except within the formal framework in which it is formulated. Conversely, the practices in which determinate statements are employed play a central role in shaping both their use and the structures to which they belong. For this reason, even though Feferman does not explicitly formulate his position in terms of meaningful mathematical statements or mathematical content, his reflections on CH clearly bear on these notions, particularly insofar as he emphasizes the role of applicability in scientific and everyday practice.
+
+However, a central difficulty with this emphasis is that it remains too restricted to direct applications in science, especially in physics, thereby overlooking—much like the indispensability argument—important aspects of mathematical practice. In particular, there are statements formulated within otherwise well-established frameworks, such as Fermat’s Last Theorem in PA, for which there is no known way of deciding them without appealing to stronger systems, such as finite-order arithmetic.\footnote{In this regard, see \textcite{McLarty2020}. I also discuss this problem in more detail in Section~\ref{FiniteOrderLegitimacy}.} At the same time, it is crucial that mathematical entities be integrated into scientific practice in as simple and natural a way as possible. Some of the restrictions Feferman defends—such as limiting the treatment of the continuum to predicative, non-set-theoretical frameworks—do not seem to adequately account for this requirement.
+
+In this regard, I propose to distinguish between two related but distinct notions, both connected to the applicability of mathematical structures. First, closely aligned with what Feferman emphasizes, is the notion of \textit{external applicability}, namely the usefulness of mathematical entities and results in modeling the physical world and thus in being directly applicable in science. Second, I introduce what I call \textit{internal fruitfulness}, that is, the role played by mathematical structures within mathematics itself, insofar as they extend, organize, or deepen our understanding of previously established concepts. From this perspective, there are entities and structures that significantly contribute to mathematical understanding without being directly relatable to physical reality. The aim of the following section—and indeed the central aim of this paper—is to develop a notion of mathematical content that accommodates both of these dimensions, while remaining as faithful as possible to mathematical practice.
+
+
+
+%=========================
+\section{Further comments on naturalism}
+
+
+\textbf{2. Mathematical Naturalism (W.V.O. Quine)}
+
+Another strong parallel is Willard Van Orman Quine.
+
+Mathematics is justified the same way as science: by its role in our best theories of the world.
+No sharp boundary between math and empirical science.
+
+Similarity:
+
+Your $S_0$
+ (structures grounded in physical applicability) is very Quinean.
+Legitimacy comes from indispensability + usefulness.
+
+Difference:
+
+Quine emphasizes empirical indispensability, while your text adds internal criteria like unification and generativity.
+
+\textbf{3. Maddy’s Second Philosophy}
+
+Penelope Maddy develops a view very close to your passage.
+
+Mathematics should be evaluated on its own internal standards, not external metaphysics.
+Mathematicians accept new structures when they are:
+fruitful
+natural
+explanatory
+
+Similarity (very strong):
+
+Your three criteria:
+Problem-solving
+Unification
+Generativity
+→ almost exactly Maddy’s notion of mathematical fruitfulness
+
 \section{Conclusion}
 \label{Conclusion}
 
@@ -433,6 +392,41 @@ In binding itself to mathematical practice, this kind of naturalism is in danger
 Mathematics belongs to man, not to God. We are not interested in properties of the positive integers that have no descriptive meaning for finite man. When somebody proves a positive integer to exist, we shall show how to find it. If God has mathematics of its own that has to be done, let him do it himself. \textcite[p. 2]{Bishop1967}
 \end{quote}
 \end{adjustwidth}
+
+
+
+\textbf{6. Category-theoretic / Unification-driven views}
+
+Some modern philosophers and mathematicians (influenced by category theory) emphasize:
+
+The value of theories lies in unifying disparate areas
+Mathematics progresses by identifying deep structural connections
+
+Similarity:
+
+Your “explanatory unification” criterion is exactly this idea.
+
+\textbf{7. Internal Realism / Practice-first views}
+
+A broader label for your passage would be:
+
+Internal fruitfulness realism (informal name)
+
+Core idea:
+
+A mathematical structure is legitimate if it earns its place within mathematical practice.
+
+This contrasts with:
+
+Platonism → legitimacy = existence in an abstract realm
+Formalism → legitimacy = consistency in a formal system
+Intuitionism → legitimacy = constructibility
+
+Your passage instead says:
+
+legitimacy = successful integration into a growing web of mathematics
+
+
 
 %-------------------------
 % Agradecimientos (opcional)
