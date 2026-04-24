@@ -123,7 +123,7 @@ I think this last point is crucial to the debate surrounding the Continuum Hypot
 
 And this is precisely the question this paper seeks to address: whether certain abstract structures, including those involved in the formulation of the Continuum Hypothesis, have progressed beyond what might be regarded, in Wittgenstein’s terms, as a merely formal \textit{sign-game}. In this regard, I agree with Quine that scientific applicability is crucial, and with Maddy on the importance of everyday mathematical practice. However, I do not think either account succeeds in adequately integrating these two criteria. The perspective developed here is also closely related to Feferman’s broader view of mathematics, which he described as \textit{conceptual structuralism}, according to which mathematical objects are understood as positions within structures determined by our conceptual practices. On this view, the legitimacy of mathematical statements ultimately depends on whether the structures involved are sufficiently clear and conceptually grounded. 
 
-The text is organized as follows. In Section~\ref{ConceptualStructuralism}, I examine Feferman’s conceptual structuralism, focusing on the roles of clarity, definiteness, and applicability, and on how these bear on the status of the Continuum Hypothesis. In Section~\ref{quasi-emp-structuralism}, I develop a refined applicability criterion and introduce a hierarchical account of mathematically legitimate structures. Section~\ref{FiniteOrderLegitimacy} discusses the legitimacy of finite-order arithmetic, while Section~\ref{SetTheoryLegitimacy} turns to the case of abstract set theory and the place of CH within it. In Section~\ref{history-section}, I compare this framework with related views, particularly those of Maddy and Shapiro. Finally, Section~\ref{Conclusion} draws together the main results of the paper.
+The text is organized as follows. In Section~\ref{alternative-approaches}, I examine Feferman’s conceptual structuralism, focusing on the roles of clarity, definiteness, and applicability, and on how these bear on the status of the Continuum Hypothesis. In Section~\ref{quasi-emp-structuralism}, I develop a refined applicability criterion and introduce a hierarchical account of mathematically legitimate structures. Section~\ref{section-CH-case} discusses the legitimacy of finite-order arithmetic and turns to the case of abstract set theory and the place of CH within it. In Section~\ref{history-section}, I compare this framework with related views, particularly those of Maddy and Shapiro. Finally, Section~\ref{Conclusion} draws together the main results of the paper.
 
 %=========================
 
@@ -175,37 +175,42 @@ I believe that the ante rem option is the most perspicuous and least artificial 
 \end{quote}
 \end{adjustwidth}
 
-In my view, the most important takeaway from mathematical structuralism is the idea that structures are the fundamental primitive concept in mathematics, and that in general, mathematitians tend to think in terms of structures. Specially chapters 5 and 6 in \textcite{Shapiro1997} are really succesful to show how integrated structures have been in various stages in history of mathematics, such as in \textcite{Dedekind1888}, or \textcite{Bourbaki1950}, where this group defended a notion of ``structure'' as a collection endowed with one or several relations, developed to satisfy a determinate set of axioms. 
+In my view, the most important takeaway from ante rem structuralism is that structures are the fundamental primitive of mathematics, and that mathematicians often reason in structural terms in practice. Chapters 5 and 6 of \textcite{Shapiro1997} illustrate how deeply this perspective is embedded in the history of mathematics. This is evident, for instance, in \textcite{Dedekind1888}, as well as in \textcite{Bourbaki1950}, where “structure” is conceived as a collection endowed with one or more relations satisfying a specified set of axioms. In particular, this implies kind of a ``holistic'' interpretation of any mathematical statement, in particular, that it can only be considered meaningful in terms of the structures where it is ultimately defined. For example, in case that the continuum hypothesis is a well defined statement in the language of third order arithmetic, and \textit{a fortiori} in set theory. Therefore, whether it is a meaningful mathematical statement depends crucially on the structures that model and instantiate this languages. Which features the involved structures should have, is something I address in section \ref{quasi-emp-structuralism}.
 
-Precisely at this point, a \textit{chicken or egg} kind of problem could appear. More precisely, the question is whether structures are prior to the axioms that characterize them, or whether, on the contrary, structures are introduced and determined through axiomatic specification. On the one hand, structuralism—especially in its ante rem form—suggests that axioms merely describe independently existing structures. On the other hand, mathematical practice often proceeds by first stipulating axioms and then taking any system satisfying them to instantiate the relevant structure. 
+Considerations around structuralism naturally raise the question of whether mathematical structures exist prior to objects, but also introduce a further “chicken or egg” problem: are structures prior to the axioms that characterize them, or are they instead determined through axiomatic specification? Ante rem structuralism suggests that axioms merely describe independently existing structures, although the position is less clear on this issue than on the question of object-structure priority.
 
+It is at this point where the epistemological problems regarding structures come into play. According to \textcite{Shapiro1997}, and much in line with what is discussed in \textcite{Resnik1981}, the fundamental way of coming to know a mathematical structure is based in pattern-recognition. The first and most known case is the one of the natural number structure, where the pattern is the idea of always being able to add one element to an existing finite sequence:
 
+\begin{adjustwidth}{1cm}{1cm}
+\begin{quote}
+  \small
+Our subject learns that the sequence of sequences goes on indefinitely. She sees that the system of finite ordinal structures has a pattern. For each sequence, there is a unique next-longest sequence, and so there is no longest sequence. The system of finite sequences is potentially infinite. Eventually, the subject can coherently discuss the structure of these finite patterns, perhaps formulating a version of the Peano axioms for this structure. We have now reached the structure of the natural numbers. \parencite[pp. 118-119]{Shapiro1997}
+\end{quote}
+\end{adjustwidth}
 
-According to Bourbaki, there are three great types of structures, or “mother structures”: algebraic structures, such as group, ring, field; order structures, such as partial order, linear order, and well-order; and topological structures, which “furnish an abstract mathematical formulation of the intuitive concepts of limit, neighborhood
-and continuity, to which we are led by our idea of space” (p. 227).
+At this point we see the sharp line between pattern recognition and axiom systems. When more abstract mathematical structures, such as the set theoretical hierarchy, come into play, then the patterns leading to them may be more complex. At this point, the pattern involved leads to fundamentally an axiom system, such as $\mathrm{ZFC}$, and the the way these structures are apprehended consists in integrating an implicit definition of the structure through these axioms:
 
-\textbf{Structures are the primitives in mathematics}
-
-\textbf{Structures vs axioms}
-
-\textbf{Gödel's completeness theorem}
+\begin{adjustwidth}{1cm}{1cm}
+\begin{quote}
+  \small
+One way to understand and communicate a particular structure is through a direct description of it (...). Eventually, a properly prepared listener will understand that it is the structure itself, and not any particular instance of it, that is being described (...). We have here an instance of implicit definition, a technique familiar in mathematical logic. Notice that a direct description can succeed in communicating a structure even if no instance of the structure is displayed. Structures described this way need not be freestanding, of course, but they clearly can go beyond those exemplified in the actual physical world that we all know and love. \parencite[p. 130]{Shapiro1997}
+\end{quote}
+\end{adjustwidth}
 
 \textbf{Epistemology}
 
 From here, the subject can apprehend other countably infinite structures as variations on this one. Conceivably, we get to the real numbers by considering sets of natural numbers, and perhaps we can proceed through the levels of type theory. However, these techniques are unnatural at the more advanced levels. We surely do not apprehend the complex-number structure this way. Moreover, even our extended pattern recognition is limited. We are nowhere near the set-theoretic hierarchy. Our other epistemic techniques make a direct appeal to language and language acquisition. A subtheme of this book is that many metaphysical and epistemological matters are closely tied to language. \parencite[p. 12]{Shapiro1997}
 
-Our subject learns that the sequence of sequences goes on indefinitely. She sees that the system of finite ordinal structures has a pattern. For each sequence, there is a unique next-longest sequence, and so there is no longest sequence. The system of finite sequences is potentially infinite. Eventually, the subject can coherently discuss the structure of these finite patterns, perhaps formulating a version of the Peano axioms for this structure. We have now reached the structure of the natural numbers. \parencite[pp. 118-119]{Shapiro1997}
-
-One way to understand and communicate a particular structure is through a direct description of it (...). Eventually, a properly prepared listener will understand that it is the structure itself, and not any particular instance of it, that is being described (...). We have here an instance of implicit definition, a technique familiar in mathematical logic. Notice that a direct description can succeed in communicating a structure even if no instance of the structure is displayed. Structures described this way need not be freestanding, of course, but they clearly can go beyond those exemplified in the actual physical world that we all know and love. \parencite[p. 130]{Shapiro1997}
 
 Elsewhere, I argue that the informal language of mathematics has the resources to distinguish standard from nonstandard models (Shapiro [1991, especially chapter 8]). See chapter 8 in \parencite{shapiro1991foundations}
 
+It is also quite reasonable to argue that we can grasp structures prior to the axiom systems that characterize them, and that it is only later on that we can give axioms as true fundamental statements about them. These axioms could perhaps be insufficient to completely characterize the structure.
 
+According to Bourbaki, there are three great types of structures, or “mother structures”: algebraic structures, such as group, ring, field; order structures, such as partial order, linear order, and well-order; and topological structures, which “furnish an abstract mathematical formulation of the intuitive concepts of limit, neighborhood
+and continuity, to which we are led by our idea of space” (p. 227).
 
 \section{A practice-based, quasi-empirical structuralism}
 \label{quasi-emp-structuralism}
-
-
 
 
 One of the most paradigmatic cases in the history of mathematics of a concept regarded as obscure, metaphysical, or ill-defined is the development of complex numbers from the sixteenth to the nineteenth century. Before presenting my own approach to this controversy, I outline the reasons why complex numbers in particular shifted from being rejected or ignored to becoming one of the most important concepts in mathematics.
@@ -339,8 +344,8 @@ This is quite systematic, but domain-specific rather than a general theory of ma
 
 
 
-\section{Legitimacy of finite order arithmetic}
-\label{FiniteOrderLegitimacy}
+\section{How CH and set theory fit in cuasi-empirical structuralism}
+\label{section-CH-case}
 
 Once a framework is accepted as contentful then any statement formulated within it has to be equally regarded. (...) reason somehow similarly by considering that CH to be undefinite is equivalent to considering third-order arithmetic to be inconsistent. I think they go too far, because different frameworks, which might disagree upon determinate fundamental questions, could be both consistent.
 
@@ -360,10 +365,6 @@ The key point here is that within any such $MC$ system, CH is a perfectly defina
 The first two approaches could be coherent with a predicativist stand, which we saw Feferman lean towards. However, they are not so compatible, as we have explained, with current and historic mathematical practice. In my view, Feferman is correct in his fundamental premise that a line must be drawn to separate legitimate from illegitimate mathematical conceptions, but I believe he may have drawn this line too restrictively by excluding CH as an illegitimate statement. However, the line may still have been correctly drawn for more abstract set theoretical notions (such as the full cumulative hierarchy of sets), which is the topic of the following section. 
 
 
-%=========================
-\section{Legitimacy of abstract set theory}
-\label{SetTheoryLegitimacy}
-
 
 It is not a matter of evaluating how easy it is to identify standard models in set theory \parencite[p. 16]{Koellner2022}, but of acknowledging that standard models are not used in practice. In general, all needed is a countable transitive model, and that can be carried out strictly in the metatheory---see \textcite[p. 8]{Kunen2011}. 
 
@@ -380,8 +381,8 @@ With respect to the power set axiom, consider, for instance, the field of topolo
 %=========================
 
 %=========================
-\section{Definiteness in conceptual structuralism: clarity and applicability}
-\label{ConceptualStructuralism}
+\section{Other metodological approaches to CH}
+\label{alternative-approaches}
 
 As explained in the introduction, this text examines the mathematical significance of certain structures. In this section, I explore how this notion is addressed—often indirectly—within conceptual structuralism, a framework that has engaged extensively with CH. In the next section, I turn to how I would address the difficulties this conception raises for this issue.
 
@@ -429,14 +430,9 @@ Feferman’s main thesis on this topic, as already mentioned, is that the Contin
 
 For the moment, let us understand a mathematical statement as meaningful insofar as it makes sense to use it outside the formal systems in which it appears, following a broadly Wittgensteinian idea—see the \nameref{Intro}. Thus, an indefinite statement in a given formal language is not merely one that is undecidable within a particular system, but rather one whose underlying concepts are insufficiently determinate to fix a definite truth value. Such a statement should therefore not be expected to be settled as true or false, even in principle. As a result, it is unlikely to play a significant role in ordinary scientific or mathematical practice, except within the formal framework in which it is formulated. Conversely, the practices in which determinate statements are employed play a central role in shaping both their use and the structures to which they belong. For this reason, even though Feferman does not explicitly formulate his position in terms of meaningful mathematical statements or mathematical content, his reflections on CH clearly bear on these notions, particularly insofar as he emphasizes the role of applicability in scientific and everyday practice.
 
-However, a central difficulty with this emphasis is that it remains too restricted to direct applications in science, especially in physics, thereby overlooking—much like the indispensability argument—important aspects of mathematical practice. In particular, there are statements formulated within otherwise well-established frameworks, such as Fermat’s Last Theorem in PA, for which there is no known way of deciding them without appealing to stronger systems, such as finite-order arithmetic.\footnote{In this regard, see \textcite{McLarty2020}. I also discuss this problem in more detail in Section~\ref{FiniteOrderLegitimacy}.} At the same time, it is crucial that mathematical entities be integrated into scientific practice in as simple and natural a way as possible. Some of the restrictions Feferman defends—such as limiting the treatment of the continuum to predicative, non-set-theoretical frameworks—do not seem to adequately account for this requirement.
+However, a central difficulty with this emphasis is that it remains too restricted to direct applications in science, especially in physics, thereby overlooking—much like the indispensability argument—important aspects of mathematical practice. In particular, there are statements formulated within otherwise well-established frameworks, such as Fermat’s Last Theorem in PA, for which there is no known way of deciding them without appealing to stronger systems, such as finite-order arithmetic.\footnote{In this regard, see \textcite{McLarty2020}. I also discuss this problem in more detail in Section~\ref{section-CH-case}.} At the same time, it is crucial that mathematical entities be integrated into scientific practice in as simple and natural a way as possible. Some of the restrictions Feferman defends—such as limiting the treatment of the continuum to predicative, non-set-theoretical frameworks—do not seem to adequately account for this requirement.
 
 In this regard, I propose to distinguish between two related but distinct notions, both connected to the applicability of mathematical structures. First, closely aligned with what Feferman emphasizes, is the notion of \textit{external applicability}, namely the usefulness of mathematical entities and results in modeling the physical world and thus in being directly applicable in science. Second, I introduce what I call \textit{internal fruitfulness}, that is, the role played by mathematical structures within mathematics itself, insofar as they extend, organize, or deepen our understanding of previously established concepts. From this perspective, there are entities and structures that significantly contribute to mathematical understanding without being directly relatable to physical reality. The aim of the following section—and indeed the central aim of this paper—is to develop a notion of mathematical content that accommodates both of these dimensions, while remaining as faithful as possible to mathematical practice.
-
-
-
-%=========================
-\section{Further comments on naturalism}
 
 
 \textbf{2. Mathematical Naturalism (W.V.O. Quine)}
