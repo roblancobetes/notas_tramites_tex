@@ -197,26 +197,27 @@ One way to understand a particular structure is through a direct description of 
 \end{quote}
 \end{adjustwidth}
 
-According to Shapiro, thus, relevant structures in mathematical discourse and axioms describing them need to stay at the same level, which in logical terms we understand as having structures determined by categorical axiom systems. However, crucial axiom systems for the practice of mathematics, such as $PA$ for arithmetic and $ZF$ for set theory, are not categorical in first order logic.\footnote{As categoricity of a theory implies completeness, any theory affected by Gödel's incompleteness theorem won't be categorical.} Accordingly, \textcite{shapiro1991foundations} argued that second order logic, where these theories are categorical (quasicategorical in the case of set theory), provides a suitable foundation for mathematics.\footnote{See \textcite[chapter 4]{shapiro1991foundations} for a proof of those categoricity results.} In chapter 8 of this book, Shapiro defends that, in pre-formal practice, mathematicians operate with concepts such as ``all subsets'', ``all natural numbers'', that fixes a unique interpretation for the axioms which enable them to distingush stardard from non standard models. Second-order logic, under full semantics, is precisely the formalism that is faithful to those informal semantic commitments, whereas first-order logic systematically fails to be.
+According to Shapiro, thus, relevant structures in mathematical discourse and axioms describing them need to stay at the same level, which in logical terms we understand as having structures determined by categorical axiom systems. However, crucial axiom systems for the practice of mathematics, such as $PA$ for arithmetic and $ZF$ for set theory, are not categorical in first order logic.\footnote{As categoricity of a theory implies completeness, any theory affected by Gödel's incompleteness theorem won't be categorical.} Accordingly, \textcite{shapiro1991foundations} argued that second order logic, where these theories are categorical (quasicategorical in the case of set theory), provides a suitable foundation for mathematics.\footnote{See \textcite[chapter 4]{shapiro1991foundations} for a proof of those categoricity results.} In chapter 8 of this book, Shapiro defends that, in pre-formal practice, mathematicians operate with concepts such as ``all subsets'', ``all natural numbers'', that fixes a unique interpretation for the axioms which enable them to distingish stardard from non standard models. Second-order logic, under full semantics, is precisely the formalism that is faithful to those informal semantic commitments, whereas first-order logic systematically fails to be.
 
+This perspective, however, is subject to some important criticism. \textcite{Vaananen2015}---much in line with \textcite{Quine1941} argues that second-order logic depends on what he calls large domain assumptions, which come quite close to the meaning of the axioms of set theory. \textcite{Shapiro2012} even accepts this, but holds that it does not undermine his case for second order logic as a natural foundation of mathematics. They agree, for that reason, that second order logic and first order set theory can be threated as logically equivalent. However, from the perspective of the practice of mathematics, the latter is no doubt more prominent in the various foundationalist approaches to mathematics.
 
-\textbf{Close}
+Arguments that Shapiro gives related to mathematical practice are also problematic. For example he states (\citeyear{shapiro1991foundations}, p. 99) that important tool in mathematical practice, which is the concept of a minimal closure, cannot be formalized without appealing to second order logic: ``There is a straightforward argument, relying on the compactness theorem, that no collection of first-order formulas can successfully characterize any non-trivial minimal closure. This is evidence that first-order languages are inadequate.'' However, applying this argument to mathematical practice is not that straightforward, since in general practicioners tend to use minimal closures that are defined within a previously given structure. Take, for instance, the algebraic closure of $\mathbb{Q}$, which is the most paradigmatic example. This set contains all the solutions to polynomical equations with coeficients in $\mathbb{Q}$, which can be written as $\{ x \in \mathbb{C}: \exists n \in \mathbb{N}, q_0, ..., q_n \neq 0 \in \mathbb{Q},   \}$
 
+Formally, 
 
 It is also quite reasonable to argue that we can grasp structures prior to the axiom systems that characterize them, and that it is only later on that we can give axioms as true fundamental statements about them. These axioms could perhaps be insufficient to completely characterize the structure.
 
-According to Bourbaki, there are three great types of structures, or “mother structures”: algebraic structures, such as group, ring, field; order structures, such as partial order, linear order, and well-order; and topological structures, which “furnish an abstract mathematical formulation of the intuitive concepts of limit, neighborhood
-and continuity, to which we are led by our idea of space” (p. 227).
+
 
 If we don't find categoricity results in second order logic convincing enough, then axioms and structures have to be conceived in a different way.
 
 There is a fundamental epistemic and ontological difference between \textit{commiting to a mathematical structure} and \textit{comitting to an axiom system}, in case the later is not categorical. 
 
-From the practice of mathematics, I submit that the use of minimal closures is now well understood, at least as much as anything in mathematics, and there is no ambiguity concerning the constructed set. It would seem, then, that it is a requirement on languages and semantics of foundational research that they be capable of characterizing minimal closures, at least if they are to capture our ability to describe and communicate what we are doing, the intended meaning of our natural languages. There is a straightforward argument, relying on the compactness theorem, that no collection of first-order formulas can successfully characterize any non-trivial minimal closure. This is evidence that first-order languages are inadequate. \parencite[99]{shapiro1991foundations}
+
 
 It is commitment to structures that makes us able to speak of minimal closures, not the use of second order logic. In a given structure, most closures are definable by formulas with parameters or describable as the intersection of definable sets. 
 
-\textcite{Vaananen2015}---much in line with \textcite{Quine1941} argues that second-order logic depends on what he calls large domain assumptions, which come quite close to the meaning of the axioms of set theory. \textcite{Shapiro2012} even accepts this, but holds that it does not undermine his case for second order logic as a natural foundation of mathematics. We can agree that second order logic and first order set theory can be threated as logically equivalent. However, from the perspective of the practice of mathematics, the latter is no doubt more prominent in the various foundationalist approaches to mathematics.
+
 
 \section{A practice-based, quasi-empirical structuralism}
 \label{quasi-emp-structuralism}
@@ -259,6 +260,8 @@ The requirement that these conditions be satisfied in a standard, simple, and na
 
 For example, the fact that $(\mathbb{C}, +, \cdot)$ is an algebraically closed field indicates that it is the simplest structure satisfying these criteria relative to $\mathbb{R}$. Moreover, complex numbers play a crucial role in simplifying proofs across many areas of mathematics. For these reasons, if a given conception of the real line belongs to $S_n$, then the corresponding structure of complex numbers naturally belongs to $S_{n+1}$. For instance, a purely geometric conception of the real line—belonging to $S_0$—would correspond to a geometric conception of the complex numbers in $S_1$. By contrast, the more standard set-theoretic conception of the real line would correspond to a structure of complex numbers belonging to $S_2$, as argued in the previous section.
 
+
+\textbf{Commitment to structures:} Our intuition clearly leans toward committing to $\mathbb{C}$ as a structure. This is really different from \textcite{Godel1947} ``intuition'' of set theoretical structures. 
 
 %=========================
 
@@ -372,13 +375,16 @@ The key point here is that within any such $MC$ system, CH is a perfectly defina
 
 \textbf{Important remark:} In the case of sixth order arithmetic, it is not true either that the structures involved are prior to the axiom systems involved. In this regard, we can still stand against the commitment to the structures involved.
 
+
+\section{The approach to set theory}
+
 The first two approaches could be coherent with a predicativist stand, which we saw Feferman lean towards. However, they are not so compatible, as we have explained, with current and historic mathematical practice. In my view, Feferman is correct in his fundamental premise that a line must be drawn to separate legitimate from illegitimate mathematical conceptions, but I believe he may have drawn this line too restrictively by excluding CH as an illegitimate statement. However, the line may still have been correctly drawn for more abstract set theoretical notions (such as the full cumulative hierarchy of sets), which is the topic of the following section. 
 
 
 
 It is not a matter of evaluating how easy it is to identify standard models in set theory \parencite[p. 16]{Koellner2022}, but of acknowledging that standard models are not used in practice. In general, all needed is a countable transitive model, and that can be carried out strictly in the metatheory---see \textcite[p. 8]{Kunen2011}. 
 
-Practice in set theory commits to structures or to axioms? It is interesting to note that, differently from other cases in mathematics, the development of axioms in set theory was prior to stablishing the set theoretical hierarchy---what Von Neumann did in (1920) to explain in which sense the axioms did make sense, to avoid paradoxes and to give an structured version of the universe of sets. In other words, in this case the structure was introduced \textit{ad hoc} for the axioms, while in other cases (such as arithmetic) it was the other way around).
+Practice in set theory commits to structures or to axioms? It is interesting to note that, differently from other cases in mathematics, the development of axioms in set theory was prior to stablishing the set theoretical hierarchy---what Von Neumann did in (1920) to explain in which sense the axioms did make sense, to avoid paradoxes and to give an structured version of the universe of sets. In other words, in this case the structure was introduced \textit{ad hoc} for the axioms, while in other cases (such as arithmetic) it was the other way around.
 
 In relative consistency proofs we do not need to beleive that the axioms of set theory are consistent: we take it as an assumption of the result.
 
@@ -391,9 +397,7 @@ With respect to the power set axiom, consider, for instance, the field of topolo
 
 
 %=========================
-
-%=========================
-\section{Other metodological approaches to CH}
+\section{Category theory}
 \label{alternative-approaches}
 
 As explained in the introduction, this text examines the mathematical significance of certain structures. In this section, I explore how this notion is addressed—often indirectly—within conceptual structuralism, a framework that has engaged extensively with CH. In the next section, I turn to how I would address the difficulties this conception raises for this issue.
