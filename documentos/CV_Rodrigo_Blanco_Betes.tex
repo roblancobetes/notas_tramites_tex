@@ -1,0 +1,218 @@
+% CV – Rodrigo Blanco Betes
+\documentclass[11pt, a4paper]{article}
+
+% ── Paquetes ────────────────────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+
+% ── Colores ─────────────────────────────────────────────────────────────────
+\definecolor{accentcolor}{RGB}{30, 80, 140}
+
+% ── Hyperref ────────────────────────────────────────────────────────────────
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accentcolor,
+  linkcolor=accentcolor,
+  pdfauthor={Rodrigo Blanco Betes},
+  pdftitle={Curriculum Vitae – Rodrigo Blanco Betes}
+}
+
+% ── Secciones ───────────────────────────────────────────────────────────────
+\titleformat{\section}
+  {\large\bfseries\color{accentcolor}}
+  {}{0em}{}
+  [\color{accentcolor}\titlerule]
+\titlespacing{\section}{0pt}{10pt}{6pt}
+
+% ── Comandos auxiliares ──────────────────────────────────────────────────────
+% Entrada de experiencia: {Título}{Fecha}{Institución}{Lugar}
+\newcommand{\cventry}[4]{%
+  \noindent
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} & \textbf{#2}\\
+    \textit{#3} & \textit{#4}
+  \end{tabularx}%
+}
+
+\pagestyle{empty}
+
+% ════════════════════════════════════════════════════════════════════════════
+\begin{document}
+
+% ── Cabecera ─────────────────────────────────────────────────────────────────
+\begin{wrapfigure}{r}{2.8cm}
+  \vspace{-10pt}
+%  \includegraphics[width=2.6cm]{photo.jpeg}
+\end{wrapfigure}
+
+{\LARGE\bfseries Rodrigo Blanco Betes}
+
+\medskip
+\faPhone\ +34 640 344 746 \\
+\faEnvelope\ \href{mailto:rodrigoblancobetes@gmail.com}{rodrigoblancobetes@gmail.com} \\
+\faMapMarker*\ Bilbao, España
+
+\medskip
+Matemático, actualmente doctorando en lógica matemática en la UPV/EHU,
+con experiencia en modelización estadística, análisis de datos y desarrollo de
+soluciones analíticas en entornos profesionales. Mi formación combina una base
+teórica sólida en áreas como análisis y fundamentos matemáticos con experiencia
+aplicada en modelización estadística y análisis de datos. Interesado en la
+enseñanza de matemáticas con enfoque práctico orientado a la resolución de problemas.
+
+% ── Educación ────────────────────────────────────────────────────────────────
+\section{Educación}
+
+\cventry{Doctorado en Lógica y Fundamentos de las Matemáticas}%
+        {Oct.\ 2023 -- actualidad}%
+        {Universidad del País Vasco, Instituto ILCLI (UPV/EHU)}%
+        {San Sebastián, España}
+\begin{itemize}[nosep, leftmargin=1.2em, topsep=4pt]
+  \item Directores de tesis: María de Ponte Azcárate y Kepa Korta.
+  \item Título provisional: \textit{On the undefiniteness of the Continuum Hypothesis
+        from a pragmatic linguistic perspective}.
+  \item Línea: lógica matemática y fundamentos de las matemáticas.
+  \item Beca de investigación predoctoral, Gobierno Vasco (2024--2025).
+\end{itemize}
+
+\medskip
+\cventry{Grado en Matemáticas}%
+        {Sep.\ 2017 -- Jul.\ 2021}%
+        {Universidad del País Vasco (UPV/EHU)}%
+        {Leioa, España}
+\begin{itemize}[nosep, leftmargin=1.2em, topsep=4pt]
+  \item Mención en Matemáticas Puras.
+  \item Nota media del expediente: 9{,}33/10.
+  \item Premio extraordinario y mejor expediente de la promoción.
+  \item Programa Erasmus en Lyon, Francia: ENS-Lyon y UCB-Lyon.
+\end{itemize}
+
+\medskip
+\cventry{Máster en Filosofía: Rama de Lógica y Filosofía de la Ciencia}%
+        {Sep.\ 2022 -- Oct.\ 2023}%
+        {Universidad Nacional de Educación a Distancia (UNED)}%
+        {España}
+\begin{itemize}[nosep, leftmargin=1.2em, topsep=4pt]
+  \item Nota media del expediente: 9{,}00/10.
+\end{itemize}
+
+% ── Docencia y méritos académicos ─────────────────────────────────────────────────────────────────
+\section{Docencia y méritos académicos}
+
+\cventry{Docente}%
+        {Ene.\ 2026 -- Mar.\ 2026}%
+        {Alfa Formación y Consultoría}%
+        {Bilbao, España}
+\begin{itemize}[nosep, leftmargin=1.2em, topsep=4pt]
+
+  \item Impartición del curso \textit{Especialista en Big Data} (230 horas).
+  \item Docencia en las herramientas/lenguajes: Microsoft Power BI, Docker,
+        Java, Hadoop, Scala, Apache Spark, Azure.
+  \item Aplicación de fundamentos matemáticos (álgebra, estadística, optimización)
+        en contextos computacionales como criptografía, programación funcional y modelización.
+\end{itemize}
+
+\cventry{Docente}%
+        {Sep.\ 2025 -- Oct.\ 2025}%
+        {Alfa Formación y Consultoría}%
+        {Bilbao, España}
+\begin{itemize}[nosep, leftmargin=1.2em, topsep=4pt]
+  \item Impartición del curso de formación profesional para el empleo
+        \textit{Introducción al Big Data} (12 horas).
+  \item Docencia en las herramientas/lenguajes: Microsoft Power BI, Google Locker Studio.
+\end{itemize}
+
+\medskip
+\cventry{Formación para la gestión y la investigación en la sanidad}%
+        {Ene.\ 2024}%
+        {Hospital de Santa Marina}%
+        {Bilbao, España}
+\begin{itemize}[nosep, leftmargin=1.2em, topsep=4pt]
+  \item Curso en teoría de juegos y sesgos cognitivos y sus aplicaciones en la sanidad
+        (12 horas).
+  \item Curso en estadística y análisis de datos para la investigación y gestión
+        sanitaria (4 horas).
+\end{itemize}
+
+\medskip
+\cventry{Seminario (ILCLI)}%
+        {Ene.\ 2026}%
+        {\textit{An alternative approach to conceptual structuralism}}%
+        {Donostia-San Sebastián, España}
+\begin{itemize}[nosep, leftmargin=1.2em, topsep=4pt]
+  \item Impartición de un seminario de investigación en el marco del ILCLI (Institute for Logic, Cognition, Language and Information).
+  \item Desarrollo de una propuesta alternativa al estructuralismo conceptual, abordando sus fundamentos lógicos y filosóficos.
+  \item Discusión de implicaciones en filosofía del lenguaje, teoría de conceptos y modelización formal.
+  \item Fecha: 30 de enero de 2026.
+\end{itemize}
+
+% ── Experiencia profesional ───────────────────────────────────────────────────
+\section{Experiencia profesional}
+
+\cventry{Consultor}%
+        {Sept.\ 2021 -- Dic.\ 2022}%
+        {Management Solutions SL}%
+        {Bilbao, España}
+\begin{itemize}[nosep, leftmargin=1.2em, topsep=4pt]
+  \item Desarrollo y validación de modelos de análisis de datos para riesgo
+        de crédito para una entidad bancaria líder en España.
+  \item Implementación y análisis de modelos estadísticos para evaluación de riesgo.
+  \item Formación interna a nuevos consultores en herramientas de análisis de datos.
+  \item Formación adicional en economía y gestión de riesgos en colaboración con
+        Universidad Pontificia Comillas -- ICADE.
+\end{itemize}
+
+% ── Proyectos de innovación ───────────────────────────────────────────────────
+\section{Proyectos de innovación}
+
+\cventry{Co-desarrollador}%
+        {Ene.\ 2025 -- Sept.\ 2025}%
+        {}{}
+\begin{itemize}[nosep, leftmargin=1.2em, topsep=4pt]
+  \item Diseño de un sistema para la generación automática de secuencias de turnos
+        en entornos sanitarios.
+  \item Implementación de criterios de optimización (descansos, carga horaria,
+        restricciones laborales).
+  \item Desarrollo de prototipo orientado a la mejora de la eficiencia organizativa
+        en centros sanitarios.
+\end{itemize}
+
+% ── Aptitudes ────────────────────────────────────────────────────────────────
+\section{Aptitudes}
+
+\begin{itemize}[nosep, leftmargin=1.2em]
+  \item \textbf{Programación:} Python, Scala, Java, SQL.
+  \item \textbf{Data \& Big Data:} Apache Spark, Hadoop, Power BI, Azure.
+  \item \textbf{Software matemático y estadístico:} MATLAB, Mathematica, R, SPSS.
+\end{itemize}
+
+% ── Idiomas ──────────────────────────────────────────────────────────────────
+\section{Idiomas}
+
+\begin{tabularx}{\linewidth}{@{}l l l l@{}}
+  \textbf{Castellano:} Nativo \\
+
+  \textbf{Inglés:} C1  \\
+
+  \textbf{Euskera:} B1 \\
+
+  \textbf{Alemán:} B2 \\
+
+  \textbf{Francés:} B2 & & &
+\end{tabularx}
+
+\end{document}

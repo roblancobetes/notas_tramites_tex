@@ -146,6 +146,51 @@ Here, Feferman explicitly acknowledges that truth is not absolute for all concep
 Finally, in the end, when all the dust settles the entire case rests on the claim that the concept of natural numbers is clear while the concept of arbitrary natural numbers is not clear. \textcite[p. 15]{Koellner2022}.
 \end{quote}
 
+In \textcite{Feferman2011a}, Section 3, Feferman presents a formal method for deciding whether a mathematical statement is well defined or not, which follows a previous article on semi-constructive theories \textcite{Feferman2010}. He argued that, following this method, CH could perhaps be proven to be an indefinite statement. In these papers Feferman opts for an intermediate approach between classical and intuitionistic logic, using classical logic in some situations he considers suitable for it, and intuitionistic logic in others.
+
+In my view, this logical approach to CH does not constitute a new argument but rather an explanation. Feferman essentially reformulates his philosophical arguments in formal terms, sometimes giving some additional explicitness to its more obscure points. However, I do not think this formal approach gives any further reason to accept Feferman’s case, in case his philosophical arguments are not accepted. Feferman develops the formal system SCS (which stands for Semi-Constructive Set Theory), based on an intuitionistic version of the Kripke–Platek (KP) axiomatic system, with some additional principles added. This results in an axiom system that can be summarized schematically as:
+
+\begin{equation}
+  \mathrm{SCS} = \mathrm{IKP} + \mathrm{MP} + \mathrm{AC}
+\end{equation}
+
+Here $\mathrm{IKP}$ stands for the intuitionistic Kripke–Platek system with the Axiom of Infinity, $\mathrm{MP}$ for Markov’s principle, and $\mathrm{AC}$ for a constructive, weaker version of the Axiom of Choice.\footnote{See \textcite{Feferman2010}, section 6 for more detail on the technicalities regarding each of the axioms added. The system defined there adds two other principles: the bounded omniscience scheme and the law of excluded middle for $\Delta_0$ formulae, but \textcite{Rathjen2016} has proven them to be redundant.}
+
+One of the most important consequences of these added principles is that the resulting system combines features of both classical and intuitionistic logic. Feferman interprets this to the extent that classical logic can be applied to definite objects and formulas. For example, the validity of the Law of Excluded Middle $A \lor \neg A$ for a given formula $A$ is taken to indicate that $A$ is definite; similarly, other classical principles are tied to definiteness. SCS basically assumes the definiteness—if defined this way—for $\Delta_0$ formulas, which quantify over the existing sets in the theory. In contrast, the universe of sets as a whole is considered indefinite, which is the reason why the system operates in general with intuitionistic logic.
+
+Feferman then came to conjecture that in this axiom system CH was indefinite, that is, that one cannot show $\mathrm{CH} \lor \neg \mathrm{CH}$, so the Law of Excluded Middle is not true for CH in this system. This would entail CH being an indefinite statement within this determinate system. Feferman went further, conjecturing that CH is also indefinite in the system $\mathrm{SCS} + \mathcal{P}(\mathbb{N})$, which adds the existence of the power set of the natural numbers. Both conjectures of Feferman were indeed correct; \textcite{Rathjen2016} published a proof for them. Rathjen, however, was cautious in drawing philosophical conclusions and focused primarily on the technical achievement:
+
+\begin{quote}
+\small
+The objective of this paper is to prove Feferman’s conjecture. In this sense it is a technical paper (...). However, as far as the ongoing discussions of the foundational status of CH are concerned, readers will have to form their own conclusions. \textcite[p. 743]{Rathjen2016}.
+\end{quote}
+
+Here I align with Rathjen: this does not prove Feferman’s philosophical case, but rather clarifies it. Koellner strongly disagrees with this line of argument:
+
+\begin{quote}
+\small
+It seems antecedently unsurprising that if one assumes only classical logic for a limited domain—say first-order number theory—then one will not be able to prove that classical logic holds for distinctive statements of a richer domain. \textcite[p. 516]{Koellner2016}.
+\end{quote}
+
+This reveals the fundamental issue with Feferman’s formal argument if interpreted in this way. Even if CH were shown to be indefinite under certain assumptions, this would not be decisive unless there were independent reasons to accept those assumptions. In this case, Feferman’s assumptions—such as restricting classical reasoning to certain formulas—are justified not by the formal system itself but by his broader philosophical conception of mathematics.
+
+In relation to conceptual structuralism, as discussed earlier, there are two main lines of reasoning that could support the indefiniteness of CH: applicability and clarity. From the perspective of applicability, one might argue that SCS suffices for all scientifically relevant mathematics. From the perspective of clarity, one might claim that SCS captures all mathematical entities that are sufficiently well-defined. In this sense, the formal system does not provide new justification, but rather a more precise articulation of Feferman’s philosophical stance.
+
+There is, however, one aspect of this approach that I find promising: the use of intuitionistic logic to model the notion of indefiniteness. This connects directly with the classical debate between classical and intuitionistic logic. The idea that a formula is definite if and only if it satisfies the Law of Excluded Middle provides a natural bridge between logical principles and philosophical notions of determinacy.
+
+Nevertheless, Feferman’s approach also reveals a tendency toward predicativism, particularly in the exclusion of the full power set operation. In SCS, real numbers are constructed via Cauchy sequences rather than as arbitrary subsets of $\mathbb{N}$. While this suffices for much of analysis, it avoids commitment to the full set-theoretic conception of the continuum.
+
+Feferman justifies this restriction partly on applicability grounds, arguing that all current applications of analysis in physics can be carried out predicatively:
+
+\begin{quote}
+\small
+What this shows is that the argument from the success of physics to the reality of the set-theoretical conception of the real numbers is completely vitiated. \textcite[p. 22]{Feferman2011a}.
+\end{quote}
+
+However, this position seems overly restrictive, as it complicates the development of real analysis and ignores broader aspects of mathematical practice. Feferman himself acknowledges a more moderate position, allowing for the acceptance of $\mathcal{P}(\mathbb{N})$ while rejecting higher levels of the set-theoretic hierarchy. Importantly, his formal results regarding CH remain valid even under this more permissive stance.
+
+%-----------------------------------------
+
 Koellner himself rejects this argument, and, as we will see, there are strong reasons for his stance. For this reason, I think it is reasonable to look for another line of argumentation in Feferman’s thought, that could also lead us to have doubts on the definiteness of CH. This will require both an interpretation and a systematic completion of the philosophical arguments of Feferman, which will result in the applicability argument. This argument defends that mathematical structures are legitimized insofar as they, in some way, model the world and help us understand it. This is not an argument Feferman formulates explicitly, but we see it appear indirectly in Thesis 3:
 
 \begin{quote}
@@ -316,50 +361,7 @@ I am no more uncomfortable doing that than if I were teaching Newtonian mechanic
 
 In summary, even though Feferman’s requirement for clarity presents significant difficulties, it manages to capture important epistemological differences between arithmetic and set theory. However, extending these differences to third-order arithmetic and the minimal frameworks that allow us to formulate CH would be problematic. This is parallel to the conclusion of Section 4 regarding the applicability argument. In the next section, I will evaluate an important line of thought in Feferman’s case on CH, which I will defend to be essentially a formal reformulation of his philosophical argumentation.
 
-\section{Feferman’s formal approach to CH and its relation to his philosophical conception}
 
-In \textcite{Feferman2011a}, Section 3, Feferman presents a formal method for deciding whether a mathematical statement is well defined or not, which follows a previous article on semi-constructive theories \textcite{Feferman2010}. He argued that, following this method, CH could perhaps be proven to be an indefinite statement. In these papers Feferman opts for an intermediate approach between classical and intuitionistic logic, using classical logic in some situations he considers suitable for it, and intuitionistic logic in others.
-
-In my view, this logical approach to CH does not constitute a new argument but rather an explanation. Feferman essentially reformulates his philosophical arguments in formal terms, sometimes giving some additional explicitness to its more obscure points. However, I do not think this formal approach gives any further reason to accept Feferman’s case, in case his philosophical arguments are not accepted. Feferman develops the formal system SCS (which stands for Semi-Constructive Set Theory), based on an intuitionistic version of the Kripke–Platek (KP) axiomatic system, with some additional principles added. This results in an axiom system that can be summarized schematically as:
-
-\begin{equation}
-  \mathrm{SCS} = \mathrm{IKP} + \mathrm{MP} + \mathrm{AC}
-\end{equation}
-
-Here $\mathrm{IKP}$ stands for the intuitionistic Kripke–Platek system with the Axiom of Infinity, $\mathrm{MP}$ for Markov’s principle, and $\mathrm{AC}$ for a constructive, weaker version of the Axiom of Choice.\footnote{See \textcite{Feferman2010}, section 6 for more detail on the technicalities regarding each of the axioms added. The system defined there adds two other principles: the bounded omniscience scheme and the law of excluded middle for $\Delta_0$ formulae, but \textcite{Rathjen2016} has proven them to be redundant.}
-
-One of the most important consequences of these added principles is that the resulting system combines features of both classical and intuitionistic logic. Feferman interprets this to the extent that classical logic can be applied to definite objects and formulas. For example, the validity of the Law of Excluded Middle $A \lor \neg A$ for a given formula $A$ is taken to indicate that $A$ is definite; similarly, other classical principles are tied to definiteness. SCS basically assumes the definiteness—if defined this way—for $\Delta_0$ formulas, which quantify over the existing sets in the theory. In contrast, the universe of sets as a whole is considered indefinite, which is the reason why the system operates in general with intuitionistic logic.
-
-Feferman then came to conjecture that in this axiom system CH was indefinite, that is, that one cannot show $\mathrm{CH} \lor \neg \mathrm{CH}$, so the Law of Excluded Middle is not true for CH in this system. This would entail CH being an indefinite statement within this determinate system. Feferman went further, conjecturing that CH is also indefinite in the system $\mathrm{SCS} + \mathcal{P}(\mathbb{N})$, which adds the existence of the power set of the natural numbers. Both conjectures of Feferman were indeed correct; \textcite{Rathjen2016} published a proof for them. Rathjen, however, was cautious in drawing philosophical conclusions and focused primarily on the technical achievement:
-
-\begin{quote}
-\small
-The objective of this paper is to prove Feferman’s conjecture. In this sense it is a technical paper (...). However, as far as the ongoing discussions of the foundational status of CH are concerned, readers will have to form their own conclusions. \textcite[p. 743]{Rathjen2016}.
-\end{quote}
-
-Here I align with Rathjen: this does not prove Feferman’s philosophical case, but rather clarifies it. Koellner strongly disagrees with this line of argument:
-
-\begin{quote}
-\small
-It seems antecedently unsurprising that if one assumes only classical logic for a limited domain—say first-order number theory—then one will not be able to prove that classical logic holds for distinctive statements of a richer domain. \textcite[p. 516]{Koellner2016}.
-\end{quote}
-
-This reveals the fundamental issue with Feferman’s formal argument if interpreted in this way. Even if CH were shown to be indefinite under certain assumptions, this would not be decisive unless there were independent reasons to accept those assumptions. In this case, Feferman’s assumptions—such as restricting classical reasoning to certain formulas—are justified not by the formal system itself but by his broader philosophical conception of mathematics.
-
-In relation to conceptual structuralism, as discussed earlier, there are two main lines of reasoning that could support the indefiniteness of CH: applicability and clarity. From the perspective of applicability, one might argue that SCS suffices for all scientifically relevant mathematics. From the perspective of clarity, one might claim that SCS captures all mathematical entities that are sufficiently well-defined. In this sense, the formal system does not provide new justification, but rather a more precise articulation of Feferman’s philosophical stance.
-
-There is, however, one aspect of this approach that I find promising: the use of intuitionistic logic to model the notion of indefiniteness. This connects directly with the classical debate between classical and intuitionistic logic. The idea that a formula is definite if and only if it satisfies the Law of Excluded Middle provides a natural bridge between logical principles and philosophical notions of determinacy.
-
-Nevertheless, Feferman’s approach also reveals a tendency toward predicativism, particularly in the exclusion of the full power set operation. In SCS, real numbers are constructed via Cauchy sequences rather than as arbitrary subsets of $\mathbb{N}$. While this suffices for much of analysis, it avoids commitment to the full set-theoretic conception of the continuum.
-
-Feferman justifies this restriction partly on applicability grounds, arguing that all current applications of analysis in physics can be carried out predicatively:
-
-\begin{quote}
-\small
-What this shows is that the argument from the success of physics to the reality of the set-theoretical conception of the real numbers is completely vitiated. \textcite[p. 22]{Feferman2011a}.
-\end{quote}
-
-However, this position seems overly restrictive, as it complicates the development of real analysis and ignores broader aspects of mathematical practice. Feferman himself acknowledges a more moderate position, allowing for the acceptance of $\mathcal{P}(\mathbb{N})$ while rejecting higher levels of the set-theoretic hierarchy. Importantly, his formal results regarding CH remain valid even under this more permissive stance.
 
 \section{Conclusion}
 

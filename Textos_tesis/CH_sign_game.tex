@@ -125,6 +125,81 @@ And this is precisely the question this paper seeks to address: whether certain 
 
 The text is organized as follows. In Section~\ref{alternative-approaches}, I examine Feferman’s conceptual structuralism, focusing on the roles of clarity, definiteness, and applicability, and on how these bear on the status of the Continuum Hypothesis. In Section~\ref{quasi-emp-structuralism}, I develop a refined applicability criterion and introduce a hierarchical account of mathematically legitimate structures. Section~\ref{section-CH-case} discusses the legitimacy of finite-order arithmetic and turns to the case of abstract set theory and the place of CH within it. In Section~\ref{history-section}, I compare this framework with related views, particularly those of Maddy and Shapiro. Finally, Section~\ref{Conclusion} draws together the main results of the paper.
 
+\section{The structuralists' approach: ontology, epistemology and categoricity}
+\label{structuralims-ontology-epistemology}
+ 
+An important philosophical approach that was able to distance itself from formalism while also addressing epistemological and ontological problems in the philosophy of mathematics is mathematical structuralism, as developed by thinkers such as Shapiro and Resnik. Crucially,structuralist and related approaches (including Feferman’s work in conceptual structuralism) connect to debates about the determinacy of set-theoretic questions such as the Continuum Hypothesis, particularly concerning whether there is a single, fixed mathematical universe.
+
+One of the most paradigmatic developments within this philosophical movement is that of \textcite{Shapiro1997}. In this work, he defends a conception known as \textit{ante rem structuralism}, according to which mathematical structures exist independently of—and prior to—the systems of objects that instantiate them. On this view, what matters is not which particular objects occupy positions within a given structure, but rather the relations that define the structure and the ways in which structures relate to and extend one another.
+
+Nevertheless, Shapiro remains flexible enough to acknowledge alternative forms of structuralism as broadly equivalent in practice, even if, in his view, they are less natural with respect to the actual development of mathematics. This openness brings his position closer to other approaches, such as Resnik’s pattern-based (\citeyear{Resnik1981}) or non-ontological structuralism (\citeyear{Resnik2018NonOntological}):
+
+\begin{adjustwidth}{1cm}{1cm}
+\small
+\begin{quote}
+I believe that the \textit{ante rem} option is the most perspicuous and least artificial of the three [eliminative, modal eliminative and \textit{ante rem} structuralism]. It comes closest to capturing how mathematical theories are conceived. Nevertheless, I do not mean to rule out the other options. Indeed, it follows from the thesis of structuralism that, in a sense, all three options are equivalent. As will be shown, each delivers the same “structure of structures.” \parencite[p. 90]{Shapiro1997}
+\end{quote}
+\end{adjustwidth}
+
+In my view, the most important takeaway from \textit{ante rem} structuralism is that structures are the fundamental primitive of mathematics, and that mathematicians often reason in structural terms in practice. Chapters 5 and 6 of \textcite{Shapiro1997} illustrate how deeply this perspective is embedded in the history of mathematics. This is evident, for instance, in \textcite{Dedekind1888}, as well as in \textcite{Bourbaki1950}, where “structure” is conceived as a collection endowed with one or more relations satisfying a specified set of axioms. In particular, this implies kind of a ``holistic'' interpretation of any mathematical statement, in particular, that it can only be considered meaningful in terms of the structures where it is ultimately defined. For example, in case that the continuum hypothesis is a well defined statement in the language of third order arithmetic, and \textit{a fortiori} in set theory. Therefore, whether it is a meaningful mathematical statement depends crucially on the structures that model and instantiate this languages.
+
+Considerations around structuralism naturally raise the question of whether mathematical structures exist prior to objects, but also introduce a further “chicken or egg” problem: are structures prior to the axioms that characterize them, or are they instead determined through axiomatic specification? \textit{Ante rem} structuralism suggests that axioms merely describe independently existing structures, although the position is less clear on this issue than on the question of object-structure priority.
+
+It is at this point where the epistemological problems regarding structures come into play. According to \textcite{Shapiro1997}, and much in line with what is discussed in \textcite{Resnik1981}, the fundamental way of coming to know a mathematical structure is based in pattern-recognition. The first and most known case is the one of the natural number structure, where the pattern is the idea of always being able to add one element to an existing finite sequence:
+
+\begin{adjustwidth}{1cm}{1cm}
+\begin{quote}
+  \small
+Our subject learns that the sequence of sequences goes on indefinitely. For each sequence, there is a unique next-longest sequence, and so there is no longest sequence. The system of finite sequences is potentially infinite. Eventually, the subject can coherently discuss the structure of these finite patterns, perhaps formulating a version of the Peano axioms for this structure. We have now reached the structure of the natural numbers. \parencite[pp. 118-119]{Shapiro1997}
+\end{quote}
+\end{adjustwidth}
+
+At this point we see the sharp line between pattern recognition and axiom systems. When more abstract mathematical structures, such as the set theoretical hierarchy, come into play, then the patterns leading to them may be more complex. At this point, the pattern involved leads to fundamentally an axiom system, such as $\mathrm{ZFC}$, and the the way these structures are apprehended consists in integrating an implicit definition of the structure through these axioms:
+
+\begin{adjustwidth}{1cm}{1cm}
+\begin{quote}
+  \small
+One way to understand a particular structure is through a direct description of it (...). Eventually, a properly prepared listener will understand that it is the structure itself, and not any particular instance of it, that is being described (...). We have here an instance of implicit definition, a technique familiar in mathematical logic. \parencite[p. 130]{Shapiro1997}
+\end{quote}
+\end{adjustwidth}
+
+According to Shapiro, thus, relevant structures in mathematical discourse and axioms describing them need to stay at the same level, which in logical terms we understand as having structures determined by categorical axiom systems. However, crucial axiom systems for the practice of mathematics, such as $PA$ for arithmetic and $ZF$ for set theory, are not categorical in first order logic.\footnote{As categoricity of a theory implies completeness, any theory affected by Gödel's incompleteness theorem won't be categorical.} Accordingly, \textcite{shapiro1991foundations} argued that second order logic, where these theories are categorical (quasicategorical in the case of set theory), provides a suitable foundation for mathematics.\footnote{See \textcite[chapter 4]{shapiro1991foundations} for a proof of those categoricity results.} In chapter 8 of this book, Shapiro defends that, in pre-formal practice, mathematicians operate with concepts such as ``all subsets'', ``all natural numbers'', that fixes a unique interpretation for the axioms which enable them to distingish stardard from non standard models. Second-order logic, under full semantics, is precisely the formalism that is faithful to those informal semantic commitments, whereas first-order logic systematically fails to be.
+
+This perspective, however, is subject to some important criticism. \textcite{Vaananen2015}---much in line with \textcite{Quine1941} argues that second-order logic depends on what he calls large domain assumptions, which come quite close to the meaning of the axioms of set theory. \textcite{Shapiro2012} even accepts this, but holds that it does not undermine his case for second order logic as a natural foundation of mathematics. They agree, for that reason, that second order logic and first order set theory can be threated as logically equivalent. However, from the perspective of the practice of mathematics, the latter is no doubt more prominent in the various foundationalist approaches to mathematics. 
+
+Arguments that Shapiro gives related to mathematical practice are also problematic. For example he states (\citeyear{shapiro1991foundations}, p. 99) that important tool in mathematical practice, which is the concept of a minimal closure, cannot be formalized without appealing to second order logic: ``There is a straightforward argument, relying on the compactness theorem, that no collection of first-order formulas can successfully characterize any non-trivial minimal closure. This is evidence that first-order languages are inadequate.'' However, applying this argument to mathematical practice is not that straightforward, since in general practicioners tend to use minimal closures that are defined within a previously given structure. Take, for instance, the algebraic closure of $\mathbb{Q}$, which is the most paradigmatic example. This set contains all the solutions to polynomical equations with coeficients in $\mathbb{Q}$, which can be written as $\{ x \in \mathbb{C}: \exists n \in \mathbb{N}, q_0, ..., q_n \neq 0 \in \mathbb{Q},\forall x, q_0 + ... + q_n x^n = 0 \}$. This is a definition with parameters over $\mathbb{Q}$ in the structure $\mathbb{C}$, using the language of first order theory of rings plus a really weak version of first order set theory. More generally, in a given structure, most closures are definable by formulas with parameters or describable as the intersection of definable sets. 
+
+For this reason, I think we should also take into account, in this regard, views such as those presented in chapter 7 of \textcite{Resnik1997}, where he defends that a mathematical theory, given by axioms, merely describes a structural pattern, without necessarily determining a unique and privileged structure that models that theory. A clear and paradigmatic case of this approach in mathematical practice is category theory. The axiomatic basis of this theory is the definition of a category $\mathcal{A}$, which consists of the following elements:
+
+\begin{enumerate}
+  \item A collection $Obj(\mathcal{A})$, whose members are called the objects of $\mathcal{A}$.
+  \item For every pair of objects $A, B \in Obj(\mathcal{A})$, a collection of arrows (or morphisms) from $A$ to $B$. If $f$ is such an arrow, we write $f: A \rightarrow B$.
+  \item A composition operation: given two arrows $f: A \rightarrow B$ and $g: B \rightarrow C$, there is an arrow $g \circ f: A \rightarrow C$.
+  \item For every object $A$, an identity arrow $id_A: A \rightarrow A$.
+\end{enumerate}
+
+These data are required to satisfy the following axioms:
+
+\begin{enumerate}
+  \item \textbf{Associativity:} For arrows $f: A \rightarrow B$, $g: B \rightarrow C$, and $h: C \rightarrow D$, we have
+  \[
+  h \circ (g \circ f) = (h \circ g) \circ f.
+  \]
+  \item \textbf{Identity:} For every arrow $f: A \rightarrow B$, we have
+  \[
+  id_B \circ f = f \quad \text{and} \quad f \circ id_A = f.
+  \]
+\end{enumerate}
+
+Such a simple and concise list of axioms is applicable to a wide variety of areas of mathematics, such as groups, topological spaces, sets, relations, partially ordered sets, differentiable manifolds, and many others. What matters in practice, however, are the particular collections that instantiate these axioms, rather than whether there exists a fundamental and privileged structure that realizes them. Views such as that of the ``category of all categories'' have been proposed, but they are not central to mathematical practice (see \textcite{maclane1998categories}).
+
+For this reason, I do not think that either of the two approaches---the priority of axioms and patterns, or that of structures over them---is unanimously adopted in mathematical practice, nor that one should be universally prioritized. Rather, we should draw a distinction between them. In cases where structures are grasped prior to the axiom systems that characterize them, and axioms are only later formulated as fundamental statements about those structures---something that aligns more closely with \textit{ante rem} structuralism---I would say that mathematicians are \textit{committing to a mathematical structure}. 
+
+In the opposite case, when mathematicians (especially since the advent of the formalist approach) proceed in the reverse direction---starting from an axiom system before having a clear structure that satisfies it---I would say that they are \textit{committing to a pattern}, or to an axiom system. In such cases, particularly when the system is non-categorical, this does not imply commitment to a determinate structure.
+
+
+This was clear in the case of set theory, which I threat in detail in section \ref{set-theory}, and even of category theory. In this case 
+
 %=========================
 
 \section{Stepping away from formalism: mathematical practice and metodology}
@@ -170,56 +245,6 @@ Having defined $S_0$, we now take the recursive step. A structure $X$, not belon
 
     \item \textbf{Generative capacity:} $X$ gives rise to new and fruitful lines of inquiry within $S$.
 \end{enumerate}
-
-\section{The structuralists' approach: ontology, epistemology and categoricity}
-\label{structuralims-ontology-epistemology}
-
-While Lakatos focused essentially on methodological and historical issues, he did not directly develop a detailed epistemological or ontological account in the philosophy of mathematics. An important philosophical approach that, while also distancing itself from formalism, does address these issues is mathematical structuralism, as developed by thinkers such as Shapiro and Resnik. Crucially,structuralist and related approaches (including Feferman’s work in conceptual structuralism) connect to debates about the determinacy of set-theoretic questions such as the Continuum Hypothesis, particularly concerning whether there is a single, fixed mathematical universe.
-
-One of the most paradigmatic developments within this philosophical movement is that of \textcite{Shapiro1997}. In this work, he defends a conception known as \textit{ante rem structuralism}, according to which mathematical structures exist independently of—and prior to—the systems of objects that instantiate them. On this view, what matters is not which particular objects occupy positions within a given structure, but rather the relations that define the structure and the ways in which structures relate to and extend one another.
-
-Nevertheless, Shapiro remains flexible enough to acknowledge alternative forms of structuralism as broadly equivalent in practice, even if, in his view, they are less natural with respect to the actual development of mathematics. This openness brings his position closer to other approaches, such as Resnik’s pattern-based (\citeyear{Resnik1981}) or non-ontological structuralism (\citeyear{Resnik2018NonOntological}):
-
-\begin{adjustwidth}{1cm}{1cm}
-\small
-\begin{quote}
-I believe that the \textit{ante rem} option is the most perspicuous and least artificial of the three [eliminative, modal eliminative and \textit{ante rem} structuralism]. It comes closest to capturing how mathematical theories are conceived. Nevertheless, I do not mean to rule out the other options. Indeed, it follows from the thesis of structuralism that, in a sense, all three options are equivalent. As will be shown, each delivers the same “structure of structures.” \parencite[p. 90]{Shapiro1997}
-\end{quote}
-\end{adjustwidth}
-
-In my view, the most important takeaway from \textit{ante rem} structuralism is that structures are the fundamental primitive of mathematics, and that mathematicians often reason in structural terms in practice. Chapters 5 and 6 of \textcite{Shapiro1997} illustrate how deeply this perspective is embedded in the history of mathematics. This is evident, for instance, in \textcite{Dedekind1888}, as well as in \textcite{Bourbaki1950}, where “structure” is conceived as a collection endowed with one or more relations satisfying a specified set of axioms. In particular, this implies kind of a ``holistic'' interpretation of any mathematical statement, in particular, that it can only be considered meaningful in terms of the structures where it is ultimately defined. For example, in case that the continuum hypothesis is a well defined statement in the language of third order arithmetic, and \textit{a fortiori} in set theory. Therefore, whether it is a meaningful mathematical statement depends crucially on the structures that model and instantiate this languages. Which features the involved structures should have, is something I address in section \ref{quasi-emp-structuralism}.
-
-Considerations around structuralism naturally raise the question of whether mathematical structures exist prior to objects, but also introduce a further “chicken or egg” problem: are structures prior to the axioms that characterize them, or are they instead determined through axiomatic specification? \textit{Ante rem} structuralism suggests that axioms merely describe independently existing structures, although the position is less clear on this issue than on the question of object-structure priority.
-
-It is at this point where the epistemological problems regarding structures come into play. According to \textcite{Shapiro1997}, and much in line with what is discussed in \textcite{Resnik1981}, the fundamental way of coming to know a mathematical structure is based in pattern-recognition. The first and most known case is the one of the natural number structure, where the pattern is the idea of always being able to add one element to an existing finite sequence:
-
-\begin{adjustwidth}{1cm}{1cm}
-\begin{quote}
-  \small
-Our subject learns that the sequence of sequences goes on indefinitely. For each sequence, there is a unique next-longest sequence, and so there is no longest sequence. The system of finite sequences is potentially infinite. Eventually, the subject can coherently discuss the structure of these finite patterns, perhaps formulating a version of the Peano axioms for this structure. We have now reached the structure of the natural numbers. \parencite[pp. 118-119]{Shapiro1997}
-\end{quote}
-\end{adjustwidth}
-
-At this point we see the sharp line between pattern recognition and axiom systems. When more abstract mathematical structures, such as the set theoretical hierarchy, come into play, then the patterns leading to them may be more complex. At this point, the pattern involved leads to fundamentally an axiom system, such as $\mathrm{ZFC}$, and the the way these structures are apprehended consists in integrating an implicit definition of the structure through these axioms:
-
-\begin{adjustwidth}{1cm}{1cm}
-\begin{quote}
-  \small
-One way to understand a particular structure is through a direct description of it (...). Eventually, a properly prepared listener will understand that it is the structure itself, and not any particular instance of it, that is being described (...). We have here an instance of implicit definition, a technique familiar in mathematical logic. \parencite[p. 130]{Shapiro1997}
-\end{quote}
-\end{adjustwidth}
-
-According to Shapiro, thus, relevant structures in mathematical discourse and axioms describing them need to stay at the same level, which in logical terms we understand as having structures determined by categorical axiom systems. However, crucial axiom systems for the practice of mathematics, such as $PA$ for arithmetic and $ZF$ for set theory, are not categorical in first order logic.\footnote{As categoricity of a theory implies completeness, any theory affected by Gödel's incompleteness theorem won't be categorical.} Accordingly, \textcite{shapiro1991foundations} argued that second order logic, where these theories are categorical (quasicategorical in the case of set theory), provides a suitable foundation for mathematics.\footnote{See \textcite[chapter 4]{shapiro1991foundations} for a proof of those categoricity results.} In chapter 8 of this book, Shapiro defends that, in pre-formal practice, mathematicians operate with concepts such as ``all subsets'', ``all natural numbers'', that fixes a unique interpretation for the axioms which enable them to distingish stardard from non standard models. Second-order logic, under full semantics, is precisely the formalism that is faithful to those informal semantic commitments, whereas first-order logic systematically fails to be.
-
-This perspective, however, is subject to some important criticism. \textcite{Vaananen2015}---much in line with \textcite{Quine1941} argues that second-order logic depends on what he calls large domain assumptions, which come quite close to the meaning of the axioms of set theory. \textcite{Shapiro2012} even accepts this, but holds that it does not undermine his case for second order logic as a natural foundation of mathematics. They agree, for that reason, that second order logic and first order set theory can be threated as logically equivalent. However, from the perspective of the practice of mathematics, the latter is no doubt more prominent in the various foundationalist approaches to mathematics.
-
-Arguments that Shapiro gives related to mathematical practice are also problematic. For example he states (\citeyear{shapiro1991foundations}, p. 99) that important tool in mathematical practice, which is the concept of a minimal closure, cannot be formalized without appealing to second order logic: ``There is a straightforward argument, relying on the compactness theorem, that no collection of first-order formulas can successfully characterize any non-trivial minimal closure. This is evidence that first-order languages are inadequate.'' However, applying this argument to mathematical practice is not that straightforward, since in general practicioners tend to use minimal closures that are defined within a previously given structure. 
-
-Take, for instance, the algebraic closure of $\mathbb{Q}$, which is the most paradigmatic example. This set contains all the solutions to polynomical equations with coeficients in $\mathbb{Q}$, which can be written as $\{ x \in \mathbb{C}: \exists n \in \mathbb{N}, q_0, ..., q_n \neq 0 \in \mathbb{Q},\forall x, q_0 + ... + q_n x^n = 0 \}$. This is a definition with parameters over $\mathbb{Q}$ in the structure $\mathbb{C}$, using the language of first order theory of rings plus a really weak version of first order set theory. More generally, in a given structure, most closures are definable by formulas with parameters or describable as the intersection of definable sets. 
-
-In many cases, this structures are grasped prior to the axiom systems that characterize them, and that it is only later on that we can give axioms as true fundamental statements about them---this is precisely which fits more to \textit{ante rem} structuralism, more than appealing to second order logic and categoricity. These axioms could perhaps be insufficient to completely characterize the structure. In this case, I would say that mathematical practicioners are \textit{commiting to a mathematical structure}.
-
-However, sometimes mathematicians (specially since the advent of the formalist approach) work the other way around, and start working on an axiom system before they can even think of a clear structure satifying them. This was clear in the case of set theory, which I threat in detail in section \ref{set-theory}, and even of category theory. In this case they are \textit{comitting to an axiom system}, which, in case it is a non categorical one, does not imply commiting to a determinate structure. \textbf{relation among them}
 
 \section{A practice-based, quasi-empirical structuralism}
 \label{quasi-emp-structuralism}
@@ -411,6 +436,8 @@ With respect to the power set axiom, consider, for instance, the field of topolo
 %=========================
 \section{Category theory}
 \label{alternative-approaches}
+
+
 
 As explained in the introduction, this text examines the mathematical significance of certain structures. In this section, I explore how this notion is addressed—often indirectly—within conceptual structuralism, a framework that has engaged extensively with CH. In the next section, I turn to how I would address the difficulties this conception raises for this issue.
 
