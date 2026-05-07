@@ -206,61 +206,47 @@ In the early nineteenth century the flood of counterexamples brought confusion. 
 
 From the perspective developed here, Lakatos draws a clear distinction between mathematical reasoning and purely formal calculation. Rather than grounding mathematics in formal derivations alone, he emphasizes its problem-solving power: definitions, entities, and assumptions are justified insofar as they contribute to the advancement of inquiry. Another central feature of his view is the iterative character of mathematical reasoning. The emergence of a refutation or the identification of a flaw does not terminate the process; instead, it prompts the introduction of revised assumptions, refined definitions, or new intermediate results, which may in turn generate further tensions and revisions. This iterative character is central to Lakatos’ account, according to which mathematics advances not through the accumulation of final proofs, but through a dynamic process of conjecture and criticism. As he puts it (\citeyear{Lakatos1976}, p.5), “mathematics […] does not grow through a monotonous increase of the number of indubitably established theorems but through the incessant improvement of guesses by speculation and criticism, by the logic of proofs and refutations”.
 
-Thus, Lakatos’ approach is able to illuminate the way mathematical entities, definitions, and structures tend to develop. In order to make my point more explicit, I defend that, if $S$ is the collection of structures (perhaps open-ended) that practicioners of mathematics tend to commit to in a given time, then another structure $X$ should be also included in that collection in case it satisfies at least one of the following conditions:
+Thus, Lakatos’ approach is able to illuminate the way mathematical entities, definitions, and structures tend to develop. How could we apply it to the perspective developed here, that assumes a structuralist approach to ontology in mathematics? I propose to understand it through the notion of $\mathcal{S}$, the (possibly open-ended) collection of mathematical structures to which mathematical practice is committed. One I defend to be of the most important insights of Lakatos’ quasi-empiricism, is the fact that $\mathcal{S}$ is closed in the following sense: a mathematical structure $X$ should be also included in that collection in case it satisfies at least one of the following conditions:
 
 \begin{enumerate}
-    \item \textbf{Problem-solving power:} $X$ provides solutions to previously existing, well-defined, and relevant problems formulated within structures in $S$.
 
-    \item \textbf{Explanatory unification:} $X$ reveals that phenomena arising in structures in $S$, previously regarded as disparate, are in fact manifestations of a single underlying principle.
+    \item \label{condition1} \textbf{Problem-solving power:} $X$ provides solutions to previously existing, well-defined, and relevant problems formulated within structures in $S$.
 
-    \item \textbf{Generative capacity:} $X$ gives rise to new and fruitful lines of inquiry within $S$.
+    \item \label{condition2} \textbf{Explanatory unification:} $X$ reveals that phenomena arising in structures in $S$, previously regarded as disparate, are in fact manifestations of a single underlying principle.
+
+    \item \label{condition3} \textbf{Generative capacity:} $X$ gives rise to new and fruitful lines of inquiry within $S$.
 \end{enumerate}
 
+To avoid redundancy, $X$ should moreover be minimal or sufficiently simple relative to the problems solved, phenomena unified, or research lines generated. I return to this criterion in Section \ref{simplicity}. These three criteria capture central ways in which mathematical structures prove fruitful in practice, a point illustrated through the historical examples discussed in Section \ref{quasi-emp-structuralism}.
 
-\textbf{Simplicity:} $X$ is---\textbf{in a sense to be discused}---the simplest structure satisfying the previous point, for a set given set of solved problems, 
+Note that this, as in Lakatos’ approach, proposes an inductive, iterative pattern, in which new structures and definitions emerge from previously accepted ones.  This is a point on which greater subtlety is required. This iterative approach does not clearly explain which mathematical notions, if any, could arise independently of previously established notions. This is fundamentally the idea of a ``base case'' in the collection $\mathcal{S}$, which in my view should contain structures whose legitimacy is grounded directly in their indispensability---or at least their deep entrenchment---in scientific and practical engagement with the physical world. This does not require accepting the indispensability argument of \textcite{quine1960} and \textcite{putnam1971} in its full ontological strength. The weaker claim defended here is simply that structures indispensable to scientific practice and successful modeling should belong to any reasonable conception of mathematics.\footnote{\textcite{Feferman1993} argues that comparatively weak proof-theoretic assumptions suffice for much of the mathematics required in scientific practice. Nevertheless, such systems may sacrifice simplicity, transparency, and usability, issues to which I return in Section \ref{simplicity}.} Strictly speaking, and adapting this idea to the present framework, conditions \ref{condition1}–\ref{condition3} should therefore be understood as applying not only to previously accepted mathematical structures, but also to real-world phenomena and to problems arising within our practical environment. A structure satisfying these conditions relative to extra-mathematical practice will be called an \textit{externally applicable structure}.
 
-Whether one commits to structures or to axiom systems, one finds an iterative pattern in which new structures and definitions emerge from previously accepted ones. It would therefore be fruitful to examine the structures and patterns present in contemporary mathematical practice—particularly those involved in the definition of CH—through this perspective. However, there is a point on which greater subtlety is required. This iterative approach does not clearly explain which mathematical notions, if any, could arise independently of previously established notions.
+The perspective developed here may therefore be understood as a form of \textit{quasi-empirical structuralism}: a structuralist conception of mathematics in which the legitimacy and development of mathematical structures are closely connected to their explanatory, problem-solving, and generative role within both mathematical and scientific practice. I think this conception is also faithful to the \textcite{Wittgenstein1978} passage mentioned in the \nameref{Intro}, insofar as it requires mathematical structures to be applicable to problems, phenomena, and areas of inquiry beyond their own immediate definition, and ultimately beyond mathematics itself.
 
+What quasi-empirical structuralism defends, then, is a kind of methodological well-foundedness for mathematical structures. If $S_1$ and $S_2$ are mathematical structures,\footnote{I insist that such structures may be open-ended, meaning—see the end of section \ref{structuralims-ontology-epistemology}—that they may consist simply of collections of axioms accepted in practice.} I write 
 
+$$S_1 \leadsto S_2 $$
 
+to indicate that $S_2 \in \mathcal{S}$ because it fulfulls conditions \ref{condition1}–\ref{condition3} with respect to $S_1 \in \mathcal{S}$. Then for any structure $S \in \mathcal{S}$, there is a sequence 
 
+$$S_0 \leadsto ... \leadsto S_n = S,$$ 
 
-
-
-
-
-
-
-
-For this reason, I propose to incorporate them into a notion of \textit{mathematical content}, organized through a recursively defined hierarchy of mathematical structures. This is not intended as a formal definition within an axiomatic system, but rather as a philosophical model structured as a sequence of classes of mathematical objects. Let us denote this sequence by $S_0, S_1, S_2, \ldots$, representing progressively more encompassing structures.
-
-
-First, we define the class $S_0$, consisting of structures whose legitimacy is grounded directly in their indispensability for modeling the physical world. This class would plausibly include structures such as the natural numbers $\mathbb{N}$, the rational numbers $\mathbb{Q}$, the Euclidean plane for spatial reasoning, and other core notions underlying real analysis and calculus (such as continuous change). Any structure in $S_0$ can thus be justified through the requirement of direct external applicability.
-
-
-
-
-Having defined $S_0$, we now take the recursive step. A structure $X$, not belonging to $S = S_0 \cup \cdots \cup S_n$, is admitted into the class $S_{n+1}$ if it satisfies, in a standard, simple, and natural way, at least one of the following conditions:
-
-
-
-
-
-
-
-
-
-
-The requirement that these conditions be satisfied in a standard, simple, and natural way implies that the legitimacy of certain structures may remain an open question. However, this requirement is essential; otherwise, redundant or artificially constructed structures would also qualify as legitimate. If a structure $X$ is deemed legitimate, then any statement formulated within it may be regarded as a \textit{meaningful mathematical statement}.
-
-
+where $S_0$ is an externally applicable structure. What concerns us here, then, is whether the structures appearing in such a sequence, in the particular case where $S$ is involved in the formulation of $CH$, are open-ended or definite.\footnote{In section \ref{simplicity} I defend that, if $S \leadsto S'$ and $S$ is open-ended, then $S'$ must also be open-ended.} More precisely, the question is whether the fruitfulness of those structures in mathematical practice derives primarily from commitment to definite mathematical objects, or instead from the continued development of inferential and axiomatic patterns that remain open-ended while guiding mathematical activity.
 \section{A practice-based, quasi-empirical structuralism}
 \label{quasi-emp-structuralism}
 
+In this section I examine several historical examples drawn from mathematical practice. The first objective is to argue that the iterative component of quasi-empirical structuralism has been present at various moments in the historical development of mathematics. The second is to defend the claim that structures such as $\mathbb{N}$, $\mathbb{R}$, and $\mathbb{C}$ have proved fruitful in mathematical practice precisely through commitment to their structural form, making it difficult to regard them as merely open-ended structures.
 
+Externally applicable structures: natural numbers, rationals, reals, geometry, ...
 
-To this end, I examine one of the most paradigmatic cases in the history of mathematics in which a mathematical structure was introduced and eventually accepted, despite initially being regarded as metaphysical and ill-defined: the development of complex numbers from the sixteenth to the nineteenth century. This is a case that illustrates how acceptance emerges from sustained mathematical practice rather than immediate structural recognition. I outline the reasons why complex numbers, in particular, shifted from being rejected or ignored to becoming one of the most central concepts in mathematics.
+Determinateness of this structure: non standard models of $\mathbb{N}$ in practice. Real-life applicability: time tending to infinity, divisibility of matter, computer programs, \dots
 
+Historical point: in contrast to set theory, axioms were given much later than the usage of these structures in practice.
+
+Categoricity arguments around $PA$. Ferreirós says it is ``easier'' to proof the categoricity of $PA$. $PA$ standard model is formalizable within $ZFC$? Arguments of \textcite{shapiro1991foundations} around second order logic are much better here: it is much easier to argue that second order logic better captures the informal language of mathematics in the case of arithmetic than in the one of set theory.
+ 
+
+%---------------Complex numbers
 The early stages of this development can be traced back to the sixteenth century. Although the idea of negative square roots had already been mentioned before, it was Rafael Bombelli, in his 1572 work L’Algebra, the first to systematically use of what we now call complex numbers.\footnote{Most of the events mentioned here are important facts in history of mathematics, where I am following texts on the topic such as \textcite{Nahin2010} and \textcite{Christen2018}.} Bombelli was working on the solution of the reduced cubic equation, an equation of the form $x^3 + px + q = 0$. Earlier, Cardano had found the following formula to solve such equations:
 
 \begin{equation}
@@ -287,7 +273,7 @@ For example, the fact that $(\mathbb{C}, +, \cdot)$ is an algebraically closed f
 
 
 \section{Simplicity and naturalness in mathematical practice}
-
+\label{simplicity}
 
 \textbf{1. Goodman (and early Quine): attempts at formal measures of simplicity}
 
@@ -376,7 +362,7 @@ This is quite systematic, but domain-specific rather than a general theory of ma
 
 
 
-\section{How CH and set theory fit in cuasi-empirical structuralism}
+\section{How CH and set theory fit in quasi-empirical structuralism}
 \label{section-CH-case}
 
 Once a framework is accepted as contentful then any statement formulated within it has to be equally regarded. (...) reason somehow similarly by considering that CH to be undefinite is equivalent to considering third-order arithmetic to be inconsistent. I think they go too far, because different frameworks, which might disagree upon determinate fundamental questions, could be both consistent.
