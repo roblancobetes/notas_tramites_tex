@@ -321,9 +321,14 @@ According to predicativism, mathematical entities should be conceptually well-de
 
 Let us recall the liar paradox, the statement that “This statement is false”. \textcite{Russell1908} rephrased it as follows: “It is not true for all propositions $p$ that if I affirm $p$, $p$ is true”. He then concluded that the cause of the paradox was a quantification over all the propositions, so that the notion of an arbitrary proposition is illegitimate. A similar reasoning was employed to explain the barber paradox, which appears after trying to define the naïve set ${x \mid x \notin x}$. This concept of an arbitrary naïve set was considered to be unclear, non-definite: this is what was thought to lead to the contradiction. Intuitionists tried to extend this debate even further, by stating that these paradoxes come from accepting logical structures that do not have a counterpart in our intuition (such as the law of excluded middle). We could perhaps say something similar about the concept of an arbitrary subset of the continuum: maybe this concept is so far from our intuition that trying to understand it in linguistic terms may lead us to contradictions or at least incongruities. However, there is no compelling evidence that the concept of an arbitrary subset of the continuum can lead to a contradiction in the same sense as the concept of a naïve set did, or the concept of all propositions. In fact, axiom systems such as ZF are hardly ever doubted to be consistent.
 
-\section{Categoricity and standard models}
+\section{Categoricity and second order logic}
+\label{categoricity-second-order-logic}
 
 The clarity of a mathematical conception could also be evaluated in metamathematical terms. However, regarding their metamathematical features, set theory and first-order arithmetic exhibit strikingly parallel features: neither admits a categorical and recursively axiomatizable first-order theory.\footnote{See \textcite{Isaacson2008}, p. 31.} If we understand a structure as “clear” only when it is determined up to isomorphism by such a theory, then the universe of sets would indeed lack clarity—but precisely in the same sense in which the natural numbers would lack it. We can say the same of the intermediate system of finite order arithmetic. No recursively axiomatizable first-order theory of arithmetic, including PA, is categorical; Gödel’s incompleteness theorem ensures that categoricity fails at the first-order level. One might seek to restore clarity through second-order logic, which does yield categorical axiomatizations of arithmetic and of set-theoretic initial segments. But full second-order semantics presupposes a background notion of “all subsets,” a commitment of the same strength and type as the set-theoretic ontology under discussion. Appealing to second-order categoricity to justify the clarity of arithmetic while doubting the clarity of set theory is therefore circular. If we turn our attention to second order logic, we find that $PA_2$ is categorical. For set theory, the best result we can have is the quasi-categoricity of $ZC2$ ($ZFC$ without replacement). This means that second-order Zermelo set theory with full semantics determines the universe up to an initial segment of the cumulative hierarchy. However, arguing this way that neither set theory of arithmetic are “clear” would be circular, for assuming the same for second order logic. On this point, Feferman and Koellner are in substantial agreement.\footnote{See p. 19 in \textcite{Feferman2011a} or p. 511 in \textcite{Koellner2016}.}
+
+
+\section{Standard models}
+\label{standard-models-epistemology}
 
 Non-categoricity implies the existence of non-standard models of both arithmetic and set theory, where certain statements can have different truth values. In arithmetic, every non-standard model contains (as an initial segment of its underlying domain) an image of the standard natural numbers. Therefore, non-standard models are easy to identify. In spite of this, Koellner argues that the case in set theory is exactly the same, and that non-standard models are easy to identify as well:
 
@@ -363,6 +368,20 @@ In summary, even though Feferman’s requirement for clarity presents significan
 
 
 \section{Other ideas related to clarity: Orey sentences, ...}
+\label{Orey sentences}
+
+This is similar to the case around $CH$, where given a countable transitive model $M$ of $ZFC$ we can force to obtain extensions $M[G_0]$, $M[G_0][G_1]$, $M[G_0][G_1][G_2]$,... that alternatively satisfy $CH$ and $\neg CH$. In fact, \textcite{Hamkins2012Multiverse} has used this fact as an argument that $CH$ should be regarded as indefinite.
+
+Be $M \models \mathrm{PA}$ a model of Peano Arithmetic. An end-extension of $M$ is a larger model $N \supseteq M$ such that no element of $N - M$ is inserted ``bellow'' an old element of $M$, i.e., whenever $a \in M$ and $b \in N$ satisfy $b <^N a $, then $b \in M$.
+
+If $\phi$ is an Orey sentence for $\mathrm{PA}$, then if $M$ is a model of $\mathrm{PA}$, we can end-extend it to obtain a model $N_1$ of $\mathrm{PA}$ where $\phi $ holds, and another model $N_2$ one where $\neg \phi$ does. 
+
+
+
+
+
+
+
 
 
 \section{Conclusion}
