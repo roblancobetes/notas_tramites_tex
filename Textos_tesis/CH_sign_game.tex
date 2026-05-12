@@ -206,7 +206,7 @@ In the early nineteenth century the flood of counterexamples brought confusion. 
 
 From the perspective developed here, Lakatos draws a clear distinction between mathematical reasoning and purely formal calculation. Rather than grounding mathematics in formal derivations alone, he emphasizes its problem-solving power: definitions, entities, and assumptions are justified insofar as they contribute to the advancement of inquiry. Another central feature of his view is the iterative character of mathematical reasoning. The emergence of a refutation or the identification of a flaw does not terminate the process; instead, it prompts the introduction of revised assumptions, refined definitions, or new intermediate results, which may in turn generate further tensions and revisions. This iterative character is central to Lakatos’ account, according to which mathematics advances not through the accumulation of final proofs, but through a dynamic process of conjecture and criticism. As he puts it (\citeyear{Lakatos1976}, p.5), “mathematics […] does not grow through a monotonous increase of the number of indubitably established theorems but through the incessant improvement of guesses by speculation and criticism, by the logic of proofs and refutations”.
 
-Thus, Lakatos’ approach is able to illuminate the way mathematical entities, definitions, and structures tend to develop. How could we apply it to the perspective developed here, that assumes a structuralist approach to ontology in mathematics? I propose to understand it through the notion of $\mathcal{S}$, the (possibly open-ended) collection of mathematical structures to which mathematical practice is committed. One I defend to be of the most important insights of Lakatos’ quasi-empiricism, is the fact that $\mathcal{S}$ is closed in the following sense: a mathematical structure $X$ should be also included in that collection in case it satisfies at least one of the following conditions:
+Thus, Lakatos’ approach is able to illuminate the way mathematical entities, definitions, and structures tend to develop. How could we apply it to the perspective developed here, that assumes a structuralist approach to ontology in mathematics? I propose to understand it through the notion of $\mathcal{S}$, the (possibly open-ended) collection of mathematical structures to which mathematical practice is committed. One I defend to be of the most important insights of Lakatos’ quasi-empiricism, is the fact that $\mathcal{S}$ is closed in the following sense: a mathematical structure $X$ should be also included in that collection in case it satisfies at least one of the following conditions:\footnote{\textbf{Alternative approach in \textcite{maclane1986mathematics}: problem solving power, naturalization, abstraction, axiomatization...}}
 
 \begin{enumerate}
 
@@ -242,6 +242,8 @@ Externally applicable structures: natural numbers, rationals, reals, geometry, .
 Determinateness of this structure: non standard models of $\mathbb{N}$ in practice. Real-life applicability: time tending to infinity, divisibility of matter, computer programs, \dots
 
 Historical point: in contrast to set theory, axioms were given much later than the usage of these structures in practice.
+
+\textcite{maclane1986mathematics} defends that the structure of natural numbers is 
 
 Categoricity arguments around $PA$. \textcite{Ferreiros2023ConStructuralism} says it is ``easier'' to proof the categoricity of $PA$. $PA$ standard model is formalizable within $ZFC$? Arguments of \textcite{shapiro1991foundations} around second order logic are much better here: it is much easier to argue that second order logic better captures the informal language of mathematics in the case of arithmetic than in the one of set theory.
  
@@ -384,6 +386,12 @@ The key point here is that within any such $MC$ system, CH is a perfectly defina
 
 \section{The approach to set theory}
 \label{set-theory}
+
+
+If $L$ is a large cardinal axiom, the theories $ZFC+L$ and $PA + \bigcup_{n < \omega} Con((ZFC + L)\upharpoonright n)$ are mutually interpretable, being the latter one framed in the language of arithmetic. This means that the logical consequences of $ZFC + L$ in the language of set theory can be understood as arithmetical sentences through a well chosen bijection. That fits well with the formalist approach to the metamathematical results, where set theoretical sentences and deductions are understood as the object of study, while the core of the reasoning is done in the metatheory of formal finitary logic. This in fact means that, even if accepting the fruitfulness of set theoretical considerations, specially regarding consistency proofs, that reasoning can be reduced to the language of arithmetic. So, in the end, the only mathematical structure one has to commit to in this case is the natural number structure, without need of a freestanding and platonic universe of sets.
+
+Is there a mathematical commit to $ZFC + (V = L)$ or to $ZFC + MM$, which stands for Martin's Maximum Axiom, presented in \textcite{ForemanMagidorShelah1988}.
+
 
 The first two approaches could be coherent with a predicativist stand, which we saw Feferman lean towards. However, they are not so compatible, as we have explained, with current and historic mathematical practice. In my view, Feferman is correct in his fundamental premise that a line must be drawn to separate legitimate from illegitimate mathematical conceptions, but I believe he may have drawn this line too restrictively by excluding CH as an illegitimate statement. However, the line may still have been correctly drawn for more abstract set theoretical notions (such as the full cumulative hierarchy of sets), which is the topic of the following section. 
 

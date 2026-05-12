@@ -283,6 +283,21 @@ $\oplus$
 
 
 
+\subsection{Interpretabilidad}
+
+Una teoría $T_1$ en $\mathcal{L}_1$ es \textit{interpretable en} $T_2$ en $\mathcal{L_2}$ si existe una correspondencia $\Phi$ que asocie a cada fórmula de $\mathcal{L}_1$ una fórmula de $\mathcal{L_2}$ tal que si $T_1 \vdash \phi$ entonces $T_2 \vdash \Phi(\phi)$. EN ese caso se escribe $T_1 \leq T_2$.
+
+Si $ T_1 $ es una teoría reflexiva (es decir, que prueba la consistencia de todas sus subteorías finitas), y $\Sigma^0_1$-completa (es decir, que puede probar todas las afirmaciones $\Sigma^0_1$ ciertas en el modelo estándar de los naturales) entonces para ver si $T_1$ es interpretable en $T_2 $ basta con comprobar sus consecuencias $\Pi^0_1$:
+
+$$ T_1 \leq T_2 \text{ si y sólo si }  T_1 \subseteq_{\Pi^0_1} T_2 $$
+
+
+
+\begin{nota}
+  Afirmaciones como $\exists p, (p \text{ es una prueba de } \phi)$ son $\Sigma^0_1$ en el lenguaje de la aritmética. Esto implica que a sistemas tan sencillos como el sistema $Q$ de Robinson se les aplique el teorema de incompletitud de Gödel.
+\end{nota}
+
+
 \chapter{La consistencia de \texorpdfstring{$\mathrm{GCH}$}{GCH} en lógica finitaria}
 
 Un argumento a favor de la integración de la teoría de conjuntos como componente de primer orden de las matemáticas es su aparición sistemática en la práctica de las matemáticas, donde ha dado lugar a desarrollos muy fructíferos---véase \textcite{Maddy1997}. Sin embargo, no está claro que en el aspecto en el que esto se ha dado en mayor medida, las pruebas de consistencia relativa, podamos estar genuinamente de integración de la propia teoría de conjuntos. Estas pruebas de consistencia se pueden entender como la mera manipulación de símbolos lógicos en un sistema formal mucho más débil. 
