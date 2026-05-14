@@ -1,0 +1,101 @@
+%=========================
+% Plantilla LaTeX Artículo Académico
+% Compilar con: pdflatex + biber + pdflatex + pdflatex
+%=========================
+\documentclass[11pt,a4paper]{article}
+
+%-------------------------
+% Idioma y tipografía
+%-------------------------
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+%-------------------------
+% Márgenes y espaciado
+%-------------------------
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+%-------------------------
+% Matemáticas y símbolos
+%-------------------------
+\usepackage{amsmath,amssymb,amsthm}
+
+%-------------------------
+% Tablas y figuras
+%-------------------------
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{changepage}
+
+%-------------------------
+% Enlaces y PDF
+%-------------------------
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  pdftitle={On the indefiniteness of the continuum hypothesis: introduction and background},
+  pdfauthor={Rodrigo Blanco Betes}
+}
+
+%-------------------------
+% Listas, código y utilidades
+%-------------------------
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{csquotes} % recomendado con biblatex
+
+%-------------------------
+% Bibliografía (biblatex + biber)
+%-------------------------
+\usepackage[
+  backend=biber,
+  style=apa,
+  sortcites=true,
+  url=true,
+  doi=true
+]{biblatex}
+\DeclareLanguageMapping{english}{english-apa}
+\addbibresource{refs.bib}
+
+%-------------------------
+% Metadatos del artículo
+%-------------------------
+\title{\textbf{On the indefiniteness of the continuum hypothesis: introduction and background}}
+
+\author{Rodrigo Blanco Betes}
+
+
+\date{\today}
+
+%-------------------------
+% Entornos de teoremas (opcional)
+%-------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\begin{document}
+\maketitle
+
+%-------------Introducción
+\section*{Introduction}
+
+%-------------Primeros antecedentes: introducción lógica a la hipótesis del continuo
+\section{The Development of CH: From a Mathematical Problem to a Philosophical Question}
+
+%-------------Versiones de filosofía de las matemáticas
+\section{Philosophy of mathematics in the early twentieth century: the big three}
+
+
+%------------Lógica vs matemáticas. Por qué las matemáticas son sintéticas
+\section{Our stand towards logicism and the meaning of mathematical statements}
+
+\end{document}
