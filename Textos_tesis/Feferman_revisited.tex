@@ -361,10 +361,6 @@ Let us recall the liar paradox, the statement that “This statement is false”
 
 
 
-
-
-
-
 \footnote{See \textcite{Isaacson2008}, p. 31.} 
 
 If we understand a structure as “clear” only when it is determined up to isomorphism by such a theory, then the universe of sets would indeed lack clarity—but precisely in the same sense in which the natural numbers would lack it. 
@@ -421,9 +417,17 @@ I have highlighted only those aspects of the proof that are relevant to the assu
 
 \subsection{The quasi-categoricity of ZFC2}
 
+The quasi-categoricity result of $ZFC_2$ can be formalized within $ZFC$, a similar setting that we found in arithmetic. We can formalize in this system the idea of being a model of full second-order set theory by the relation $(M,P) \models ZFC_2$, where $P=P(M)$ (and similarly for the interpretation of higher order variables), and in such a way that the $ZFC$ axioms hold when relativized to $M$, where the replacement schema can now be seen as a single axiom:
+
+\[
+\forall f\,\forall x\,\exists y\,\forall z\,
+\Bigl(
+z\in y \leftrightarrow \exists t\in x\,(z=f(t))
+\Bigr).
+\]
 
 
-
+%--------Closing the section--------
 The crutial point, in my view, is that the set theoretic assumptions made are fairly weak: the most demanding conditions are perhaps accepting the power set of the natural numbers and a fairly weak version of replacement, which tends to happen ubiquitously in mathematical practice:
 
 \begin{adjustwidth}{1cm}{1cm}
