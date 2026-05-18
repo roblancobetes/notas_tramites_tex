@@ -1,8 +1,8 @@
 %=========================
-% Plantilla LaTeX Artículo Académico
+% Plantilla LaTeX Libro
 % Compilar con: pdflatex + biber + pdflatex + pdflatex
 %=========================
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper]{book}
 
 %-------------------------
 % Idioma y tipografía
@@ -42,7 +42,7 @@
   linkcolor=blue,
   citecolor=blue,
   urlcolor=blue,
-  pdftitle={On the indefiniteness of the continuum hypothesis: introduction and background},
+  pdftitle={On the indefiniteness of the continuum hypothesis},
   pdfauthor={Rodrigo Blanco Betes}
 }
 
@@ -69,7 +69,7 @@
 %-------------------------
 % Metadatos del artículo
 %-------------------------
-\title{\textbf{On the indefiniteness of the continuum hypothesis: introduction and background}}
+\title{\textbf{On the indefiniteness of the continuum hypothesis}}
 
 \author{Rodrigo Blanco Betes}
 
@@ -83,10 +83,21 @@
 \newtheorem{lemma}{Lemma}
 
 \begin{document}
+
+% ---------- Portada ----------
+\frontmatter
 \maketitle
+
+\tableofcontents
 
 %-------------Introducción
 \section*{Introduction}
+
+
+%----------------Texto principal----------
+\mainmatter
+
+\chapter{Background}
 
 %-------------Primeros antecedentes: introducción lógica a la hipótesis del continuo
 \section{The Development of CH: From a Mathematical Problem to a Philosophical Question}
