@@ -79,6 +79,7 @@
 %-------------------------
 % Entornos de teoremas (opcional)
 %-------------------------
+\theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
 
@@ -246,9 +247,9 @@ This remains, of course, a conjecture, but it is a fairly plausible one. Most ph
 
 The system $\mathsf{ACA}_0$ can be formulated within second-order arithmetic and permits the formation of sets of natural numbers definable by arithmetical formulas. Calculus, algebra, functional analysis, basic topology, and many other branches of mathematics used in physics can be formalized within this framework. The stronger system $\Pi^1_1\text{-}\mathsf{CA}_0$, which additionally allows sets of natural numbers defined by $\Pi^1_1$ formulas, is (thought not predicative) generally regarded as more than sufficient. In any case, there is no need to move beyond the language of second-order arithmetic.\footnote{These systems arise in the program of reverse mathematics, which is largely carried out within second-order arithmetic. See \textcite{Simpson2006} for further details.}
 
-By contrast, statements such as the Continuum Hypothesis require systems of third-order arithmetic, quantifying not only over natural numbers and sets of natural numbers (that is, real numbers), but also over sets of sets of natural numbers. This highlights the fact that merely formulating CH already involves a level of set-theoretic complexity far beyond what is required for the core mathematics used in physics. Thus, at least from the standpoint of scientific applicability, there appears to be little reason to regard CH as determinate, given that scientific practice would remain essentially unaffected regardless of whether CH were true or false.
+By contrast, statements such as the Continuum Hypothesis require systems of third-order arithmetic, quantifying not only over natural numbers and sets of natural numbers (that is, real numbers), but also over sets of sets of natural numbers. This highlights the fact that merely formulating CH already involves a level of set-theoretic complexity far beyond what is required for the core mathematics used in physics. Thus, at least from the standpoint of scientific applicability, there appears to be little reason to regard CH as determinate, given that scientific practice would remain essentially unaffected regardless of whether CH were true or false. Needless to say, scientific applicability is not the only consideration that might support regarding CH as determinate.
 
-This is another point at which Feferman's tendency toward predicativism becomes apparent, since he argues \parencite[p.~22]{Feferman2011a} that all current applications of analysis in physics can be carried out predicatively, whithout need of set-theoretically defining the continuum:
+This is another point at which Feferman's tendency toward predicativism appears, since he argues \parencite[p.~22]{Feferman2011a} that all current applications of analysis in physics can be carried out predicatively, whithout need of set-theoretically defining the continuum:
 
 \begin{adjustwidth}{1cm}{1cm}
 \begin{quote}
@@ -289,6 +290,7 @@ One of the most influential defenses of methodological principles guiding mathem
 
 Such principles were undoubtedly important in the early development of set theory, but they have not remained uniformly dominant, either prior to the rise of foundationalism or in contemporary mathematical practice. Moreover, maximizing principles may conflict with one another; consider, for example, the incompatibility between the Axiom of Choice and the Axiom of Determinacy. Furthermore, the very notion of an arbitrary set is itself controversial, partly because it cannot be fully captured within formal systems such as ZFC, or even within considerably stronger systems, as argued by \textcite{Ferreiros2011}.
 
+%----------Feferman & mathematical practice-----------------
 Feferman’s conceptual structuralism can in fact be understood as an alternative to unrestricted maximizing and unifying principles; see \parencite[p.~9]{Feferman2011a}. He addresses Maddy’s proposal more directly in \textcite[p.~9]{Feferman2000newaxioms}:
 
 \begin{adjustwidth}{1cm}{1cm}
@@ -307,72 +309,38 @@ Old-style infinitesimals, Dirac delta-functions, unrestricted comprehension? If 
 \end{quote}
 \end{adjustwidth}
 
-In these passages, Feferman suggests that merely following whatever mathematical practitioners happen to do at a given historical moment may lead to philosophically fragile accounts of mathematics. At the same time, he is clearly not claiming that philosophy of mathematics should ignore mathematical practice altogether.
+In these passages, Feferman suggests that merely following whatever mathematical practitioners happen to do at a given historical moment may lead to philosophically fragile accounts of mathematics. At the same time, he is not claiming that the philosophy of mathematics should ignore mathematical practice altogether. Rather, he implicitly appeals to mathematical practice in arguing against maximizing conceptions of mathematics, noting that entities or principles such as infinitesimals, Dirac delta-functions, and unrestricted comprehension are no longer accepted in the unrestricted forms in which they originally appeared. In my view, the key is instead to identify methodological principles that remain stable across historical periods and across different domains of mathematical practice.
 
-\textbf{What does in mathematical practice ensure determinacy?}
-
-\textbf{Commitment to structures vs. commitment to axioms}
-
-\textbf{How does a mathematician imply that they see a structure as determinate? Here are some reasons:}
+The question, then, is not whether mathematical practice matters, but which features of mathematical practice could justify regarding certain mathematical structures as determinate. In some cases, the role a structure plays within mathematical practice gives us stronger reasons to regard it as determinate than can be provided by metamathematical results alone. In particular, a structure such as the set $\mathbb{N}$ of natural numbers is treated significantly differently in mathematical practice from structures such as the set-theoretic hierarchy. The following features do not by themselves settle questions of determinacy, but they help explain why certain mathematical structures are treated in practice as more fixed and objective than others:
 
 \begin{enumerate}
-  \item Modes of access in practice: Our practical interaction with natural numbers is iterative, algorithmic, sequential. But mathematical practice almost never directly manipulates $P(\mathbb{R})$.
-  \item Degree of framework dependence: Arithmetic often functions as a fixed background across foundational programs. Higher set theory often changes together with the surrounding foundational assumptions.
-  \item Explanatory indispensability vs. optional enrichment: The natural numbers seem unavoidable in ordinary mathematics. By contrast, large portions of higher set theory function more like optional enrichments of mathematics. CH is a paradigmatic example: vast areas of mathematics proceed unaffected regardless of its truth value.
-  \item Convergence of representations: The natural numbers appear monomorphic partly because an enormous variety of mathematical practices converge on the same structure, By contrast, the set-theoretic hierarchy admits radically different extensions and interpretations, such as forcing extensions, inner models, large cardinal hierarchies, determinacy models, multiverse conceptions.
+
+  \item \textbf{Modes of access in practice:} Our practical interaction with the natural numbers is iterative, sequential, and intuitive. Some of our most fundamental cognitive capacities, especially those related to space and time, appear to mirror this structure. By contrast, set-theoretic conceptions appear quite differently in mathematical practice: they are more dependent on formal axiom systems and less directly connected to intuition. For instance, ordinary mathematical practice almost never directly manipulates objects such as $P(\mathbb{R})$.\footnote{If we examine the paradigmatic structures that arise across different areas of mathematics, we find that they often remain below the level of the full power set of the continuum. For example, the canonical structure in topology is the real line endowed with its usual topology, which restricts attention to open sets. Similar observations apply in areas such as geometry, analysis, and measure theory.}
+
+  \item \textbf{Degree of framework dependence:} Arithmetic often functions as a fixed background across different foundational programs. Apart from finitists and certain forms of constructivism and intuitionism, most foundational perspectives accept the basic notions of arithmetic and treat arithmetical statements as determinate. By contrast, higher set theory is often highly sensitive to variations in the surrounding foundational assumptions. This is reflected in the large number of competing axiomatic frameworks that have been proposed for set theory, including $ZFC$, $KP$, intuitionistic set theory, $SCS$, and many other cases.
+  
+  \item \textbf{Explanatory indispensability vs. optional enrichment:} The natural numbers seem unavoidable in ordinary mathematics. By contrast, large portions of higher set theory function more like optional enrichments of mathematics. The Continuum Hypothesis is a paradigmatic example: vast areas of mathematics proceed unaffected regardless of its truth value. Similar considerations apply to large cardinal axioms, determinacy principles, forcing axioms, and related set-theoretic extensions.
+  
+  \item \textbf{Convergence of representations:} The natural numbers appear more determinate in part because an enormous variety of mathematical practices converge on the same structure. By contrast, the set-theoretic hierarchy admits radically different extensions and interpretations, including forcing extensions, inner models, large cardinal hierarchies, determinacy models, and multiverse conceptions.
+  
 \end{enumerate}
 
-\textbf{Take into account that many is already said in Section \ref{standard-models-epistemology}. Arithmetic and set theory invert the order of whether axioms apply to structures or structures to axioms.}
+In Section \ref{standard-models-epistemology}, I return to these differences, focusing in particular on how mathematical practice treats the standard models of arithmetic and set theory. In the context of Conceptual Structuralism, it is natural to view these features of mathematical practice as reflecting one of its central ideas: namely, that determinate structures must remain sufficiently connected to our cognitive capacities. I am not claiming that this automatically proves Feferman right, but rather that a sufficiently detailed examination of mathematical practice may have something to contribute to the question of the definiteness of CH.
 
-One such question is Fermat's Last Theorem. \textcite{Feferman1999} defended the idea that questions like this one would most likely be provable using tools in weaker systems, such as PA. In this particular case, however, the proof required much stronger tools so that, even in the most conservative reconstructions, can only be formulated within sixth-order arithmetic—see \textcite{McLarty2020}. This framework could therefore be legitimized because of its internal applicability to questions that arise within the practice of mathematics. If the idea of a world picture, as formulated in conceptual structuralism, were extended to include this notion of applicability, the conclusion about the indefiniteness of CH could perhaps be completely different.
-
-For this reason, we must be more flexible. First, we should accept mathematical conceptions that help us solve internal questions formulated in previously defined concepts or that provide them with explanatory power. Second, we should prefer simpler conceptions, and those that integrate more naturally with the previously defined ones. There is no space here to elaborate on these ideas, which nevertheless naturally extend the guiding principle given before and avoid the issues that arose at the end of the previous section. This amplification of the idea of applicability is what I would call \textit{internal fruitfulness}. I think that an in-depth analysis of this idea, together with its implications for the legitimacy of the mathematical conceptions within which CH can be defined, would be the next step in completing the applicability argument.
-
-Even if this refinement would lead us to reasons for accepting the definiteness of CH, maybe the same could not be said of more abstract mathematical conceptions. Recall that, for CH to be definite, one need only commit to the legitimacy of relatively weak frameworks, described in the language of finite order arithmetic. This lies far behind the full theoretic strength of ZF set theory.
-
-In this regard, the distinction between mathematics and metamathematics is crucial. Axiomatic set theory often functions in this metamathematical role; it provides results about the proving power of specific axiom systems for formalized mathematical languages. A paradigmatic example of a metamathematical reasoning about set-theoretical concepts is found in independence results. These results show the impossibility of logically proving certain statements—most notably, CH—from the axioms of a theory like ZFC. Crucially, these independence proofs do not rely on the abstract set-theoretical structures whose status they investigate. Within the proofs, these structures appear merely as formulas in a formal language. The actual reasoning occurs from an external framework, known as the metatheory. In general, the metatheory is taken to be a much weaker system than ZFC, often requiring only finitistic tools. For example, we see in \textcite{Kunen2011}, p. 11: “All we assert as being `really true' is elementary finitistic reasoning: this is called the metatheory. Using this reasoning, we can explain what a logical formula is and what a formal proof is (…). Then, all discussions about infinite and uncountable sets take place within ZFC, which is called the formal theory”. 
-
-Recall that the standard model of arithmetic can be formalized using the ZF axiom system. Therefore, the consequences of these axioms could not contradict a true result in arithmetic unless the axioms were found to be inconsistent, which seems highly unlikely. For this reason, even a mathematician only committing to the definiteness of arithmetic would find these axioms interesting. They could use the ZF axioms as a useful metamathematical tool and have reasons to believe in the consequences of the axioms when applied to arithmetic. But this would not lead them to commit to the full set-theoretic hierarchy, nor to defend that the concept of an arbitrary set is definite.\footnote{Even acknowledging that ZF is a consistent theory does not imply the aforementioned commitments. A Skolem-type numerable model could suffice for proving the consistency of ZF set theory intuitively.} Whether the set-theoretical hierarchy could be legitimized in the form of “ideal world-pictures,” following the language of Feferman and conceptual structuralism, is not that immediate to address. In this regard, I do not follow Parsons in considering that consistency of axiomatic theories could in general lead to the commitment to a corresponding structure that models them:
-
-\begin{adjustwidth}{1cm}{1cm}
-\begin{quote}
-\small
-We might begin with the weakest assumption that would justify regarding [set-theoretical structures] as legitimate objects of mathematical investigation, the consistency of the basic theories that have been around for some time. \textcite[p. 535]{Parsons2016a}.
-\end{quote}
-\end{adjustwidth}
-
-Taking all this into account, I think that the notion of applicability, that Feferman mentions but only indirectly, is nevertheless highly promising.  How CH, or abstract set-theoretical conceptions, might precisely fit into such a framework is a complex topic to think about, that goes beyond the limits of this work (see Author, in preparation).
+I now return to metamathematical arguments, which play an important role in Koellner's criticism. I agree with Koellner that such arguments are not sufficient to establish the indefiniteness of CH, but I also think that he assigns them too much weight in his interpretation of Feferman.
 
 \section{Categoricity and second order logic}
 \label{categoricity-second-order-logic}
 
-\footnote{See \textcite{Isaacson2008}, p. 31.} 
+The strongest reason for regarding a mathematical structure as determinate would be the existence of a categorical axiomatization in first-order logic. However, the Löwenheim--Skolem theorem implies that no recursively enumerable first-order theory with an infinite model can be categorical. Consequently, neither the structure of the natural numbers nor the set-theoretic hierarchy can be regarded as determinate solely on the basis of first-order categoricity. 
 
-If we understand a structure as “clear” only when it is determined up to isomorphism by such a theory, then the universe of sets would indeed lack clarity—but precisely in the same sense in which the natural numbers would lack it. 
+Some authors, such as \textcite[31]{Isaacson2008} and \textcite[chapter 8]{shapiro1991foundations}, have argued that categoricity results in full second-order logic should be accepted, since categoricity becomes available in that setting. In the case of arithmetic, full second-order Peano arithmetic, $PA_2$, is categorical. In the case of set theory, an initial segment of the universe $V_\kappa$, where $\kappa$ is a strongly inaccesible cardinal, is likewise quasi-categorically characterized by second-order formulations of Zermelo-Fraenkel set theory, $ZFC_2$. Both \textcite[19]{Feferman2011a} and \textcite[511]{Koellner2016} reject this position, arguing that full second-order semantics presupposes a background notion of ``all subsets,'' thereby involving a commitment of essentially the same kind and strength as the set-theoretic ontology under discussion. 
 
-We can say the same of the intermediate system of finite order arithmetic.
-
-No recursively axiomatizable first-order theory of arithmetic, including PA, is categorical; Gödel's incompleteness theorem ensures that categoricity fails at the first-order level. 
-
-One might seek to restore clarity through second-order logic, which does yield categorical axiomatizations of arithmetic and of set-theoretic initial segments. But full second-order semantics presupposes a background notion of “all subsets,” a commitment of the same strength and type as the set-theoretic ontology under discussion. 
-
-Appealing to second-order categoricity to justify the clarity of arithmetic while doubting the clarity of set theory is therefore circular. If we turn our attention to second order logic, we find that $PA_2$ is categorical. 
-
-For set theory, the best result we can have is the quasi-categoricity of $ZC2$ ($ZFC$ without replacement). 
-
-This means that second-order Zermelo set theory with full semantics determines the universe up to an initial segment of the cumulative hierarchy. However, arguing this way that neither set theory of arithmetic are “clear” would be circular, for assuming the same for second order logic. On this point, Feferman and Koellner are in substantial agreement.
-
-
-\footnote{See p. 19 in \textcite{Feferman2011a} or p. 511 in \textcite{Koellner2016}.}
-
-\textcite{Koellner2010SecondOrderLogic}
-
-
-The circularity is so patent, one does not see that any more can be claimed thereby than that the definiteness of those notions may be accepted as a matter of faith. \textcite[20]{Feferman2011a}
+In this section, I sketch both the categoricity result for arithmetic and the quasi-categoricity result for set theory. I then examine whether, even if these results fail to establish the determinacy of the corresponding structures, they nevertheless receive different treatment within ordinary mathematical practice.
 
 \subsection{The categoricity of \texorpdfstring{$PA_2$}{PA2}}
 
-The categoricity theorem for second-order Peano Arithmetic ($PA_2$) can be formalized within $ZF\!-\!P+\mathrm{Pow}(\omega)$.\footnote{The axiom $Pow(\omega)$ is understood as the requirement that there exists the power set of the natural numbers.} Under full second-order semantics, second-order variables range over all subsets of the first-order domain. In the case of arithmetic, this amounts to quantification over $\mathcal{P}(\mathbb{N})$. The crucial principle is the second-order induction axiom:
+The categoricity theorem for second-order Peano Arithmetic ($PA_2$) can be formalized within $ZF\!-\!P+\mathrm{Pow}(\omega)$. Under full second-order semantics, second-order variables range over all subsets of the first-order domain. In the case of arithmetic, this amounts to quantification over $\mathcal{P}(\mathbb{N})$. The crucial principle is the second-order induction axiom:
 
 \[
 \forall X\Bigl[(0\in X \wedge \forall n\,(n\in X \rightarrow S(n)\in X))
@@ -398,7 +366,9 @@ A=M$.
 
 Hence every element of $M$ lies in the image of $f$, so $f$ is surjective. Therefore $f$ is a bijection preserving $0$ and successor, and thus an isomorphism. Consequently every full model of $PA_2$ is isomorphic to $(\mathbb{N},0,S)$.
 
-I have highlighted only those aspects of the proof that are relevant to the assumptions on which it depends, rather than its detailed derivation.\footnote{For a rigorous formulation of the proof, see \textcite[82]{shapiro1991foundations}.}
+I have highlighted only those aspects of the proof that are relevant to the assumptions on which it depends, rather than presenting its full formal derivation.\footnote{For a rigorous formulation of the proof, see \textcite[82]{shapiro1991foundations}.}
+
+The crucial point, in my view, is that the underlying set-theoretic assumptions are comparatively weak. The strongest assumptions involved are arguably the existence of the power set of the natural numbers together with a weak form of replacement, both of which tend to be accepted ubiquitously throughout ordinary mathematical practice.
 
 \subsection{The quasi-categoricity of ZFC2}
 
@@ -411,9 +381,45 @@ z\in y \leftrightarrow \exists t\in x\,(z=f(t))
 \Bigr).
 \]
 
+\begin{theorem}[Zermelo , Shepherdson]
+  
+\(\kappa\) is inaccessible iff
+\[
+V_\kappa \models \mathrm{ZFC}^2 .
+\]
+\end{theorem}
 
-%--------Closing the section--------
-The crutial point, in my view, is that the set theoretic assumptions made are fairly weak: the most demanding conditions are perhaps accepting the power set of the natural numbers and a fairly weak version of replacement, which tends to happen ubiquitously in mathematical practice:
+\begin{proof}
+All the axioms of ZFC except Replacement are readily seen to hold in \(V_\alpha\) for any limit ordinal \(\alpha > \omega\). To verify Replacement for \(V_\kappa\), suppose that \(x \in V_\kappa\) and \(F\) is any function $x \to V_\kappa$.
+
+Then $|F''x| \leq |x| < \kappa$ and so by (a) $F''x \in V_\kappa$.
+
+For the converse, first note that \(\kappa\) is regular: If not, there would be an \(\alpha < \kappa\) and a function $G : \alpha \to \kappa$ with a range unbounded in \(\kappa\). Then \(G \subseteq V_\kappa\), and so by second-order Replacement $G''\alpha \in V_\kappa$. Hence, $\sup(G''\alpha)=\kappa \in V_\kappa$, a contradiction.
+
+It remains to establish that \(\kappa\) is a strong limit cardinal. Else, there would be a \(\lambda < \kappa\) such that $2^\lambda \geq \kappa$.
+
+Then
+\[
+\mathcal{P}(\lambda)\in V_\kappa
+\]
+by the Power Set Axiom, yet there would be a surjection
+\[
+H : \mathcal{P}(\lambda)\to \kappa .
+\]
+So again by second-order Replacement,
+\[
+H''\mathcal{P}(\lambda)=\kappa \in V_\kappa,
+\]
+a contradiction.
+\end{proof}
+
+\subsection{Conclusion}
+
+\textcite{Koellner2010SecondOrderLogic} defends that second-order logic does not have the absoluteness properties to be called a ``logic''.
+
+The circularity is so patent, one does not see that any more can be claimed thereby than that the definiteness of those notions may be accepted as a matter of faith. \textcite[20]{Feferman2011a}
+
+One might seek to restore clarity through second-order logic, which does yield categorical axiomatizations of arithmetic and of set-theoretic initial segments. 
 
 \begin{adjustwidth}{1cm}{1cm}
 \begin{quote}
@@ -533,7 +539,7 @@ The fundamental thesis of this paper is that this philosophical conception, once
 
 The next step should be to develop a more fine-grained notion of the applicability of mathematical structures, which includes both the notion of applicability for natural science and the notion of internal applicability to solve problems that arise within previously defined mathematical conceptions.
 
-I argue that this notion can be understood through a recursive sequence, that I call $S_0, S_1, \dots$, which represent ever-widening classes of mathematical conceptions. The class $S_0$ would consist of structures whose legitimacy is grounded directly in their indispensability in modeling the physical world, and would probably include structures such as the set of natural numbers $\mathbb{N}$, the rational numbers $\mathbb{Q}$, the Euclidean plane for spatial reasoning, and others representing core notions of real analysis and calculus (such as that of continuous change). Any structure in $S_0$ can then be justified through the external applicability requirement in its most direct form. Once $S_0$ is defined, it is the moment to take the recursive step. A structure $X$, not belonging to $S = S_1 \cup \dots \cup S_n$, is admitted into class $S_{n+1}$ if it meets, in the most standard, simple and natural way, one of the following conditions:
+The class $S_0$ would consist of structures whose legitimacy is grounded directly in their indispensability in modeling the physical world, and would probably include structures such as the set of natural numbers $\mathbb{N}$, the rational numbers $\mathbb{Q}$, the Euclidean plane for spatial reasoning, and others representing core notions of real analysis and calculus (such as that of continuous change). Any structure in $S_0$ can then be justified through the external applicability requirement in its most direct form. Once $S_0$ is defined, it is the moment to take the recursive step. A structure $X$, not belonging to $S = S_1 \cup \dots \cup S_n$, is admitted into class $S_{n+1}$ if it meets, in the most standard, simple and natural way, one of the following conditions:
 
 \begin{enumerate}
   \item \textbf{Problem-Solving Power:} $X$ provides solutions to previously existing, well-defined and relevant problems, i.e., to problems formulated within structures in $S$.
