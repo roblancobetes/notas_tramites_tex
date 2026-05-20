@@ -99,7 +99,7 @@ Cantor was unable to resolve this problem, and its status remained open for deca
 
 Since then, there have been a huge number of attempts to settle CH, but none of them has been successful.\footnote{For a summary of the current status of CH, see \textcite{Feferman2011a}, Section 1. } These attempts have never offered a clear counterexample to Cantor's hypothesis, nor an intuitive model demonstrating whether it is true or false. It seems that there is no way to relate CH to a well-established and accepted result of mathematics; so it stands as a metaphysical statement, independent of all the results accepted in everyday mathematical practice.
 
-This has led some mathematicians and philosophers of mathematics to doubt whether it even makes sense to seek a unique and meaningful answer to the continuum hypothesis. One of the most important proponents of this perspective is Solomon Feferman, who proposed a philosophical framework for understanding mathematics called conceptual structuralism. In this framework, mathematics is the result of open-ended processes derived from simple real-life situations, such as counting and ordering, where clarity and practical applicability are crucial. \textcite{Feferman2011a} defended that if we accept conceptual structuralism, then CH turns into an intrinsically vague and indefinite mathematical question. However, conceptual structuralism and its implications for CH have been subject to substantial criticism. Some of the strongest and most direct criticisms have come from Peter Koellner (\citeyear{Koellner2016,Koellner2022}). Koellner's viewpoint on CH bears similarities to those of Woodin (\citeyear{Woodin2001a,Woodin2001b}) or \textcite{Maddy1997}, but he distinguishes himself by having addressed Feferman's philosophical proposal more explicitly.\footnote{\textcite{Parsons2016b} also argues directly against Feferman's conception of set theory, but Koellner's does address Feferman's case on CH much more explicitly.} Shortly put, Koellner's main claims are:
+This has led some mathematicians and philosophers of mathematics to doubt whether it even makes sense to seek a unique and meaningful answer to the continuum hypothesis. One of the most important proponents of this perspective is Solomon Feferman, who proposed a philosophical framework for understanding mathematics called conceptual structuralism. In this framework, mathematics is the result of open-ended processes derived from simple real-life situations, such as counting and ordering, where clarity and practical applicability are crucial. \textcite{Feferman2011a} maintained that if we accept conceptual structuralism, then CH turns into an intrinsically vague and indefinite mathematical question. However, conceptual structuralism and its implications for CH have been subject to substantial criticism. Some of the strongest and most direct criticisms have come from Peter Koellner (\citeyear{Koellner2016,Koellner2022}). Koellner's viewpoint on CH bears similarities to those of Woodin (\citeyear{Woodin2001a,Woodin2001b}) or \textcite{Maddy1997}, but he distinguishes himself by having addressed Feferman's philosophical proposal more explicitly.\footnote{\textcite{Parsons2016b} also argues directly against Feferman's conception of set theory, but Koellner's does address Feferman's case on CH much more explicitly.} Shortly put, Koellner's main claims are:
 
 \begin{enumerate}
 \item That conceptual structuralism is ambiguous on the status of CH.
@@ -107,13 +107,17 @@ This has led some mathematicians and philosophers of mathematics to doubt whethe
 \item That it is not acceptable to make mathematics dependent on subjective processes and social conventions as Feferman proposes.
 \end{enumerate}
 
-In this paper, I offer an interpretation of conceptual structuralism that makes it easier to understand why it leads to the indefiniteness of CH. I defend that once we consider the emphasis conceptual structuralism places on practical applicability—not much treated in Koellner's criticism, not even in Feferman's reasoning—then an argument could be made for the indefiniteness of CH. I do not claim, however, that this argument is definitive, but rather that it is not true that conceptual structuralism is irrelevant to the status of CH. This argument is also, in my view, more promising than Feferman's idea of clarity. Thus, regarding point (2), I lean more towards Koellner's view.
+Formal categoricity arguments do not by themselves secure determinacy.
+Yet mathematical practice treats arithmetic and set theory very differently.
+This asymmetry helps explain why CH appears less determinate than arithmetic truths.
+
+In this paper, I offer an interpretation of conceptual structuralism that makes it easier to understand why it leads to the indefiniteness of CH. I argue that once we consider the emphasis conceptual structuralism places on practical applicability—not much treated in Koellner's criticism, not even in Feferman's reasoning—then an argument could be made for the indefiniteness of CH. I do not claim, however, that this argument is definitive, but rather that it is not true that conceptual structuralism is irrelevant to the status of CH. This argument is also, in my view, more promising than Feferman's idea of clarity. Thus, regarding point (2), I lean more towards Koellner's view.
 
 A proper treatment of point (3) above would require a deep examination of speech act theory and institutional theory; something that is well beyond the scope of this paper. Let me briefly point out, however, that I do not think, as Koellner does, that it is impossible to understand mathematical entities in an institutional or social way. Quite the contrary. There have been, for the time being, promising attempts to understand mathematics in an institutional way, as Feferman does, and they have proven to be quite resilient to criticism.\footnote{Take for example \textcite{Cole2013}, who gives an institutional account of mathematics based on speech act theory and argues that it can give an account of the necessity and objectivity of mathematical facts.}
 
-In summary, the most important thesis this paper defends is that an alternative interpretation can be given to conceptual structuralism, which focuses most on the applicability of mathematical structures and conceptions in real-life practice, and less on logical and epistemological clarity. 
+In summary, the most important thesis this paper is that an alternative interpretation can be given to conceptual structuralism, which focuses most on the applicability of mathematical structures and conceptions in real-life practice, and less on logical and epistemological clarity. 
 
-The text is organized as follows. In the next section, I interpret Feferman's conceptual structuralism, clarifying and completing it, while also focusing on its implications for CH. Section 3 explains how its relation to practical and scientific applicability could support Feferman's case, despite presenting limitations. In Section 4, I show how this argument applies to actual mathematical practice. In Sections 5 and 6, I address different ways Feferman approaches the notion of clarity and evaluate the problems his arguments present. Finally, in Section 7 I approach Feferman's formal argument, and see how it relates to the philosophical ones analyzed in the rest of the text.
+I first reconstruct Feferman's conceptual structuralism and its relation to CH. I then argue that the strongest version of Feferman's position does not rest primarily on metamathematical considerations, but on the role different structures play within mathematical and scientific practice...
 
 \section{Understanding Feferman's conceptual structuralism}
 \label{conceptual-structuralism-intro}
@@ -397,7 +401,7 @@ V_\kappa \models \mathrm{ZFC}_2 .
 
 Except replacement, the axioms of $\mathrm{ZFC}$ easily hold in \(V_\alpha\), in case \(\alpha > \omega\) is a limit ordinal. Replacement is the axiom that uses the hypothesis that $\kappa$ is inaccesible: if $x \in \kappa$ and $f: x \to \kappa$, $f(x)= \{ y \subseteq \kappa | \exists z \in x, f(z) = y \}$, then we have $|f(x)| \leq |x| < \kappa$. As this cardinal is inaccesible, it cannot be reached by taking unions or power sets of smaller cardinals, which implies that $f(x) \in V_\kappa$, thus being replacement verifyed relatively to this model.
 
-To proof the converse, we need to see both that $\kappa$ is regular and that, if $\mu < \kappa$, $\mathcal{P}(\mu) < \kappa$. If $\kappa$ were not regular there would be an $\alpha < \kappa$ and a function $f : \alpha \to \kappa$ such that $max_{x\in\alpha}\{ f(x) \} = \kappa$. Then $f \subseteq V_\kappa$, so by second-order Replacement $Im(f) \in V_\kappa$. Then by the axiom of union in $V_\kappa$, $\cup Im(f) = \kappa \in V_\kappa$, a contradiction. For the second part, suppose there would be a \(\mu < \kappa\) such that $2^\mu \geq \kappa$. Then there would be a surjective function $f : \mathcal{P}(\mu)\to \kappa$, But power set axiom implies $\mathcal{P}(\mu) \in V_\kappa$ so by second-order replacement, $Im(f)= f(\mathcal{P}(\mu))=\kappa \in V_\kappa$, a contradiction.\footnote{See \textcite[23]{Kanamori2003} for a modern formulation and proof of the theorem. See also \ref{set-theory appendix} for precise definitions of the set-theoretic notions employed there.}
+To proof the converse, we need to see both that $\kappa$ is regular and that, if $\mu < \kappa$, $\mathcal{P}(\mu) < \kappa$. If $\kappa$ were not regular there would be an $\alpha < \kappa$ and a function $f : \alpha \to \kappa$ such that $max_{x\in\alpha}\{ f(x) \} = \kappa$. Then $f \subseteq V_\kappa$, so by second-order Replacement $Im(f) \in V_\kappa$. Then by the axiom of union in $V_\kappa$, $\cup Im(f) = \kappa \in V_\kappa$, a contradiction. For the second part, suppose there would be a \(\mu < \kappa\) such that $2^\mu \geq \kappa$. Then there would be a surjective function $f : \mathcal{P}(\mu)\to \kappa$, But power set axiom implies $\mathcal{P}(\mu) \in V_\kappa$ so by second-order replacement, $Im(f)= f(\mathcal{P}(\mu))=\kappa \in V_\kappa$, a contradiction.\footnote{See \textcite[23]{Kanamori2003} for a modern formulation and proof of the theorem. See also Appendix \ref{set-theory appendix} for precise definitions of the set-theoretic notions employed there.}
 
 \end{proof}
 
@@ -411,29 +415,23 @@ The situation in arithmetic is parallel. Working in $\mathrm{ZF\!-\!P}+\mathrm{P
 
 So it seems that both results exhibit a potential circularity, since they do not establish the determinacy of the intended structures unless the higher-order metatheoretical structures in which these results are formulated and proved are themselves already taken to be determinate. In this vein, \textcite[20]{Feferman2011a} states that ``the circularity is so patent, one does not see that any more can be claimed thereby than that the definiteness of those notions may be accepted as a matter of faith.''
 
-In either case it is not a mean to stablish definiteness in logical terms.
+In either case, this does not provide a means of establishing definiteness in purely logical terms, at least not within first-order finitary logic, which has classically been regarded as the canonical notion of logic. If one instead adopts full second-order logic, then the relevant determinacy assumptions are already built into the logic itself. \textcite{Koellner2010SecondOrderLogic} explains in detail why full second-order logic is fragile with respect to background set-theoretical assumptions, a feature that appears to stand in tension with the traditional conception of logic as invariant across interpretations.
 
-Even if higher logics are defined, what we understand as a logical proof is fundamebtally concerned with first order logic. What these results show is that there is no way of stablishing determinacy of a structure logically, in terms of first order axioms. If one adheres to second order logic, then the determinacy assumptions are implicit in the logic itself. 
-
-However, in practice these two results are quite different. Feferman is right in asserting that determinacy in this cases is accepted as a matter of faith. But, in practice, the determinacy of the structures where the categoricity of arithmetic is proven are usually accepted to be determined. And thus the result is understood \textit{within} these structures.
+In my view, Feferman is correct in claiming that determinacy in these cases is ultimately accepted as a matter of faith, both in the categoricity of arithmetic and in that of set theory. Nevertheless, I maintain that the two cases differ substantially in mathematical practice. Mathematicians typically do not reason in a purely syntactic fashion, but rather \textit{within} an intended structure. Structures incorporating $\mathbb{N}$ and $\mathcal{P}(\mathbb{N}) \simeq \mathbb{R}$, within which the categoricity theorem for $\mathrm{PA}_2$ can be proved, are generally immediately accessible and appear ubiquitously and consistently across different areas of mathematical practice. By contrast, the full set-theoretic hierarchy rarely appears outside foundational contexts, except perhaps as an intuitive representation of the axioms of set theory themselves. Needless to say, the assumptions underlying the categoricity theorem for arithmetic are substantially weaker than those required in the corresponding case of set theory, as \textcite[141]{Ferreiros2023ConStructuralism} points out:
 
 \begin{adjustwidth}{1cm}{1cm}
 \begin{quote}
 \small
-The categoricity of the $\mathbb{N}$-structure can be obtained in weak second-order logic and does not even depend on its impredicativity. Hence its fully determinate nature, so to speak. In practice, this is admitted by mathematicians and logicians who differ in their acceptance of some questionable foundational principles. \textcite[141]{Ferreiros2023ConStructuralism}
+The categoricity of the $\mathbb{N}$-structure can be obtained in weak second-order logic (...). Hence its fully determinate nature, so to speak. In practice, this is admitted by mathematicians and logicians who differ in their acceptance of some questionable foundational principles. The categoricity of the $V$-structure is (...) merely an ideal that guides some important research projects in advanced set theory (while it is abandoned in other projects).
 \end{quote}
 \end{adjustwidth}
 
-Definiteness cannot be proven in logical terms, because it trascends logic. It is not to be expected that we can prove logically the definiteness of a certain entity without also departing from the one of a similar one.
-
-In this case what we have is the commitment to a specific mathematical reality. From this reality practicioners extract axioms, that lead them to the results that they are interested in. In the case of the categlricity of arithmetic, they commit to the natural number structure and to some features of its subsets. This features can be formalized in various axioms systems, which suffice in this case to prove the result meeded. In the case of set theory the commitments needed are much stronger, and less usual in current mathematical practice.
-
-In any case, it is the commitment to mathematical structures, and the fact that they can be conceived by practicioners, what leads to the axiomatizacion and, in this case, the categoricity result, but never the other way around.
-
-The proof in set theory is more circular than in arithmetic. In either case it is not a mean to stablish definiteness in logical terms.
+In such cases, what we find is a commitment to a specific mathematical reality. From this reality, practitioners extract axioms that lead to the results in which they are interested. In the case of the categoricity of arithmetic, the commitment is to the structure of the natural numbers and to certain features of its subsets. These features can be formalized in various axiomatic systems, which in this case suffice to prove the desired categoricity result. In the case of set theory, by contrast, the required commitments are substantially stronger and far less common in ordinary mathematical practice.
 
 \section{Standard models}
 \label{standard-models-epistemology}
+
+
 
 Non-categoricity implies the existence of non-standard models of both arithmetic and set theory, where certain statements can have different truth values. In arithmetic, every non-standard model contains (as an initial segment of its underlying domain) an image of the standard natural numbers. Therefore, non-standard models are easy to identify. In spite of this, Koellner argues that the case in set theory is exactly the same, and that non-standard models are easy to identify as well:
 
@@ -477,7 +475,7 @@ I am no more uncomfortable doing that than if I were teaching Newtonian mechanic
 \end{quote}
 \end{adjustwidth}
 
-In summary, even though Feferman's requirement for clarity presents significant difficulties, it manages to capture important epistemological differences between arithmetic and set theory. However, extending these differences to third-order arithmetic and the minimal frameworks that allow us to formulate CH would be problematic. This is parallel to the conclusion of Section 4 regarding the applicability argument. In the next section, I will evaluate an important line of thought in Feferman's case on CH, which I will defend to be essentially a formal reformulation of his philosophical argumentation.
+In summary, even though Feferman's requirement for clarity presents significant difficulties, it manages to capture important epistemological differences between arithmetic and set theory. However, extending these differences to third-order arithmetic and the minimal frameworks that allow us to formulate CH would be problematic. This is parallel to the conclusion of Section 4 regarding the applicability argument. In the next section, I will evaluate an important line of thought in Feferman's case on CH, which I will argue to be essentially a formal reformulation of his philosophical argumentation.
 
 
 This is similar to the case around $CH$, where given a countable transitive model $M$ of $\mathrm{ZFC}$ we can force to obtain extensions $M[G_0]$, $M[G_0][G_1]$, $M[G_0][G_1][G_2]$,... that alternatively satisfy $CH$ and $\neg CH$. In fact, \textcite{Hamkins2012Multiverse} has used this fact as an argument that $CH$ should be regarded as indefinite.
@@ -531,31 +529,13 @@ Let us recall the liar paradox, the statement that “This statement is false”
 
 The Feferman-Koellner dispute on CH is just one more episode in the long line of philosophical and mathematical controversies that this conjecture has generated since Cantor posed it. Both Feferman and Koellner have made precise and insightful contributions to these controversies. In my view, the only significant weakness in Koellner's argument was his failure to consider Feferman's conceptual structuralism more fully. It is true that Feferman's writings are sometimes too concise and difficult to understand, but I believe the interpretation I have given here is loyal to his main ideas.
 
-The fundamental thesis of this paper is that this philosophical conception, once interpreted as I do, offers a complementary argument for the indefiniteness of CH, which is grounded also in scientific and practical applicability, and not only in the notion of mathematical clarity, upon which Feferman explicitly relies. Considering the possibility of this applicability argument, I believe Koellner is incorrect in stating that conceptual structuralism does not address the indefiniteness of CH. However, this does not mean that we should accept the argument in its basic form, as presented in Section 3.
+The fundamental thesis of this paper is that this philosophical conception, once interpreted as I do, offers a complementary argument for the indefiniteness of CH, which is grounded also in scientific and practical applicability, and not only in the notion of mathematical clarity, upon which Feferman explicitly relies. Considering the possibility of this applicability argument, I believe Koellner is incorrect in stating that conceptual structuralism does not address the indefiniteness of CH.
 
-The next step should be to develop a more fine-grained notion of the applicability of mathematical structures, which includes both the notion of applicability for natural science and the notion of internal applicability to solve problems that arise within previously defined mathematical conceptions.
-
-The class $S_0$ would consist of structures whose legitimacy is grounded directly in their indispensability in modeling the physical world, and would probably include structures such as the set of natural numbers $\mathbb{N}$, the rational numbers $\mathbb{Q}$, the Euclidean plane for spatial reasoning, and others representing core notions of real analysis and calculus (such as that of continuous change). Any structure in $S_0$ can then be justified through the external applicability requirement in its most direct form. Once $S_0$ is defined, it is the moment to take the recursive step. A structure $X$, not belonging to $S = S_1 \cup \dots \cup S_n$, is admitted into class $S_{n+1}$ if it meets, in the most standard, simple and natural way, one of the following conditions:
-
-\begin{enumerate}
-  \item \textbf{Problem-Solving Power:} $X$ provides solutions to previously existing, well-defined and relevant problems, i.e., to problems formulated within structures in $S$.
-
-  \item \textbf{Explanatory Unification:} $X$ is able to reveal that previously seemingly disparate phenomena derived from structures in $S$ are in fact manifestations of a single underlying principle from $X$.
-
-  \item \textbf{Generative Capacity:} $X$ naturally leads to new, fruitful lines of inquiry in $S$.
-\end{enumerate}
-
-This definition requires further explanation, but I do not have the space to provide it now. The main goal of \textcite{Blanco2} is precisely to further explain what I understand as standard, simple, and natural mathematical conceptions and to state more explicitly which structures could fit into each level of the $\{S_n\}$ hierarchy. In particular, it would shed considerable light on the debate around CH to understand where, within this hierarchy, both systems of third-order arithmetic and more abstract set-theoretic conceptions stand.
+The next step should be to develop a more fine-grained notion of the applicability of mathematical structures, which includes both the notion of applicability for natural science and the notion of internal applicability to solve problems that arise within previously defined mathematical conceptions. 
 
 My purpose in this paper has been to show how the notion of practical and scientific applicability can play a crucial role in the debate over the definiteness of CH, and how this leads to the next step in understanding such an enigmatic and controversial statement.
 
 %=========================
-
-
-
-\printbibliography
-
-
 \appendix
 
 \section{Set-theoretical background}
@@ -636,6 +616,9 @@ f(x) = \{f(t) : t \in x\}
 is also a set.
 
 The regularity of $\kappa$ ensures that applying definable functions to sets already in $V_\kappa$ cannot produce sets of rank reaching or exceeding $\kappa$. Thus the outputs of such functions remain inside $V_\kappa$.
+
+%-----------Fin del apéndice
+\printbibliography
 
 \end{document}
 
