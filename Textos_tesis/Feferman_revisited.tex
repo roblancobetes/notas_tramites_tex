@@ -77,10 +77,11 @@
 \date{\today}
 
 %-------------------------
-% Entornos de teoremas (opcional)
+% Entornos de teoremas
 %-------------------------
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
+\newtheorem*{theorem*}{Theorem}
 \newtheorem{lemma}{Lemma}
 
 \begin{document}
@@ -164,7 +165,7 @@ Here, Feferman explicitly acknowledges that truth is not absolute for all concep
 This philosophical approach, presented in Section 2 of \parencite{Feferman2011a}, has a formal counterpart in Section 3. There, Feferman introduces a method for determining whether a mathematical statement is well defined, building on his earlier work on semi-constructive theories \parencite{Feferman2010}. He argues that the Continuum Hypothesis may ultimately prove to be an indefinite statement. In these papers, Feferman adopts an intermediate position between classical and intuitionistic logic, using classical logic in contexts he considers appropriate while relying on intuitionistic logic elsewhere.
 Again, I take this logical approach to CH not to provide a new argument, but rather to offer an explanation. Feferman essentially reformulates his philosophical position in formal terms, sometimes making more explicit some of its otherwise obscure aspects. However, I do not think that this formal framework provides any additional reason to accept his position for those who are unconvinced by the underlying philosophical arguments.
 
-Feferman develops the formal system SCS (Semi-Constructive Set Theory), based on an intuitionistic version of the Kripke–Platek (KP) axiomatic system together with several additional principles. Schematically, the system can be represented as:
+Feferman develops the formal system $\mathrm{SCS}$ (Semi-Constructive Set Theory), based on an intuitionistic version of the Kripke–Platek (KP) axiomatic system together with several additional principles. Schematically, the system can be represented as:
 
 \begin{equation}
 \mathrm{SCS} = \mathrm{IKP} + \mathrm{MP} + \mathrm{AC}
@@ -172,7 +173,7 @@ Feferman develops the formal system SCS (Semi-Constructive Set Theory), based on
 
 Here, $\mathrm{IKP}$ denotes the intuitionistic Kripke–Platek system with the Axiom of Infinity, $\mathrm{MP}$ denotes Markov's Principle, and $\mathrm{AC}$ denotes a constructive and weaker version of the Axiom of Choice.\footnote{See \textcite[Section 6]{Feferman2010} for further details regarding the added axioms. The system defined there also includes the bounded omniscience scheme and the law of excluded middle for $\Delta_0$ formulae, but \textcite{Rathjen2016} proved these principles to be redundant.}
 
-According to Feferman, the validity of the Law of Excluded Middle, $A \lor \neg A$, for a given formula $A$ indicates that $A$ is definite; similarly, other classical principles are associated with definiteness. SCS assumes definiteness for $\Delta_0$ formulas and for first-order arithmetical statements. By contrast, the universe of sets as a whole is regarded as indefinite, which explains why the system generally operates within intuitionistic logic.
+According to Feferman, the validity of the Law of Excluded Middle, $A \lor \neg A$, for a given formula $A$ indicates that $A$ is definite; similarly, other classical principles are associated with definiteness. $\mathrm{SCS}$ assumes definiteness for $\Delta_0$ formulas and for first-order arithmetical statements. By contrast, the universe of sets as a whole is regarded as indefinite, which explains why the system generally operates within intuitionistic logic.
 
 Feferman subsequently conjectured that CH is indefinite in this axiomatic system; that is, that one cannot derive $\mathrm{CH} \lor \neg \mathrm{CH}$. He went further still, conjecturing that CH also remains indefinite in the stronger system $\mathrm{SCS} + \mathcal{P}(\mathbb{N})$, which postulates the existence of the power set of the natural numbers. Both conjectures were later confirmed by \textcite{Rathjen2016}.
 
@@ -315,9 +316,9 @@ The question, then, is not whether mathematical practice matters, but which feat
 
 \begin{enumerate}
 
-  \item \textbf{Modes of access in practice:} Our practical interaction with the natural numbers is iterative, sequential, and intuitive. Some of our most fundamental cognitive capacities, especially those related to space and time, appear to mirror this structure. By contrast, set-theoretic conceptions appear quite differently in mathematical practice: they are more dependent on formal axiom systems and less directly connected to intuition. For instance, ordinary mathematical practice almost never directly manipulates objects such as $P(\mathbb{R})$.\footnote{If we examine the paradigmatic structures that arise across different areas of mathematics, we find that they often remain below the level of the full power set of the continuum. For example, the canonical structure in topology is the real line endowed with its usual topology, which restricts attention to open sets. Similar observations apply in areas such as geometry, analysis, and measure theory.}
+  \item \textbf{Modes of access in practice:} Our practical interaction with the natural numbers is iterative, sequential, and intuitive. Some of our most fundamental cognitive capacities, especially those related to space and time, appear to mirror this structure. By contrast, set-theoretic conceptions appear quite differently in mathematical practice: they are more dependent on formal axiom systems and less directly connected to intuition. For instance, ordinary mathematical practice almost never directly manipulates objects such as $\mathcal{P}(\mathbb{R})$.\footnote{If we examine the paradigmatic structures that arise across different areas of mathematics, we find that they often remain below the level of the full power set of the continuum. For example, the canonical structure in topology is the real line endowed with its usual topology, which restricts attention to open sets. Similar observations apply in areas such as geometry, analysis, and measure theory.}
 
-  \item \textbf{Degree of framework dependence:} Arithmetic often functions as a fixed background across different foundational programs. Apart from finitists and certain forms of constructivism and intuitionism, most foundational perspectives accept the basic notions of arithmetic and treat arithmetical statements as determinate. By contrast, higher set theory is often highly sensitive to variations in the surrounding foundational assumptions. This is reflected in the large number of competing axiomatic frameworks that have been proposed for set theory, including $ZFC$, $KP$, intuitionistic set theory, $SCS$, and many other cases.
+  \item \textbf{Degree of framework dependence:} Arithmetic often functions as a fixed background across different foundational programs. Apart from finitists and certain forms of constructivism and intuitionism, most foundational perspectives accept the basic notions of arithmetic and treat arithmetical statements as determinate. By contrast, higher set theory is often highly sensitive to variations in the surrounding foundational assumptions. This is reflected in the large number of competing axiomatic frameworks that have been proposed for set theory, including $\mathrm{ZFC}$, $KP$, intuitionistic set theory, $\mathrm{SCS}$, and many other cases.
   
   \item \textbf{Explanatory indispensability vs. optional enrichment:} The natural numbers seem unavoidable in ordinary mathematics. By contrast, large portions of higher set theory function more like optional enrichments of mathematics. The Continuum Hypothesis is a paradigmatic example: vast areas of mathematics proceed unaffected regardless of its truth value. Similar considerations apply to large cardinal axioms, determinacy principles, forcing axioms, and related set-theoretic extensions.
   
@@ -332,9 +333,9 @@ I now return to metamathematical arguments, which play an important role in Koel
 \section{Categoricity and second order logic}
 \label{categoricity-second-order-logic}
 
-The strongest reason for regarding a mathematical structure as determinate would be the existence of a categorical axiomatization in first-order logic. However, the Löwenheim--Skolem theorem implies that no recursively enumerable first-order theory with an infinite model can be categorical. Consequently, neither the structure of the natural numbers nor the set-theoretic hierarchy can be regarded as determinate solely on the basis of first-order categoricity. 
+One of the main metamathematical and model-theoretical approaches to determinacy of mathematical structures is the concept of categoricity. Perhaps the strongest reason for regarding a mathematical structure as determinate would be the existence of a categorical axiomatization in first-order logic. However, the Löwenheim--Skolem theorem implies that no recursively enumerable first-order theory with an infinite model can be categorical. Consequently, neither the structure of the natural numbers nor the set-theoretic hierarchy can be regarded as determinate solely on the basis of first-order categoricity.
 
-Some authors, such as \textcite[31]{Isaacson2008} and \textcite[chapter 8]{shapiro1991foundations}, have argued that categoricity results in full second-order logic should be accepted, since categoricity becomes available in that setting. In the case of arithmetic, full second-order Peano arithmetic, $PA_2$, is categorical. In the case of set theory, an initial segment of the universe $V_\kappa$, where $\kappa$ is a strongly inaccesible cardinal, is likewise quasi-categorically characterized by second-order formulations of Zermelo-Fraenkel set theory, $ZFC_2$. Both \textcite[19]{Feferman2011a} and \textcite[511]{Koellner2016} reject this position, arguing that full second-order semantics presupposes a background notion of ``all subsets,'' thereby involving a commitment of essentially the same kind and strength as the set-theoretic ontology under discussion. 
+Some authors, such as \textcite[31]{Isaacson2008} and \textcite[chapter 8]{shapiro1991foundations}, have argued that categoricity results in full second-order logic should be accepted, since categoricity becomes available in that setting. In the case of arithmetic, full second-order Peano arithmetic, $PA_2$, is categorical. In the case of set theory, an initial segment of the universe $V_\kappa$, where $\kappa$ is a strongly inaccesible cardinal, is likewise quasi-categorically characterized by second-order formulations of Zermelo-Fraenkel set theory, $\mathrm{ZFC}_2$. Both \textcite[19]{Feferman2011a} and \textcite[511]{Koellner2016} reject this position, arguing that full second-order semantics presupposes a background notion of ``all subsets,'' thereby involving a commitment of essentially the same kind and strength as the set-theoretic ontology under discussion. 
 
 In this section, I sketch both the categoricity result for arithmetic and the quasi-categoricity result for set theory. I then examine whether, even if these results fail to establish the determinacy of the corresponding structures, they nevertheless receive different treatment within ordinary mathematical practice.
 
@@ -372,7 +373,7 @@ The crucial point, in my view, is that the underlying set-theoretic assumptions 
 
 \subsection{The quasi-categoricity of ZFC2}
 
-The quasi-categoricity result of $ZFC_2$ can be formalized within $ZFC$, a similar setting that we found in arithmetic. We can formalize in this system the idea of being a model of full second-order set theory by the relation $(M,P) \models ZFC_2$, where $P=P(M)$ (and similarly for the interpretation of higher order variables), and in such a way that the $ZFC$ axioms hold when relativized to $M$, where the replacement schema can now be seen as a single axiom:
+The quasi-categoricity result of $\mathrm{ZFC}_2$ can be formalized and proven within $\mathrm{ZFC}$, a similar setting that we found in arithmetic. We can formalize in this system the idea of being a model of full second-order set theory by the relation $(M,P) \models \mathrm{ZFC}_2$, where $P=\mathcal{P}(M)$ (and similarly for the interpretation of higher order variables), and in such a way that the $\mathrm{ZFC}$ axioms hold when relativized to $M$, where the replacement schema can now be seen as a single axiom:
 
 \[
 \forall f\,\forall x\,\exists y\,\forall z\,
@@ -381,39 +382,32 @@ z\in y \leftrightarrow \exists t\in x\,(z=f(t))
 \Bigr).
 \]
 
-\begin{theorem}[Zermelo , Shepherdson]
+With this setting, the quasi-categoricity result is stated as follows:
+
+\begin{theorem*}[\textcite{Zermelo1930}]
   
-\(\kappa\) is inaccessible iff
+\(\kappa\) is strongly inaccessible iff
 \[
-V_\kappa \models \mathrm{ZFC}^2 .
+V_\kappa \models \mathrm{ZFC}_2 .
 \]
-\end{theorem}
+
+\end{theorem*}
 
 \begin{proof}
-All the axioms of ZFC except Replacement are readily seen to hold in \(V_\alpha\) for any limit ordinal \(\alpha > \omega\). To verify Replacement for \(V_\kappa\), suppose that \(x \in V_\kappa\) and \(F\) is any function $x \to V_\kappa$.
 
-Then $|F''x| \leq |x| < \kappa$ and so by (a) $F''x \in V_\kappa$.
+Except replacement, the axioms of $\mathrm{ZFC}$ easily hold in \(V_\alpha\), in case \(\alpha > \omega\) is a limit ordinal. Replacement is the axiom that uses the hypothesis that $\kappa$ is inaccesible: if $x \in \kappa$ and $f: x \to \kappa$, $f(x)= \{ y \subseteq \kappa | \exists z \in x, f(z) = y \}$, then we have $|f(x)| \leq |x| < \kappa$. As this cardinal is inaccesible, it cannot be reached by taking unions or power sets of smaller cardinals, which implies that $f(x) \in V_\kappa$, thus being replacement verifyed relatively to this model.
 
-For the converse, first note that \(\kappa\) is regular: If not, there would be an \(\alpha < \kappa\) and a function $G : \alpha \to \kappa$ with a range unbounded in \(\kappa\). Then \(G \subseteq V_\kappa\), and so by second-order Replacement $G''\alpha \in V_\kappa$. Hence, $\sup(G''\alpha)=\kappa \in V_\kappa$, a contradiction.
+To proof the converse, we need to see both that $\kappa$ is regular and that, if $\mu < \kappa$, $\mathcal{P}(\mu) < \kappa$. If $\kappa$ were not regular there would be an $\alpha < \kappa$ and a function $f : \alpha \to \kappa$ such that $max_{x\in\alpha}\{ f(x) \} = \kappa$. Then $f \subseteq V_\kappa$, so by second-order Replacement $Im(f) \in V_\kappa$. Then by the axiom of union in $V_\kappa$, $\cup Im(f) = \kappa \in V_\kappa$, a contradiction. For the second part, suppose there would be a \(\mu < \kappa\) such that $2^\mu \geq \kappa$. Then there would be a surjective function $f : \mathcal{P}(\mu)\to \kappa$, But power set axiom implies $\mathcal{P}(\mu) \in V_\kappa$ so by second-order replacement, $Im(f)= f(\mathcal{P}(\mu))=\kappa \in V_\kappa$, a contradiction.\footnote{See \textcite[23]{Kanamori2003} for a modern formulation and proof of the theorem. See also \ref{set-theory appendix} for precise definitions of the set-theoretic notions employed there.}
 
-It remains to establish that \(\kappa\) is a strong limit cardinal. Else, there would be a \(\lambda < \kappa\) such that $2^\lambda \geq \kappa$.
-
-Then
-\[
-\mathcal{P}(\lambda)\in V_\kappa
-\]
-by the Power Set Axiom, yet there would be a surjection
-\[
-H : \mathcal{P}(\lambda)\to \kappa .
-\]
-So again by second-order Replacement,
-\[
-H''\mathcal{P}(\lambda)=\kappa \in V_\kappa,
-\]
-a contradiction.
 \end{proof}
 
+Note that, similarly to the case of arithmetic, the proof is straightforward. The theorem then shows that $V_\kappa$ is the only model of set theory of the corresponding size, what leads to the \textit{quasi-categoricity} label. 
+
 \subsection{Conclusion}
+
+Note that, in the end, this is a theorem of first order $\mathrm{ZFC}$. This is in the sense that $\mathrm{ZFC}_1$ proves that for any strongly inaccesible cardinal $\kappa$, $V_\kappa$ is the only model of the corresponding size of $\mathrm{ZFC}_2$.
+
+Internally, $V_\kappa$ are isomorphic (that is, in a given model, $V_\kappa$ is trivially isomorphic to $V_\kappa$). But externally, two models of $\mathrm{ZFC}$ may have different $V_\kappa$.
 
 \textcite{Koellner2010SecondOrderLogic} defends that second-order logic does not have the absoluteness properties to be called a ``logic''.
 
@@ -484,7 +478,7 @@ I am no more uncomfortable doing that than if I were teaching Newtonian mechanic
 In summary, even though Feferman's requirement for clarity presents significant difficulties, it manages to capture important epistemological differences between arithmetic and set theory. However, extending these differences to third-order arithmetic and the minimal frameworks that allow us to formulate CH would be problematic. This is parallel to the conclusion of Section 4 regarding the applicability argument. In the next section, I will evaluate an important line of thought in Feferman's case on CH, which I will defend to be essentially a formal reformulation of his philosophical argumentation.
 
 
-This is similar to the case around $CH$, where given a countable transitive model $M$ of $ZFC$ we can force to obtain extensions $M[G_0]$, $M[G_0][G_1]$, $M[G_0][G_1][G_2]$,... that alternatively satisfy $CH$ and $\neg CH$. In fact, \textcite{Hamkins2012Multiverse} has used this fact as an argument that $CH$ should be regarded as indefinite.
+This is similar to the case around $CH$, where given a countable transitive model $M$ of $\mathrm{ZFC}$ we can force to obtain extensions $M[G_0]$, $M[G_0][G_1]$, $M[G_0][G_1][G_2]$,... that alternatively satisfy $CH$ and $\neg CH$. In fact, \textcite{Hamkins2012Multiverse} has used this fact as an argument that $CH$ should be regarded as indefinite.
 
 Be $M \models \mathrm{PA}$ a model of Peano Arithmetic. An end-extension of $M$ is a larger model $N \supseteq M$ such that no element of $N - M$ is inserted ``bellow'' an old element of $M$, i.e., whenever $a \in M$ and $b \in N$ satisfy $b <^N a $, then $b \in M$.
 
@@ -554,6 +548,92 @@ This definition requires further explanation, but I do not have the space to pro
 My purpose in this paper has been to show how the notion of practical and scientific applicability can play a crucial role in the debate over the definiteness of CH, and how this leads to the next step in understanding such an enigmatic and controversial statement.
 
 %=========================
+
+
+
 \printbibliography
 
+
+\appendix
+
+\section{Set-theoretical background}
+\label{set-theory appendix}
+
+This appendix briefly reviews some set-theoretical notions relevant to the discussion of the quasi-categoricity of second-order set theory given in Section \ref{categoricity-second-order-logic}.
+
+Modern set theory commonly understands the universe of sets through the \emph{cumulative hierarchy}, also called the \emph{Von Neumann hierarchy}. The idea is that sets are generated in stages, where at each stage one forms new sets only from sets already constructed at previous stages. The hierarchy is defined recursively along the ordinals:
+
+\[
+V_0 = \varnothing,
+\]
+
+\[
+V_{\alpha+1} = \mathcal{P}(V_\alpha),
+\]
+
+and for limit ordinals $\lambda$,
+
+\[
+V_\lambda = \bigcup_{\beta < \lambda} V_\beta.
+\]
+
+Here $\mathcal{P}(X)$ denotes the power set of $X$, that is, the set of all subsets of $X$. Intuitively, each stage collects together all sets that can be formed from earlier stages. The entire set-theoretic universe is then represented by
+
+\[
+V = \bigcup_{\alpha \in \mathrm{Ord}} V_\alpha,
+\]
+
+where $\mathrm{Ord}$ denotes the class of all ordinals.
+
+The hierarchy proceeds through the ordinals. Ordinals generalize the natural numbers by extending the notion of order type beyond the finite.
+
+Successor ordinals are ordinals of the form $\alpha+1$. At successor stages, new sets are generated by applying the power set operation to the previous stage. Limit ordinals, by contrast, have no immediate predecessor. Examples include $\omega$, the first infinite ordinal. At a limit stage $\lambda$, no genuinely new operation is performed; instead one simply takes the union of all earlier stages:
+
+\[
+V_\lambda = \bigcup_{\beta < \lambda} V_\beta.
+\]
+
+Thus the cumulative hierarchy alternates between power set formation at
+successor stages and unions at limit stages.
+
+A cardinal $\kappa$ is called \emph{regular} if it cannot be expressed as the union of fewer than $\kappa$ sets, each of cardinality smaller than $\kappa$. Equivalently, $\kappa$ is regular if there is no function
+
+\[
+f : \lambda \to \kappa
+\]
+
+with $\lambda < \kappa$ such that the image of $f$ is unbounded in $\kappa$. Intuitively, a regular cardinal cannot be ``built up gradually'' from a smaller number of smaller cardinals. The cardinal $\omega$ is regular, whereas $\aleph_\omega$ is singular.
+
+A cardinal $\kappa$ is a \emph{strong limit cardinal} if for every
+$\lambda < \kappa$,
+
+\[
+2^\lambda < \kappa.
+\]
+
+Equivalently, taking power sets of smaller cardinals never reaches $\kappa$. This notion is important because the cumulative hierarchy is generated by iterating the power set operation.
+
+A cardinal $\kappa$ is called \emph{strongly inaccessible} if:
+
+\begin{enumerate}
+    \item $\kappa$ is uncountable,
+    \item $\kappa$ is regular,
+    \item $\kappa$ is a strong limit cardinal.
+\end{enumerate}
+
+Strongly inaccessible cardinals are important because the structure $V_\kappa$ behaves like a miniature universe of sets. In particular, $V_\kappa$ satisfies the axioms of ZFC. This is the key idea behind the quasi-categoricity theorem for second-order set theory.
+
+Replacement states, roughly, that if one applies a definable function to a set, the resulting collection is again a set.
+
+Formally, if $f$ is a definable function and $x$ is a set, then
+
+\[
+f(x) = \{f(t) : t \in x\}
+\]
+
+is also a set.
+
+The regularity of $\kappa$ ensures that applying definable functions to sets already in $V_\kappa$ cannot produce sets of rank reaching or exceeding $\kappa$. Thus the outputs of such functions remain inside $V_\kappa$.
+
 \end{document}
+
