@@ -339,9 +339,9 @@ Some authors, such as \textcite[31]{Isaacson2008} and \textcite[chapter 8]{shapi
 
 In this section, I sketch both the categoricity result for arithmetic and the quasi-categoricity result for set theory. I then examine whether, even if these results fail to establish the determinacy of the corresponding structures, they nevertheless receive different treatment within ordinary mathematical practice.
 
-\subsection{The categoricity of \texorpdfstring{$PA_2$}{PA2}}
+\subsection{The categoricity of \texorpdfstring{$\mathrm{PA}_2$}{PA2}}
 
-The categoricity theorem for second-order Peano Arithmetic ($PA_2$) can be formalized within $ZF\!-\!P+\mathrm{Pow}(\omega)$. Under full second-order semantics, second-order variables range over all subsets of the first-order domain. In the case of arithmetic, this amounts to quantification over $\mathcal{P}(\mathbb{N})$. The crucial principle is the second-order induction axiom:
+The categoricity theorem for second-order Peano Arithmetic ($\mathrm{PA}_2$) can be formalized within $\mathrm{ZF\!-\!P}+\mathrm{Pow}(\omega)$. Under full second-order semantics, second-order variables range over all subsets of the first-order domain. In the case of arithmetic, this amounts to quantification over $\mathcal{P}(\mathbb{N})$. The crucial principle is the second-order induction axiom:
 
 \[
 \forall X\Bigl[(0\in X \wedge \forall n\,(n\in X \rightarrow S(n)\in X))
@@ -405,15 +405,13 @@ Note that, similarly to the case of arithmetic, the proof is straightforward. Th
 
 \subsection{Conclusion}
 
-Note that, in the end, this is a theorem of first order $\mathrm{ZFC}$. This is in the sense that $\mathrm{ZFC}_1$ proves that for any strongly inaccesible cardinal $\kappa$, $V_\kappa$ is the only model of the corresponding size of $\mathrm{ZFC}_2$.
+Note that, in the end, this is a theorem of first-order $\mathrm{ZFC}$. More precisely, $\mathrm{ZFC}_1$ formalizes and proves that for every strongly inaccessible cardinal $\kappa$, $V_\kappa$ is the unique full second-order model of $\mathrm{ZFC}_2$ of cardinality $\kappa$. Internally, the relevant $V_\kappa$ are isomorphic (i.e., within a given model, $V_\kappa$ is trivially isomorphic to itself). Externally, however, two models of $\mathrm{ZFC}$ may have different $V_\kappa$'s.
 
-Internally, $V_\kappa$ are isomorphic (that is, in a given model, $V_\kappa$ is trivially isomorphic to $V_\kappa$). But externally, two models of $\mathrm{ZFC}$ may have different $V_\kappa$.
+The situation in arithmetic is parallel. Working in $\mathrm{ZF\!-\!P}+\mathrm{Pow}(\omega)$, one can formalize the relation $\mathcal{M} \models \mathrm{PA}_2$ and prove the corresponding categoricity theorem. However, $\mathrm{ZF\!-\!P}+\mathrm{Pow}(\omega)$ is itself not categorical, and the corresponding structures of natural numbers in two different models of the theory need not be isomorphic.
 
-\textcite{Koellner2010SecondOrderLogic} defends that second-order logic does not have the absoluteness properties to be called a ``logic''.
+So it seems that both results exhibit a potential circularity, since they do not establish the determinacy of the intended structures unless the higher-order metatheoretical structures in which these results are formulated and proved are themselves already taken to be determinate. In this vein, \textcite[20]{Feferman2011a} states that ``the circularity is so patent, one does not see that any more can be claimed thereby than that the definiteness of those notions may be accepted as a matter of faith.''
 
-The circularity is so patent, one does not see that any more can be claimed thereby than that the definiteness of those notions may be accepted as a matter of faith. \textcite[20]{Feferman2011a}
-
-One might seek to restore clarity through second-order logic, which does yield categorical axiomatizations of arithmetic and of set-theoretic initial segments. 
+The proof in set theory is more circular than in arithmetic. In either case it is not a mean to stablish definiteness in logical terms.
 
 \begin{adjustwidth}{1cm}{1cm}
 \begin{quote}
@@ -422,13 +420,13 @@ The categoricity of the $\mathbb{N}$-structure can be obtained in weak second-or
 \end{quote}
 \end{adjustwidth}
 
-The proof in set theory is more circular than in arithmetic. In either case it is not a mean to stablish definiteness in logical terms.
-
 Definiteness cannot be proven in logical terms, because it trascends logic. It is not to be expected that we can prove logically the definiteness of a certain entity without also departing from the one of a similar one.
 
 In this case what we have is the commitment to a specific mathematical reality. From this reality practicioners extract axioms, that lead them to the results that they are interested in. In the case of the categlricity of arithmetic, they commit to the natural number structure and to some features of its subsets. This features can be formalized in various axioms systems, which suffice in this case to prove the result meeded. In the case of set theory the commitments needed are much stronger, and less usual in current mathematical practice.
 
 In any case, it is the commitment to mathematical structures, and the fact that they can be conceived by practicioners, what leads to the axiomatizacion and, in this case, the categoricity result, but never the other way around.
+
+The proof in set theory is more circular than in arithmetic. In either case it is not a mean to stablish definiteness in logical terms.
 
 \section{Standard models}
 \label{standard-models-epistemology}
