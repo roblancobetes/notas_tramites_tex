@@ -88,36 +88,43 @@
 \maketitle
 
 \begin{abstract}
-Solomon Feferman \textcite{Feferman2011a} argued that the Continuum Hypothesis may fail to constitute a definite mathematical question. More recently, \textcite{Koellner2016,Koellner2022} has criticized this position as obscure, unfounded, and overly conventionalist. In this paper, I revisit Feferman's perspective through the lens of mathematical practice. I argue that mathematical definiteness cannot be secured purely through categoricity arguments or metamathematical considerations; issues concerning applicability and mathematical practice must also be taken into account, though not in a simplistic indispensability-theoretic sense. Interpreted in this way, Feferman's position can withstand some of Koellner's strongest objections.
+Solomon \textcite{Feferman2011a} argued that the Continuum Hypothesis may fail to constitute a definite mathematical question. More recently, \textcite{Koellner2016,Koellner2022} has criticized this position as obscure, unfounded, and overly conventionalist. In this paper, I revisit Feferman's perspective through the lens of mathematical practice. I argue that mathematical definiteness cannot be secured purely through categoricity arguments or metamathematical considerations; issues concerning applicability and mathematical practice must also be taken into account, though not in a simplistic indispensability-theoretic sense. Interpreted in this way, Feferman's position can withstand some of Koellner's strongest objections.
 \end{abstract}
 
 \section{Introduction}
 
-At the end of the 19th century, Georg Cantor extended the concept of cardinality to infinite sets. In doing so, he was able to show that the cardinality of the continuum is strictly greater than the one of the set of all natural numbers. This led him to conjecture that there was no third set strictly between those two, in terms of cardinality; a conjecture known as the Continuum Hypothesis (CH). The same process can be extended to any set $A$, which can be shown to have smaller cardinality than its power set $\mathcal{P}(A)$. One can then formulate what is known as the Generalized Continuum Hypothesis (GCH), which states that there cannot be an intermediate set strictly between these two in terms of cardinality.\footnote{This intermediate set, in case of existing, would be called an interpolant. There is a stronger way of formulating this hypothesis in terms of well-ordered sets, but it presumes the axiom of choice; see \textcite{Koellner2023}. Even using the weaker version, CH presupposes a huge set theoretical apparatus, consisting in a system strong enough to entail the existence of a definite set containing all the subsets of the continuum, or a strong way of the power set axiom in the case of GCH. In this paper, I focus on the the weaker version, which is also the main focus of Feferman. }
+At the end of the 19th century, Georg Cantor extended the concept of cardinality to infinite sets. In doing so, he was able to show that the cardinality of the continuum is strictly greater than the one of the set of all natural numbers. This led him to conjecture that there was no third set strictly between those two, in terms of cardinality; a conjecture known as the Continuum Hypothesis (CH). The same process can be extended to any set $A$, which can be shown to have smaller cardinality than its power set $\mathcal{P}(A)$. One can then formulate what is known as the Generalized Continuum Hypothesis (GCH), which states that there cannot be an intermediate set strictly between these two in terms of cardinality.\footnote{This intermediate set, in case of existing, would be called an interpolant. There is a stronger way of formulating this hypothesis in terms of well-ordered sets, but it presumes the axiom of choice; see \textcite{Koellner2023}. Even using the weaker version, CH presupposes a huge set theoretical apparatus, consisting in a system strong enough to entail the existence of a definite set containing all the subsets of the continuum, or a strong way of the power set axiom in the case of GCH.}
 
-Cantor was unable to resolve this problem, and its status remained open for decades. Years later, \textcite{Godel1940} proved that GCH is consistent with the axioms of ZFC of set theory, and \textcite{Cohen1966} proved the same for its negation. All this gave CH its highly controversial status: an apparently well-defined and legitimate mathematical question but proven to be unsolvable with the tools available to mathematicians in everyday practice.
+Cantor was unable to resolve this problem, and its status remained open for decades. Years later, \textcite{Godel1940} proved that GCH is consistent with the axioms of ZFC of set theory, and \textcite{Cohen1966} proved the same for its negation. All this gave CH its highly controversial status: an apparently well-defined mathematical question but proven to be unsolvable with the tools available to mathematicians in everyday practice.
 
-Since then, there have been a huge number of attempts to settle CH, but none of them has been successful.\footnote{For a summary of the current status of CH, see \textcite{Feferman2011a}, Section 1. } These attempts have never offered a clear counterexample to Cantor's hypothesis, nor an intuitive model demonstrating whether it is true or false. It seems that there is no way to relate CH to a well-established and accepted result of mathematics; so it stands as a metaphysical statement, independent of all the results accepted in everyday mathematical practice.
+Since then, there have been a huge number of attempts to settle CH, but none of them has been successful.\footnote{For a summary of the current status of CH, see \textcite{Feferman2011a}, Section 1. } These attempts have never offered a clear counterexample to Cantor's hypothesis, nor an intuitive model demonstrating whether it is true or false. It seems that there is no way to relate CH to a well-established and accepted result of mathematics.
 
-This has led some mathematicians and philosophers of mathematics to doubt whether it even makes sense to seek a unique and meaningful answer to the continuum hypothesis. One of the most important proponents of this perspective is Solomon Feferman, who proposed a philosophical framework for understanding mathematics called conceptual structuralism. In this framework, mathematics is the result of open-ended processes derived from simple real-life situations, such as counting and ordering, where clarity and practical applicability are crucial. \textcite{Feferman2011a} maintained that if we accept conceptual structuralism, then CH turns into an intrinsically vague and indefinite mathematical question. However, conceptual structuralism and its implications for CH have been subject to substantial criticism. Some of the strongest and most direct criticisms have come from Peter Koellner (\citeyear{Koellner2016,Koellner2022}). Koellner's viewpoint on CH bears similarities to those of Woodin (\citeyear{Woodin2001a,Woodin2001b}) or \textcite{Maddy1997}, but he distinguishes himself by having addressed Feferman's philosophical proposal more explicitly.\footnote{\textcite{Parsons2016b} also argues directly against Feferman's conception of set theory, but Koellner's does address Feferman's case on CH much more explicitly.} Shortly put, Koellner's main claims are:
+This has led some mathematicians and philosophers of mathematics to doubt whether it even makes sense to seek a unique and meaningful answer to the continuum hypothesis. One of the most important proponents of this perspective is Solomon Feferman, who proposed a philosophical framework for understanding mathematics called conceptual structuralism. In this framework, mathematics is the result of open-ended processes derived from simple real-life situations, such as counting and ordering, where clarity and practical applicability are crucial. \textcite{Feferman2011a} maintained that if we accept conceptual structuralism, then CH turns into an intrinsically vague and indefinite mathematical question.
+
+However, conceptual structuralism and its implications for CH have been subject to substantial criticism. Some of the strongest and most direct criticisms have come from Peter Koellner (\citeyear{Koellner2016,Koellner2022}). Koellner's viewpoint on CH bears similarities to those of \textcite{Parsons2016b}, Woodin (\citeyear{Woodin2001a,Woodin2001b}) or \textcite{Maddy1997}, but he distinguishes himself by having addressed Feferman's philosophical proposal more explicitly. Shortly put, Koellner's main claims are:
 
 \begin{enumerate}
 \item That conceptual structuralism is ambiguous on the status of CH.
-\item That Feferman's case relies on a notion of mathematical clarity with several weaknesses, such as the fact that the metamathematical characteristics of set theory that justify Feferman's position are also present in other areas, such as arithmetic.
+\item That the metamathematical characteristics of set theory that could justify Feferman's position are also present in other areas, such as arithmetic.
 \item That it is not acceptable to make mathematics dependent on subjective processes and social conventions as Feferman proposes.
 \end{enumerate}
+
+The main purpose of this text is to argue against points (1) and (2) above. 
 
 Formal categoricity arguments do not by themselves secure determinacy.
 Yet mathematical practice treats arithmetic and set theory very differently.
 This asymmetry helps explain why CH appears less determinate than arithmetic truths.
 
-In this paper, I offer an interpretation of conceptual structuralism that makes it easier to understand why it leads to the indefiniteness of CH. I argue that once we consider the emphasis conceptual structuralism places on practical applicability—not much treated in Koellner's criticism, not even in Feferman's reasoning—then an argument could be made for the indefiniteness of CH. I do not claim, however, that this argument is definitive, but rather that it is not true that conceptual structuralism is irrelevant to the status of CH. This argument is also, in my view, more promising than Feferman's idea of clarity. Thus, regarding point (2), I lean more towards Koellner's view.
-
 A proper treatment of point (3) above would require a deep examination of speech act theory and institutional theory; something that is well beyond the scope of this paper. Let me briefly point out, however, that I do not think, as Koellner does, that it is impossible to understand mathematical entities in an institutional or social way. Quite the contrary. There have been, for the time being, promising attempts to understand mathematics in an institutional way, as Feferman does, and they have proven to be quite resilient to criticism.\footnote{Take for example \textcite{Cole2013}, who gives an institutional account of mathematics based on speech act theory and argues that it can give an account of the necessity and objectivity of mathematical facts.}
+
+
 
 In summary, the most important thesis this paper is that an alternative interpretation can be given to conceptual structuralism, which focuses most on the applicability of mathematical structures and conceptions in real-life practice, and less on logical and epistemological clarity. 
 
-I first reconstruct Feferman's conceptual structuralism and its relation to CH. I then argue that the strongest version of Feferman's position does not rest primarily on metamathematical considerations, but on the role different structures play within mathematical and scientific practice...
+The text is organized as follows: I first reconstruct Feferman's conceptual structuralism and its relation to CH, in Section \ref{conceptual-structuralism-intro}. 
+
+
+I then argue that the strongest version of Feferman's position does not rest primarily on metamathematical considerations, but on the role different structures play within mathematical and scientific practice...
 
 \section{Understanding Feferman's conceptual structuralism}
 \label{conceptual-structuralism-intro}
@@ -131,7 +138,7 @@ There is no time to elaborate these points, but various aspects of them will com
 \end{quote}
 \end{adjustwidth}
 
-This concerns us here because the most direct criticism by Koellner of Feferman's argument is precisely that his philosophical conception does not say anything about whether CH must be considered a legitimate or definite statement:
+This concerns us here because the most direct criticism by Koellner of Feferman's argument is precisely that his philosophical conception does not say anything about whether CH must be considered a definite statement:
 
 \begin{adjustwidth}{1cm}{1cm}
 \begin{quote}
@@ -296,7 +303,7 @@ One of the most influential defenses of methodological principles guiding mathem
 Such principles were undoubtedly important in the early development of set theory, but they have not remained uniformly dominant, either prior to the rise of foundationalism or in contemporary mathematical practice. Moreover, maximizing principles may conflict with one another; consider, for example, the incompatibility between the Axiom of Choice and the Axiom of Determinacy. Furthermore, the very notion of an arbitrary set is itself controversial, partly because it cannot be fully captured within formal systems such as ZFC, or even within considerably stronger systems, as argued by \textcite{Ferreiros2011}.
 
 %----------Feferman & mathematical practice-----------------
-Feferman’s conceptual structuralism can in fact be understood as an alternative to unrestricted maximizing and unifying principles; see \parencite[p.~9]{Feferman2011a}. He addresses Maddy’s proposal more directly in \textcite[p.~9]{Feferman2000newaxioms}:
+Feferman’s conceptual structuralism can in fact be understood as an alternative to unrestricted maximizing and unifying principles; see \parencite[p.~9]{Feferman2011a}. He addresses Maddy’s proposal more directly in \textcite[p.~9]{Feferman2000NewAxioms}:
 
 \begin{adjustwidth}{1cm}{1cm}
 \small
@@ -333,6 +340,7 @@ The question, then, is not whether mathematical practice matters, but which feat
 In Section \ref{standard-models-epistemology}, I return to these differences, focusing in particular on how mathematical practice treats the standard models of arithmetic and set theory. In the context of Conceptual Structuralism, it is natural to view these features of mathematical practice as reflecting one of its central ideas: namely, that determinate structures must remain sufficiently connected to our cognitive capacities. I am not claiming that this automatically proves Feferman right, but rather that a sufficiently detailed examination of mathematical practice may have something to contribute to the question of the definiteness of CH.
 
 I now return to metamathematical arguments, which play an important role in Koellner's criticism. I agree with Koellner that such arguments are not sufficient to establish the indefiniteness of CH, but I also think that he assigns them too much weight in his interpretation of Feferman.
+
 
 \section{Categoricity and second order logic}
 \label{categoricity-second-order-logic}
@@ -461,84 +469,23 @@ This highlights a fundamental disanalogy between arithmetic and set theory. Whil
 
 A system of axioms such as \(\mathrm{PA}\) was originally extracted from the standard structure \(\mathbb{N}\), which then served as the basis for subsequent formal reasoning. This fits well with Conceptual Structuralism, as reflected in Thesis 3 discussed in Section \ref{conceptual-structuralism-intro}. In set theory, however, the process appears inverted: one begins with a system of axioms such as \(\mathrm{ZF}\) and then attempts to recover from them a determinate structure, namely the cumulative hierarchy of sets. But since no comparably privileged structure is available, fundamental questions often require appeal to controversial philosophical principles. Feferman appears to endorse a closely related view when he states that ``the concept of arbitrary set essential to its formulation is vague or underdetermined and there is no way to sharpen it without violating what it is supposed to be about'' (\textcite[p.~1]{Feferman2011a}).
 
-\section{Conceptual Structuralism Beyond the Clarity Argument}
-\label{clarity}
+%-------------Orey sentences---------------------------
+In set theory, many have thought of independence phenomena as a reason for indeterminacy. For example, given a countable transitive model $M$ of $\mathrm{ZFC}$ we can force to obtain extensions $M[G_0]$, $M[G_0][G_1]$, $M[G_0][G_1][G_2]$,... that alternatively satisfy $CH$ and $\neg CH$, something that \textcite{Hamkins2012Multiverse} has used this fact as an argument that $CH$ should be regarded as indefinite. 
 
-This is similar to the case around $CH$, where given a countable transitive model $M$ of $\mathrm{ZFC}$ we can force to obtain extensions $M[G_0]$, $M[G_0][G_1]$, $M[G_0][G_1][G_2]$,... that alternatively satisfy $CH$ and $\neg CH$. In fact, \textcite{Hamkins2012Multiverse} has used this fact as an argument that $CH$ should be regarded as indefinite.
+However, there is \textcite[513]{Koellner2016} a parallel situation in aritmetic. If $M \models \mathrm{PA}$ is a model of Peano Arithmetic, an end-extension of $M$ is a larger model $N \supseteq M$ such that no element of $N - M$ is inserted ``bellow'' an old element of $M$, i.e., whenever $a \in M$ and $b \in N$ satisfy $b <^N a $, then $b \in M$. If $\phi$ is an Orey sentence for $\mathrm{PA}$, then if $M$ is a model of $\mathrm{PA}$, we can end-extend it to obtain a model $N_1$ of $\mathrm{PA}$ where $\phi $ holds, and another model $N_2$ one where $\neg \phi$ does. 
 
-Be $M \models \mathrm{PA}$ a model of Peano Arithmetic. An end-extension of $M$ is a larger model $N \supseteq M$ such that no element of $N - M$ is inserted ``bellow'' an old element of $M$, i.e., whenever $a \in M$ and $b \in N$ satisfy $b <^N a $, then $b \in M$.
-
-If $\phi$ is an Orey sentence for $\mathrm{PA}$, then if $M$ is a model of $\mathrm{PA}$, we can end-extend it to obtain a model $N_1$ of $\mathrm{PA}$ where $\phi $ holds, and another model $N_2$ one where $\neg \phi$ does.
-
-
-
-
-Feferman's central idea is that there is a progressive loss of clarity as we move from fully transparent concepts—such as that of a natural number sequence—to increasingly obscure notions:
-
-\begin{adjustwidth}{1cm}{1cm}
-\begin{quote}
-\small
-For example, we have a much clearer conception of arbitrary sequences of points on the Hilbert (or Dedekind, or Cauchy-Cantor) line, or at least of bounded strictly monotone sequence, than we do of arbitrary subsets of the line (...). Our conception allows us to reason that there is no enumeration of all infinite paths through the binary tree, resp. of all subsets of $N$, simply by the appropriate diagonal argument (...). And when we step to $S(S(N))$ there is a still further loss of clarity, but it is just the definiteness of that that is needed to make definite sense of CH. \textcite[p. 21]{Feferman2011a}.
-\end{quote}
-\end{adjustwidth}
-
-Thesis 5 of conceptual structuralism—see Section 2—maintains that if a conception is not completely clear, then statements formulated within it cannot possess definite truth values. Thus, Feferman's argument would imply that CH is an indefinite statement, provided his reasons are compelling for regarding higher-order frameworks, such as third-order arithmetic or the cumulative set-theoretic hierarchy (the ones where CH can be precisely formalized), as lacking full clarity.
-
-
-In addition to this, the idea of clarity of a determinate concept seems to be too subjective to constitute a criterion for its validity. This is something Koellner also points out:
-
-\begin{adjustwidth}{1cm}{1cm}
-\begin{quote}
-\small
-Intuitions of clarity are not robust. Some people think that the concept of an arbitrary subset of natural numbers is about as clear a conception as one can have; others disagree. Whose intuitions are to count? \textcite[p. 14]{Koellner2022}.
-\end{quote}
-\end{adjustwidth}
-
-Feferman himself could be considered to lean towards interpreting clarity as an intrinsically subjective property of a concept, at least that seems to appear in Thesis 6 of conceptual structuralism (\textcite{Feferman2011a}, p. 11): “What is clear in a given conception is time-dependent, both for the individual and historically”. This makes Koellner's point even stronger.
-
-\textbf{Tendency im mathematical practice}
-
-Feferman's insistence on clarity can also be interpreted as a modern continuation of the predicative tradition, although he did not always explicitly identify with it:
-
-\begin{adjustwidth}{1cm}{1cm}
-\begin{quote}
-\small
-Though I am not now nor never have been a predicativist, I have to admit to being a sympathizer since I am an avowed anti-platonist, at least insofar as set theory is concerned, and I grant the natural numbers a position of primacy in our mathematical thought. \textcite[p. 313]{Feferman2004a}.
-\end{quote}
-\end{adjustwidth}
-
-
-Let us recall the liar paradox, the statement that “This statement is false”. \textcite{Russell1908} rephrased it as follows: “It is not true for all propositions $p$ that if I affirm $p$, $p$ is true”. He then concluded that the cause of the paradox was a quantification over all the propositions, so that the notion of an arbitrary proposition is illegitimate. A similar reasoning was employed to explain the barber paradox, which appears after trying to define the naïve set ${x \mid x \notin x}$. This concept of an arbitrary naïve set was considered to be unclear, non-definite: this is what was thought to lead to the contradiction. Intuitionists tried to extend this debate even further, by stating that these paradoxes come from accepting logical structures that do not have a counterpart in our intuition (such as the law of excluded middle). We could perhaps say something similar about the concept of an arbitrary subset of the continuum: maybe this concept is so far from our intuition that trying to understand it in linguistic terms may lead us to contradictions or at least incongruities. However, there is no compelling evidence that the concept of an arbitrary subset of the continuum can lead to a contradiction in the same sense as the concept of a naïve set did, or the concept of all propositions. In fact, axiom systems such as ZF are hardly ever doubted to be consistent.
-
+First-order \(\mathrm{PA}\) is not, however, the final framework within which arithmetical truth is investigated. Goodstein's theorem and the Paris--Harrington theorem are classical examples of statements independent of \(\mathrm{PA}\), yet provable in stronger systems of arithmetic or set theory.\footnote{For Goodstein's theorem, see \textcite{KirbyParis1982}; for the Paris--Harrington theorem, see \textcite{ParisHarrington1977}.} Thus, arithmetic, no less than set theory, is subject to independence phenomena. The crucial difference, however, is that arithmetical practice has generally exhibited a stable progression toward stronger frameworks capable of resolving such statements, while preserving the privileged status of the standard structure \(\mathbb{N}\). In set theory, by contrast, the transition to stronger principles is far more philosophically contested, since no comparably privileged conception of the universe of sets appears to be available.\footnote{\textbf{Mention large cardinals?}} Independence alone is not the issue; the issue is whether mathematical practice stabilizes around a privileged structure when extending axiomatic strength.
 
 \section{Conclusion}
 
-
-
-
-
-\begin{adjustwidth}{1cm}{1cm}
-\begin{quote}
-\small
-There is no problem to put oneself in the mental frame of mind of “this is what the cumulative hierarchy looks like”, for which one can see that such and such propositions including the axioms of ZFC are (more or less) obviously true. I have taught set theory many times and have presented it in terms of this ideal-world picture with only the caveat that this is what things are supposed to be like in that world, rather than to assert that that's the way the world actually is. \textcite[p. 19]{Feferman2011a}.
-\end{quote}
-\end{adjustwidth}
-
-Feferman's disbelief in a Platonic set-theoretical realm is again evident. His skepticism, however, does not seem to stem from a difficulty in conceiving the realm, but from the distance between such idealized structures and the real world. He concludes the paragraph with a comparison to idealized models in physics:
-
-\begin{adjustwidth}{1cm}{1cm}
-\begin{quote}
-\small
-I am no more uncomfortable doing that than if I were teaching Newtonian mechanics and talking of a world in which space-time is Euclidean (...), or if I were teaching relativistic mechanics. And one can see why little more is needed conceptually to develop an extraordinary part of set theory; as in the case of number theory, a little bit goes a long way. The issue is not whether we can think in such terms but, rather, what the philosophical status is of that kind of thought. \textcite[p. 19]{Feferman2011a}.
-\end{quote}
-\end{adjustwidth}
-
-
 The Feferman-Koellner dispute on CH is just one more episode in the long line of philosophical and mathematical controversies that this conjecture has generated since Cantor posed it. Both Feferman and Koellner have made precise and insightful contributions to these controversies. In my view, the only significant weakness in Koellner's argument was his failure to consider Feferman's conceptual structuralism more fully. It is true that Feferman's writings are sometimes too concise and difficult to understand, but I believe the interpretation I have given here is loyal to his main ideas.
+
+
+
+
 
 The fundamental thesis of this paper is that this philosophical conception, once interpreted as I do, offers a complementary argument for the indefiniteness of CH, which is grounded also in scientific and practical applicability, and not only in the notion of mathematical clarity, upon which Feferman explicitly relies. Considering the possibility of this argument, I believe Koellner is incorrect in stating that conceptual structuralism does not address the indefiniteness of CH.
 
-The next step should be to develop a more fine-grained notion of the applicability of mathematical structures, which includes both the notion of applicability for natural science and the notion of internal applicability to solve problems that arise within previously defined mathematical conceptions. 
 
 \printbibliography
 
