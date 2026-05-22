@@ -339,7 +339,7 @@ I now return to metamathematical arguments, which play an important role in Koel
 
 One of the main metamathematical and model-theoretical approaches to determinacy of mathematical structures is the concept of categoricity. Perhaps the strongest reason for regarding a mathematical structure as determinate would be the existence of a categorical axiomatization in first-order logic. However, the Löwenheim--Skolem theorem implies that no recursively enumerable first-order theory with an infinite model can be categorical. Consequently, neither the structure of the natural numbers nor the set-theoretic hierarchy can be regarded as determinate solely on the basis of first-order categoricity.
 
-Some authors, such as \textcite[31]{Isaacson2008} and \textcite[chapter 8]{shapiro1991foundations}, have argued that categoricity results in full second-order logic should be accepted, since categoricity becomes available in that setting. In the case of arithmetic, full second-order Peano arithmetic, $PA_2$, is categorical. In the case of set theory, an initial segment of the universe $V_\kappa$, where $\kappa$ is a strongly inaccesible cardinal, is likewise quasi-categorically characterized by second-order formulations of Zermelo-Fraenkel set theory, $\mathrm{ZFC}_2$. Both \textcite[19]{Feferman2011a} and \textcite[511]{Koellner2016} reject this position, arguing that full second-order semantics presupposes a background notion of ``all subsets,'' thereby involving a commitment of essentially the same kind and strength as the set-theoretic ontology under discussion. 
+Some authors, such as \textcite[31]{Isaacson2008} and \textcite[chapter 8]{shapiro1991foundations}, have argued that categoricity results in full second-order logic should be accepted, since categoricity becomes available in that setting. In the case of arithmetic, full second-order Peano arithmetic, $PA_2$, is categorical. In the case of set theory, an initial segment of the universe $V_\kappa$, where $\kappa$ is a strongly inaccessible cardinal, is likewise quasi-categorically characterized by second-order formulations of Zermelo-Fraenkel set theory, $\mathrm{ZFC}_2$. Both \textcite[19]{Feferman2011a} and \textcite[511]{Koellner2016} reject this position, arguing that full second-order semantics presupposes a background notion of ``all subsets,'' thereby involving a commitment of essentially the same kind and strength as the set-theoretic ontology under discussion. 
 
 In this section, I sketch both the categoricity result for arithmetic and the quasi-categoricity result for set theory. I then examine whether, even if these results fail to establish the determinacy of the corresponding structures, they nevertheless receive different treatment within ordinary mathematical practice.
 
@@ -399,9 +399,9 @@ V_\kappa \models \mathrm{ZFC}_2 .
 
 \begin{proof}
 
-Except replacement, the axioms of $\mathrm{ZFC}$ easily hold in \(V_\alpha\), in case \(\alpha > \omega\) is a limit ordinal. Replacement is the axiom that uses the hypothesis that $\kappa$ is inaccesible: if $x \in \kappa$ and $f: x \to \kappa$, $f(x)= \{ y \subseteq \kappa | \exists z \in x, f(z) = y \}$, then we have $|f(x)| \leq |x| < \kappa$. As this cardinal is inaccesible, it cannot be reached by taking unions or power sets of smaller cardinals, which implies that $f(x) \in V_\kappa$, thus being replacement verifyed relatively to this model.
+Except replacement, the axioms of $\mathrm{ZFC}$ easily hold in \(V_\alpha\), in case \(\alpha > \omega\) is a limit ordinal. Replacement is the axiom that uses the hypothesis that $\kappa$ is inaccessible: if $x \in \kappa$ and $f: x \to \kappa$, $f(x)= \{ y \subseteq \kappa | \exists z \in x, f(z) = y \}$, then we have $|f(x)| \leq |x| < \kappa$. As this cardinal is inaccessible, it cannot be reached by taking unions or power sets of smaller cardinals, which implies that $f(x) \in V_\kappa$, thus being replacement verifyed relatively to this model.
 
-To proof the converse, we need to see both that $\kappa$ is regular and that, if $\mu < \kappa$, $\mathcal{P}(\mu) < \kappa$. If $\kappa$ were not regular there would be an $\alpha < \kappa$ and a function $f : \alpha \to \kappa$ such that $max_{x\in\alpha}\{ f(x) \} = \kappa$. Then $f \subseteq V_\kappa$, so by second-order Replacement $Im(f) \in V_\kappa$. Then by the axiom of union in $V_\kappa$, $\cup Im(f) = \kappa \in V_\kappa$, a contradiction. For the second part, suppose there would be a \(\mu < \kappa\) such that $2^\mu \geq \kappa$. Then there would be a surjective function $f : \mathcal{P}(\mu)\to \kappa$, But power set axiom implies $\mathcal{P}(\mu) \in V_\kappa$ so by second-order replacement, $Im(f)= f(\mathcal{P}(\mu))=\kappa \in V_\kappa$, a contradiction.\footnote{See \textcite[23]{Kanamori2003} for a modern formulation and proof of the theorem. See also Appendix \ref{set-theory appendix} for precise definitions of the set-theoretic notions employed there.}
+To proof the converse, we need to see both that $\kappa$ is regular and that, if $\mu < \kappa$, $\mathcal{P}(\mu) < \kappa$. If $\kappa$ were not regular there would be an $\alpha < \kappa$ and a function $f : \alpha \to \kappa$ such that $max_{x\in\alpha}\{ f(x) \} = \kappa$. Then $f \subseteq V_\kappa$, so by second-order Replacement $Im(f) \in V_\kappa$. Then by the axiom of union in $V_\kappa$, $\cup Im(f) = \kappa \in V_\kappa$, a contradiction. For the second part, suppose there would be a \(\mu < \kappa\) such that $2^\mu \geq \kappa$. Then there would be a surjective function $f : \mathcal{P}(\mu)\to \kappa$, But power set axiom implies $\mathcal{P}(\mu) \in V_\kappa$ so by second-order replacement, $Im(f)= f(\mathcal{P}(\mu))=\kappa \in V_\kappa$, a contradiction.\footnote{See \textcite[23]{Kanamori2003} for a modern formulation and proof of the theorem.}
 
 \end{proof}
 
@@ -417,7 +417,7 @@ So it seems that both results exhibit a potential circularity, since they do not
 
 In either case, this does not provide a means of establishing definiteness in purely logical terms, at least not within first-order finitary logic, which has classically been regarded as the canonical notion of logic. If one instead adopts full second-order logic, then the relevant determinacy assumptions are already built into the logic itself. \textcite{Koellner2010SecondOrderLogic} explains in detail why full second-order logic is fragile with respect to background set-theoretical assumptions, a feature that appears to stand in tension with the traditional conception of logic as invariant across interpretations.
 
-In my view, Feferman is correct in claiming that determinacy in these cases is ultimately accepted as a matter of faith, both in the categoricity of arithmetic and in that of set theory. Nevertheless, I maintain that the two cases differ substantially in mathematical practice. Mathematicians typically do not reason in a purely syntactic fashion, but rather \textit{within} an intended structure. Structures incorporating $\mathbb{N}$ and $\mathcal{P}(\mathbb{N}) \simeq \mathbb{R}$, within which the categoricity theorem for $\mathrm{PA}_2$ can be proved, are generally immediately accessible and appear ubiquitously and consistently across different areas of mathematical practice. By contrast, the full set-theoretic hierarchy rarely appears outside foundational contexts, except perhaps as an intuitive representation of the axioms of set theory themselves. Needless to say, the assumptions underlying the categoricity theorem for arithmetic are substantially weaker than those required in the corresponding case of set theory, as \textcite[141]{Ferreiros2023ConStructuralism} points out:
+In my view, Feferman is correct in claiming that determinacy in these cases is ultimately accepted as a matter of faith, both in the categoricity of arithmetic and in that of set theory. Nevertheless, I maintain that the two cases differ substantially in mathematical practice. Mathematicians typically do not reason in a purely syntactic fashion, but rather \textit{within} an intended structure. Structures incorporating $\mathbb{N}$ and $\mathcal{P}(\mathbb{N}) \simeq \mathbb{R}$, within which the categoricity theorem for $\mathrm{PA}_2$ can be proved, appear ubiquitously and consistently across different areas of mathematical practice. By contrast, the full set-theoretic hierarchy rarely appears outside foundational contexts, except perhaps as an intuitive representation of the axioms of set theory themselves. Needless to say, the assumptions underlying the categoricity theorem for arithmetic are substantially weaker than those required in the corresponding case of set theory, as \textcite[141]{Ferreiros2023ConStructuralism} points out:
 
 \begin{adjustwidth}{1cm}{1cm}
 \begin{quote}
@@ -431,66 +431,38 @@ In such cases, what we find is a commitment to a specific mathematical reality. 
 \section{Standard models}
 \label{standard-models-epistemology}
 
-The issue of non-standard models appearing is parallel to the one of categoricity, since they are non-categorical theories which admit non-standard models.
+The issue of non-standard models is parallel to that of categoricity, since the failure of categoricity allows the existence of non-standard models. For this reason, both first-order $\mathrm{PA}$ and first-order $\mathrm{ZFC}$ admit non-standard models. 
 
-Non standard elements. Order type of the non-standard model:
+In the case of arithmetic, a non-standard model $M$ is characterized by the existence of a non-standard element $a \in M$, which has the feature that $a > 0_M, 1_M, 2_M, \dots$. Since its induction schema ranges only over first-order definable properties, first-order  $\mathrm{PA}$ cannot exclude non-standard elements. If $a$ is non-standard, then $a-1,a-2,\dots$ are all in $M$ and also non-standard. 
 
-$$\mathbb{N}+\mu \cdot \mathbb{Z}$$
+If $a$ and $b$ are such that $|a-b|$ is non-standard, then $$c = \left\lfloor \frac{a+b}{2} \right\rfloor \in M $$ is such that both $|a-c|$ and $|c-b|$ are non-standard. Defining then an equivalence relation $a\thicksim b \Leftrightarrow |a-b| \text{ is standard}$, it can be shown that each equivalence class has the order type of $\mathbb{Z}$, and the quotient order is dense without endpoints. It follows that every countable non-standard model of $\mathrm{PA}$ has order type
 
-Lightstone&Robinson 1975 used non-standard reals to proof results on the ordinary reals 
+$$\omega + (\mathbb{Z} \cdot \eta) $$
 
-What is the main use of the standard model? It inspired axioms.
+being $\eta$ the usual order type of $\mathbb{Q}$, the set of the rational numbers. For uncountable models, $\eta$ must in general be replaced by some dense linear order $I$ without endpoints.
 
-In arithmetic, every non-standard model contains (as an initial segment of its underlying domain) an image of the standard natural numbers. Therefore, non-standard models are easy to identify. In spite of this, Koellner argues that the case in set theory is exactly the same, and that non-standard models are easy to identify as well:
-
-\begin{adjustwidth}{1cm}{1cm}
-\begin{quote}
-\small
-But the case in set theory is exactly parallel. Take a case like Cohen's method of forcing where you build a non-standard model (...). This is done within set theory and it is revealed in the first step that one is dealing with a non-standard model since it is a countable object. In the second approach one builds class size models (...) but one builds a Boolean-valued model and, once again, it is immediately revealed that it is non-standard. \textcite[p. 512]{Koellner2016}.
-\end{quote}
-\end{adjustwidth}
-
-Note how Koellner correctly identifies methods for recognizing a non-standard model of set theory but fails to address how one would positively identify a standard one. 
-
-One of the central results underlying forcing is the generic filter existence lemma; see, for example, Lemma IV.2.3 in \textcite[246]{Kunen2011}. This result presupposes that the ground model $M \models ZFC$ is countable from the metatheoretical perspective (typically also transitive). Consequently, in many canonical applications of forcing—including Cohen’s original construction—the models that play the central operational role are countable transitive models. This reveals an interesting tension concerning the notion of a “standard model” in set theory. In forcing practice, the structures that mathematicians most directly manipulate are not fully realized platonic universes, but countable transitive models and their forcing extensions. This does not show that countable transitive models are the intended models of set theory, but it does suggest that the practical role of “standardness” in set theory differs significantly from the case of arithmetic, where the standard model is usually regarded as epistemologically privileged from the outset.
-
-This highlights a fundamental disanalogy between arithmetic and set theory. In arithmetic, the standard model, $\mathbb{N}$, is epistemologically privileged. We have a direct pre-theoretical intuition of this structure—it is the very one we use to learn counting. The complete theory of this model serves as a clear (although not recursively computable) benchmark for truth in arithmetic. 
-
-However, we have no analogous intuition for the entire cumulative set-theoretic hierarchy, where the standard model of set theory is supposed to depend on. Instead, different set-theoretic frameworks propose competing visions of what the universe of sets should be. Most set-theorists would argue that $L$, Gödel's constructible universe, is not a standard model of the set-theoretic universe. However, to argue this way one might need further philosophical assumptions (such as maximizing principles) which seem much more demanding than arguing that $\mathbb{N}$ is the standard model of arithmetic. The standard model $\mathbb{N}$ is grounded in the simple iterative application of the successor operation, which exhaustively generates the arithmetical universe. By contrast, the cumulative set-theoretic hierarchy is built through a much more intricate network of operations—power set, replacement, transfinite recursion—that do not obviously exhaust the universe of sets.
-
-If we accept conceptual structuralism, a basic conception of mathematics should be of a structure, from which one could later extract a set of axioms describing it. For that to succeed, there is need of an epistemologically privileged structure, such as $\mathbb{N}$.
-
-From this structure one can extract, for example, a set of axioms such as $\mathrm{PA}$, and start reasoning about them. However, the process is inverted in the case of set theory: one begins from a set of axioms, such as $\mathrm{ZF}$, and then tries to accommodate them in a determinate structure, such as the cumulative hierarchy of sets. But as the structure is no longer epistemologically privileged, there is often no way of deciding fundamental questions in it without relying on controversial philosophical principles. I think that, in fact, Feferman is very close to thinking this when he states that ``the concept of arbitrary set essential to its formulation is vague or underdetermined and there is no way to sharpen it without violating what it is supposed to be about'' (\textcite{Feferman2011a}, p. 1).
-
-This provides a starting point to address the question of how set theory might be considered unclear while arithmetic is not. However, applying this to CH would be problematic because the definiteness of this statement would only correspond to considering third-order arithmetic as clear. It is more difficult to argue that we cannot depart from an intuitive structure, such as $\mathbb{N}$, and develop the corresponding axioms.
-
-\textcite{Feferman2000rationale} also considers that set theory can be regarded as having an intuitive model in the cumulative hierarchy, but that does not make him commit to the existence of the entire set-theoretic universe, nor to accepting a Platonic stance:
+One feature of these models is that every non-standard model of $\mathrm{PA}$ contains, as an initial segment of its domain, a copy of the standard natural numbers. For this reason, \textcite[p.~512]{Koellner2016} states that “in the case of number theory, when you build a non-standard model, its non-standard character is immediately revealed, since the standard part is a proper substructure of the entire structure.” On the other hand, he considers the situation in set theory to be entirely analogous, describing this as a metamathematical parallelism between arithmetic and set theory:
 
 \begin{adjustwidth}{1cm}{1cm}
 \begin{quote}
 \small
-ZF has an intuitive model in the transfinite iteration of the power set operation taken cumulatively. This has nothing to do with a belief in a platonic reality whose members include the natural numbers and arbitrary sets of natural numbers, and so on. On the contrary, I disbelieve in such entities. \textcite[p. 72]{Feferman2000rationale}.
+But the case in set theory is exactly parallel. Take a case like Cohen's method of forcing where you build a non-standard model (...). This is done within set theory and it is revealed in the first step that one is dealing with a non-standard model since it is a countable object. In the second approach one builds class size models (...) but one builds a Boolean-valued model and, once again, it is immediately revealed that it is non-standard.
 \end{quote}
 \end{adjustwidth}
 
-Perhaps Feferman is distinguishing between a non-standard, yet theoretically valid, model of ZF and a standard model of ZF, which would imply a further commitment to the reality of the universe it describes. He expressed a similar view in a later discussion of CH:
+Note, however, that while Koellner correctly identifies criteria by which a model of set theory may be recognized as non-standard, he does not address how one could positively identify a standard model.
 
-\begin{adjustwidth}{1cm}{1cm}
-\begin{quote}
-\small
-There is no problem to put oneself in the mental frame of mind of “this is what the cumulative hierarchy looks like”, for which one can see that such and such propositions including the axioms of ZFC are (more or less) obviously true. I have taught set theory many times and have presented it in terms of this ideal-world picture with only the caveat that this is what things are supposed to be like in that world, rather than to assert that that's the way the world actually is. \textcite[p. 19]{Feferman2011a}.
-\end{quote}
-\end{adjustwidth}
+Turning to the case of set theory in greater detail, a standard approach, as Koellner points out, is to begin with a model \(M \models \mathrm{ZFC}\) and extend it by means of an \(M\)-generic filter \(G\), obtaining a new model \(M[G]\) satisfying \(\mathrm{ZFC}\) together with some additional statement forced over \(M\). Typically, \(M\) is assumed to be both transitive and countable and, consequently, so is \(M[G]\). This is not done arbitrarily. In the first place, the Löwenheim--Skolem theorem together with Mostowski's collapse lemma allows one, in many contexts, to replace a given model by a countable transitive one without essential loss of generality. More importantly, a central result underlying forcing is the generic filter existence lemma; see, for example, Lemma IV.2.3 in \textcite[p.~246]{Kunen2011}. The standard proof of this result presupposes that the ground model \(M\) is countable from the metatheoretical perspective. Consequently, in many canonical applications of forcing---including Cohen's original construction---the models that play the central operational role are countable transitive models.
 
-Feferman's disbelief in a Platonic set-theoretical realm is again evident. His skepticism, however, does not seem to stem from a difficulty in conceiving the realm, but from the distance between such idealized structures and the real world. He concludes the paragraph with a comparison to idealized models in physics:
+In the case of Boolean-valued models \(V^{\mathbb{B}}\), the situation is similar. In these models, sentences are assigned truth values in a complete Boolean algebra rather than the classical values \(0\) and \(1\). This is why Koellner says that such structures are ``immediately non-standard'': they do not satisfy the ordinary two-valued semantics of classical first-order logic. After choosing a \(V\)-generic ultrafilter \(G\), similarly to the previous case, the quotient \(V^{\mathbb{B}}/G\) becomes again an ordinary two-valued model satisfying \(\mathrm{ZFC}\) together with whatever additional statements are forced over the ground model. In this case, however, there is no straightforward criterion by which one could determine whether the resulting model is standard or non-standard; this depends ultimately on broader philosophical assumptions concerning the intended universe of sets.
 
-\begin{adjustwidth}{1cm}{1cm}
-\begin{quote}
-\small
-I am no more uncomfortable doing that than if I were teaching Newtonian mechanics and talking of a world in which space-time is Euclidean (...), or if I were teaching relativistic mechanics. And one can see why little more is needed conceptually to develop an extraordinary part of set theory; as in the case of number theory, a little bit goes a long way. The issue is not whether we can think in such terms but, rather, what the philosophical status is of that kind of thought. \textcite[p. 19]{Feferman2011a}.
-\end{quote}
-\end{adjustwidth}
+This reveals an interesting tension concerning the notion of a ``standard model'' in set theory. In forcing practice, the structures that mathematicians most directly manipulate are not fully realized platonic universes, but countable transitive models together with their forcing extensions, or, in some cases, Boolean-valued models. In ordinary language, the term ``standard'' usually denotes something widely accepted or commonly employed. In arithmetic, although first-order theories admit non-standard models, mathematical practice has consistently privileged the standard model of the natural numbers. In set theory, by contrast, forcing practice often proceeds through surrogate structures rather than through direct engagement with the universe ordinarily regarded as standard.
+This highlights a fundamental disanalogy between arithmetic and set theory. While in arithmetic, the standard model, \(\mathbb{N}\), is privileged by practice, different set-theoretic frameworks propose competing conceptions of what the universe of sets should be. Most set theorists would reject the claim that \(L\), Gödel's constructible universe, exhausts the intended universe of sets. Yet defending this position appears to require substantial additional philosophical assumptions, such as maximizing principles, which are considerably more demanding than those required to justify taking \(\mathbb{N}\) as the standard model of arithmetic. The structure \(\mathbb{N}\) is grounded in the simple iterative application of the successor operation, which appears sufficient to generate the entirety of the arithmetical universe. By contrast, the cumulative hierarchy is generated through a far more intricate network of operations---power set, replacement, transfinite recursion---which do not obviously exhaust the universe of sets.
 
+A system of axioms such as \(\mathrm{PA}\) was originally extracted from the standard structure \(\mathbb{N}\), which then served as the basis for subsequent formal reasoning. This fits well with Conceptual Structuralism, as reflected in Thesis 3 discussed in Section \ref{conceptual-structuralism-intro}. In set theory, however, the process appears inverted: one begins with a system of axioms such as \(\mathrm{ZF}\) and then attempts to recover from them a determinate structure, namely the cumulative hierarchy of sets. But since no comparably privileged structure is available, fundamental questions often require appeal to controversial philosophical principles. Feferman appears to endorse a closely related view when he states that ``the concept of arbitrary set essential to its formulation is vague or underdetermined and there is no way to sharpen it without violating what it is supposed to be about'' (\textcite[p.~1]{Feferman2011a}).
+
+\section{Conceptual Structuralism Beyond the Clarity Argument}
+\label{clarity}
 
 This is similar to the case around $CH$, where given a countable transitive model $M$ of $\mathrm{ZFC}$ we can force to obtain extensions $M[G_0]$, $M[G_0][G_1]$, $M[G_0][G_1][G_2]$,... that alternatively satisfy $CH$ and $\neg CH$. In fact, \textcite{Hamkins2012Multiverse} has used this fact as an argument that $CH$ should be regarded as indefinite.
 
@@ -499,8 +471,7 @@ Be $M \models \mathrm{PA}$ a model of Peano Arithmetic. An end-extension of $M$ 
 If $\phi$ is an Orey sentence for $\mathrm{PA}$, then if $M$ is a model of $\mathrm{PA}$, we can end-extend it to obtain a model $N_1$ of $\mathrm{PA}$ where $\phi $ holds, and another model $N_2$ one where $\neg \phi$ does.
 
 
-\section{Considerations around the clarity argument}
-\label{clarity}
+
 
 Feferman's central idea is that there is a progressive loss of clarity as we move from fully transparent concepts—such as that of a natural number sequence—to increasingly obscure notions:
 
@@ -542,95 +513,33 @@ Let us recall the liar paradox, the statement that “This statement is false”
 
 \section{Conclusion}
 
+
+
+
+
+\begin{adjustwidth}{1cm}{1cm}
+\begin{quote}
+\small
+There is no problem to put oneself in the mental frame of mind of “this is what the cumulative hierarchy looks like”, for which one can see that such and such propositions including the axioms of ZFC are (more or less) obviously true. I have taught set theory many times and have presented it in terms of this ideal-world picture with only the caveat that this is what things are supposed to be like in that world, rather than to assert that that's the way the world actually is. \textcite[p. 19]{Feferman2011a}.
+\end{quote}
+\end{adjustwidth}
+
+Feferman's disbelief in a Platonic set-theoretical realm is again evident. His skepticism, however, does not seem to stem from a difficulty in conceiving the realm, but from the distance between such idealized structures and the real world. He concludes the paragraph with a comparison to idealized models in physics:
+
+\begin{adjustwidth}{1cm}{1cm}
+\begin{quote}
+\small
+I am no more uncomfortable doing that than if I were teaching Newtonian mechanics and talking of a world in which space-time is Euclidean (...), or if I were teaching relativistic mechanics. And one can see why little more is needed conceptually to develop an extraordinary part of set theory; as in the case of number theory, a little bit goes a long way. The issue is not whether we can think in such terms but, rather, what the philosophical status is of that kind of thought. \textcite[p. 19]{Feferman2011a}.
+\end{quote}
+\end{adjustwidth}
+
+
 The Feferman-Koellner dispute on CH is just one more episode in the long line of philosophical and mathematical controversies that this conjecture has generated since Cantor posed it. Both Feferman and Koellner have made precise and insightful contributions to these controversies. In my view, the only significant weakness in Koellner's argument was his failure to consider Feferman's conceptual structuralism more fully. It is true that Feferman's writings are sometimes too concise and difficult to understand, but I believe the interpretation I have given here is loyal to his main ideas.
 
 The fundamental thesis of this paper is that this philosophical conception, once interpreted as I do, offers a complementary argument for the indefiniteness of CH, which is grounded also in scientific and practical applicability, and not only in the notion of mathematical clarity, upon which Feferman explicitly relies. Considering the possibility of this argument, I believe Koellner is incorrect in stating that conceptual structuralism does not address the indefiniteness of CH.
 
 The next step should be to develop a more fine-grained notion of the applicability of mathematical structures, which includes both the notion of applicability for natural science and the notion of internal applicability to solve problems that arise within previously defined mathematical conceptions. 
 
-%=========================
-\appendix
-
-\section{Set-theoretical background}
-\label{set-theory appendix}
-
-This appendix briefly reviews some set-theoretical notions relevant to the discussion of the quasi-categoricity of second-order set theory given in Section \ref{categoricity-second-order-logic}.
-
-Modern set theory commonly understands the universe of sets through the \emph{cumulative hierarchy}, also called the \emph{Von Neumann hierarchy}. The idea is that sets are generated in stages, where at each stage one forms new sets only from sets already constructed at previous stages. The hierarchy is defined recursively along the ordinals:
-
-\[
-V_0 = \varnothing,
-\]
-
-\[
-V_{\alpha+1} = \mathcal{P}(V_\alpha),
-\]
-
-and for limit ordinals $\lambda$,
-
-\[
-V_\lambda = \bigcup_{\beta < \lambda} V_\beta.
-\]
-
-Here $\mathcal{P}(X)$ denotes the power set of $X$, that is, the set of all subsets of $X$. Intuitively, each stage collects together all sets that can be formed from earlier stages. The entire set-theoretic universe is then represented by
-
-\[
-V = \bigcup_{\alpha \in \mathrm{Ord}} V_\alpha,
-\]
-
-where $\mathrm{Ord}$ denotes the class of all ordinals.
-
-The hierarchy proceeds through the ordinals. Ordinals generalize the natural numbers by extending the notion of order type beyond the finite.
-
-Successor ordinals are ordinals of the form $\alpha+1$. At successor stages, new sets are generated by applying the power set operation to the previous stage. Limit ordinals, by contrast, have no immediate predecessor. Examples include $\omega$, the first infinite ordinal. At a limit stage $\lambda$, no genuinely new operation is performed; instead one simply takes the union of all earlier stages:
-
-\[
-V_\lambda = \bigcup_{\beta < \lambda} V_\beta.
-\]
-
-Thus the cumulative hierarchy alternates between power set formation at
-successor stages and unions at limit stages.
-
-A cardinal $\kappa$ is called \emph{regular} if it cannot be expressed as the union of fewer than $\kappa$ sets, each of cardinality smaller than $\kappa$. Equivalently, $\kappa$ is regular if there is no function
-
-\[
-f : \lambda \to \kappa
-\]
-
-with $\lambda < \kappa$ such that the image of $f$ is unbounded in $\kappa$. Intuitively, a regular cardinal cannot be ``built up gradually'' from a smaller number of smaller cardinals. The cardinal $\omega$ is regular, whereas $\aleph_\omega$ is singular.
-
-A cardinal $\kappa$ is a \emph{strong limit cardinal} if for every
-$\lambda < \kappa$,
-
-\[
-2^\lambda < \kappa.
-\]
-
-Equivalently, taking power sets of smaller cardinals never reaches $\kappa$. This notion is important because the cumulative hierarchy is generated by iterating the power set operation.
-
-A cardinal $\kappa$ is called \emph{strongly inaccessible} if:
-
-\begin{enumerate}
-    \item $\kappa$ is uncountable,
-    \item $\kappa$ is regular,
-    \item $\kappa$ is a strong limit cardinal.
-\end{enumerate}
-
-Strongly inaccessible cardinals are important because the structure $V_\kappa$ behaves like a miniature universe of sets. In particular, $V_\kappa$ satisfies the axioms of ZFC. This is the key idea behind the quasi-categoricity theorem for second-order set theory.
-
-Replacement states, roughly, that if one applies a definable function to a set, the resulting collection is again a set.
-
-Formally, if $f$ is a definable function and $x$ is a set, then
-
-\[
-f(x) = \{f(t) : t \in x\}
-\]
-
-is also a set.
-
-The regularity of $\kappa$ ensures that applying definable functions to sets already in $V_\kappa$ cannot produce sets of rank reaching or exceeding $\kappa$. Thus the outputs of such functions remain inside $V_\kappa$.
-
-%-----------Fin del apéndice
 \printbibliography
 
 \end{document}
