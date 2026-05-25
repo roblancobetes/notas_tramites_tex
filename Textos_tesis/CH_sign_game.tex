@@ -168,13 +168,12 @@ This perspective, however, is subject to some important criticism. \textcite{Vaa
 
 Arguments that Shapiro gives related to mathematical practice are also problematic. For example he states (\citeyear{shapiro1991foundations}, p. 99) that important tool in mathematical practice, which is the concept of a minimal closure, cannot be formalized without appealing to second order logic: ``There is a straightforward argument, relying on the compactness theorem, that no collection of first-order formulas can successfully characterize any non-trivial minimal closure. This is evidence that first-order languages are inadequate.'' However, applying this argument to mathematical practice is not that straightforward, since in general practicioners tend to use minimal closures that are defined within a previously given structure. Take, for instance, the algebraic closure of $\mathbb{Q}$, which is the most paradigmatic example. This set contains all the solutions to polynomical equations with coeficients in $\mathbb{Q}$, which can be written as $\{ x \in \mathbb{C}: \exists n \in \mathbb{N}, q_0, ..., q_n \neq 0 \in \mathbb{Q},\forall x, q_0 + ... + q_n x^n = 0 \}$. This is a definition with parameters over $\mathbb{Q}$ in the structure $\mathbb{C}$, using the language of first order theory of rings plus a really weak version of first order set theory. More generally, in a given structure, most closures are definable by formulas with parameters or describable as the intersection of definable sets. 
 
+%-------------Distinction: open-ended vs determined structures----------------
 For this reason, I think we should also take into account, in this regard, views such as those presented in chapter 7 of \textcite{Resnik1997}, where he defends that a mathematical theory, given by axioms, merely describes a structural pattern, without necessarily determining a unique and privileged structure that models that theory. A clear and paradigmatic case of this approach in mathematical practice is category theory. With a really simple and concise list of axioms, this theory is applicable to a wide variety of areas of mathematics, such as groups, topological spaces, sets, relations, partially ordered sets, differentiable manifolds, and many others---see section \ref{cat-theory}. What matters in practice, however, are the particular collections that instantiate these axioms, rather than whether there exists a fundamental and privileged structure that realizes them. Views such as that of the ``category of all categories'' have been proposed, but they are not central to mathematical practice
 
 \textbf{Relation to references such as (but not limited to):} \textcite{maclane1998categories} and \textcite{Feferman2013Category}.
 
-For this reason, I do not think that either of the two approaches---the priority of axioms and patterns, or that of structures over them---is unanimously adopted in mathematical practice, nor that one should be universally prioritized. Rather, we should draw a distinction between them. In cases where structures are grasped prior to the axiom systems that characterize them, and axioms are only later formulated as fundamental statements about those structures---something that aligns more closely with \textit{ante rem} structuralism---I would say that mathematicians are \textit{committing to a mathematical structure}. In the opposite case, when mathematicians (especially since the advent of the formalist approach) proceed in the reverse direction---starting from an axiom system before having a clear structure that satisfies it---I would say that they are \textit{committing to an axiom system}, which is fundamentally prioritizing the mathematical pattern to the structure that realizes it. In such cases, particularly when the system is non-categorical, this does not imply commitment to a determinate structure. Naturally, getting back to the question around CH, committing to a mathematical structure implies accepting a reality where the statements defined in the corresponding mathematical language are definite, while committing to an axiom system does not, as it just implies accepting a determinate mathematical pattern, to apply it perhaps in an open-ended structure or universe. In fact, by Gödel's completeness theorem, any consistent set of axioms in mathematics has a model. Thus, assuming that mathematicians commit only to systems they take to be consistent, committing to an axiom system may be identified with committing to the class of structures satisfying it. In order to simplify the terminology in the rest of the text, I call this class of structures an \textit{open-ended structure}. %--Maybe call this polymorphic?
-
-
+For this reason, I do not think that either of the two approaches---the priority of axioms and patterns, or that of structures over them---is unanimously adopted in mathematical practice, nor that one should be universally prioritized. Rather, we should draw a distinction between them. In cases where structures are grasped prior to the axiom systems that characterize them, and axioms are only later formulated as fundamental statements about those structures---something that aligns more closely with \textit{ante rem} structuralism---I would say that mathematicians are \textit{committing to a mathematical structure}. In the opposite case, when mathematicians (especially since the advent of the formalist approach) proceed in the reverse direction---starting from an axiom system before having a clear structure that satisfies it---I would say that they are \textit{committing to an axiom system}, which is fundamentally prioritizing the mathematical pattern to the structure that realizes it. In such cases, particularly when the system is non-categorical, this does not imply commitment to a determinate structure. Naturally, getting back to the question around CH, committing to a mathematical structure implies accepting a reality where the statements defined in the corresponding mathematical language are definite, while committing to an axiom system does not, as it just implies accepting a determinate mathematical pattern, to apply it perhaps in an open-ended structure or universe. In fact, by Gödel's completeness theorem, any consistent set of axioms in mathematics has a model. Thus, assuming that mathematicians commit only to systems they take to be consistent, committing to an axiom system may be identified with committing to the class of structures satisfying it. In order to simplify the terminology in the rest of the text, I call this class of structures an \textit{open-ended structure}.
 
 %=========================
 \section{Stepping away from formalism: mathematical practice and metodology}
@@ -229,7 +228,7 @@ $$S_1 \leadsto S_2 $$
 
 to indicate that $S_2 \in \mathcal{S}$ because it fulfulls conditions \ref{condition1}–\ref{condition3} with respect to $S_1 \in \mathcal{S}$. In this case I would say, in a way that is natural regarding those conditions, that $S_2$ is \textit{internally fruitfull} with respect to $S_1$. Then for any structure $S \in \mathcal{S}$, there is a sequence 
 
-$$S_0 \leadsto ... \leadsto S_n = S,$$ 
+$$ S_0 \leadsto ... \leadsto S_n = S $$ 
 
 where $S_0$ is an externally applicable structure. What concerns us here, then, is whether the structures appearing in such a sequence, in the particular case where $S$ is involved in the formulation of $CH$, are open-ended or definite.\footnote{In section \ref{simplicity} I defend that, if $S \leadsto S'$ and $S$ is open-ended, then $S'$ must also be open-ended.} More precisely, the question is whether the fruitfulness of those structures in mathematical practice derives primarily from commitment to definite mathematical objects, or instead from the continued development of inferential and axiomatic patterns that remain open-ended while guiding mathematical activity.
 
@@ -239,6 +238,31 @@ where $S_0$ is an externally applicable structure. What concerns us here, then, 
 
 In this section I examine several historical examples drawn from mathematical practice. The first objective is to argue that the iterative component of quasi-empirical structuralism has been present at various moments in the historical development of mathematics. The second is to defend the claim that structures such as $\mathbb{N}$, $\mathbb{R}$, and $\mathbb{C}$ have proved fruitful in mathematical practice precisely through commitment to their structural form, making it difficult to regard them as merely open-ended structures.
 
+%---------------Complex numbers--------------------------
+The early stages of this development can be traced back to the sixteenth century. Although the idea of negative square roots had already been mentioned before, it was Rafael Bombelli, in his 1572 work L’Algebra, the first to systematically use of what we now call complex numbers.\footnote{Most of the events mentioned here are important facts in history of mathematics, where I am following texts on the topic such as \textcite{Nahin2010} and \textcite{Christen2018}.} Bombelli was working on the solution of the reduced cubic equation, an equation of the form $x^3 + px + q = 0$. Earlier, Cardano had found the following formula to solve such equations:
+
+\begin{equation}
+x = \sqrt[3]{-\frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3}} 
++ \sqrt[3]{-\frac{q}{2} - \sqrt{\left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3}}
+\end{equation} 
+
+Cardano’s difficulty lay in interpreting this formula when negative square roots were involved. In fact, he concluded that the formula was not solvable “in general.” Bombelli decided to step a little bit further, introducing the symbol $pdm$ to represent $\sqrt{-1}$, thereby providing a clear precursor to the imaginary unit.\footnote{This stands literally for \textit{piú di meno}, which mean “plus or minus” in Italian—see \textcite{Christen2018} for more details. He arrived at many of the operational properties of complex numbers, such as $pdm \cdot pdm = -1$.} In this way, he was able to obtain new real roots of certain equations of the given form, which Cardano had been unable to.
+
+Progress in this area accelerated in the following years. While Descartes showed little interest in such numbers, referring to them pejoratively as “imaginary,” Leibniz used them in a manner similar to Bombelli, as intermediate steps in solving equations. Euler was probably the first to use them systematically: he introduced the notation $i$ for the imaginary unit and employed it in many formulas. Perhaps the most well known is Euler's formula, which states that for any real phase $\alpha$, $e^{i\alpha} = \cos \alpha + i \sin \alpha$. Another notable application is the factorization of fourth-degree polynomials with no real roots (such as $x^4 + 1$). Later, Gauss introduced the complex plane, standardized the notation, and firmly established the acceptance of complex numbers, using them in many important results, most notably in the fundamental theorem of algebra. Since then, complex numbers have become one of the cornerstones of mathematics, and the set of complex numbers is now regarded as a mathematical structure in its own right.
+
+What were the reasons for such a shift? In my view, complex numbers constituted the simplest mathematical structure extending the real line while exhibiting three fundamental features, which had traditionally—albeit in different forms throughout history—been regarded as criteria of legitimacy.
+
+First, complex numbers demonstrated significant problem-solving power, as seen in the factorization and solution of higher-degree polynomials. Second, they provided explanatory unification: results such as the fundamental theorem of algebra, or the unification of trigonometric and exponential functions through Euler's formula, illustrate this point, and many further examples could be given. Finally, they enabled mathematicians to simplify and extend existing formulations to such an extent that new areas of application emerged, through connections with geometry, analysis, algebra, number theory, and beyond.
+
+These features of structures such as the complex numbers are, in my view, what distinguish mathematical reasoning from mere symbol manipulation. 
+
+For example, the fact that $(\mathbb{C}, +, \cdot)$ is an algebraically closed field indicates that it is the simplest structure satisfying these criteria relative to $\mathbb{R}$. Moreover, complex numbers play a crucial role in simplifying proofs across many areas of mathematics. For these reasons, if a given conception of the real line belongs to $S_n$, then the corresponding structure of complex numbers naturally belongs to $S_{n+1}$. For instance, a purely geometric conception of the real line—belonging to $S_0$—would correspond to a geometric conception of the complex numbers in $S_1$. By contrast, the more standard set-theoretic conception of the real line would correspond to a structure of complex numbers belonging to $S_2$, as argued in the previous section.
+
+
+\textbf{Commitment to structures:} Our intuition clearly leans toward committing to $\mathbb{C}$ as a structure. This is really different from \textcite{Godel1947} ``intuition'' of set theoretical structures. 
+
+%=========================
+\section{The natural numbers: a structure well-determined by practice?}
 Externally applicable structures: natural numbers, rationals, reals, geometry, ...
 
 Determinateness of this structure: non standard models of $\mathbb{N}$ in practice. Real-life applicability: time tending to infinity, divisibility of matter, computer programs, \dots
@@ -252,36 +276,10 @@ Historical point: in contrast to set theory, axioms were given much later than t
 \begin{quote}
 Other approaches restrict attention to those real numbers which are explicitly “constructible” in some specific sense, perhaps by means of recursive functions of natural numbers (...). In my view, such requirements of constructivity tend to emphasize arithmetic at the expense of geometry. Since the real numbers should subsume both arithmetic and geometric aspects of mensuration, these practical uses seem better formalized by the standard axioms for the field of real numbers. \textcite[107]{maclane1986mathematics}
 \end{quote}
-\end{adjustwith}
+\end{adjustwidth}
 
 Categoricity arguments around $PA$. \textcite{Ferreiros2023ConStructuralism} says it is ``easier'' to proof the categoricity of $PA$. $PA$ standard model is formalizable within $ZFC$? Arguments of \textcite{shapiro1991foundations} around second order logic are much better here: it is much easier to argue that second order logic better captures the informal language of mathematics in the case of arithmetic than in the one of set theory.
  
-
-%---------------Complex numbers--------------------------
-The early stages of this development can be traced back to the sixteenth century. Although the idea of negative square roots had already been mentioned before, it was Rafael Bombelli, in his 1572 work L’Algebra, the first to systematically use of what we now call complex numbers.\footnote{Most of the events mentioned here are important facts in history of mathematics, where I am following texts on the topic such as \textcite{Nahin2010} and \textcite{Christen2018}.} Bombelli was working on the solution of the reduced cubic equation, an equation of the form $x^3 + px + q = 0$. Earlier, Cardano had found the following formula to solve such equations:
-
-\begin{equation}
-x = \sqrt[3]{-\frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3}} 
-+ \sqrt[3]{-\frac{q}{2} - \sqrt{\left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3}}
-\end{equation} 
-
-Cardano’s difficulty lay in interpreting this formula when negative square roots were involved. In fact, he concluded that the formula was not solvable “in general.” Bombelli decided to step a little bit further, introducing the symbol $pdm$ to represent $\sqrt{-1}$, thereby providing a clear precursor to the imaginary unit.\footnote{This stands literally for \textit{piú di meno}, which mean “plus or minus” in Italian—see \textcite{Christen2018} for more details. He arrived at many of the operational properties of complex numbers, such as $pdm \cdot pdm = -1$.} In this way, he was able to obtain new real roots of certain equations of the given form, which Cardano had been unable to.
-
-Progress in this area accelerated in the following years. While Descartes showed little interest in such numbers, referring to them pejoratively as “imaginary,” Leibniz used them in a manner similar to Bombelli, as intermediate steps in solving equations. Euler was probably the first to use them systematically: he introduced the notation $i$ for the imaginary unit and employed it in many formulas. Perhaps the most well known is Euler’s formula, which states that for any real phase $\alpha$, $e^{i\alpha} = \cos \alpha + i \sin \alpha$. Another notable application is the factorization of fourth-degree polynomials with no real roots (such as $x^4 + 1$). Later, Gauss introduced the complex plane, standardized the notation, and firmly established the acceptance of complex numbers, using them in many important results, most notably in the fundamental theorem of algebra. Since then, complex numbers have become one of the cornerstones of mathematics, and the set of complex numbers is now regarded as a mathematical structure in its own right.
-
-What were the reasons for such a shift? In my view, complex numbers constituted the simplest mathematical structure extending the real line while exhibiting three fundamental features, which had traditionally—albeit in different forms throughout history—been regarded as criteria of legitimacy.
-
-First, complex numbers demonstrated significant problem-solving power, as seen in the factorization and solution of higher-degree polynomials. Second, they provided explanatory unification: results such as the fundamental theorem of algebra, or the unification of trigonometric and exponential functions through Euler’s formula, illustrate this point, and many further examples could be given. Finally, they enabled mathematicians to simplify and extend existing formulations to such an extent that new areas of application emerged, through connections with geometry, analysis, algebra, number theory, and beyond.
-
-These features of structures such as the complex numbers are, in my view, what distinguish mathematical reasoning from mere symbol manipulation. 
-
-For example, the fact that $(\mathbb{C}, +, \cdot)$ is an algebraically closed field indicates that it is the simplest structure satisfying these criteria relative to $\mathbb{R}$. Moreover, complex numbers play a crucial role in simplifying proofs across many areas of mathematics. For these reasons, if a given conception of the real line belongs to $S_n$, then the corresponding structure of complex numbers naturally belongs to $S_{n+1}$. For instance, a purely geometric conception of the real line—belonging to $S_0$—would correspond to a geometric conception of the complex numbers in $S_1$. By contrast, the more standard set-theoretic conception of the real line would correspond to a structure of complex numbers belonging to $S_2$, as argued in the previous section.
-
-
-\textbf{Commitment to structures:} Our intuition clearly leans toward committing to $\mathbb{C}$ as a structure. This is really different from \textcite{Godel1947} ``intuition'' of set theoretical structures. 
-
-%=========================
-
 
 \section{Simplicity and naturalness in mathematical practice}
 \label{simplicity}
@@ -376,9 +374,7 @@ This is quite systematic, but domain-specific rather than a general theory of ma
 \section{How CH and set theory fit in quasi-empirical structuralism}
 \label{section-CH-case}
 
-Once a framework is accepted as contentful then any statement formulated within it has to be equally regarded. (...) reason somehow similarly by considering that CH to be undefinite is equivalent to considering third-order arithmetic to be inconsistent. I think they go too far, because different frameworks, which might disagree upon determinate fundamental questions, could be both consistent.
-
-structures that, in the simplest possible way, contribute to solving such problems, are themselves considered legitimate. One such kind of problem is known as the Weil Conjectures. Named after the mathematician that introduced them in 1949, consist of four deep hypotheses on algebraic varieties defined over finite fields. These conjectures were crucial for the development of modern algebraic geometry.  
+One such kind of problem is known as the Weil Conjectures. Named after the mathematician that introduced them in 1949, consist of four deep hypotheses on algebraic varieties defined over finite fields. These conjectures were crucial for the development of modern algebraic geometry.  
 
 The Weil conjectures can be formulated in an extremely weak axiom system, such as second order arithmetic, or even PA with minor additions. Consequently, they cannot be considered illegitimate for being far ahead of down-to-earth mathematics. However, proving them requires much more mathematical power. The conjectures were ultimately proven by Pierre Deligne in (1974), using tools previously developed by Grothendieck, using the concept of a Grothendieck Universe, which requires ZFC plus the existence of a strongly inaccessible cardinal. \textcite{McLarty2020} demonstrated that developing such tools requires a far weaker axiom system, one that can be formulated within finite-order arithmetic. In any case, these systems, which McCarty refers to as $MC$, require for each natural number $n$, the iterated power set $P^n(\mathbb{N})$ to exist.  $MC$ systems are the weakest systems where the proof of Weil’s conjecture using the tools Grothendieck provided can be carried out.  
 
@@ -455,7 +451,7 @@ These data are required to satisfy the following axioms:
 \end{enumerate}
 
 \section{Other approaches}
-\ref{alternative-approaches}
+\label{alternative-approaches}
 
 As explained in the introduction, this text examines the mathematical significance of certain structures. In this section, I explore how this notion is addressed—often indirectly—within conceptual structuralism, a framework that has engaged extensively with CH. In the next section, I turn to how I would address the difficulties this conception raises for this issue.
 
