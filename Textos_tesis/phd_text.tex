@@ -1,61 +1,25 @@
-%=========================
-% Plantilla LaTeX Artículo Académico
-% Compilar con: pdflatex + biber + pdflatex + pdflatex
-%=========================
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper]{book}
 
-%-------------------------
-% Idioma y tipografía
-%-------------------------
 \usepackage[english]{babel}
 \usepackage{csquotes}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 
-%-------------------------
-% Márgenes y espaciado
-%-------------------------
 \usepackage[a4paper,margin=2.5cm]{geometry}
 \usepackage{setspace}
 \onehalfspacing
 
-%-------------------------
-% Matemáticas y símbolos
-%-------------------------
 \usepackage{amsmath,amssymb,amsthm}
 
-%-------------------------
-% Tablas y figuras
-%-------------------------
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{changepage}
 
-%-------------------------
-% Enlaces y PDF
-%-------------------------
-\usepackage{hyperref}
-\hypersetup{
-  colorlinks=true,
-  linkcolor=blue,
-  citecolor=blue,
-  urlcolor=blue,
-  pdftitle={Feferman revisited: conceptual structuralism, Koellner's critique and mathematical practice},
-  pdfauthor={Rodrigo Blanco Betes}
-}
-
-%-------------------------
-% Listas, código y utilidades
-%-------------------------
 \usepackage{enumitem}
 \usepackage{xcolor}
-\usepackage{csquotes} % recomendado con biblatex
 
-%-------------------------
-% Bibliografía (biblatex + biber)
-%-------------------------
 \usepackage[
   backend=biber,
   style=apa,
@@ -63,33 +27,55 @@
   url=true,
   doi=true
 ]{biblatex}
-\DeclareLanguageMapping{english}{english-apa}
 \addbibresource{refs.bib}
 
-%-------------------------
-% Metadatos del artículo
-%-------------------------
-\title{\textbf{Feferman revisited: conceptual structuralism, Koellner's critique and mathematical practice}}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  pdftitle={On the Indefiniteness of the Continuum Hypothesis},
+  pdfauthor={Rodrigo Blanco Betes}
+}
 
+\title{\textbf{On the Indefiniteness of the Continuum Hypothesis}}
 \author{Rodrigo Blanco Betes}
-
-
 \date{\today}
 
-%-------------------------
-% Entornos de teoremas
-%-------------------------
-\theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
-\newtheorem*{theorem*}{Theorem}
 \newtheorem{lemma}{Lemma}
 
 \begin{document}
+
+% ---------- Portada ----------
+\frontmatter
 \maketitle
 
-\begin{abstract}
-Solomon \textcite{Feferman2011a} argued that the Continuum Hypothesis may fail to constitute a definite mathematical question. More recently, \textcite{Koellner2016,Koellner2022} has criticized this position as obscure, unfounded, and overly conventionalist. In this paper, I revisit Feferman's perspective through the lens of mathematical practice. I argue that mathematical definiteness cannot be secured purely through categoricity arguments or metamathematical considerations; issues concerning applicability and mathematical practice must also be taken into account, though not in a simplistic indispensability-theoretic sense. Interpreted in this way, Feferman's position can withstand some of Koellner's strongest objections.
-\end{abstract}
+\tableofcontents
+
+%-------------Introducción
+\section*{Introduction}
+
+
+%----------------Texto principal----------
+\mainmatter
+
+\chapter{Background}
+
+%-------------Primeros antecedentes: introducción lógica a la hipótesis del continuo
+\section{The Development of CH: From a Mathematical Problem to a Philosophical Question}
+
+%-------------Versiones de filosofía de las matemáticas
+\section{Philosophy of mathematics in the early twentieth century: the big three}
+
+
+
+%------------Lógica vs matemáticas. Por qué las matemáticas son sintéticas
+\section{Our stand towards logicism and the meaning of mathematical statements}
+
+%----------------Primer capítulo: interpretación de CS y crítica de Koellner
+\chapter{Feferman’s Conceptual Structuralism and its Critics}
 
 \section{Introduction}
 
@@ -548,4 +534,3 @@ The resulting picture is neither straightforward platonism nor simple convention
 \printbibliography
 
 \end{document}
-
