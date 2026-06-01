@@ -332,24 +332,27 @@ It is true that contemporary mathematics contains alternative frameworks, such a
 
 In this section I return to the question of the determinacy of mathematical structures, introduced in Section \ref{structuralims-ontology-epistemology} as a distinction between commitment to structures and commitment to axiom systems. I defend the claim that structures such as $(\mathbb{N}, 0, S)$ or $(\mathbb{R}, \tau_u)$ have proved fruitful in mathematical practice precisely through commitment to their structural form, making it difficult to regard them as merely open-ended structures.
 
-Moreover, these structures occupy a distinctive position within mathematical practice because of their deep entrenchment in scientific applications and everyday forms of reasoning.
+Moreover, these structures occupy a distinctive position within mathematical practice because of their deep entrenchment in scientific applications and everyday forms of reasoning. Counting, measurement, spatial representation, and quantitative modelling all rely on them in essential ways. In the terminology introduced in Section \ref{quasi-emp-structuralism}, they provide some of the clearest examples of externally applicable structures.
 
- Counting, measurement, spatial representation, and quantitative modelling all rely on them in essential ways. In the terminology introduced in Section \ref{quasi-emp-structuralism}, they provide some of the clearest examples of externally applicable structures.
-
-
-
-
-\textbf{Commitment to structures:} Our intuition clearly leans toward committing to $\mathbb{C}$ as a structure. This is really different from \textcite{Godel1947} ``intuition'' of set theoretical structures. 
-
-$\mathbb{N}$ is the simplest infinite mathematical structure, although it is increbly rich, and in many cases enough for most applications in physics.
+%---------Natural numbers-----------------
+$\mathbb{N}$ is the simplest infinite mathematical structure, although it is increbly rich, and in many cases enough for most applications in physics and many areas of mathematics.
 
 It is hard to enumerate all the applications a structure as $\mathbb{N}$ has. \textcite{maclane1986mathematics} defends that the structure of natural numbers is based in practical neccesities. Real-life applicability: time tending to infinity, divisibility of matter, computer programs.
 
+arithmetic operations were invented (or discovered?) because they have all manner of practical uses in financial or scientific 
+calculations 10
+
+Such counts are useful in gambling or speculating. Choose three cards in succession from an (ordered) deck of thirteen; what is the chance that they come out in a direct or reverse order? It is the ratio of favorable cases [(123) or (321)] to the total number 6 of cases (of permutations). 12
+
+
+
 The possibility of formalyzing, simplifying and solving problems regarding these processes is through the standard model.
 
-Non standars models: $\omega+ \mathbb{Z} \eta$ 
+Non-standard models: $\omega+ \mathbb{Z} \eta$ 
 
-A simple idea, a biyection between the future days in the calendar (the standard model fits but non-standard do not).
+A non-standard element is an element $a\in M$ such that $0_M, 1_M, 2_M,... < a$
+
+A simple idea, a biyection between the future days in the calendar (the standard model fits but non-standard do not: there are not non-standard days in the calendar).
 
  Determinateness of this structure: non standard models of $\mathbb{N}$ in practice.  \dots Non-standard models of $PA$ do not represent the notion of counting and tending to infinity as $(\mathbb{N},0,S)$ does. Similarly, non standard models of the axioms of the real line do not parallel our intuition of space as $\mathbb{R}$ does. These structures are priviledged by practice: it is practice, and not logical reasoning, that tells mathematicians to choose them instead of others.
 
@@ -357,6 +360,9 @@ Categoricity arguments around $\mathrm{PA}$. \textcite{Ferreiros2023ConStructura
 
 Dedekind's proof is a fairly accepted theorem in practice. It seems that I am taking the position of \textcite{shapiro1991foundations}regarding second order logic, which I was hesitant about in Section 2. Instead, I am just stating that they could be applied, restrictively, much more suitably in the case of arithmetic: it is much easier to argue that second order logic better captures the informal language of mathematics in the case of arithmetic, as in Dedekind's categoricity argument, than in the one of set theory.
 
+This chapter will explore the origins and development of the system of real numbers. These numbers form the most central structure in all of Mathematics. Like other structures it arises from more primitive human activities-in this case, from the measurement and comparison of magnitudes of various kinds. 93
+
+%-----------Real numbers------------------
 \begin{adjustwidth}{1cm}{1cm}
 \small
 \begin{quote}
@@ -367,22 +373,29 @@ Other approaches restrict attention to those real numbers which are explicitly �
 
 Historical point: in contrast to set theory, axioms were given much later than the usage of these structures in practice.
 
-
-
-Externally applicable structures: natural numbers, rationals, reals, geometry, ...
-
 Perhaps externally applicable structures are more likely to be determined. Although in an idealized way, these structures are related to proccesses or phenomena in real-life experience that our intuition considers determinate. 
 
+\textbf{Commitment to structures:} Our intuition clearly leans toward committing to $\mathbb{C}$ as a structure. This is really different from \textcite{Godel1947} ``intuition'' of set theoretical structures. 
+
+%===========================
 \section{The approach to set theory}
 \label{set-theory}
 
-Recall that the standard model of arithmetic can be formalized using the ZF axiom system. Therefore, the consequences of these axioms could not contradict a true result in arithmetic unless the axioms were found to be inconsistent, which seems highly unlikely. For this reason, even a mathematician only committing to the definiteness of arithmetic would find these axioms interesting. They could use the ZF axioms as a useful metamathematical tool and have reasons to believe in the consequences of the axioms when applied to arithmetic. But this would not lead them to commit to the full set-theoretic hierarchy, nor to defend that the concept of an arbitrary set is definite.\footnote{Even acknowledging that ZF is a consistent theory does not imply the aforementioned commitments. A Skolem-type numerable model could suffice for proving the consistency of ZF set theory intuitively.}
+Recall that the standard model of arithmetic can be formalized using the ZF axiom system. 
+
+Therefore, the consequences of these axioms could not contradict a true result in arithmetic unless the axioms were found to be inconsistent, which seems highly unlikely. For this reason, even a mathematician only committing to the definiteness of arithmetic would find these axioms interesting. 
+
+They could use the ZF axioms as a useful metamathematical tool and have reasons to believe in the consequences of the axioms when applied to arithmetic. But this would not lead them to commit to the full set-theoretic hierarchy, nor to defend that the concept of an arbitrary set is definite.\footnote{Even acknowledging that ZF is a consistent theory does not imply the aforementioned commitments. A Skolem-type numerable model could suffice for proving the consistency of ZF set theory intuitively.}
 
 \textbf{Statements in arithmetic such as Goodstein's theorem were proven through axiom systems whose scope is beyond arithmetic, in particular transfinite ordinal induction. So it is not that unnatural to understand higher-order assumptions to refer in practice to arithmetic.}
 
 If $L$ is a large cardinal axiom, the theories $ZFC+L$ and $PA + \bigcup_{n < \omega} Con((ZFC + L)\upharpoonright n)$ are mutually interpretable, being the latter one framed in the language of arithmetic. This means that the logical consequences of $ZFC + L$ in the language of set theory can be understood as arithmetical sentences through a well chosen bijection. That fits well with the formalist approach to the metamathematical results, where set theoretical sentences and deductions are understood as the object of study, while the core of the reasoning is done in the metatheory of formal finitary logic. This in fact means that, even if accepting the fruitfulness of set theoretical considerations, specially regarding consistency proofs, that reasoning can be reduced to the language of arithmetic. So, in the end, the only mathematical structure one has to commit to in this case is the natural number structure, without need of a freestanding and platonic universe of sets.
 
+
+
 Is there a mathematical commit to $ZFC + (V = L)$ or to $ZFC + MM$, which stands for Martin's Maximum Axiom, presented in \textcite{ForemanMagidorShelah1988}?
+
+Maximal forcing axioms. Woodind's $\Omega$-logic. 
 
 The whole cumulative hierarchy (7) is intended (or imaged) to produce all the sets that we need for Mathematics. Though it does not produce any ``universal set'' of all sets, it does produce sets of all finite sizes as well as many infinite sets. \textcite[362]{maclane1986mathematics}
 
@@ -400,9 +413,7 @@ Proof in Mathematics is both a means to understand why some result holds and a w
   \end{quote}
 \end{adjustwidth}
 
-We have the sequence: 
 
-$$ (\mathbb{N}, 0, S), (\mathbb{R},\tau_u, \beta), (\mathbb{C}, ...) \leadsto \mathrm{ZFC} $$
 
 It is not a matter of evaluating how easy it is to identify standard models in set theory \parencite[p. 16]{Koellner2022}, but of acknowledging that standard models are not used in practice. In general, all needed is a countable transitive model, and that can be carried out strictly in the metatheory---see \textcite[p. 8]{Kunen2011}. 
 
@@ -419,6 +430,18 @@ Are abstract set theoretical structures internally fruitful with respect to stru
 With respect to the power set axiom, consider, for instance, the field of topology. Topology focuses on the study of topological spaces—structures defined as a set together with a collection of its subsets satisfying certain conditions. The power set axiom seems be inherent in the very definition, as the topology on a set is defined as subset of the power set, . Nevertheless, I would argue this is interpreted in a schematic way by the working topologist. In practice, one reasons about any given family of subsets of that fulfills the specific rules. Theorems are proven about this structure itself. This schematic reasoning about a family of subsets if fundamentally different from needing to quantify over a pre-existing, completed totality . A potential objection could be the definition of the discrete topology, where the space is formed through the entire power set. However, in most cases practical applications, this topology is used on countable sets. When it is applied to uncountable sets, it is typically within the realm of abstract set-theoretical considerations themselves—precisely the context whose necessity for more down-to-earth applications we are questioning. One could concede that a topologist, for simplicity, assumes they can always form the power set of any set they encounter in practice. However, for this purpose a far weaker system that ZFC, like the previously given MC, could suffice.
 
 \textbf{Set theory is commitment to axioms: the practicioner finds it useful to assume that some properties of the sets he is using are going to hold. For example, that for any set $A$, there is a set $P(A)$ with the property of containing all the sets $B$ such that $B \subseteq A$. But that does not mean that they commmit to an univocally determined universe of sets.}
+
+We have the sequence: 
+
+$$ (\mathbb{N}, 0, S), (\mathbb{R},\tau_u, \beta), (\mathbb{C}, ...) \leadsto \mathrm{ZFC} $$
+
+But not 
+
+$$ (\mathbb{N}, 0, S), (\mathbb{R},\tau_u, \beta), (\mathbb{C}, ...) \leadsto \mathrm{ZFC}+\mathrm{MM} $$
+
+nor 
+
+$$ (\mathbb{N}, 0, S), (\mathbb{R},\tau_u, \beta), (\mathbb{C}, ...) \leadsto \mathrm{ZFC}+\mathrm{(V=L)} $$
 
 %=========================
 \section{Category theory}
@@ -453,6 +476,8 @@ For these reasons "set" turns out to have many meanings, so that the purported f
   \end{quote}
 \end{adjustwidth}
 
+Being $(G, +, \cdot)$ any group,  
+
 
 
 \section{How CH and set theory fit in quasi-empirical structuralism}
@@ -461,7 +486,9 @@ For these reasons "set" turns out to have many meanings, so that the purported f
 One such kind of problem is known as the Weil Conjectures. Named after the mathematician that introduced them in 1949, consist of four deep hypotheses on algebraic varieties defined over finite fields. These conjectures were crucial for the development of modern algebraic geometry.  
 
 %----------Weil conjectures------------------
-The Weil conjectures can be formulated in an extremely weak axiom system, such as second order arithmetic, or even PA with minor additions. Consequently, they cannot be considered illegitimate for being far ahead of down-to-earth mathematics. However, proving them requires much more mathematical power. The conjectures were ultimately proven by Pierre Deligne in (1974), using tools previously developed by Grothendieck, using the concept of a Grothendieck Universe, which requires ZFC plus the existence of a strongly inaccessible cardinal. \textcite{McLarty2020} demonstrated that developing such tools requires a far weaker axiom system, one that can be formulated within finite-order arithmetic. In any case, these systems, which McCarty refers to as $MC$, require for each natural number $n$, the iterated power set $P^n(\mathbb{N})$ to exist.  $MC$ systems are the weakest systems where the proof of Weil’s conjecture using the tools Grothendieck provided can be carried out.  
+The Weil conjectures can be formulated in an extremely weak axiom system, such as second order arithmetic, or even PA with minor additions. Consequently, they cannot be considered illegitimate for being far ahead of down-to-earth mathematics. However, proving them requires much more mathematical power. The conjectures were ultimately proven by Pierre Deligne in (1974), using tools previously developed by Grothendieck, using the concept of a Grothendieck Universe, which requires ZFC plus the existence of a strongly inaccessible cardinal. \textcite{McLarty2020} demonstrated that developing such tools requires a far weaker axiom system, one that can be formulated within finite-order arithmetic. In any case, these systems, which McCarty refers to as $MC$, require for each natural number $n$, the iterated power set $P^n(\mathbb{N})$ to exist.  $MC$ systems are the weakest systems where the proof of Weil’s conjecture using the tools Grothendieck provided can be carried out.
+
+Toposes
 
 %-------------Fermat's Last Theorem--------------
 One such question is Fermat's Last Theorem. \textcite{Feferman1999} defended the idea that questions like this one would most likely be provable using tools in weaker systems, such as PA. In this particular case, however, the proof required much stronger tools so that, even in the most conservative reconstructions, can only be formulated within sixth-order arithmetic—see \textcite{McLarty2020}.
