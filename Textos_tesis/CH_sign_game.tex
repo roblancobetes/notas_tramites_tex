@@ -330,21 +330,28 @@ It is true that contemporary mathematics contains alternative frameworks, such a
 \section{The natural numbers and the real line: structures determined by practice?}
 \label{natural-reals}
 
-In this section I return to the question of the determinacy of mathematical structures, introduced in Section \ref{structuralims-ontology-epistemology} as a distinction between commitment to structures and commitment to axiom systems. I defend the claim that structures such as $(\mathbb{N}, 0, S)$ or $(\mathbb{R}, \tau_u)$ have proved fruitful in mathematical practice precisely through commitment to their structural form, making it difficult to regard them as merely open-ended structures.
-
-Moreover, these structures occupy a distinctive position within mathematical practice because of their deep entrenchment in scientific applications and everyday forms of reasoning. Counting, measurement, spatial representation, and quantitative modelling all rely on them in essential ways. In the terminology introduced in Section \ref{quasi-emp-structuralism}, they provide some of the clearest examples of externally applicable structures.
+In this section I return to the question of the determinacy of mathematical structures, introduced in Section \ref{structuralims-ontology-epistemology} as a distinction between commitment to structures and commitment to axiom systems. I argue that structures such as $(\mathbb{N}, 0, S)$ and $(\mathbb{R}, \tau_u)$ have proved fruitful in mathematical practice precisely because mathematicians have treated them as determinate structures rather than merely as open-ended collections of models satisfying an axiom system. This point is reinforced by the distinctive role these structures play beyond pure mathematics. Their deep entrenchment in scientific applications and everyday forms of reasoning gives them a stability and significance not shared by many more specialised mathematical structures. Counting, measurement, spatial representation, and quantitative modelling all rely on them in essential ways. In the terminology introduced in Section \ref{quasi-emp-structuralism}, they therefore provide some of the clearest examples of externally applicable structures.
 
 %---------Natural numbers-----------------
-$\mathbb{N}$ is the simplest infinite mathematical structure, although it is increbly rich, and in many cases enough for most applications in physics and many areas of mathematics.
+$\mathbb{N}$ is the simplest infinite mathematical structure, yet it is remarkably rich, in many cases enough for most applications in physics and many areas of mathematics. Its applications are so widespread that they are difficult to survey exhaustively. As \textcite[10]{maclane1986mathematics} observes, ``arithmetic operations were invented (or discovered?) because they have all manner of practical uses in financial or scientific calculations.'' Practical activities have also motivated the development of more sophisticated combinatorial concepts grounded in the natural numbers. Mac Lane illustrates this with the example of gambling, where questions about the probabilities of different card arrangements naturally lead to the study of finite permutation groups:
 
-It is hard to enumerate all the applications a structure as $\mathbb{N}$ has. \textcite{maclane1986mathematics} defends that the structure of natural numbers is based in practical neccesities. Real-life applicability: time tending to infinity, divisibility of matter, computer programs.
+\begin{adjustwidth}{1cm}{1cm}
+\begin{quote}
+  \small
+Such counts are useful in gambling or speculating. Choose three cards in succession from an (ordered) deck of thirteen; what is the chance that they come out in a direct or reverse order? It is the ratio of favorable cases [(123) or (321)] to the total number 6 of cases (of permutations). \parencite[12]{maclane1986mathematics}
+\end{quote}
+\end{adjustwidth}
 
-arithmetic operations were invented (or discovered?) because they have all manner of practical uses in financial or scientific 
-calculations 10
+The central challenge, however, is to explain how such applications can support the claim that arithmetic is determinate. A standard response appeals to categoricity results for arithmetic. Since most mathematical and scientific applications of arithmetic rely on the axioms of PA, a categorical characterization of those axioms would secure a unique structure as their intended model. In that case, arithmetical truth could be identified with truth in that structure. Dedekind's proof that the second-order version of PA is categorical \parencite{Dedekind1888} is often taken to provide precisely such a characterization. This result has been widely accepted in mathematical practice as capturing the structure of the natural numbers; see, for example, \textcite[47]{maclane1986mathematics} and \textcite[141]{Ferreiros2023ConStructuralism}.
 
-Such counts are useful in gambling or speculating. Choose three cards in succession from an (ordered) deck of thirteen; what is the chance that they come out in a direct or reverse order? It is the ratio of favorable cases [(123) or (321)] to the total number 6 of cases (of permutations). 12
+\textcite[19]{Feferman2011a} and \textcite[511]{Koellner2016}, fundamentally because it is proven within $\mathrm{ZFC}$ (or perhaps in weaker versions such as $\mathrm{ZF}^- -P + Pow(\omega)$)\footnote{Here $Pow(\omega)$ stands for the axioms asserting the existence of the powerset of the set of all natural numbers.} , while these background set theories are themselves non-categorical. As a result, the categoricity theorem secures uniqueness only relative to a particular model of the underlying set theory. Although any two realizations of the natural-number structure within a given model are isomorphic, different models of the background theory may contain different realizations of that structure. Consequently, the categoricity result alone does not establish an absolutely unique natural-number structure. 
+
+For this reason, I am reluctant to appeal to categoricity results in full second-order logic as a sufficient basis for the determinacy of arithmetical statements. This echoes the concerns raised in Section \ref{structuralims-ontology-epistemology}, where I expressed reservations about \textcite{shapiro1991foundations}' reliance on full second-order logic in accounting for the determinacy of mathematical structures.
+
+I think that many of these problems disappear if we fully understand the distinction between commitment to structures or to an axiomatic system.
 
 
+Instead, I am just stating that they could be applied, restrictively, much more suitably in the case of arithmetic: it is much easier to argue that second order logic better captures the informal language of mathematics in the case of arithmetic, as in Dedekind's categoricity argument, than in the one of set theory.
 
 The possibility of formalyzing, simplifying and solving problems regarding these processes is through the standard model.
 
@@ -352,19 +359,13 @@ Non-standard models: $\omega+ \mathbb{Z} \eta$
 
 A non-standard element is an element $a\in M$ such that $0_M, 1_M, 2_M,... < a$
 
+Determinateness of this structure: non standard models of $\mathbb{N}$ in practice.  \dots Non-standard models of $PA$ do not represent the notion of counting and tending to infinity as $(\mathbb{N},0,S)$ does. Similarly, non standard models of the axioms of the real line do not parallel our intuition of space as $\mathbb{R}$ does. These structures are priviledged by practice: it is practice, and not logical reasoning, that tells mathematicians to choose them instead of others.
+
 A simple idea, a biyection between the future days in the calendar (the standard model fits but non-standard do not: there are not non-standard days in the calendar).
 
- Determinateness of this structure: non standard models of $\mathbb{N}$ in practice.  \dots Non-standard models of $PA$ do not represent the notion of counting and tending to infinity as $(\mathbb{N},0,S)$ does. Similarly, non standard models of the axioms of the real line do not parallel our intuition of space as $\mathbb{R}$ does. These structures are priviledged by practice: it is practice, and not logical reasoning, that tells mathematicians to choose them instead of others.
-
-Categoricity arguments around $\mathrm{PA}$. \textcite{Ferreiros2023ConStructuralism} says it is ``easier'' to proof the categoricity of $\mathrm{PA}$. $\mathrm{PA}$ standard model is formalizable within $\mathrm{ZFC}$?
-
-Dedekind's proof is a fairly accepted theorem in practice. It seems that I am taking the position of \textcite{shapiro1991foundations}regarding second order logic, which I was hesitant about in Section 2. Instead, I am just stating that they could be applied, restrictively, much more suitably in the case of arithmetic: it is much easier to argue that second order logic better captures the informal language of mathematics in the case of arithmetic, as in Dedekind's categoricity argument, than in the one of set theory.
-
+%-----------Real numbers------------------
 This chapter will explore the origins and development of the system of real numbers. These numbers form the most central structure in all of Mathematics. Like other structures it arises from more primitive human activities-in this case, from the measurement and comparison of magnitudes of various kinds. 93
 
-Mathematicians commit to the natural numbers+ there is no recursively enumerable set of axioms that determines this set= there can be cases of committing to a structure that cannot be reduced to a set of axioms.
-
-%-----------Real numbers------------------
 \begin{adjustwidth}{1cm}{1cm}
 \small
 \begin{quote}
@@ -372,10 +373,11 @@ Other approaches restrict attention to those real numbers which are explicitly �
 \end{quote}
 \end{adjustwidth}
 
-
 Historical point: in contrast to set theory, axioms were given much later than the usage of these structures in practice.
 
 Perhaps externally applicable structures are more likely to be determined. Although in an idealized way, these structures are related to proccesses or phenomena in real-life experience that our intuition considers determinate. 
+
+Mathematicians commit to the natural numbers+ there is no recursively enumerable set of axioms that determines this set= there can be cases of committing to a structure that cannot be reduced to a set of axioms.
 
 \textbf{Commitment to structures:} Our intuition clearly leans toward committing to $\mathbb{C}$ as a structure. This is really different from \textcite{Godel1947} ``intuition'' of set theoretical structures. 
 
@@ -483,6 +485,13 @@ These data are required to satisfy the following axioms:
   \small
   \begin{quote}
 For these reasons "set" turns out to have many meanings, so that the purported foundation of all of Mathematics upon set theory totters. But there are other possibilities. For example, the membership relation for sets can often be replaced by the composition operation for functions. This leads to an alternative foundation for Mathematics upon categoriesspecifically, on the category of all functions. Now much of Mathematics is dynamic, in that it deals with morphisms of an object L into another object of the same kind. Such morphisms (like functions) form categories, and so the approach via categories fits well with the objective of organizing and understanding Mathematics. That, in truth, should be the goal of a proper philosophy of Mathematics. \textcite[359]{maclane1986mathematics}
+  \end{quote}
+\end{adjustwidth}
+
+\begin{adjustwidth}{1cm}{1cm}
+  \small
+  \begin{quote}
+Atiyah described mathematics as the “science of analogy.” In this vein, the purview of category theory is mathematical analogy. Category theory provides a cross-disciplinary language for mathematics designed to delineate general phenomena, which enables the transfer of ideas from one area of study to another. The category-theoretic perspective can function as a simplifying1 abstraction, isolating propositions that hold for formal reasons from those whose proofs require techniques particular to a given mathematical discipline. \parencite[ix]{Riehl2014Category}
   \end{quote}
 \end{adjustwidth}
 
