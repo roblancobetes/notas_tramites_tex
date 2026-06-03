@@ -389,7 +389,7 @@ Other approaches restrict attention to those real numbers which are explicitly �
 \end{quote}
 \end{adjustwidth}
 
-The discussion of arithmetic and the real line suggests that determinacy in mathematics cannot be explained solely by appeal to categoricity results. Although such results are often taken to characterize the intended structures of arithmetic and analysis, they themselves presuppose background frameworks whose determinacy is open to further philosophical scrutiny. What ultimately distinguishes the natural numbers and the real line is not merely that they can be characterized categorically, but that they occupy a uniquely entrenched position within mathematical, scientific, and everyday practice. Once such structures are adopted, questions that remain unresolved at the level of a first-order axiom system—whether because they are undecidable from the axioms or because they depend on features varying across models—receive definite answers, at least in principle, within a privileged structure. These structures are more suited to be considered as externally appliable.
+The discussion of arithmetic and the real line suggests that determinacy in mathematics cannot be explained solely by appeal to categoricity results. Although such results are often taken to characterize the intended structures of arithmetic and analysis, they themselves presuppose background frameworks whose determinacy is open to further philosophical scrutiny. What ultimately distinguishes the natural numbers and the real line is not merely that they can be characterized categorically, but that they occupy a uniquely entrenched position within mathematical, scientific, and everyday practice. Once such structures are adopted, questions that remain unresolved at the level of a first-order axiom system—whether because they are undecidable from the axioms or because they depend on features varying across models—receive definite answers, at least in principle, within a privileged structure. From the perspective of quasi-empirical structuralism, this privileged status is closely connected to their role as externally applicable structures, deeply embedded in practices of counting, measurement, spatial representation, and scientific modelling.\footnote{This does not entail that non-standard models can never be fruitfully employed in mathematics. For example, hyperreal fields have been used in non-standard analysis and asymptotic methods; see \textcite{lightstone1975nonarchimedean}. The claim is only that such structures do not occupy the same foundational position as the standard real line in practices of measurement, geometry, and scientific modelling.}
 
 The question, then, is whether a similar argument can be given for the structures associated with contemporary set theory. Do mathematicians adopt the cumulative hierarchy in the same sense that they adopt the natural numbers and the real line, or does set theory occupy a different position within mathematical practice? This is the issue to which I now turn.
 
@@ -397,8 +397,13 @@ The question, then, is whether a similar argument can be given for the structure
 \section{The approach to set theory}
 \label{set-theory}
 
-Maddy bel. axioms: axioms of set theory gain extrinsic evidence instead of intrinsic. This implies that practicioners have adopted this axioms, but not the corresponding structures in a determinate form.
+%-------Intro: set theory is not externally fruitful-----------
+Are abstract set theoretical structures internally fruitful with respect to structures in other areas of mathematics? 
 
+\textcite{maddy1988believing1,maddy1988believing2}: axioms of set theory gain extrinsic evidence instead of intrinsic. This implies that practicioners have adopted this axioms, but not the corresponding structures in a determinate form.
+
+
+%----First use: extension of the axioms----------------
 Every mathematician knows that the consequences of a theorem in ZFC restricted to arithmetic are true statements the standard model of arithmetic. For this reason, the very commitment to this standard model makes the usage of ZFC interesting. 
 
 Therefore, the consequences of these axioms could not contradict a true result in arithmetic unless the axioms were found to be inconsistent, which seems highly unlikely. For this reason, even a mathematician only committing to the definiteness of arithmetic would find these axioms interesting. 
@@ -409,6 +414,7 @@ Goodstein theorems: truth in arithmetic neq a determinate recursive axiom system
 
 It is also true that any model of ZFC contains a set that is isomorph to $(\mathbb{N},0,S)$, as an initial segment of the natural numbers within that model.
 
+%---Reason 2: metamathematics-------------
 They could use the ZF axioms as a useful metamathematical tool and have reasons to believe in the consequences of the axioms when applied to arithmetic. But this would not lead them to commit to the full set-theoretic hierarchy, nor to defend that the concept of an arbitrary set is definite.\footnote{Even acknowledging that ZF is a consistent theory does not imply the aforementioned commitments. A Skolem-type numerable model could suffice for proving the consistency of ZF set theory intuitively.}
 
 \textbf{Statements in arithmetic such as Goodstein's theorem were proven through axiom systems whose scope is beyond arithmetic, in particular transfinite ordinal induction. So it is not that unnatural to understand higher-order assumptions to refer in practice to arithmetic.}
@@ -416,19 +422,6 @@ They could use the ZF axioms as a useful metamathematical tool and have reasons 
 If $L$ is a large cardinal axiom, the theories $ZFC+L$ and $PA + \bigcup_{n < \omega} Con((ZFC + L)\upharpoonright n)$ are mutually interpretable, being the latter one framed in the language of arithmetic. This means that the logical consequences of $ZFC + L$ in the language of set theory can be understood as arithmetical sentences through a well chosen bijection. That fits well with the formalist approach to the metamathematical results, where set theoretical sentences and deductions are understood as the object of study, while the core of the reasoning is done in the metatheory of formal finitary logic. This in fact means that, even if accepting the fruitfulness of set theoretical considerations, specially regarding consistency proofs, that reasoning can be reduced to the language of arithmetic. So, in the end, the only mathematical structure one has to adopt in this case is the natural number structure, without need of a freestanding and platonic universe of sets.
 
 
-
-Is there a mathematical commit to $ZFC + (V = L)$ or to $ZFC + MM$, which stands for Martin's Maximum Axiom, presented in \textcite{ForemanMagidorShelah1988}?
-
-Maximal forcing axioms. Woodind's $\Omega$-logic. 
-
-The whole cumulative hierarchy (7) is intended (or imaged) to produce all the sets that we need for Mathematics. Though it does not produce any ``universal set'' of all sets, it does produce sets of all finite sizes as well as many infinite sets. \textcite[362]{maclane1986mathematics}
-
-\begin{adjustwidth}{1cm}{1cm}
-  \small
-  \begin{quote}
-Within ZFC set theory, the cumulative hierarchy can be formally constructed. Before axioms are at hand, the hierarchy is a Platonic myth, clearly visible only to those with a sixth sense for sets. \textcite[373]{maclane1986mathematics}
-  \end{quote}
-\end{adjustwidth}
 
 \begin{adjustwidth}{1cm}{1cm}
   \small
@@ -441,17 +434,27 @@ Proof in Mathematics is both a means to understand why some result holds and a w
 
 It is not a matter of evaluating how easy it is to identify standard models in set theory \parencite[p. 16]{Koellner2022}, but of acknowledging that standard models are not used in practice. In general, all needed is a countable transitive model, and that can be carried out strictly in the metatheory---see \textcite[p. 8]{Kunen2011}. 
 
-Practice in set theory commits to structures or to axioms? It is interesting to note that, differently from other cases in mathematics, the development of axioms in set theory was prior to stablishing the set theoretical hierarchy---what Von Neumann did in (1920) to explain in which sense the axioms did make sense, to avoid paradoxes and to give an structured version of the universe of sets. In other words, in this case the structure was introduced \textit{ad hoc} for the axioms, while in other cases (such as arithmetic) it was the other way around.
-
-In relative consistency proofs we do not need to beleive that the axioms of set theory are consistent: we take it as an assumption of the result.
+It is interesting to note that, differently from other cases in mathematics, the development of axioms in set theory was prior to stablishing the set theoretical hierarchy---what Von Neumann did in (1920) to explain in which sense the axioms did make sense, to avoid paradoxes and to give an structured version of the universe of sets. In other words, in this case the structure was introduced \textit{ad hoc} for the axioms, while in other cases (such as arithmetic) it was the other way around.
 
 In this regard, the distinction between mathematics and metamathematics is crucial. Axiomatic set theory often functions in this metamathematical role; it provides results about the proving power of specific axiom systems for formalized mathematical languages. A paradigmatic example of a metamathematical reasoning about set-theoretical concepts is found in independence results. These results show the impossibility of logically proving certain statements—most notably, CH—from the axioms of a theory like ZFC. Crucially, these independence proofs do not rely on the abstract set-theoretical structures whose status they investigate. Within the proofs, these structures appear merely as formulas in a formal language. The actual reasoning occurs from an external framework, known as the metatheory. In general, the metatheory is taken to be a much weaker system than ZFC, often requiring only finitistic tools. For example, we see in \textcite{Kunen2011}, p. 11: “All we assert as being `really true' is elementary finitistic reasoning: this is called the metatheory. Using this reasoning, we can explain what a logical formula is and what a formal proof is (…). Then, all discussions about infinite and uncountable sets take place within ZFC, which is called the formal theory”. 
 
 Therefore, even if one accepts —as I do— that this metamathematical reasoning constitutes a crucial and fruitful part of current mathematical practice, its success legitimates the weaker tools it employs (axioms or concepts from logic, finitistic reasoning, forcing, etc.), not the abstract set-theoretical structures themselves. 
 
-Are abstract set theoretical structures internally fruitful with respect to structures in other areas of mathematics? In this regard, probably the most important success of set theory has been its full integration as a unifying language and a conceptual framework for all of mathematics. The concept of set provides a single but powerful tool to define nearly all relevant mathematical objects, functions, numbers, spaces, and more. This, of course, demonstrates a significant explanatory fruitfulness that can be attributed to set theory, offering a deeply integrated language across mathematical areas. However, this success is linguistic and conceptual, not foundational. It does not require adopting the higher levels of the cumulative set hierarchy, neither to the full strength of all axioms in set theory. It is true, for example, that the Axiom of Choice is often used in practice, but it is not clear whether this is usually done with its full strength or referring to weaker versions of it (such as Dependent Choice).
+%--------Reason 3: unifying language------------
+In this regard, probably the most important success of set theory has been its full integration as a unifying language and a conceptual framework for all of mathematics. The concept of set provides a single but powerful tool to define nearly all relevant mathematical objects, functions, numbers, spaces, and more. This, of course, demonstrates a significant explanatory fruitfulness that can be attributed to set theory, offering a deeply integrated language across mathematical areas. However, this success is linguistic and conceptual, not foundational. It does not require adopting the higher levels of the cumulative set hierarchy, neither to the full strength of all axioms in set theory. It is true, for example, that the Axiom of Choice is often used in practice, but it is not clear whether this is usually done with its full strength or referring to weaker versions of it (such as Dependent Choice).
 
 With respect to the power set axiom, consider, for instance, the field of topology. Topology focuses on the study of topological spaces—structures defined as a set together with a collection of its subsets satisfying certain conditions. The power set axiom seems be inherent in the very definition, as the topology on a set is defined as subset of the power set, . Nevertheless, I would argue this is interpreted in a schematic way by the working topologist. In practice, one reasons about any given family of subsets of that fulfills the specific rules. Theorems are proven about this structure itself. This schematic reasoning about a family of subsets if fundamentally different from needing to quantify over a pre-existing, completed totality . A potential objection could be the definition of the discrete topology, where the space is formed through the entire power set. However, in most cases practical applications, this topology is used on countable sets. When it is applied to uncountable sets, it is typically within the realm of abstract set-theoretical considerations themselves—precisely the context whose necessity for more down-to-earth applications we are questioning. One could concede that a topologist, for simplicity, assumes they can always form the power set of any set they encounter in practice. However, for this purpose a far weaker system that ZFC, like the previously given MC, could suffice.
+
+%-------Conclusion: adoption of set theory but not in structural form--------------
+
+The whole cumulative hierarchy (7) is intended (or imaged) to produce all the sets that we need for Mathematics. Though it does not produce any ``universal set'' of all sets, it does produce sets of all finite sizes as well as many infinite sets. \textcite[362]{maclane1986mathematics}
+
+\begin{adjustwidth}{1cm}{1cm}
+  \small
+  \begin{quote}
+Within ZFC set theory, the cumulative hierarchy can be formally constructed. Before axioms are at hand, the hierarchy is a Platonic myth, clearly visible only to those with a sixth sense for sets. \textcite[373]{maclane1986mathematics}
+  \end{quote}
+\end{adjustwidth}
 
 \textbf{Set theory is commitment to axioms: the practicioner finds it useful to assume that some properties of the sets he is using are going to hold. For example, that for any set $A$, there is a set $P(A)$ with the property of containing all the sets $B$ such that $B \subseteq A$. But that does not mean that they commmit to an univocally determined universe of sets.}
 
