@@ -69,13 +69,59 @@
 
 \chapter{Background}
 
+%-------------Versiones de filosofía de las matemáticas
+\section{Realism, naturalism and constructivism in philosophy of mathematics}
+
+\begin{quote}
+So much of mathematics as is wanted for use in empirical science is for me on a par with the rest of science. Transfinite ramifications are on the same footing insofar as they come of a simplificatory rounding out, but anything further is on a par with uninterpreted systems. \textcite[p. 788]{quine1984}
+\end{quote} 
+
+Sure that intrincancy vs simplicity have not played any role at all in discussions around indispensability?
 %-------------Primeros antecedentes: introducción lógica a la hipótesis del continuo
 \section{The Development of CH: From a Mathematical Problem to a Philosophical Question}
 
-%-------------Versiones de filosofía de las matemáticas
-\section{Realism and constructivism in philosophy of mathematics}
+%------------Exploraciones del problema más avanzadas: Woodin, MM, etc.-----
+\section{The logical approach to CH after Cohen's forcing}
 
-\subsection{Mathematics and conventions}
+%-----Woodin's ideas----------------
+Does the formal independence of the Continuum Hypothesis from the axioms of Set Theory imply that the question has no meaning? Some, including Cohen himself, have argued that the answer to this question is “yes” [1]. But for this position to be credible either the other classical problems in set theory which have been similarly shown to be formally unsolvable would also have to be regarded as without meaning, or there must be an explanation as to why the problem of the Continuum Hypothesis is different. \textcite[p. 29]{woodin2004}
+
+Should the axiom of Projective Determinacy be accepted as true? One argument that is frequently cited against this axiom is that there are interesting alternative theories for the projective sets, indeed there are some very difficult open questions about the possible theories for the projective sets in the context where Projective Determinacy is false. But this argument confuses two issues. Accepting Projective Determinacy as true does not deny the study of models in which it is false. For example, it is certainly the prevailing belief that the axioms for Number Theory are consistent. Nevertheless the study of models of Number Theory in which the axioms are inconsistent seems clearly an interesting program and a deep understanding of these models probably entails resolving the P = NP question of computational complexity. Do I believe the axiom of Projective Determinacy is true? This I find to be a rather frequently asked question of me. My answer is this. I believe the axiom of Projective Determinacy is as true as the axioms of Number Theory. \textcite[pp. 31-32]{woodin2004} 
+
+For each such countable ordinal, $\alpha$, the structure
+\[
+\langle \mathcal{P}(\alpha), \alpha, \cdot, +, \in \rangle
+\]
+is reducible to the structure,
+\[
+\langle \mathcal{P}(\omega), \omega, \cdot, +, \in \rangle.
+\]
+
+Therefore I claim that the next natural structure is
+\[
+\langle \mathcal{P}(\omega_1), \omega_1, \cdot, +, \in \rangle,
+\]
+which is the standard structure for all sets of countable ordinals. It is well known that
+this structure is equivalent to the structure of all sets of hereditary cardinality less than $\aleph_2$.
+
+Whether or not CH holds is a first order property of this structure. Therefore any reasonably complete axiomatization for this structure should resolve CH. \textcite[p. 32]{woodin2004}
+
+The existence of good sentences (which are $\Omega$-satisfiable) and the theorem that good sentences must imply that the Continuum Hypothesisis false would seem to narrow the possibilities for an argument that the problem of the Continuum Hypothesisis fundamentally different from the measure problem for the projective sets to essentially just the fact that neither $CH$ or ($\neg CH$) is $\Omega_{ZFC}$-valid. But accepting this as the reason that the problem of the Continuum Hypothesis is without meaning forces one to make the stronger claim that if a 2-sentence is not $\Omega_{ZFC}$-valid then the claim that it is true is not meaningful (noting that both $CH$ and $\neg CH$ are 2 sentences). However the plausibility of such a claim critically depends on the $\Omega$ Conjecture. \textcite[p. 44]{woodin2004}
+
+In this quote from Woodin, a sentence $\phi$ is \textit{good} in case it is $\Omega$-satisfiable, i.e. if and only if there is a consistent theory $T$ such that $T \models_\Omega \phi$. This is equivalent to saying that, for any ordinal $\alpha$ and complete Boolean algebra $\mathbb{B}$, if $V^\mathbb{B}_\alpha \models T$, then $V^\mathbb{B}_\alpha \models \phi$. This means these sentences are true in a way that is absolute and stable under forcing.
+
+The main idea of Woodin is that in case there are “enough” good sentences, then all these sentences should lead to the fact that $CH$ is false.
+
+%--------Proyective determinacy-----------------------
+
+It has also been pointed out that the larger large cardinal axioms are supported by strong arguments of analogy. Typically, such arguments single out a combinatorial property of the first infinite cardinal $\omega$ and posit the existence of uncountable cardinals having an analogous property. This is usually justified by appealing to the uniform generation of sets in the cumulative hierarchy on the grounds that this uniformity should rule out the existence of ‘singularities’. It is fair to say that this line of reasoning is generally regarded as carrying less credence than justifications via reflection principles. \textcite[p. 97]{hauser2004}
+
+Nevertheless acceptance of PD as an axiom was hampered by its lack of intrinsic evidence. That difficulty was overcome when it was shown that PD is implied by large cardinal axioms. More precisely, PD follows from the existence of infinitely many Woodin cardinals. \textcite[p. 99]{hauser2004}
+
+Note: PD can be deduced by the existence of sufficiently large cardinal axioms. If we follow \textcite{Maddy1997} (MAXIMIZE and UNIFY), that would be an argument for accepting this axiom. However, I think that would be the case only in case fruitful conections of this axiom with more down-to-earth areas of mathematics are found. We have to consider to which extend the results on the proyective sets this axiom entails (Baire property, perfect set property, Lebesgue measurability) can be thus considered. Else, this area of research would be abbandoned through the years.
+
+This also affords an improved understanding of the claim that PD is the ‘correct’ axiom for second order number theory. Not only does PD yield a complete structure theory for the projective sets, it is also implied by and in fact equivalent to many combinatorial principles which on the surface have nothing to do with determinacy. Most importantly, however, second order number theory as given by PD is shared by all sufficiently strong extensions of ZFC. The reason for this is the curious phenomenon that propositions implying the consistency of PD actually imply PD. \textcite[p. 100]{hauser2004}
+
 
 
 %------------Lógica vs matemáticas. Por qué las matemáticas son sintéticas, no lógicas ni puramente formales
@@ -89,8 +135,16 @@ Mathematics assume to priviledge some structures, in a way thay first-order logi
 
 MacLane states that mathematics is ``formal'' in a way that could undermine these structural commitments.
 
+When Hilbert revived Euclid’s ideas at the beginning of the twentieth century he declared this indispensability as the characteristic mark of axiomhood. In [29] [=\textcite{Hilbert1918}] for example, intrinsic plausibility is not even mentioned. (...) Hilbert’s account is inadequate in several respects. For one thing, he ignores the principle that an axiom ought to have a higher degree of evidence than the theorems it proves. Another more subtle inadequacy is brought to light by projective determanacy: how could one possibly remain convinced of its consistency without believing it is true? \textcite[p. 102]{hauser2004}
 
-%-------------Sección sobre pragmática en matemáticas------------------------
+The idea of the legitimacy hierarchy does essentially provide an extrinsic reason to accept axioms as true, i.e. whether they model the most suitable structures. So essentially I agree that axioms in mathematics are justified in the end by extrinsic reasoning. In regard to the last observation by Hauser, I think that a consistent statement in a determinate axiomatic system can be regarded as a false or meaningless mathematical statement, in any case not a true mathematical statement. That does not contradict how he goes on: "The higher epistemic weight of intrinsic plausibility appears to be a consequence of the fact that—in contrast with extrinsic evidence—there is at least one way in which it is directly linked with truth, namely when an axiom is ‘implied’ by the concept(s) it aims to capture". 
+
+
+%------Sobre constructivismo y convenciones--------
+\section{Mathematics, constructivism and conventionalism}
+
+
+%-------Sección sobre pragmática en matemáticas-----------------
 \section{How pragmatic linguistics may fit into mathematics}
 
 
@@ -560,6 +614,57 @@ The resulting picture is neither straightforward platonism nor simple convention
 Perhaps externally applicable structures are more likely to be determined. Although in an idealized way, these structures are related to proccesses or phenomena in real-life experience that our intuition considers determinate. 
 
 Mathematicians adopt the natural numbers+ there is no recursively enumerable set of axioms that determines this set= there can be cases of adopting a structure that cannot be reduced to a set of axioms.
+
+If $L$ is a large cardinal axiom, the theories $ZFC+L$ and $PA + \bigcup_{n < \omega} Con((ZFC + L)\upharpoonright n)$ are mutually interpretable, being the latter one framed in the language of arithmetic. This means that the logical consequences of $ZFC + L$ in the language of set theory can be understood as arithmetical sentences through a well chosen bijection. That fits well with the formalist approach to the metamathematical results, where set theoretical sentences and deductions are understood as the object of study, while the core of the reasoning is done in the metatheory of formal finitary logic. This in fact means that, even if accepting the fruitfulness of set theoretical considerations, specially regarding consistency proofs, that reasoning can be reduced to the language of arithmetic. So, in the end, the only mathematical structure one has to adopt in this case is the natural number structure, without need of a freestanding and platonic universe of sets.
+
+%---¿Algo de teoría de categorías?----
+\section{Perhaps category theory is a more suitable foundation for mathematics}
+
+The axiomatic basis of this theory is the definition of a category $\mathcal{A}$, which consists of the following elements:
+
+\begin{enumerate}
+  \item A collection $Obj(\mathcal{A})$, whose members are called the objects of $\mathcal{A}$.
+  \item For every pair of objects $A, B \in Obj(\mathcal{A})$, a collection of arrows (or morphisms) from $A$ to $B$. If $f$ is such an arrow, we write $f: A \rightarrow B$.
+  \item A composition operation: given two arrows $f: A \rightarrow B$ and $g: B \rightarrow C$, there is an arrow $g \circ f: A \rightarrow C$.
+  \item For every object $A$, an identity arrow $id_A: A \rightarrow A$.
+\end{enumerate}
+
+These data are required to satisfy the following axioms:
+
+\begin{enumerate}
+  \item \textbf{Associativity:} For arrows $f: A \rightarrow B$, $g: B \rightarrow C$, and $h: C \rightarrow D$, we have
+  \[
+  h \circ (g \circ f) = (h \circ g) \circ f.
+  \]
+  \item \textbf{Identity:} For every arrow $f: A \rightarrow B$, we have
+  \[
+  id_B \circ f = f \quad \text{and} \quad f \circ id_A = f.
+  \]
+\end{enumerate}
+
+\begin{adjustwidth}{1cm}{1cm}
+  \small
+  \begin{quote}
+For these reasons "set" turns out to have many meanings, so that the purported foundation of all of Mathematics upon set theory totters. But there are other possibilities. For example, the membership relation for sets can often be replaced by the composition operation for functions. This leads to an alternative foundation for Mathematics upon categoriesspecifically, on the category of all functions. Now much of Mathematics is dynamic, in that it deals with morphisms of an object L into another object of the same kind. Such morphisms (like functions) form categories, and so the approach via categories fits well with the objective of organizing and understanding Mathematics. That, in truth, should be the goal of a proper philosophy of Mathematics. \textcite[359]{maclane1986mathematics}
+  \end{quote}
+\end{adjustwidth}
+
+\begin{adjustwidth}{1cm}{1cm}
+  \small
+  \begin{quote}
+Atiyah described mathematics as the “science of analogy.” In this vein, the purview of category theory is mathematical analogy. Category theory provides a cross-disciplinary language for mathematics designed to delineate general phenomena, which enables the transfer of ideas from one area of study to another. The category-theoretic perspective can function as a simplifying1 abstraction, isolating propositions that hold for formal reasons from those whose proofs require techniques particular to a given mathematical discipline. \parencite[ix]{Riehl2014Category}
+  \end{quote}
+\end{adjustwidth}
+
+Being $(G, +, \cdot)$ any group,  
+
+Possible roles:
+
+evidence for Resnik-style structuralism,
+evidence against unique intended structures,
+evidence that mathematics often adopts patterns rather than structures,
+an alternative foundation.
+
 
 \section{How does this differenciate from naïve conventionalism?}
 
