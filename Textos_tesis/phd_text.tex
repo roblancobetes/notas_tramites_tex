@@ -624,6 +624,469 @@ The resulting picture is neither straightforward platonism nor simple convention
 %-----------Segundo capítulo--------
 \chapter{The idea of \textit{quasi-empirical structuralist} and its implications to the Continuum Hypothesis}
 
+
+%=========================
+\section{Introduction}
+\label{Intro}
+
+Toward the end of the 19th century, Georg Cantor developed a theory of cardinality for infinite sets. Among his key results was the proof that the cardinality of the continuum strictly exceeds that of the natural numbers. This prompted him to ask whether any set could exist with a cardinality strictly between the two --- a conjecture that came to be known as the \textit{Continuum Hypothesis} (CH). The argument generalizes naturally: for any set $A$, one can show that the cardinality of its power set $\mathcal{P}(A)$ is strictly larger than that of $A$ itself. This observation gives rise to the \textit{Generalized Continuum Hypothesis} (GCH), which asserts that no set of intermediate cardinality can exist between $A$ and $\mathcal{P}(A)$. 
+
+The work of \textcite{Godel1940} and \textcite{Cohen1966} showed it to be independent of the ZFC axioms of set theory, and therefore impossible to decide using the tools usually available to mathematicians in practice. This has led some authors to question whether the question admits a unique and meaningful answer at all. Among the most prominent is Solomon Feferman, who has argued (\citeyear{Feferman2011a}) that $\mathrm{CH}$ is an indefinite mathematical statement---the mathematical structures in which it could be evaluated being, in his view, not clear and intrinsically vague.
+
+In this paper I would like to face this controversy from a different angle. In my view, one of the most crucial and delicate features of any meaningful mathematical statement is whether it amounts to more than a mere logical tautology. Almost any mathematical result can of course be read as a true statement within a given formal system---but the real significance of mathematics lies in whether its symbols connect to something beyond that system, whether they carry meaning that is not exhausted by the rules governing them. This is a central concern of the \textit{philosophy of mathematical practice}, a growing field that takes seriously the gap between formal proof and mathematical understanding. 
+
+This paper approaches the question through what I call \textit{quasi-empirical structuralism}, a perspective that draws on two distinct but complementary commitments. The first is the quasi-empiricist philosophy of mathematics developed by \textcite{Lakatos1976}, on which mathematical knowledge grows through an iterative process of conjecture, refutation, and revision driven by the practice itself---not by the top-down imposition of formal systems. Underlying this view is a broader claim about mathematical meaning: that the significance of a mathematical statement cannot be read off from its position within a formal system alone, but depends on the uses to which it is put and the problems it is called upon to solve. This idea finds a striking expression in Wittgenstein:
+
+\begin{adjustwidth}{1cm}{1cm}
+\small
+\begin{quote}
+It is essential to mathematics that its signs are also employed in mufti (...). It is the use outside mathematics, and so the meaning of the signs, that makes the sign-game into mathematics. \parencite[V §2]{Wittgenstein1978}\footnote{Wittgenstein uses the phrase “employed in mufti” to mean that mathematical signs are used outside their formal mathematical setting—in ordinary contexts such as science, measurement, engineering, or everyday reasoning. In these contexts, the symbols appear without their \textit{formal mathematical uniform}, that is, outside the strictly formal system.}
+\end{quote}
+\end{adjustwidth}
+
+%------------------------------------
+The second commitment is a structuralist approach to mathematical discourse. On this view, mathematical statements are formulated within structures whose relevant features are determined by the relations among their constituent objects rather than by the intrinsic nature of those objects. Whether one interprets such structures realistically, as Shapiro does, or more modestly as patterns in Resnik's sense, mathematical meaning is inseparable from the structures within which statements are formulated.
+
+Most structuralists hold that accepting such a structure carries genuine ontological weight---a commitment that cannot be dissolved into pure logic.\footnote{See \textcite{Shapiro1997}.} This, however, raises an immediate difficulty. Given any consistent set of axioms, a model satisfying them can be shown to exist---which would seem to oblige the structuralist to count every logically coherent structure as a legitimate mathematical one. Most structuralists resist this conclusion, but the grounds for doing so are non-trivial: it is not enough to point to logical consistency alone. This brings us to a further and more fundamental question, one that will prove central to the argument of this paper---why do certain structures count as genuinely mathematical, while others remain merely formally possible?
+
+This last point bears directly on the debate surrounding the Continuum Hypothesis. It is of course true that $\mathrm{CH}$ has a precise and well-defined meaning within the language of set theory. But well-definedness within a logical language does not, in general, suffice for genuine mathematical significance---if it did, even the most elaborate and idle tautologies would qualify as mathematical claims. Nor is the issue whether the structures in which $\mathrm{CH}$ can be evaluated are mathematically legitimate. Set theorists routinely investigate a wide variety of such structures, many of which are exceptionally rich and well understood. The philosophical question is rather whether mathematical practice provides grounds for privileging one of these structures as the intended universe of sets. The framework developed here draws closely on Feferman's conceptual structuralism, on which mathematical objects are positions within structures determined by our conceptual practices, and the determinacy of a mathematical statement depends on whether those structures are sufficiently clear and grounded.
+
+An important clarification is required. The view defended here does not identify mathematical fruitfulness with semantic determinacy. A statement may be perfectly determinate relative to a given mathematical structure even if that structure has little significance for mathematical practice. In particular, the Continuum Hypothesis has a definite truth value in many well-understood set-theoretic structures. For example, it is true in Gödel's constructible universe $L$ and false in many forcing extensions. The issue is therefore not whether $\mathrm{CH}$ can be evaluated in a determinate structure, but whether mathematical practice provides sufficient grounds for privileging one such structure as the intended universe of sets.
+
+The role of fruitfulness in the present account is indirect. Mathematical practice does not confer truth values on statements; rather, it guides the adoption of mathematical structures. Once a structure has been adopted as sufficiently determinate, statements formulated within it inherit determinate truth conditions. The central question is therefore not whether $\mathrm{CH}$ has a truth value in some set-theoretic universe, but whether contemporary mathematics has adopted a privileged set-theoretic structure in the same way that it has adopted the standard structures of arithmetic and analysis. My claim is that, at present, there is insufficient reason to think that it has.
+
+\section{The structuralists' approach: ontology, epistemology and categoricity}
+\label{structuralims-ontology-epistemology}
+ 
+An important philosophical approach that distances itself from formalism while engaging seriously with both epistemological and ontological questions is mathematical structuralism, developed most prominently by Shapiro and Resnik. As will become clear, structuralist approaches---including Feferman's conceptual structuralism---bear directly on debates about the determinacy of set-theoretic statements such as CH, particularly the question of whether there is a single, fixed set-theoretic universe.
+
+One of the most paradigmatic developments within this philosophical movement is that of \textcite{Shapiro1997}. In this work, he defends a conception known as \textit{ante rem structuralism}, according to which mathematical structures exist independently of—and prior to—the systems of objects that instantiate them. On this view, what matters is not which particular objects occupy positions within a given structure, but rather the relations that define the structure and the ways in which structures relate to and extend one another.
+
+Shapiro remains nevertheless open to alternative forms of structuralism, acknowledging them as broadly equivalent in practice even if less natural with respect to the actual development of mathematics. This includes Resnik's pattern-based (\citeyear{Resnik1981}) or non-ontological structuralism (\citeyear{Resnik2018NonOntological}). Shapiro himself is explicit on this point:
+
+\begin{adjustwidth}{1cm}{1cm}
+\small
+\begin{quote}
+I believe that the \textit{ante rem} option is the most perspicuous and least artificial of the three [eliminative, modal eliminative and \textit{ante rem} structuralism]. It comes closest to capturing how mathematical theories are conceived. Nevertheless, I do not mean to rule out the other options. Indeed, it follows from the thesis of structuralism that, in a sense, all three options are equivalent. As will be shown, each delivers the same “structure of structures.” \parencite[p. 90]{Shapiro1997}
+\end{quote}
+\end{adjustwidth}
+
+%--------Important upshot of structuralism: in a really weak form--------------
+The most important upshot of ante rem structuralism, for the purposes of this paper, is that structures are the fundamental primitives of mathematics, and that mathematicians characteristically reason in structural terms. Chapters 5 and 6 of \textcite{Shapiro1997} illustrate how deeply this perspective is embedded in the history of mathematics. This is evident, for instance, in \textcite{Dedekind1888}, as well as in \textcite{Bourbaki1950}, where “structure” is conceived as a collection endowed with one or more relations satisfying a specified set of axioms. The philosophical consequence is a broadly holistic constraint on mathematical meaning: a statement can only be considered determinate or meaningful relative to the structures in which it is defined. Applied to CH, this means that the question of its meaningfulness turns on whether the structures that model the languages in which it is formulated---including set theory---are themselves sufficiently grounded to confer that meaning.
+
+Considerations around structuralism naturally raise the question of whether mathematical structures exist prior to objects, but also introduce a further “chicken or egg” problem: are structures prior to the axioms that characterize them, or are they instead determined through axiomatic specification? \textit{Ante rem} structuralism suggests that axioms merely describe independently existing structures, although the position is less clear on this issue than on the question of object-structure priority.
+
+It is at this point where the epistemological problems regarding structures come into play. According to \textcite{Shapiro1997}, and much in line with \textcite{Resnik1981}, the fundamental way of coming to know a mathematical structure is through pattern recognition. The clearest case is the natural number structure, where the relevant pattern is the indefinitely iterable act of adding one element to a finite sequence:
+
+\begin{adjustwidth}{1cm}{1cm}
+\begin{quote}
+  \small
+Our subject learns that the sequence of sequences goes on indefinitely. For each sequence, there is a unique next-longest sequence, and so there is no longest sequence. The system of finite sequences is potentially infinite. Eventually, the subject can coherently discuss the structure of these finite patterns, perhaps formulating a version of the Peano axioms for this structure. We have now reached the structure of the natural numbers. \parencite[pp. 118-119]{Shapiro1997}
+\end{quote}
+\end{adjustwidth}
+
+At this point we see the sharp line between pattern recognition and axiom systems. When more abstract mathematical structures, such as the set theoretical hierarchy, come into play, then the patterns leading to them may be more complex. At this point, the pattern involved leads to fundamentally an axiom system, such as $\mathrm{ZFC}$, and the structure is apprehended not directly but through what Shapiro calls implicit definition:
+
+\begin{adjustwidth}{1cm}{1cm}
+\begin{quote}
+  \small
+One way to understand a particular structure is through a direct description of it (...). Eventually, a properly prepared listener will understand that it is the structure itself, and not any particular instance of it, that is being described (...). We have here an instance of implicit definition, a technique familiar in mathematical logic. \parencite[p. 130]{Shapiro1997}
+\end{quote}
+\end{adjustwidth}
+
+According to Shapiro, thus, relevant structures in mathematical discourse and axioms describing them need to stay at the same level, which in logical terms we understand as having structures determined by categorical axiom systems. However, crucial axiom systems for the practice of mathematics, such as $\mathrm{PA}$ for arithmetic and $\mathrm{ZF}$ for set theory, are not categorical in first order logic.\footnote{As categoricity of a theory implies completeness, any theory affected by Gödel's incompleteness theorem won't be categorical.} Accordingly, \textcite{shapiro1991foundations} argued that second order logic, where these theories are categorical (quasicategorical in the case of set theory), provides a suitable foundation for mathematics.\footnote{See \textcite[chapter 4]{shapiro1991foundations} for a proof of those categoricity results.} In chapter 8 of this book, Shapiro defends that, in pre-formal practice, mathematicians operate with concepts such as ``all subsets'', ``all natural numbers'', that fixes a unique interpretation for the axioms which enable them to distingish stardard from non standard models. Second-order logic, under full semantics, is precisely the formalism that is faithful to those informal semantic commitments, whereas first-order logic systematically fails to be.
+
+This perspective, however, is subject to some important criticism. \textcite{Vaananen2015}---much in line with \textcite{Quine1941}--- argues that second-order logic depends on what he calls large domain assumptions, which come quite close to the meaning of the axioms of set theory. \textcite{Shapiro2012} even accepts this, but holds that it does not undermine his case for second order logic as a natural foundation of mathematics. They agree, for that reason, that second order logic and first order set theory can be threated as logically equivalent. However, from the perspective of the practice of mathematics, the latter is no doubt more prominent in the various foundationalist approaches to mathematics. 
+
+Arguments that Shapiro gives related to mathematical practice are also problematic. For example he states (\citeyear{shapiro1991foundations}, p. 99) that important tool in mathematical practice, which is the concept of a minimal closure, cannot be formalized without appealing to second order logic: ``There is a straightforward argument, relying on the compactness theorem, that no collection of first-order formulas can successfully characterize any non-trivial minimal closure. This is evidence that first-order languages are inadequate.'' However, applying this argument to mathematical practice is not that straightforward, since in general practicioners tend to use minimal closures that are defined within a previously given structure. Take, for instance, the algebraic closure of $\mathbb{Q}$, which is one of the most paradigmatic examples. This set contains all the solutions to polynomical equations with coeficients in $\mathbb{Q}$, which can be defined with parameters over $\mathbb{Q}$ in the structure $\mathbb{C}$, using the language of first-order theory of rings plus a really weak version of first-order set theory. More generally, in a given structure, most closures are definable by formulas with parameters or describable as the intersection of definable sets. Shapiro's compactness argument establishes a genuine limitation of first-order logic in the abstract, but it does not map cleanly onto the way closures are actually used.
+
+%-------------Distinction: open-ended vs determined structures----------------
+In this discussion---the priority of axioms and patterns, or that of structures over them---not all the structuralists agree Shapiro. \textcite[Chapter 7]{Resnik1997} defends that a mathematical theory, given by axioms, merely describes a structural pattern, without necessarily determining a unique and privileged structure that models that theory.
+
+A clear and paradigmatic case of this approach in mathematical practice is category theory. With a remarkably concise set of axioms---objects, morphisms, composition, and identity---the theory applies across a wide variety of mathematical domains, including groups, topological spaces, sets, relations, partially ordered sets, and differentiable manifolds. What matters in practice, however, are the particular collections that instantiate these axioms, rather than whether there exists a fundamental and privileged structure that realises them. This is precisely the spirit in which \textcite{maclane1998categories} develops the theory: category theory is presented as a unifying language for mathematical practice, one whose power lies in its ability to reveal structural analogies across disparate areas, not in grounding mathematics in a single canonical structure. MacLane is notably cautious about foundational overreach---he treats the axioms of category theory as a flexible and powerful descriptive tool rather than as the implicit definition of a unique intended model.\footnote{Similarly, \textcite{Feferman2013Category} argues that the strength of category theory lies precisely in what MacLane emphasised---its role as a structural lingua franca across mathematical domains---rather than in any foundational pretension. He is also critical of the notion of a ``category of all categories'': beyond the coherence problems such a universal structure faces, he argues that explaining what a category is already presupposes a prior notion of collection and operation, so category theory cannot serve as a logically autonomous foundation.}
+
+The category theory case thus illustrates, in a particularly vivid way, the broader tension between the two modes of structural aprehension identified above. Neither of these two approaches---the priority of structures, or the priority of axioms and patterns---is unanimously adopted in mathematical practice, and I do not think one should be universally privileged over the other. Rather, the two capture genuinely different modes of mathematical commitment, and the distinction between them is philosophically consequential. The disagreement between Shapiro and Resnik is not merely ontological. It also reflects different ways in which mathematical practice relates structures to the axioms used to describe them. In some cases, mathematicians appear to begin with a structure that is already understood, at least informally, and subsequently formulate axioms intended to capture its essential features. In other cases, they begin with an axiom system and investigate the range of structures satisfying it, without taking any particular model to be privileged. The distinction between these two situations is not exhausted by questions of ontology or epistemology; it concerns the role that structures and axioms play within mathematical practice itself. To mark this distinction, I introduce the notions of adoption of a mathematical structure and adoption of an axiom system.
+
+\textbf{Notion of adoption closer to \textcite{Feferman2011a} and conceptual structuralism. The following distinction is more methodological than ontological.}
+
+A structure is adopted when non-standard realizations are treated as representations of the same mathematical object.
+
+A pattern is adopted when different realizations are treated as equally legitimate mathematical possibilities.
+
+When mathematicians grasp a structure prior to the axiom system that characterises it---formulating axioms only later as fundamental statements about something already implicitly understood---I say they are \textit{adopting a mathematical structure}. This aligns more closely with the spirit of \textit{ante rem} structuralism. In the opposite case, when mathematicians proceed in the reverse direction---beginning from an axiom system before having a clear structure in view, as has been increasingly common since the formalist turn---I say they are \textit{adopting an axiom system}. This is to prioritise the pattern over any particular structure that realises it. Crucially, when the axiom system in question is non-categorical, such an adoption does not determine a unique structure: many non-isomorphic models may satisfy the same axioms, and no principled grounds exist for privileging one over the others. By Gödel's completeness theorem, any consistent axiom system has a model; assuming mathematicians commit only to systems they take to be consistent, axiomatic commitment may therefore be identified with the adoption of the entire class of structures satisfying those axioms. I refer to this class, for the remainder of the paper, as an \textit{open-ended structure}.
+
+The distinction bears directly on the question of CH. When mathematicians adopt a mathematical structure, statements formulated in the corresponding language are treated as possessing determinate truth values, even when those values cannot be established by currently available proof methods. By contrast, adopting a non-categorical axiom system amounts only to adopting a pattern that may be realised by many non-isomorphic structures. In that case, semantic determinacy is not secured by the axioms alone: a statement may receive different truth values in different models. Questions such as $\mathrm{CH}$ therefore remain open not merely epistemically but also structurally, insofar as no privileged structure is available to fix a unique answer.
+
+%=========================
+\section{Stepping away from formalism: mathematical practice and metodology}
+\label{quasi-emp-structuralism}
+
+As we have seen, structuralism provides important ontological and epistemological insights into mathematics, particularly through the notions of adoption of mathematical structures and axiom systems. Our concern here, however, is not merely the nature of such commitments, but the reasons mathematicians adopt particular structures or axioms in actual mathematical practice.
+
+Philosophical approaches to mathematics have evolved dramatically over the course of the twentieth century. At the beggining of this century, both the mathematical world—strongly influenced by Hilbert’s formalism—and several philosophical approaches to mathematics, such as logical positivism, located the essence of mathematics in formal and logical methods. From the perspective of formalism, mathematical statements were understood as deductions from a given set of axioms, and any consistent theory formulated in a logical language was regarded as sufficient to define a corresponding piece of mathematical reality—see, for instance, \textcite{hilbert1971geometry}. Within logical positivism, as represented for example by \textcite{carnap1937syntax}, mathematical sentences were regarded as analytic, in the sense that they say nothing about the empirical world and function instead as tools for clarifying the structure of scientific language.
+
+In the latter half of the twentieth century, new philosophical conceptions of mathematics emerged that emphasized practical applicability, heuristic reasoning, and the essentially informal character of everyday mathematical work. As pointed out in the \nameref{Intro}, this shift marked the advent of the so-called \textit{philosophy of mathematical practice}. One of its earliest and most influential proponents was Imre Lakatos, who, in his work \textit{Proofs and Refutations}, strongly criticized the formalist approach of earlier schools:
+
+\begin{adjustwidth}{1cm}{1cm}
+\small
+\begin{quote}
+Since, [according to logical positivism], informal mathematics is neither `tautological' nor empirical, it must be meaningless, sheer nonsense. The dogmas of logical positivism have been detrimental to the \textit{history and philosophy of mathematics}. \parencite[p. 2]{Lakatos1976}
+\end{quote}
+\end{adjustwidth}
+
+Lakatos’ alternative approach is known as quasi-empiricism, as he argued that mathematics develops in a manner analogous to the empirical sciences: one begins with a conjecture and subsequently seeks a proof. Although such a proof may initially appear convincing, it can generally be decomposed into lemmas and implicit assumptions, which may themselves be vulnerable to refutation. When such refutations arise, the original conjecture is not simply discarded but rather refined—whether by restricting its scope, revising underlying definitions, or modifying auxiliary assumptions.\footnote{This idea is extensively developed through the analysis of Euler's formula, which states that for convex polyhedra with $V$ vertices, $E$ edges, and $F$ faces, $V - E + F = 2$. See \textcite[pp. 10–41]{Lakatos1976}.}
+
+According to Lakatos, this perspective remains meaningful even in the context of the increasing rigor of nineteenth-century mathematics, particularly with the formalization of analysis:
+
+\begin{adjustwidth}{1cm}{1cm}
+\small
+\begin{quote}
+In the early nineteenth century the flood of counterexamples brought confusion. Since proofs were crystal-clear, refutations had to be miraculous freaks, to be completely segregated from the indubitable proofs. Cauchy’s revolution of rigour rested on the heuristic innovation that the mathematician should not stop at the proof: he should go on and find out what he has proved by enumerating the exceptions, or rather by stating a safe domain where the proof is valid.\parencite[p. 55]{Lakatos1976}
+\end{quote}
+\end{adjustwidth}
+
+From the perspective developed here, Lakatos draws a clear distinction between mathematical reasoning and purely formal calculation. Rather than grounding mathematics in formal derivations alone, he emphasizes its problem-solving power: definitions, entities, and assumptions are justified insofar as they contribute to the advancement of inquiry. Another central feature of his view is the iterative character of mathematical reasoning. The emergence of a refutation or the identification of a flaw does not terminate the process; instead, it prompts the introduction of revised assumptions, refined definitions, or new intermediate results, which may in turn generate further tensions and revisions. This iterative character is central to Lakatos’ account, according to which mathematics advances not through the accumulation of final proofs, but through a dynamic process of conjecture and criticism. As he puts it (\citeyear{Lakatos1976}, p.5), “mathematics [\dots] does not grow through a monotonous increase of the number of indubitably established theorems but through the incessant improvement of guesses by speculation and criticism, by the logic of proofs and refutations”.
+
+%--------Inserting MacLane-------------------
+Lakatos' approach illuminates not just how mathematics is justified, but how it develops---through problems, failures, and the iterative refinement of concepts. This raises a question central to the present paper: how do mathematical structures and axiom systems actually come into being, and why are they introduced when they are? This is a question that, in a similar vein to Lakatos, much oriented to practice, \textcite[36]{maclane1986mathematics} further explores:
+
+\begin{adjustwidth}{1cm}{1cm}
+\small
+\begin{quote}
+The genesis of the more complex mathematical structures tends to take place within Mathematics itself. [There] are a variety of processes which may generate new ideas and new notions. We list a few of these processes in tentative form for further refinement after our more detailed studies. \parencite[p. 36]{maclane1986mathematics}
+\end{quote}
+\end{adjustwidth}
+
+MacLane's list includes \textit{conundrums} (the pressure exerted by hard unsolved problems), completion, invariance, common structure (the recognition of structural analogies across different areas), generalisation, abstraction, axiomatisation, and analysis of proof. What is striking about this catalogue is how closely it mirrors the Lakatosian picture: mathematical structures do not arrive fully formed, imposed from above by logical fiat, but are drawn out by the demands of practice. MacLane makes this developmental dimension explicit later in the same work, arguing that mathematics emerges from human experience and scientific practice and grows through successive cycles of formalisation and generalisation:
+
+\begin{adjustwidth}{1cm}{1cm}
+\small
+\begin{quote}
+Mathematics, in our description, rests on ideas and problems arising from human experience and scientific phenomena and consists in many successive and interconnected steps in formalizing and generalizing these inputs. \parencite[449]{maclane1986mathematics}
+\end{quote}
+\end{adjustwidth}
+
+%--------------Externally applicable structures------------------------
+The reference to human experience and science is crucial here. MacLane's account of how mathematics develops has the shape of a mathematical induction. There is a base case: a set of notions directly grounded in practical and scientific engagement with the physical world---measurement, counting, spatial reasoning, the mathematics demanded by physical problems. From this foundation, the iterative processes MacLane catalogues---generalisation, abstraction, the recognition of common structure, the analysis of proof---allow the totality of mathematical knowledge to grow, each step building on what came before while progressively loosening its ties to the physical ground. What results is a body of mathematics that is largely self-sustaining and internally driven, yet never fully detached from the base that gave rise to it.
+
+This duplicity---between mathematics as an autonomous discipline pursued for its own sake and mathematics as something that cannot afford to lose contact with the external world---is captured with remarkable precision by \textcite[pp. 332--337]{Poincare1897rapports}:
+
+\begin{adjustwidth}{1cm}{1cm}
+\small
+\begin{quote}
+And above all, those devoted to mathematics find in it pleasures analogous to those given by painting and music (\dots). That is why I do not hesitate to say that mathematics deserves to be cultivated for its own sake, and that theories which cannot be applied to physics should be esteemed just as highly as the others (...). But the pure mathematician who would forget the existence of the external world would be like a painter who knew how to harmoniously combine colors and forms, but lacked models. His creative power would soon run dry. 
+\end{quote}
+\end{adjustwidth}
+
+How might these insights be integrated into the perspective developed here, that assumes a structuralist approach to mathematical discourse and metodology? I propose to do so through the notion of $\mathcal{S}$, the---possibly open-ended---collection of mathematical structures to which mathematical practice is committed. Following the induction analogy introduced above, $\mathcal{S}$ must have a base case: a set of structures whose appearance in practice is grounded directly in their indispensability, or at least their deep entrenchment, in scientific and practical engagement with the physical world. This does not require accepting the indispensability argument of \textcite{quine1960} and \textcite{putnam1971} in its full ontological strength---the claim is not that mathematical objects exist because science needs them. The weaker claim defended here is simply that structures which have proven most successful in modelling physical phenomena, and which are thereby thoroughly embedded in scientific practice, should belong to any reasonable conception of mathematics. A mathematical structure satisfying these conditions will be called an \textit{externally applicable structure}.
+
+%-----Internally fruitful structures-------
+Beyond the base case, $\mathcal{S}$ is closed under the following principles. The first three criteria characterize mathematical fruitfulness and capture, in schematic form, central features of the approaches of Mac Lane and Lakatos. The fourth concerns a distinct notion, namely the adoption of a structure or axiom system within mathematical practice.:
+
+\begin{enumerate}
+
+    \item \label{condition1} \textbf{Problem-solving power:} $X$ provides solutions to previously existing, well-defined, and relevant problems formulated within structures in $S$.
+
+    \item \label{condition2} \textbf{Explanatory unification and simplification:} $X$ reveals common structural principles underlying phenomena previously treated separately, often through abstraction and axiomatization, thereby simplifying existing theories and enabling the transfer of results and methods across structures in $S$.
+
+    \item \label{condition3} \textbf{Generative capacity:} $X$ gives rise to new and fruitful lines of inquiry within other structures in $S$.
+    
+    \item \label{condition4} \textbf{Stability of reliance:} the structure or axiom system $X$ becomes part of the shared background assumptions on which substantial areas of mathematics routinely depend.
+    
+\end{enumerate}
+
+Criteria \ref{condition1}, \ref{condition2}, and \ref{condition3} are best understood as criteria of mathematical fruitfulness rather than criteria of adoption. They explain why a structure or axiom system becomes a serious object of mathematical investigation, but not why it becomes part of the background framework of mathematical practice itself. Adoption is a stronger notion, referring to those structures and axiom systems upon which mathematicians routinely rely in their ordinary work.
+
+The distinction is important. A conjecture may possess considerable explanatory or problem-solving power and nevertheless remain a hypothesis rather than becoming part of the accepted background of mathematical reasoning. Otherwise, any sufficiently fruitful but unresolved conjecture would eventually have to be adopted simply because of its mathematical utility, something that mathematical practice clearly does not tend toward. For this reason condition \ref{condition4} should be included.
+
+The perspective developed here may therefore be understood as a form of \textit{quasi-empirical structuralism}: a structuralist conception of mathematics in which the development of mathematical structures is closely connected to their explanatory, problem-solving, and generative role within both mathematical and scientific practice. I think this conception is also faithful to the \textcite{Wittgenstein1978} passage mentioned in the \nameref{Intro}, insofar as it requires mathematical structures to be applicable to problems, phenomena, and areas of inquiry beyond their own immediate definition, and ultimately beyond mathematics itself.
+
+What quasi-empirical structuralism defends, then, is a kind of methodological well-foundedness for mathematical structures. If $S_1$ and $S_2$ are mathematical structures,\footnote{I insist that such structures may be open-ended, meaning—see the end of section \ref{structuralims-ontology-epistemology}—that they may consist simply of collections of axioms accepted in practice.} I write 
+
+$$S_1 \leadsto S_2 $$
+
+to indicate that $S_2 \in \mathcal{S}$ because it fulfulls condition \ref{condition4} and one among \ref{condition1}, \ref{condition2} or \ref{condition3} with respect to $S_1 \in \mathcal{S}$. In this case I would say, in a way that is natural regarding those conditions, that $S_2$ is \textit{internally fruitfull} with respect to $S_1$.\footnote{Externally applicable structures fulfill this conditions with respect to real-life processes and conceptions of our sensorimotor cognition.} Then for any structure $S \in \mathcal{S}$, there is a sequence 
+
+$$ S_0 \leadsto ... \leadsto S_n = S $$
+
+where $S_0$ is an externally applicable structure. What concerns us here, then, is whether the structures appearing in such a sequence, in the particular case where $S$ is involved in the formulation of $CH$, are open-ended or definite. More precisely, the question is whether the fruitfulness of those structures in mathematical practice derives primarily from the adoption of definite mathematical objects, or instead from the continued development of inferential and axiomatic patterns that remain open-ended while guiding mathematical activity.
+
+
+\section{Some historical examples}
+\label{history-section}
+
+In this section I examine several historical examples drawn from mathematical practice. The main objective is to argue that the iterative component of quasi-empirical structuralism has been present at various moments in the historical development of mathematics. One of the most paradigmatic cases is the development of complex numbers from the sixteenth to the nineteenth century. Initially regarded as obscure, metaphysical, or ill-defined, complex numbers eventually became one of the central structures of modern mathematics. Before turning to the implications of this example, I outline the reasons for this transformation.
+
+%---------------Complex numbers history--------------------------
+The early stages of this development can be traced back to the sixteenth century. Although the idea of negative square roots had already been mentioned before, it was Rafael Bombelli, in his 1572 work L’Algebra, the first to systematically use of what we now call complex numbers.\footnote{Most of the events mentioned here are important facts in history of mathematics, where I am following texts on the topic such as \textcite{Nahin2010} and \textcite{Christen2018}.} Bombelli was working on the solution of the reduced cubic equation, an equation of the form $x^3 + px + q = 0$. Earlier, Cardano had found the following formula to solve such equations:
+
+\begin{equation}
+x = \sqrt[3]{-\frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3}} 
++ \sqrt[3]{-\frac{q}{2} - \sqrt{\left(\frac{q}{2}\right)^2 + \left(\frac{p}{3}\right)^3}}
+\end{equation} 
+
+Cardano’s difficulty lay in interpreting this formula when negative square roots were involved. In fact, he concluded that the formula was not solvable “in general.” Bombelli decided to step a little bit further, introducing the symbol $pdm$ to represent $\sqrt{-1}$, thereby providing a clear precursor to the imaginary unit.\footnote{This stands literally for \textit{piú di meno}, which mean “plus or minus” in Italian—see \textcite{Christen2018} for more details. He arrived at many of the operational properties of complex numbers, such as $pdm \cdot pdm = -1$.} In this way, he was able to obtain new real roots of certain equations of the given form, which Cardano had been unable to.
+
+Progress in this area accelerated in the following years. While Descartes showed little interest in such numbers, referring to them pejoratively as “imaginary,” Leibniz used them in a manner similar to Bombelli, as intermediate steps in solving equations. Euler was probably the first to use them systematically: he introduced the notation $i$ for the imaginary unit and employed it in many formulas. Perhaps the most well known is Euler's formula, which states that for any real phase $\alpha$, $e^{i\alpha} = \cos \alpha + i \sin \alpha$. Another notable application is the factorization of fourth-degree polynomials with no real roots (such as $x^4 + 1$). Later, Gauss introduced the complex plane, standardized the notation, and firmly established the acceptance of complex numbers, using them in many important results, most notably in the fundamental theorem of algebra. Since then, complex numbers have become one of the cornerstones of mathematics, and the set of complex numbers is now regarded as a mathematical structure in its own right.
+
+%------------Reasons for shift------------------
+What were the reasons for such a shift? In my view, complex numbers constituted the simplest algebraically closed extension of the real line while satisfying the three criteria of mathematical fruitfulness introduced in Section \ref{quasi-emp-structuralism}. First, they exhibited significant problem-solving power, as seen in the factorization and solution of higher-degree polynomial equations. Second, they provided explanatory unification: the Fundamental Theorem of Algebra and the unification of trigonometric and exponential functions through Euler's formula are particularly striking examples. Third, they generated new and fruitful lines of inquiry through their deep connections with geometry, analysis, algebra, number theory, and many other areas of mathematics. In this sense, the emergence of complex numbers provides a paradigmatic instance of the relation $S_1 \leadsto S_2$ introduced above. At least in their earliest applications to algebraic equations, complex numbers (endowed with their algebraic operations) may be regarded as internally fruitful with respect to the real number structure:
+
+$$ (\mathbb{R}, +, \cdot) \leadsto (\mathbb{C}, +, \cdot) $$
+
+%-------------------Arbitrary functions & Wave equation--------------------
+
+Another interesting example is given by the dispute between Euler and d'Alembert around the problem of string vibration, which occurred the second half of the XVIII century. In 1747, d'Alembert had given a formulation to the wave equation, which is the following:
+
+\[
+\frac{\partial^2 y}{\partial t^2}
+=
+c^2 \frac{\partial^2 y}{\partial x^2}
+\]
+
+This equation has the solution of the form
+
+\[
+y(x,t) = f(x-ct) + g(x+ct),
+\]
+
+being \(f\) and \(g\) suitable functions. The problem concerned the class of functions from which \(f\) and \(g\) should be drawn in order to capture all solutions of the equation. D'Alembert had in mind analytic functions represented by smooth formulas, whereas Euler adopted a broader conception of function, one that was not necessarily expressible by a single formula. Prior to this controversy, the notion of a real-valued function was closely tied to its representation by an analytic expression, and Euler himself---see \textcite[p.~117]{Maddy1997}---often characterized functions in these terms.
+
+However, the wave equation led Euler to revise this view. The initial conditions of this equation were physically interpreted as describing the shape of a string \(y(x,0)\) in space, which could, at least in principle, assume a serrated and non-smooth form. Such a shape might be non-differentiable or even fail to be representable by a single analytic formula, a possibility that D'Alembert rejected.\footnote{Such serrated functions have played an important role in the subsequent history of analysis. One of the most paradigmatic examples is the Weierstrass function, formally introduced in 1872. This function is defined by the infinite series \(\sum_{n=0}^{\infty} a^n \cos(b^n \pi x)\), where \(a \in (0,1)\), \(b\) is an odd positive integer, and \(ab > 1 + \frac{3}{2}\pi\).}
+
+Euler maintained that functions ``are equally satisfactory, whether they are expressed by some equation or whether they are traced in any fashion, in such a way as not to be subject to any equation'' (quoted and translated in \textcite[p.~288]{Truesdell1960}). I do not think Euler was thinking on a set $\mathbb{R}^\mathbb{R}$ containing all the arbitrary real-valued functions in $\mathbb{R}$. Euler's contribution was not the introduction of a precise new structure, but the recognition that the concept of function should be broadened beyond analytic expressions. In modern terms, this corresponds to a transition from a restricted class of functions to progressively richer function spaces.
+
+This conceptual transition proved extraordinarily fruitful, as it enabled the mathematical treatment of a much broader range of physical and analytical phenomena. By allowing functions that were not necessarily smooth or representable by a single analytic expression, mathematicians could rigorously formulate and solve problems arising from wave propagation, heat diffusion, and, later, quantum mechanics. Beyond its problem-solving power, this broader conception of function also fostered a remarkable explanatory unification: seemingly disparate areas such as geometry, analysis, and spectral theory came to be understood within a common framework, particularly through the development of Hilbert-space methods. Moreover, the expanded notion of function exhibited considerable generative capacity, giving rise to entire new branches of mathematics, including functional analysis, operator theory, the modern theory of partial differential equations, and harmonic analysis. What began as a dispute over the admissible shapes of vibrating strings thus contributed to a profound reconfiguration of the mathematical landscape. Modern structures such as Hilbert spaces and function spaces like $(L^2(\mathbb R))$ may be viewed as particularly striking outcomes of this process. Their acceptance did not arise from an antecedent adoption of those structures themselves, but from their sustained success in extending and organizing mathematical practice. In the terminology introduced in Section \ref{quasi-emp-structuralism}, such structures were incorporated because of their internal fruitfulness with respect to simpler structures, such as $(\mathbb R,C^2(\mathbb R))$, which are closer to the conception of function defended by d'Alembert.
+
+I want to make clear that not all legitimacy disputes in mathematics are decided in favor of the entity under consideration. A particularly instructive example is provided by the history of infinitesimals. Originally, in the expression
+
+$$\int_a^b f(x),dx$$
+
+the symbol (dx) was not merely regarded as part of the notation but was often understood as denoting an infinitesimal quantity in its own right. Likewise, operations such as
+
+$$d(f \cdot g)=df \cdot g + f \cdot dg$$
+
+were accepted and widely employed throughout the seventeenth and eighteenth centuries.\footnote{See, for instance, \textcite{Bos1974} for a historical account of infinitesimals. The topic is also discussed by \textcite{Lakatos1976}, who emphasizes the important role that conceptually problematic entities may nevertheless play in mathematical practice. }
+
+Later, however, infinitesimals were largely displaced by a more fruitful framework, namely the limit concept that emerged during the nineteenth-century formalization of calculus. This framework offered greater explanatory unity and rigor, while integrating more naturally into the structure of the real line. From the perspective of quasi-empirical structuralism, the point is not that infinitesimals were devoid of mathematical value. On the contrary, they played an important heuristic and developmental role. Rather, the relevant observation is that the limit framework ultimately proved more fruitful according to the criteria introduced in Section 3 and therefore became the dominant foundation for analysis. It is true that expressions involving $dx$ receive rigorous interpretations in later theories, such as differential forms in geometry, though not in precisely the same sense originally intended. The point I would like to make is not that infinitesimals were meaningless, but that the original conception lost its central role.
+
+It is true that contemporary mathematics contains alternative frameworks, such as the surreal numbers and nonstandard analysis, in which infinitesimal-like entities can once again be rigorously defined.\footnote{See \textcite{Knuth1974} for an accessible introduction to surreal numbers. I do not deny the conceptual interest or mathematical depth of such frameworks. The point is simply that they have not achieved the same degree of integration into mainstream mathematical practice as the classical limit-based approach.} Their existence nevertheless reinforces the central lesson of this section: adoption of mathematical structures is not determined solely by logical consistency or conceptual possibility, but also by the extent to which a structure proves fruitful within mathematical practice.
+
+The examples discussed in this section exhibit a common pattern. Mathematical structures are not typically adopted simply because they are logically consistent or formally definable. Rather, they gain legitimacy through their capacity to solve problems, unify previously disconnected domains, and generate new lines of inquiry. Complex numbers, modern function spaces, and other successful mathematical structures earned their place within mathematics because they proved fruitful according to these criteria. Conversely, structures or concepts that fail to play such a role may remain mathematically coherent without becoming central to mathematical practice. From the perspective of quasi-empirical structuralism, the significance of a mathematical structure is therefore inseparable from its position within a broader network of applications, explanations, and developments.
+
+%=========================
+\section{The natural numbers and the real line: structures determined by practice?}
+\label{natural-reals}
+
+In this section I return to the question of the determinacy of mathematical structures, introduced in Section \ref{structuralims-ontology-epistemology} as a distinction between adoption of structures and adoption of axiom systems. I argue that structures such as $(\mathbb{N}, 0, S)$ and $(\mathbb{R},1, +, \cdot, <)$ have proved fruitful in mathematical practice precisely because mathematicians have treated them as determinate structures rather than merely as open-ended collections of models satisfying an axiom system. This point is reinforced by the distinctive role these structures play beyond pure mathematics. Their deep entrenchment in scientific applications and everyday forms of reasoning gives them a stability and significance not shared by many more specialised mathematical structures. Counting, measurement, spatial representation, and quantitative modelling all rely on them in essential ways. In the terminology introduced in Section \ref{quasi-emp-structuralism}, they therefore provide some of the clearest examples of externally applicable structures.
+
+%---------Natural numbers-----------------
+$\mathbb{N}$ is the simplest infinite mathematical structure, yet it is remarkably rich, in many cases enough for most applications in physics and many areas of mathematics. Its applications are so widespread that they are difficult to survey exhaustively. As \textcite[10]{maclane1986mathematics} observes, ``arithmetic operations were invented (or discovered?) because they have all manner of practical uses in financial or scientific calculations.'' Practical activities have also motivated the development of more sophisticated combinatorial concepts grounded in the natural numbers. Mac Lane illustrates this with the example of gambling, where questions about the probabilities of different card arrangements naturally lead to the study of finite permutation groups:
+
+\begin{adjustwidth}{1cm}{1cm}
+\begin{quote}
+  \small
+Such counts are useful in gambling or speculating. Choose three cards in succession from an (ordered) deck of thirteen; what is the chance that they come out in a direct or reverse order? It is the ratio of favorable cases [(123) or (321)] to the total number 6 of cases (of permutations). \parencite[12]{maclane1986mathematics}
+\end{quote}
+\end{adjustwidth}
+
+The central challenge, however, is to explain how such applications can support the claim that arithmetic is determinate. A standard response appeals to categoricity results for arithmetic. Since most mathematical and scientific applications of arithmetic rely on the axioms of PA, a categorical characterization of those axioms would secure a unique structure as their intended model. In that case, arithmetical truth could be identified with truth in that structure. Dedekind's proof that the second-order version of PA is categorical \parencite{Dedekind1888} is often taken to provide precisely such a characterization. This result has been widely accepted in mathematical practice as capturing the structure of the natural numbers; see, for example, \textcite[47]{maclane1986mathematics} and \textcite[141]{Ferreiros2023ConStructuralism}.
+
+\textcite[19]{Feferman2011a} and \textcite[511]{Koellner2016}, fundamentally because it is proven within $\mathrm{ZFC}$ (or perhaps in weaker versions such as $\mathrm{ZF}^- -P + Pow(\omega)$)\footnote{Here $Pow(\omega)$ stands for the axioms asserting the existence of the powerset of the set of all natural numbers.} , while these background set theories are themselves non-categorical. As a result, the categoricity theorem secures uniqueness only relative to a particular model of the underlying set theory. Although any two realizations of the natural-number structure within a given model are isomorphic, different models of the background theory may contain different realizations of that structure. Consequently, the categoricity result alone does not establish an absolutely unique natural-number structure. 
+
+For this reason, I am reluctant to appeal to categoricity results in full second-order logic as a sufficient basis for the determinacy of arithmetical statements. This echoes the concerns raised in Section \ref{structuralims-ontology-epistemology}, where I expressed reservations about \textcite{shapiro1991foundations}' reliance on full second-order logic in accounting for the determinacy of mathematical structures.
+
+I believe that many of these difficulties can be resolved by taking seriously the distinction between adoption of structures and adoption of axiom systems. In particular, the role that mathematical practice assigns to results such as Dedekind's categoricity theorem can only be adequately understood in light of this distinction. Mathematicians do not typically regard the theorem as establishing the determinacy of arithmetic from a neutral, external standpoint. Rather, it is understood and proved \textit{within} mathematical structures that are already taken as sufficiently determinate for the purposes of the proof. In particular, the categoricity theorem for $\mathrm{PA}_2$ is established within structures incorporating $\mathbb{N}$ and $\mathcal{P}(\mathbb{N}) \cong \mathbb{R}$.
+
+From this perspective, the theorem should be seen not as grounding the determinacy of arithmetic, but as expressing a structural relationship that holds within a broader mathematical framework already committed to those structures. And the reason why mathematicians adopting these structures is, in my view, quite related to practice, in the spirit of quasi-empirical structuralism. The remaining question, then, is why mathematicians are justified in treating those background structures as sufficiently determinate. My suggestion is that the answer lies largely in mathematical practice itself. In the spirit of quasi-empirical structuralism, adoption of structures such as $\mathbb{N}$ and $\mathbb{R}$ is not primarily secured by foundational arguments, but by their sustained success across a wide range of mathematical, scientific, and everyday applications.
+
+This is something that, for instance, non-standard models of first-order arithmetic fail to do. Such a model $(M, 0_M, S_M)$ is characterized by the incorporation of a non-standard element, an element $a\in M$ such that $0_M, S_M(0), S_M(S_M(0)),... < a$. As the property of being a non-standard element is not expresible in first-order logic, then first-order $\mathrm{PA}$ cannot exclude the appearance of these elements. Any enumerable non-standard model of arithmetic has the following order type:
+
+$$\omega+ \mathbb{Z} \eta$$ 
+
+where $\eta$ represents the usual order type of the rational numbers. Thus, after an initial segment isomorphic to the standard natural numbers, the model contains infinitely many copies of the integers arranged densely like the rationals.
+
+These non-standard models models of $PA$ fail to capture the notion of counting and indefinite iteration as the standard structure $(\mathbb{N},0,S)$ does. In particular, many applications presuppose a one-to-one correspondence between the natural numbers and processes generated by repeated succession. A simple example is provided by the sequence of future days in a calendar. Each future day can naturally be associated with a unique natural number representing the number of days elapsed from a given starting point. The standard model of arithmetic captures this correspondence exactly. By contrast, non-standard models contain additional elements that do not correspond to any finite stage of such a process, and therefore cannot be interpreted as representing the structure underlying ordinary counting practices.
+
+%-----------Real numbers-----------------
+A similar point applies to non-standard models of theories intended to characterize the real line. Although such models may satisfy the relevant axioms, they do not play the same role in spatial representation, measurement, and scientific modelling as $(\mathbb{R},1, +, \cdot, <)$. This structure is commonly characterized as a complete ordered field satisfying the least-upper-bound principle. Under suitable higher-order formulations, these axioms characterize the real numbers uniquely up to isomorphism, much as second-order Peano Arithmetic characterizes the natural number structure. As before, however, the resulting categoricity depends on assumptions that go beyond first-order logic.
+
+Similarly to arithmetic, restricting attention to first-order theories intended to characterize the real line leads to the appearance of non-standard models. A classical example is provided by the field of hyperreal numbers $^*\mathbb{R}$, which contains all real numbers together with infinitesimal elements $\varepsilon$ such that, for every standard natural number $n$:\footnote{See \textcite{robinson1966nonstandard} for more insights on non-standard models of analysis.}
+
+$$ 0 < \varepsilon < \frac{1}{n} $$
+
+These non-standard structures are nevertheless treated quite differently in mathematical practice from the standard real line. The latter provides the framework within which continuity, magnitude, and geometric space are successfully represented and studied. Its privileged status is closely connected to the role that the real numbers play in a wide range of human and scientific activities. In this spirit, \textcite[93]{maclane1986mathematics} emphasizes the central place of the real numbers within mathematics:
+
+\begin{adjustwidth}{1cm}{1cm}
+\small
+\begin{quote}
+[The system of real] numbers form the most central structure in all of Mathematics. Like other structures it arises from more primitive human activities-in this case, from the measurement and comparison of magnitudes of various kinds.
+\end{quote}
+\end{adjustwidth}
+
+A natural objection to the position developed here comes from constructivist approaches to mathematics, such as the ones given in \textcite{Bishop1967} or \textcite{bridges1987varieties}. Constructivists typically require mathematical objects to be given through explicit methods of construction and are therefore often reluctant to accept completed infinite totalities whose elements cannot, even in principle, be individually generated. Applied to the real numbers, this leads many constructivist accounts to restrict attention to classes of reals that admit some effective or computational description. Such approaches have considerable philosophical appeal, particularly from the perspective of mathematical practice, since they seek to ground mathematical meaning in concrete procedures rather than abstract existence assumptions. Nevertheless, one may question whether such restrictions fully capture the role that the real numbers play in geometry, measurement, and scientific modelling. This concern is expressed by Mac Lane:
+
+\begin{adjustwidth}{1cm}{1cm}
+\small
+\begin{quote}
+Other approaches restrict attention to those real numbers which are explicitly “constructible” in some specific sense, perhaps by means of recursive functions of natural numbers (...). In my view, such requirements of constructivity tend to emphasize arithmetic at the expense of geometry. Since the real numbers should subsume both arithmetic and geometric aspects of mensuration, these practical uses seem better formalized by the standard axioms for the field of real numbers. \textcite[107]{maclane1986mathematics}
+\end{quote}
+\end{adjustwidth}
+
+The discussion of arithmetic and the real line suggests that determinacy in mathematics cannot be explained solely by appeal to categoricity results. Although such results are often taken to characterize the intended structures of arithmetic and analysis, they themselves presuppose background frameworks whose determinacy is open to further philosophical scrutiny. What ultimately distinguishes the natural numbers and the real line is not merely that they can be characterized categorically, but that they occupy a uniquely entrenched position within mathematical, scientific, and everyday practice. Once such structures are adopted, questions that remain unresolved at the level of a first-order axiom system—whether because they are undecidable from the axioms or because they depend on features varying across models—receive definite answers, at least in principle, within a privileged structure. From the perspective of quasi-empirical structuralism, this privileged status is closely connected to their role as externally applicable structures, deeply embedded in practices of counting, measurement, spatial representation, and scientific modelling.\footnote{This does not entail that non-standard models can never be fruitfully employed in mathematics. For example, hyperreal fields have been used in non-standard analysis and asymptotic methods; see \textcite{lightstone1975nonarchimedean}. The claim is only that such structures do not occupy the same foundational position as the standard real line in practices of measurement, geometry, and scientific modelling.}
+
+The question, then, is whether a similar argument can be given for the structures associated with contemporary set theory. Do mathematicians adopt the cumulative hierarchy in the same sense that they adopt the natural numbers and the real line, or does set theory occupy a different position within mathematical practice? This is the issue to which I now turn.
+
+%===========================
+\section{The approach to set theory}
+\label{set-theory}
+
+%-------Intro: set theory is not externally fruitful-----------
+
+Most people would agree that abstract set theoretical axiom systems, such as $\mathrm{ZFC}$, are not externally applicable. \textcite{Feferman1993} argued that really weak axiom systems, even $\mathrm{PA}$ could suffice for the applications of mathematics in physics. For these reason, in case mathamaticians have adopted abstract set-theoretic structures or axiom systems, that is expected to have happened due to their internal fruitfulness, that is, its utility within other areas of mathematics. In this regard, I think there are three fundamental reason to argue the internal fruitfulness of such abstract set theoretic structures:
+ 
+\begin{enumerate}
+
+\item \label{ext-axioms} Axioms in set theory serve as an extension of weaker theories that cam be applied to previously adopted structures, such as $\mathbb{N}$ or $\mathbb{R}$.
+
+\item \label{common-language} Set theory has served as a common language for other areas of mathematics, allowing disparate concepts, reasoning and results to be expresed in a unifying language.
+
+\item \label{metamathematics} Set theory has enabled metamathematical considerations, i.e., has been useful to determine the scope and reach of previously adopted axiom systems.
+
+\end{enumerate}
+
+In this Section I argue that for any of those uses, differently to arithmetic and geometry, mathematicians have focused in set theory in its axiomatic form, with no need of an underlying privileged structure.
+
+%----First use: extension of the axioms----------------
+Regarding \ref{ext-axioms}, working in the language of set theory, one may consider formulas whose quantifiers are all relativized to the set $\omega$ of natural numbers. Such formulas will be called \emph{arithmetical sentences}. We then define
+
+$$ \mathrm{Arith}(\mathrm{ZFC}) = \{\varphi : \varphi \text{ is arithmetical and } \mathrm{ZFC}\vdash\varphi\}.$$
+
+Thus, $\mathrm{Arith}(\mathrm{ZFC})$ is the collection of all arithmetical consequences of $\mathrm{ZFC}$. This theory enjoys several basic properties. First, $\operatorname{Th}(\mathrm{PA}) \subseteq \mathrm{Arith}(\mathrm{ZFC})$, since every theorem of first-order Peano Arithmetic is provable in $\mathrm{ZFC}$ under the standard interpretation of arithmetic in set theory. Furthermore,
+
+$$ \mathrm{Arith}(\mathrm{ZFC}) \subseteq \operatorname{Th}(\mathbb{N}), $$
+
+where $\operatorname{Th}(\mathbb{N})$ denotes the complete first-order theory of the standard model of arithmetic. In other words, assuming that $\mathrm{ZFC}$ is consistent, every arithmetical sentence provable in $\mathrm{ZFC}$ is true in $\mathbb{N}$.
+
+Similarly, one may consider the consequences of $\mathrm{ZFC}$ obtained by restricting quantification to subsets of $\omega$, that canonically code real numbers. Assuming that $\mathrm{ZFC}$ is consistent, every such consequence is true in the standard structure of second-order arithmetic $(\omega, \mathcal{P}(\omega))$, and hence belongs to $\operatorname{Th}((\omega, \mathcal{P}(\omega)))$. Since $\mathcal{P}(\omega)$ is in bijection with $\mathbb{R}$, this theory captures the consequences of $\mathrm{ZFC}$ concerning the real line, i.e. the structure $(\mathrm{R}, 1, +, \cdot, <)$.
+
+For this reason, the adoption of standard structures such as $\mathbb{N}$ and $\mathbb{R}$ makes the use of $\mathrm{ZFC}$ particularly interesting. Although formulated as a theory of sets, $\mathrm{ZFC}$ has consequences concerning these lower-order structures that go beyond what can be proved in the usual first-order axiomatizations of arithmetic and analysis. A notable example is Goodstein's theorem, an arithmetical statement that is unprovable in first-order Peano Arithmetic but can be established using methods involving transfinite ordinal induction, which can be formalized within $\mathrm{ZFC}$ (indeed, considerably less strength suffices). This illustrates that it is not unnatural to regard stronger set-theoretic principles as yielding genuine information about more elementary mathematical structures.
+
+
+%--------Reason 2: unifying language------------
+Point \ref{common-language} is closely related to this. Perhaps the greatest success of set theory has been its integration as a common language and conceptual framework for virtually all of mathematics. The notion of set provides a uniform way of representing mathematical objects, functions, spaces, relations, and structures from widely different areas. In this sense, set theory exhibits considerable explanatory fruitfulness by supplying a shared language through which mathematical theories can be formulated and compared.
+
+I would argue, however, that this success is primarily linguistic and conceptual rather than foundational. Their success in mathematical practice therefore provides reasons for adopting set-theoretic modes of reasoning, but not necessarily for privileging a specific cumulative hierarchy as the intended universe of sets.
+
+This point can be illustrated by considering individual axioms. Principles such as the Axiom of Choice are frequently employed in mathematical practice, but it is often unclear whether their full strength is required, as opposed to weaker principles such as Dependent Choice. An even more revealing example is provided by Replacement. In practice, the full Axiom of Replacement is almost always replaced by its weaker bounded\footnote{The Axiom of Replacement asserts the existence of the set ${\varphi(z)\mid z\in x}$, for any set $x$ and any univocal formula $\varphi$ in the language. The bounded version requires all quantifiers occurring in $\varphi$ to be relativized to previously given sets, that is, to be of the form $\forall u\in t$ or $\exists v\in s$.} version---see for instance \textcite[postnote]{maclane1986mathematics} or \textcite[2]{McLarty2020}. The fact that ordinary mathematics can typically be carried out using such weaker principles suggests that the practical utility of set theory is not tightly connected to commitment to the full cumulative hierarchy envisioned by ZFC.
+
+A similar observation applies to the Power Set Axiom. At first sight, it seems built into the very definition of a topological space, since a topology on a set is defined as a collection of subsets of that set. Yet the working topologist typically reasons schematically about a particular family of subsets satisfying certain closure conditions, rather than about a completed totality of all subsets. Theorems are proved about the given topological structure itself, and not about the full power set from which the topology is drawn. Such schematic reasoning differs significantly from commitment to an independently existing power set in the full set-theoretic sense.
+
+It is true, for instance, that the definition of the discrete topology, It is true, for instance, that the definition of the discrete topology, where the topology consists of the entire power set, appears to invoke the full Power Set Axiom. Here, however, it is important to distinguish two different situations. On the one hand, a mathematician may reason directly about a particular topological structure. This is closer to the notion of adopting a mathematical structure introduced in Section \ref{structuralims-ontology-epistemology}. On the other hand, the existence of a discrete topology may be invoked only schematically, for example in the construction of counterexamples or in the formulation of general results about topological spaces. In the former case, the structures actually manipulated in practice are very often countable and explicitly given. In the latter case, one merely appeals to a broader set-theoretic framework without thereby committing oneself to any particular cumulative hierarchy. The mathematical usefulness of such reasoning therefore does not by itself provide grounds for privileging one set-theoretic universe over its competitors.
+
+These examples are necessarily selective and are intended only to illustrate a broader tendency within mathematical practice. Their significance for the present discussion is that they suggest a distinction between adopting set-theoretic methods and adopting a privileged set-theoretic universe. The central claim of this paper is that the former is widespread in contemporary mathematics, whereas the latter is considerably less evident.
+
+%---Reason 3: metamathematics-------------
+And finally, regarding point \ref{metamathematics}, axiomatic set theory often functions in a metamathematical role, providing results about the proving power of specific axiom systems for formalized mathematical languages. Indeed, the connection between mathematical provability and formal derivability from the axioms of set theory is so close in contemporary practice that \textcite[373]{maclane1986mathematics} proposes the following standard of rigor:
+
+\begin{adjustwidth}{1cm}{1cm}
+\small
+\begin{quote}
+Proof in Mathematics is both a means to understand why some result holds and a way to achieve precision. As to precision, we have now stated an absolute standard of rigor: A Mathematical proof is rigorous when it is (or could be) written out in the first order predicate language $\mathcal{L}(\in)$ as a sequence of inferences from the axioms ZFC, each inference made according to one of the stated rules.
+\end{quote}
+\end{adjustwidth}
+
+A paradigmatic example of metamathematical reasoning about set theory is provided by independence results. These results establish that certain statements—most notably the Continuum Hypothesis—cannot be proved or refuted from the axioms of a theory such as ZFC. Crucially, such arguments do not presuppose a uniquely determined set-theoretic universe of the kind whose status is under investigation. Rather, they proceed by reasoning about formal theories, proofs, and models from an external framework known as the metatheory. In many presentations, the metatheory is considerably weaker than the set-theoretic theory being studied and requires only comparatively modest assumptions concerning formulas, derivations, and formal reasoning. As \textcite[11]{Kunen2011} observes: 
+
+\begin{adjustwidth}{1cm}{1cm}
+\begin{quote}
+  \small
+All we assert as being ‘really true’ is elementary finitistic reasoning: this is called the metatheory. Using this reasoning, we can explain what a logical formula is and what a formal proof is (...). Then, all discussions about infinite and uncountable sets take place within ZFC, which is called the formal theory.
+\end{quote}
+\end{adjustwidth}
+
+Returning to the point under discussion, it is interesting to note that these applications make no appeal to a standard or privileged model of set theory. Indeed, many metamathematical applications focus primarily on formal logic, and the models employed are often deliberately chosen to be non-standard:
+
+\begin{adjustwidth}{1cm}{1cm}
+\begin{quote}
+\small
+Take a case like Cohen's method of forcing where you build a non-standard model (...). This is done within set theory and it is revealed in the first step that one is dealing with a non-standard model since it is a countable object. In the second approach one builds class size models (...) but one builds a Boolean-valued model and, once again, it is immediately revealed that it is non-standard. \parencite[p. 16]{Koellner2022}
+\end{quote}
+\end{adjustwidth}
+
+This feature becomes particularly apparent in forcing and independence proofs. As Koellner observes, the models used in such arguments are typically recognized from the outset as non-standard, whether because they are countable transitive models or because they arise through Boolean-valued constructions. This observation is not merely technical; independence proofs proceed by reasoning about formal theories and models without requiring access to a uniquely determined universe of sets. While set theorists possess a variety of criteria for recognizing models as non-standard, no comparably straightforward criterion exists for identifying a standard model. Consequently, the success of forcing arguments demonstrates the fruitfulness of set-theoretic methods while remaining neutral on the existence of a privileged set-theoretic structure.
+
+%-------Conclusion: adoption of set theory but not in structural form-------------------------
+%-------Conclusion: adoption of ZFC but not stronger axioms that could decide CH--------------
+It is interesting to note that, unlike many other cases in mathematics, the development of the axioms of set theory preceded the articulation of the structure modelling them, the cumulative hierarchy. The hierarchical conception of the set-theoretic universe emerged later in the work of \textcite{vonNeumann1925} and \textcite{Zermelo1930}, largely in order to explain how the axioms could be understood, to avoid the classical paradoxes, and to provide a structured conception of the universe of sets. In this respect, the situation slighly differs from cases such as arithmetic, where the underlying structure was already integrated in mathematical practice before its formal axiomatization. One might therefore say that, in set theory, the structure was introduced in order to make sense of the axioms, rather than the axioms being introduced to describe a previously adopted structure. Indeed, understanding the cumulative hierarchy independently of the formal axioms is not straightforward:
+
+\begin{adjustwidth}{1cm}{1cm}
+\small
+\begin{quote}
+Within ZFC set theory, the cumulative hierarchy can be formally constructed. Before axioms are at hand, the hierarchy is a Platonic myth, clearly visible only to those with a sixth sense for sets. \textcite[373]{maclane1986mathematics}
+\end{quote}
+\end{adjustwidth}
+
+To sum up, the axioms of set theory prove fruitful with respect to previously adopted mathematical structures, both by extending their theory and by providing a common framework for mathematical reasoning. Thus, regarding the examples discussed in this section, we may reasonably say that
+
+$$(\mathbb N,0,S), \; (\mathbb{R},1, +, \cdot, <) \; \leadsto \; \mathrm{ZFC}.$$
+
+What does not follow, however, is a corresponding adoption of a determinate cumulative hierarchy. In particular, the preceding considerations do not establish
+
+$$(\mathbb N,0,S), \; (\mathbb{R},1, +, \cdot, <) \; \leadsto \; \big( \bigcup_{\alpha}V_\alpha,\in \big).$$
+
+The examples examined above provide reasons for adopting the axioms of set theory as fruitful mathematical tools, but not necessarily for adopting a privileged set-theoretic universe as a determinate mathematical structure.
+ 
+%-----------References to set-theorists-------
+I do not think this perspective undermines the fruitfulness of set theory, nor should it be rejected by defenders of set-theoretic practice. For instance, \textcite{maddy1988believing1,maddy1988believing2} argues that set-theoretic axioms acquire justification primarily through extrinsic rather than intrinsic considerations. Her account provides a compelling explanation of how increasingly strong set-theoretic principles gain legitimacy within mathematical practice. Moreover, the criteria she invokes are largely compatible with the quasi-empirical considerations discussed above. In particular, Maddy's notion of extrinsic justification concerns the adoption of axioms rather than the adoption of structures. What remains less clear, however, is whether the fruitfulness of an axiom system is sufficient to establish the existence of a uniquely determined set-theoretic structure corresponding to it. Maddy's considerations provide reasons to accept and employ set-theoretic axioms, but the further transition from axiomatic fruitfulness to commitment to a privileged cumulative hierarchy requires additional argument.
+
+\section{How \texorpdfstring{$\mathrm{CH}$}{CH} fits in quasi-empirical structuralism}
+\label{section-CH-case}
+
+We may now return to the question that motivated this paper: whether the Continuum Hypothesis should be regarded as a definite mathematical problem. From the perspective of quasi-empirical structuralism, there are two possible routes by which such definiteness might be secured. First, mathematical practice might adopt an axiom system that settles $\mathrm{CH}$ and becomes sufficiently entrenched to form part of the background framework of mathematical reasoning. Second, mathematical practice might adopt a determinate structure in whose language $\mathrm{CH}$ is evaluated, thereby fixing its truth value independently of any particular axiomatic extension.
+
+%-----Further axioms----
+Regarding the first of these possibilities, we saw in the previous section that mathematical practice consistently relies on axiom systems such as $\mathrm{ZFC}$, or perhaps weaker fragments, both as a common language for mathematics and as a useful metamathematical framework. In the sense introduced above, such systems may therefore be regarded as adopted by mathematical practice. This fact alone, however, is insufficient to secure the definiteness of $\mathrm{CH}$, since $\mathrm{CH}$ is independent of $\mathrm{ZFC}$.
+
+The existence of axioms such as $\mathrm{V=L}$ and $\mathrm{MM}$ does not undermine the present view.\footnote{Martin's Maximum (MM) is a strong forcing axiom introduced by \textcite{ForemanMagidorShelah1988}. It has substantial combinatorial and structural consequences and decides many questions independent of $\mathrm{ZFC}$, among them $\neg\mathrm{CH}$.} On the contrary, the fact that contemporary set theory continues to treat the universes determined by such principles as competing mathematical possibilities is precisely evidence that mathematical practice has not converged on the adoption of a privileged set-theoretic universe. The fruitfulness of $\mathrm{MM}$ and $\mathrm{V=L}$ is genuine, and it fully explains why they have become important objects of mathematical investigation. What it does not explain is why either principle should be incorporated into the shared background assumptions on which substantial areas of mathematics routinely depend. In the terminology of condition \ref{condition4}, neither principle appears to have achieved the stability of reliance characteristic of genuinely adopted frameworks. So, in our notation, we do not have the following sequence:
+
+$$ (\mathbb{N}, 0, S), \; (\mathbb{R},1, +, \cdot, <) \; \leadsto \; \mathrm{ZFC}+\mathrm{MM} $$
+
+nor 
+
+$$ (\mathbb{N}, 0, S), \; (\mathbb{R},1, +, \cdot, <) \; \leadsto \; \mathrm{ZFC}+\mathrm{(V=L)}. $$
+
+%----------Finite-order arithmetic: Weil conjectures, Fermat's last theorem and MC systems----------
+Then it remains to address whether some determined structures have been adopted, in which statements as $\mathrm{CH}$ receive definite truth conditions. Having argued in Section \ref{set-theory} that this is not the case for the set-theoretic universe, we must now examine whether a positive answer might nevertheless emerge from weaker frameworks, such as finite-order arithmetic.
+A paradigmatic case of the application of stronger foundational frameworks to previously adopted mathematical structures is provided by the \textit{Weil conjectures}. Introduced by Weil in 1949, these consist of four deep conjectures concerning algebraic varieties over finite fields and played a central role in the development of modern algebraic geometry.
+
+What makes the example particularly relevant here is the contrast between the logical complexity of the statements themselves and that of the tools used in their proof. The Weil conjectures can be formulated in comparatively weak systems, such as second-order arithmetic or suitable extensions of Peano Arithmetic. Their eventual proof was obtained by \textcite{Deligne1974}, building on the étale cohomological machinery developed by Grothendieck and his collaborators. In its original formulation, this machinery made use of Grothendieck universes, whose existence requires $\mathrm{ZFC}$ together with a strongly inaccessible cardinal. \textcite{McLarty2020}, however, has shown that the essential mathematical content of these methods can be reconstructed in considerably weaker frameworks, namely finite-order arithmetical systems. These systems, denoted by $\mathrm{MC}$, are, in effect, the weakest within which Grothendieck's methods can be formalized and Deligne's proof carried out.
+
+The systems $\mathrm{MC}$ require the existence of the iterated power sets $P^n(\mathbb N)$ for each natural number $n$. In this respect, they resemble the higher-order frameworks discussed in Section \ref{set-theory}. Yet the existence of such iterated power sets does not by itself determine a privileged cumulative hierarchy. At most, it licenses the use of specific higher-order structures required for particular mathematical purposes. Consequently, the considerations advanced in Section \ref{set-theory} apply equally here: the successful use of these frameworks provides strong reasons to employ them, but considerably weaker reasons to regard the corresponding higher-order structures as determinate mathematical objects.
+
+%-------------Fermat's Last Theorem--------------
+A similar phenomenon can be observed in the proof of Fermat's Last Theorem. Although the theorem is a statement about the natural numbers, its proof relies on sophisticated machinery from arithmetic geometry and the theory of modular forms. Current foundational reconstructions place this machinery within finite-order arithmetic, though it remains an open question how weak the underlying framework can ultimately be made \parencite[17]{McLarty2020}. 
+
+\textcite{Feferman1999} defended the view that Fermat's Last Theorem should ultimately be provable within substantially weaker systems, perhaps even within $\mathrm{PA}$. Whether or not this expectation is correct is largely irrelevant to the present discussion. My argument does not require that ordinary mathematics reduce to first-order arithmetic, only that the structures actually relied upon by mathematical practice fall short of determining a privileged universe of sets.
+
+
+\section{Conclusion}
+\label{Conclusion}
+
+In any case, if there is a boundary between adopted mathematical structures and merely available foundational frameworks, it appears to lie somewhere within finite-order arithmetic rather than at the level of the full cumulative hierarchy. This conclusion should not be understood as denying the mathematical legitimacy of stronger frameworks. Contemporary set theory has produced a rich variety of fruitful structures whose investigation has substantially deepened our understanding of mathematics. The present claim is only that such structures have not been adopted in the same sense as the natural numbers, the real line, or the finite-order frameworks on which ordinary mathematical practice routinely relies.
+
+Whether this reflects an inherent limitation of our mathematical capacities or merely the current state of mathematical development remains an open question. Nevertheless, a common theme running through the perspectives considered in this paper—from Wittgenstein's emphasis on use, through Lakatos's and Mac Lane's focus on mathematical practice, to Feferman's conceptual structuralism—is that mathematical meaning and determinacy arise from structures that human beings can successfully employ, understand, and integrate into their mathematical activity. In this regard, I share, at least in spirit, although not necessarily in its specific content, the following words of \textcite[p. 2]{Bishop1967}:
+
+\begin{adjustwidth}{1cm}{1cm}
+\small
+\begin{quote}
+Mathematics belongs to man, not to God. We are not interested in properties of the positive integers that have no descriptive meaning for finite man (\dots). If God has mathematics of its own that has to be done, let him do it himself. 
+\end{quote}
+\end{adjustwidth}
+
+Of course, judgments of mathematical fruitfulness are neither fixed nor timeless. Mathematical practice evolves, and structures that presently occupy a peripheral role may in the future acquire a central position within the discipline. Nothing in the present account excludes this possibility. On the contrary, the quasi-empirical perspective developed here is intended to be dynamic rather than static. The adoption of mathematical structures is understood as an ongoing historical process, one that depends on their continued integration into mathematical practice and their capacity to support further developments. Whether future mathematical developments will lead to the adoption of stronger set-theoretic structures remains an open question. The claim defended in this paper is only that contemporary mathematical practice has not yet done so. Consequently, there is at present insufficient reason to regard the Continuum Hypothesis as possessing a uniquely determined truth value.
+
+
 %-----------Tercer capítulo-------------
 \chapter{Mathematics as institutions, and how this affect the case around \texorpdfstring{$\mathrm{CH}$}{CH}}
 
