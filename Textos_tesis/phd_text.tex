@@ -87,8 +87,17 @@ Sure that intrincancy vs simplicity have not played any role at all in discussio
 %-------------Primeros antecedentes: introducción lógica a la hipótesis del continuo
 \section{The Development of CH: From a Mathematical Problem to a Philosophical Question}
 
+At the end of the 19th century, Georg Cantor extended the concept of cardinality to infinite sets. Through this development, he was able to show that the cardinality of the continuum is strictly greater than that of the set of natural numbers. This led him to conjecture that there was not a third set strictly between those two, in terms of cardinality; a conjecture known as the Continuum Hypothesis (CH).1 However, this hypothesis proved far harder to resolve than Cantor might have expected, and he had been unable to resolve it by his death in 1918. 
+
+Cantor’s efforts paralleled the development of theoretical set theory, one of whose most important achievements was the establishment of the Zermelo-Fraenkel axioms (hereafter ZF). These axioms, including the axiom of choice2, are so strong that all necessary mathematical objects for modern academic and technical practices can be constructed by using them, as well as all universally accepted theorems proven. They also shed new light on the continuum problem, partly elucidating why Cantor had been unable to solve it. Kurt Gödel showed in 1938 that this conjecture was unprovable from the axioms of set theory, and so did Paul Cohen in 1962 with its negation. This gave CH a highly controversial status: an apparently well-defined and legitimate mathematical question but proven to be unsolvable within the tolls mathematicians can provide in everyday practice.
+
 %------------Exploraciones del problema más avanzadas: Woodin, MM, etc.-----
 \section{The logical approach to CH after Cohen's forcing}
+For example, between 1999 and 2004, Hugh Woodin worked on an argument suggesting that CH was false, by trying to build a canonical model of ZFC where CH fails. This model is characterized by certain maximality principles concerning the universal--existential theory of all sets of countable ordinals. In this model, Woodin used strong determinacy axioms, such as projective determinacy, and showed that they seemed to lead naturally to the negation of CH.\footnote{Reference 12.}
+
+However, the kind of arguments Woodin made required strengthening classical logic in a certain way. That is the reason why he developed $\Omega$-logic. For this new formalism to behave properly, there are two main requirements: on the one hand, the logic must satisfy the soundness property, i.e., any sentence provable logically from a certain theory must be true in all structures of that theory; on the other hand, there is the completeness requirement, which states the reciprocal implication. \textcite[p.~7]{woodin2004} was able to prove soundness, but the completeness requirement was far more challenging. He reformulated it as a conjecture---later known as the $\Omega$-conjecture---which would naturally imply the negation of CH. However, the conjecture turned out to be much harder to prove than he initially expected, and over time, \textcite{woodin2004} moved away from pursuing this path.
+
+After that, Woodin explored a totally different approach. As we have said in the previous section, Gödel showed the consistency of AC and GCH with ZF by constructing the model $L$. One of the main problems of this model is that most large cardinals cannot be realized within it. Because of this, Woodin proposed enlarging this model so that most large cardinals could be accommodated within it. This project, which has not yet been completed, is known as Ultimate-$L$. If this model were successfully constructed, and if it were accepted as the true canonical model for set theory, then CH would turn out to be true. However, there is no clear evidence that either of these conditions can be fulfilled.\footnote{Reference 13.}
 
 %-----Woodin's ideas----------------
 Does the formal independence of the Continuum Hypothesis from the axioms of Set Theory imply that the question has no meaning? Some, including Cohen himself, have argued that the answer to this question is “yes” [1]. But for this position to be credible either the other classical problems in set theory which have been similarly shown to be formally unsolvable would also have to be regarded as without meaning, or there must be an explanation as to why the problem of the Continuum Hypothesis is different. \textcite[p. 29]{woodin2004}
@@ -119,6 +128,9 @@ In this quote from Woodin, a sentence $\phi$ is \textit{good} in case it is $\Om
 
 The main idea of Woodin is that in case there are “enough” good sentences, then all these sentences should lead to the fact that $CH$ is false.
 
+%---------Martin's Maximun------------------------
+One of the most widely accepted alternatives is Martin's Maximum (MM), introduced in \cite{ForemanMagidorShelah1988}. This axiom states that for any forcing notion $P$ that preserves stationary subsets of $\omega_1$, and for any family of $\aleph_1$ many dense subsets of $P$, there exists a filter $G \subseteq P$ that meets all of them. This means that any forcing that adds or removes subsets of $\omega_1$ will not destroy stationary subsets, which are a certain kind of large subset of $\omega_1$. Thus, this axiom asserts the existence of a ``maximal'' canonical forcing that can subsume many of the forcing constructions set theorists would like to use. Once this forcing axiom is assumed, the cardinality of the continuum becomes $\aleph_2$, which implies that CH is false.
+
 %--------Proyective determinacy-----------------------
 
 It has also been pointed out that the larger large cardinal axioms are supported by strong arguments of analogy. Typically, such arguments single out a combinatorial property of the first infinite cardinal $\omega$ and posit the existence of uncountable cardinals having an analogous property. This is usually justified by appealing to the uniform generation of sets in the cumulative hierarchy on the grounds that this uniformity should rule out the existence of ‘singularities’. It is fair to say that this line of reasoning is generally regarded as carrying less credence than justifications via reflection principles. \textcite[p. 97]{hauser2004}
@@ -132,7 +144,7 @@ This also affords an improved understanding of the claim that PD is the ‘corre
 
 
 %------------Lógica vs matemáticas. Por qué las matemáticas son sintéticas, no lógicas ni puramente formales
-\section{Our stand towards logicism and the meaning of mathematical statements}
+\section{Our stand towards logicism and formalism}
 
 First order logic is the only that we can understand as logic. Koellner
 
@@ -163,6 +175,36 @@ Moreover, there are good reasons why Mathematicians do not usually present their
 %-------Sección sobre pragmática en matemáticas-----------------
 \section{How pragmatic linguistics may fit into mathematics}
 
+Dummett (1978) was one of the clearest stating that philosophy of language was essential to foundational problems in mathematics, these last requiring a reasonable conception of meaning. This is crucial as well in the problem Feferman proposes, as it consists in denying that CH has any mathematical meaning at all. 
+
+Another area of philosophy where a similar shift occurred, mutatis mutandis, is the philosophy of language, particularly with the emergence of pragmatics and the philosophy of ordinary language. While early XX century philosophy of language focused mainly on syntax, semantics and idealized languages, we later witnessed the emergence of other concepts, such as, context and speaker intention in understanding meaning. A lot of research initially concentrated on studying the purely formal and logical relations of linguistic signs but gradually shifted to examining how these signs are actually used in reality, much like in the philosophy of mathematics in recent times. 6 
+
+We hold that this parallelism is not casual, and that in order to address the philosophical problems that mathematics presents, we need first to fix many of the ones language presents by itself.7 In particular, there must be many pragmatic phenomena interfering in the development of mathematics and in the various ways mathematics is actually done.8 CH is of course no exception, and to address the problem we are facing here (whether it constitutes a well-defined mathematical problem) we need to deeply understand the pragmatic and linguistic aspects in relation with it. 
+
+Feferman also points out slightly in this direction, by citing the following passage of Searle: “[T]here are portions of the real world, objective facts in the world, that are only facts by human agreement. In a sense there are things that exist only because we believe them to exist. ... things like money, property, governments, and marriages. Yet many facts regarding these things are ‘objective’ facts in the sense that they are not a matter of [our] preferences, evaluations, or moral attitude”9. Like Searle, Feferman holds that many aspects of our reality can be objective just because of human agreement, and in fact this is the status of mathematical objectivity, according to his point of view: “The objectivity of mathematics is a special case of intersubjective objectivity that is ubiquitous in social reality”10. CH falls, according to Feferman, out of this kind of intersubjective objectivity. Our purpose in this paper is to try to shed some light on this point of view. We aim to undertake a deeper inquiry into the linguistic and pragmatic aspects surrounding the various ways in which the CH can be defined, with particular focus on speech acts and illocutionary force. Luckily, some steps have been already taken in this direction. 
+
+Máximas de Grice en matemáticas 
+
+Teorema de Cauchy; para cada primo p que divide al orden del grupo, hay un elemento en G de orden p (nunca se especifica si hay sólo uno) 
+
+Falacia “Esto es un trozo de papel” (implicando que es sólo un trozo de papel) no se puede dar en matemáticas (falacia de la verdad a medias) 
+
+Speech act theory was not designed specifically for mathematics, and its development in the late 20th century was mostly independent of them. In fact, pragmatic linguistic theories have been seen with skepticism by many philosophers of mathematics. We can see a recent example in (Ganesalingam, 2013), where the author holds that pragmatic phenomena, both near side pragmatics and far side pragmatics11 essentially do not appear in mathematics. The author states, for example, in p. 24: “Most issues relating to near-side pragmatics do not arise in connection with mathematical language. For example, because mathematics is concerned with timeless facts, indexicals and demonstratives never occur in mathematical language […]. By contrast, mathematics certainly contains sentences that one would expect to trigger ‘far-side’ pragmatic phenomena. However, such phenomena simply do not occur”. 
+
+These arguments could be accepted regarding indexicals12, although with some caution. For example, in mathematical elucidation one tends to use indexicals, and it is far from evident that this kind of act can be excluded from mathematical language. On the other hand, as stablished in (Perry \& Korta, 2020), near-side pragmatics not only encompasses indexicals and context dependency, but also presuppositions, issues related to resolving ambiguity, vagueness, the reference of proper names, demonstratives, anaphors, and the interaction of context with these elements. These phenomena are all concerned with determining "what is said" in an utterance—i.e., the precise content communicated before additional layers of meaning (like implicatures or speech acts) come into play. We think that Ganesalingam, although other really interesting aspects of his work, does not account for all these aspects, and focuses too much in indexicals. 
+
+The point concerning far-side pragmatics, which interest us even more here, seems to be even more controversial. For instance, look at the following passage in a classic mathematical textbook: “In order to arrive at a definition of the derivative of a function whose domain is $\mathbb{R}^n$ (or an open subset of this space), let us take another look at the familiar case, and let us see how to interpret the derivative in that case in a way which will naturally extend to $n>1$”. The derivative of a function in the real numbers is defined using the formula: 
+
+$$ f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h} $$
+ 
+This definition, however, cannot be extended to multiple-variable functions in a reasonable way. The solution is to identify the derivative of f in a point with the linear function behaving more similarly to f around it. This new way of understanding the derivative is now extensible to higher dimensions. With this approach $f'$ is understood as the linear function which behaves the most similarly to f at a given point14. All the concepts involved in the new definition, linear functions, distances, limits, can be defined in $\mathbb{R}^n$.
+
+The point is that all these definitions are semantically equivalent, but in pragmatic terms there are different. Nobody would use formula (13) when doing one-variable analysis, while (1) is not naturally extendable to $\mathbb{R}$. Both definitions mean the same (in literal terms), but each of them implies different forms of understanding the concepts involved, and makes mathematical reasoning develop in different ways; it could be said too, in a Gricean way of speaking, that they entail different implicatures.
+
+
+
+\section{The main theses of the PhD}
+The thesis defends the view that mathematical determinacy is grounded not merely in formal axiomatization but in the successful adoption of mathematical structures within mathematical practice. Mathematical structures acquire objectivity through stable institutional and representational roles, and the status of CH reveals the limits of accounts that appeal only to formal methods.
 
 %----------------Primer capítulo: interpretación de CS y crítica de Koellner
 \chapter{Feferman's Conceptual Structuralism and its Critics}
@@ -284,7 +326,7 @@ The direct apprehension of these [structures] leads one to speak of truth in a s
 \end{adjustwidth}
 
 
-\section{Scientific applicability in evaluating Feferman's case}
+\section{Scientific applicability in Feferman's case}
 \label{science-applicability}
 
 We have seen that Feferman imposes important epistemological limitations on mathematical structures, at least if statements formulated within them are to be regarded as having determinate truth values. These limitations are relatively clear—especially when expressed formally through the systems $\mathrm{SCS}$ and $\mathrm{SCS} + Pow(\omega)$—but it is far less clear how they are to be evaluated and ultimately justified on philosophical grounds.
@@ -347,7 +389,7 @@ One might nevertheless argue that this reduces the scientific applicability of m
 
 From this perspective, predicative mathematics may sometimes complicate the construction and development of certain mathematical domains, especially regarding the problem of constructing the continuum in a predicative and non-set-theoretic manner. Still, I think Feferman was right to remain flexible on this issue, as suggested at the end of Section \ref{conceptual-structuralism-intro}. Moreover, his position concerning CH does not appear to be significantly affected here, since the limits of predicative mathematics are generally located within the scope of second-order arithmetic. To assess this issue more fully, however, we must move beyond scientific applicability and consider mathematical practice itself.
 
-\section{Conceptual Structuralism regarding the philosophy of mathematical practice}
+\section{Conceptual Structuralism and the philosophy of mathematical practice}
 \label{mathematical-practice}
 
 For many years, the philosophy of mathematics was dominated by the foundationalist tradition, closely associated with foundational programs within mathematics, such as axiomatic set theory. This situation began to change in the second half of the twentieth century with the emergence of the so-called \textit{philosophy of mathematical practice}. As \textcite{Mancosu2008} observes:
@@ -624,7 +666,7 @@ From this perspective, arithmetic and higher set theory occupy importantly diffe
 The resulting picture is neither straightforward platonism nor simple conventionalism. Rather, mathematical determinacy emerges gradually from the interaction between formal systems, conceptual clarity, and the stabilizing role of mathematical practice itself. Interpreted in this way, conceptual structuralism offers not merely a skeptical attitude toward CH, but a broader philosophical framework for understanding why some mathematical structures come to be treated as fixed and objective while others remain open to competing interpretations.
 
 %-----------Segundo capítulo--------
-\chapter{The idea of \textit{quasi-empirical structuralist} and its implications to the Continuum Hypothesis}
+\chapter{The idea of \textit{quasi-empirical structuralist}}
 \label{chapter2}
 
 %=========================
@@ -657,7 +699,7 @@ The role of fruitfulness in the present account is indirect. Mathematical practi
 
 The remainder of the paper is organized as follows. Section \ref{structuralims-ontology-epistemology} develops the structuralist framework underlying the present account and introduces the distinction between the adoption of mathematical structures and the adoption of axiom systems. Section \ref{quasi-emp-structuralism} turns to the philosophy of mathematical practice, drawing on Lakatos and Mac Lane to formulate the quasi-empirical criteria of mathematical fruitfulness that guide the adoption of structures. Section \ref{history-section} illustrates these ideas through a series of historical case studies, including the development of complex numbers, function spaces, and infinitesimals. Section \ref{natural-reals} argues that the standard structures of arithmetic and analysis have achieved a privileged status within mathematical practice, thereby supporting determinate truth conditions for statements formulated within them. Section \ref{set-theory} contrasts this situation with that of contemporary set theory, arguing that mathematical practice has largely adopted set-theoretic methods and axioms without thereby privileging a unique set-theoretic universe. Section \ref{section-CH-case} applies the preceding analysis to $\mathrm{CH}$ and examines whether either contemporary axiomatic developments or current mathematical practice provide grounds for treating $\mathrm{CH}$ as determinate in the relevant sense.
 
-\section{The structuralists' approach: ontology, epistemology and categoricity}
+\section{The structuralists' approach: adoption of structures}
 \label{structuralims-ontology-epistemology}
  
 An important philosophical approach that distances itself from formalism while engaging seriously with both epistemological and ontological questions is mathematical structuralism, developed most prominently by Shapiro and Resnik. As will become clear, structuralist approaches---including Feferman's conceptual structuralism---bear directly on debates about the determinacy of set-theoretic statements such as CH, particularly the question of whether there is a single, fixed set-theoretic universe.
