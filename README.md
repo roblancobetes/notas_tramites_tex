@@ -5,17 +5,22 @@ Repositorio para la gestión de documentos en LaTeX (prácticas, presentaciones 
 
 ```text
 .
-├── ejercicios/                  # Ejercicios y documentos principales
+├── documentos/                  # documentos administrativos/CV
 │   ├── out_aux/                 # Archivos auxiliares (ignorado)
 │   ├── out_pdf/                 # PDFs generados (ignorado)
 │   └── *.tex                    # Archivos fuente
+│
+├── ejercicios/                  # Ejercicios y documentos principales
+│   ├── out_aux/                 
+│   ├── out_pdf/                 
+│   └── *.tex                   
 │
 ├── Presentaciones_curso_BD/     # Presentaciones
 │   ├── out_aux/
 │   ├── out_pdf/
 │   └── *.tex
 │
-├── Textos_tesis/                # Documentos de tesis
+├── Textos_matemáticas/           # Notas sobre lógica y para cursos
 │   ├── out_aux/
 │   ├── out_pdf/
 │   └── *.tex
